@@ -1,0 +1,296 @@
+[
+  {
+    "project_id": "aso",
+    "observations": [
+      "aso@kepco-aso",
+      "aso@kepco-list"
+    ],
+    "source_ids": [
+      "kepco-aso",
+      "kepco-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "正式站名、都道府县、额定容量与投运月份对应，公告与案例表是同一站。"
+  },
+  {
+    "project_id": "chikugo",
+    "observations": [
+      "chikugo@kepco-chikugo",
+      "chikugo@kepco-list"
+    ],
+    "source_ids": [
+      "kepco-chikugo",
+      "kepco-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "正式站名、都道府县、额定容量与投运月份对应，公告与案例表是同一站。"
+  },
+  {
+    "project_id": "hamamatsu",
+    "observations": [
+      "hamamatsu@kepco-mito-hamamatsu",
+      "hamamatsu@kepco-list"
+    ],
+    "source_ids": [
+      "kepco-mito-hamamatsu",
+      "kepco-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "正式站名、都道府县、额定容量与投运月份对应，公告与案例表是同一站。"
+  },
+  {
+    "project_id": "hibikinada",
+    "observations": [
+      "hibikinada@jpower-hibikinada"
+    ],
+    "source_ids": [
+      "jpower-hibikinada"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "若松事业所内响滩站10MW/43MWh，是独立储能站，不与同名太阳能/海风场合并。"
+  },
+  {
+    "project_id": "hirohara",
+    "observations": [
+      "hirohara@eku-hirohara"
+    ],
+    "source_ids": [
+      "eku-hirohara"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "广原站项目详情与2024/2026相关新闻为同一宫崎市30MW/120MWh站。"
+  },
+  {
+    "project_id": "kasugai",
+    "observations": [
+      "kasugai@kepco-kasugai",
+      "kasugai@kepco-list"
+    ],
+    "source_ids": [
+      "kepco-kasugai",
+      "kepco-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "正式站名、都道府县、额定容量与投运月份对应，公告与案例表是同一站。"
+  },
+  {
+    "project_id": "kinokawa",
+    "observations": [
+      "kinokawa@orix-kinokawa",
+      "kinokawa@kepco-list",
+      "kinokawa@orix-status"
+    ],
+    "source_ids": [
+      "orix-kinokawa",
+      "kepco-list",
+      "orix-status"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "ORIX与关西电力为同一纪之川站，地点/48MW/113MWh一致。不是两个站。"
+  },
+  {
+    "project_id": "maibara-koto",
+    "observations": [
+      "maibara-koto@orix-maibara",
+      "maibara-koto@orix-status"
+    ],
+    "source_ids": [
+      "orix-maibara",
+      "orix-status"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "公告站名、米原市和134MW/548MWh一致；较新官方现况将开工记录为2024年12月。"
+  },
+  {
+    "project_id": "mito",
+    "observations": [
+      "mito@kepco-mito-hamamatsu",
+      "mito@kepco-list"
+    ],
+    "source_ids": [
+      "kepco-mito-hamamatsu",
+      "kepco-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "正式站名、都道府县、额定容量与投运月份对应，公告与案例表是同一站。"
+  },
+  {
+    "project_id": "renova-fukuroi",
+    "observations": [
+      "renova-fukuroi@renova-fukuroi",
+      "renova-fukuroi@renova-list"
+    ],
+    "source_ids": [
+      "renova-fukuroi",
+      "renova-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-himeji",
+    "observations": [
+      "renova-himeji@renova-himeji",
+      "renova-himeji@renova-list"
+    ],
+    "source_ids": [
+      "renova-himeji",
+      "renova-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-ishikari",
+    "observations": [
+      "renova-ishikari@renova-ishikari",
+      "renova-ishikari@renova-list",
+      "renova-ishikari@renova-groundbreaking"
+    ],
+    "source_ids": [
+      "renova-ishikari",
+      "renova-list",
+      "renova-groundbreaking"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-kikugawa",
+    "observations": [
+      "renova-kikugawa@renova-kikugawa",
+      "renova-kikugawa@renova-list"
+    ],
+    "source_ids": [
+      "renova-kikugawa",
+      "renova-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-mori",
+    "observations": [
+      "renova-mori@renova-mori",
+      "renova-mori@renova-list"
+    ],
+    "source_ids": [
+      "renova-mori",
+      "renova-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-shiraoi",
+    "observations": [
+      "renova-shiraoi@renova-shiraoi",
+      "renova-shiraoi@renova-list",
+      "renova-shiraoi@renova-groundbreaking"
+    ],
+    "source_ids": [
+      "renova-shiraoi",
+      "renova-list",
+      "renova-groundbreaking"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-tomakomai",
+    "observations": [
+      "renova-tomakomai@renova-tomakomai",
+      "renova-tomakomai@renova-list",
+      "renova-tomakomai@renova-groundbreaking"
+    ],
+    "source_ids": [
+      "renova-tomakomai",
+      "renova-list",
+      "renova-groundbreaking"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "renova-yasugi",
+    "observations": [
+      "renova-yasugi@renova-yasugi",
+      "renova-yasugi@renova-list"
+    ],
+    "source_ids": [
+      "renova-yasugi",
+      "renova-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "官方站名、城市、MW一致。相同アールツーSPV下的苫小牧/白老/森町是不同物理站点。"
+  },
+  {
+    "project_id": "sapporo-1",
+    "observations": [
+      "sapporo-1@kepco-sapporo",
+      "sapporo-1@kepco-list",
+      "sapporo-1@toshiba-sapporo",
+      "sapporo-1@orem-sapporo"
+    ],
+    "source_ids": [
+      "kepco-sapporo",
+      "kepco-list",
+      "toshiba-sapporo",
+      "orem-sapporo"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "札幌1/2是分别命名的两个50MW/175.5MWh站；EPC/O&M公告不增加站数。"
+  },
+  {
+    "project_id": "sapporo-2",
+    "observations": [
+      "sapporo-2@kepco-sapporo",
+      "sapporo-2@kepco-list",
+      "sapporo-2@toshiba-sapporo",
+      "sapporo-2@orem-sapporo"
+    ],
+    "source_ids": [
+      "kepco-sapporo",
+      "kepco-list",
+      "toshiba-sapporo",
+      "orem-sapporo"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "札幌1/2是分别命名的两个50MW/175.5MWh站；EPC/O&M公告不增加站数。"
+  },
+  {
+    "project_id": "tanagawa",
+    "observations": [
+      "tanagawa@kepco-tanagawa",
+      "tanagawa@kepco-list"
+    ],
+    "source_ids": [
+      "kepco-tanagawa",
+      "kepco-list"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "正式站名、都道府县、额定容量与投运月份对应，公告与案例表是同一站。"
+  },
+  {
+    "project_id": "yonezawa",
+    "observations": [
+      "yonezawa@orix-yufu-yonezawa"
+    ],
+    "source_ids": [
+      "orix-yufu-yonezawa"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "同篇公告明确两个不同地点和两套容量；由布与米沢分别计一站。"
+  },
+  {
+    "project_id": "yufu",
+    "observations": [
+      "yufu@orix-yufu-yonezawa"
+    ],
+    "source_ids": [
+      "orix-yufu-yonezawa"
+    ],
+    "resolution": "one physical station despite multiple announcements",
+    "reason": "同篇公告明确两个不同地点和两套容量；由布与米沢分别计一站。"
+  }
+]

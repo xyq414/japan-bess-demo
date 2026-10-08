@@ -1,0 +1,1962 @@
+{
+  "schema_version": "public-project-sample-1",
+  "version": "1.0",
+  "as_of_jst": "2026-10-07",
+  "question": "哪些区域公开新增储能较多，投运时间如何分布？",
+  "coverage": "公开可识别项目样本；非全国完整项目库。淘科另有9站并列资料，不纳入本样本合计。",
+  "status_taxonomy": {
+    "operational": "官方明确已运营",
+    "construction": "本项目官方明确在建/已开始建设",
+    "planned": "开发已披露；未取得实际开工证据"
+  },
+  "timing_notice": "expected COD保留公告年/月/年初/FY原精度。FY日本财年为4月至翌年3月，不能与CY月度精确相加。公告不是投运保证。",
+  "concentration_notice": "缺少全国覆盖分母，不报告全国市场份额或HHI。开发商计数仅描述样本；聚合商缺失保留未知。",
+  "projects": [
+    {
+      "project_id": "aso",
+      "project_name": "SGET阿蘇蓄電所",
+      "owner": null,
+      "project_vehicle": "SGET阿蘇蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "SGET阿蘇蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "熊本県",
+      "jepx_area": "kyushu",
+      "mw": 50.0,
+      "mwh": 175.0,
+      "status": "planned",
+      "announced_date": "2026-03-25",
+      "construction_start": null,
+      "expected_cod": "2029-06",
+      "expected_cod_year": 2029,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-aso",
+        "kepco-list"
+      ],
+      "duration_hours": 3.5,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-aso",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第6；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "熊本県阿蘇郡南阿蘇村",
+            "商業運転開始": "2029年6月予定",
+            "定格出力": "50MW",
+            "定格容量": "175MWh",
+            "敷地面積": "約10,000m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "chikugo",
+      "project_name": "筑後蓄電所",
+      "owner": null,
+      "project_vehicle": "福岡筑後蓄電合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "福岡筑後蓄電合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "福岡県",
+      "jepx_area": "kyushu",
+      "mw": 39.0,
+      "mwh": 145.0,
+      "status": "planned",
+      "announced_date": "2026-03-25",
+      "construction_start": null,
+      "expected_cod": "2028-12",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-chikugo",
+        "kepco-list"
+      ],
+      "duration_hours": 3.717948717948718,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-chikugo",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第7；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "福岡県筑後市",
+            "商業運転開始": "2028年12月予定",
+            "定格出力": "39MW",
+            "定格容量": "145MWh",
+            "敷地面積": "約4,300m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "hamamatsu",
+      "project_name": "SGET浜松蓄電所",
+      "owner": null,
+      "project_vehicle": "SGET浜松蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "SGET浜松蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "静岡県",
+      "jepx_area": "chubu",
+      "mw": 30.0,
+      "mwh": 110.3,
+      "status": "planned",
+      "announced_date": "2025-09-25",
+      "construction_start": null,
+      "expected_cod": "2028-06",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-mito-hamamatsu",
+        "kepco-list"
+      ],
+      "duration_hours": 3.6766666666666667,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-mito-hamamatsu",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第5；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "静岡県浜松市中央区入野町",
+            "商業運転開始": "2028年6月予定",
+            "定格出力": "30MW",
+            "定格容量": "110.3MWh",
+            "敷地面積": "約5,000m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "hibikinada",
+      "project_name": "響灘蓄電所",
+      "owner": null,
+      "project_vehicle": "電源開発株式会社",
+      "developer_group": "J-POWER",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "福岡県",
+      "jepx_area": "kyushu",
+      "mw": 10.0,
+      "mwh": 43.0,
+      "status": "construction",
+      "announced_date": "2025-10-01",
+      "construction_start": {
+        "value": "2025-10",
+        "kind": "actual_month"
+      },
+      "expected_cod": "2028-04",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "容量与功率公告为约数。",
+      "source_ids": [
+        "jpower-hibikinada"
+      ],
+      "duration_hours": 4.3,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "jpower-hibikinada",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "jpower-hibikinada",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "hirohara",
+      "project_name": "広原蓄電所",
+      "owner": "Eku Energy",
+      "project_vehicle": "Eku Energy",
+      "developer_group": "Eku Energy",
+      "operator": null,
+      "aggregator": "東京ガス",
+      "prefecture": "宮崎県",
+      "jepx_area": "kyushu",
+      "mw": 30.0,
+      "mwh": 120.0,
+      "status": "construction",
+      "announced_date": "2024-04-24",
+      "construction_start": {
+        "value": "2024-09",
+        "kind": "groundbreaking_month"
+      },
+      "expected_cod": "2027-early",
+      "expected_cod_year": 2027,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "2027年初，未猜具体月日。东京燃气20年充放电运用权，不能等同已成交调频容量。",
+      "source_ids": [
+        "eku-hirohara"
+      ],
+      "duration_hours": 4.0,
+      "duration_bucket": "4h",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "eku-hirohara",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "eku-hirohara",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "kasugai",
+      "project_name": "春日井蓄電所",
+      "owner": null,
+      "project_vehicle": "春日井蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "春日井蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "愛知県",
+      "jepx_area": "chubu",
+      "mw": 39.0,
+      "mwh": 81.0,
+      "status": "planned",
+      "announced_date": "2026-08-05",
+      "construction_start": null,
+      "expected_cod": "2028-04",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-kasugai",
+        "kepco-list"
+      ],
+      "duration_hours": 2.076923076923077,
+      "duration_bucket": "2h",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-kasugai",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第8；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "愛知県春日井市内津町",
+            "商業運転開始": "2028年4月予定",
+            "定格出力": "39MW",
+            "定格容量": "81MWh",
+            "敷地面積": "約7,500m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "kinokawa",
+      "project_name": "紀の川蓄電所",
+      "owner": null,
+      "project_vehicle": "紀の川蓄電所合同会社",
+      "developer_group": "ORIX / 関西電力",
+      "operator": "紀の川蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "和歌山県",
+      "jepx_area": "kansai",
+      "mw": 48.0,
+      "mwh": 113.0,
+      "status": "operational",
+      "announced_date": "2024-11-29",
+      "construction_start": null,
+      "expected_cod": null,
+      "expected_cod_year": null,
+      "expected_cod_basis": null,
+      "actual_cod": "2024-12-01",
+      "notes": "",
+      "source_ids": [
+        "orix-kinokawa",
+        "kepco-list",
+        "orix-status"
+      ],
+      "duration_hours": 2.3541666666666665,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "orix-kinokawa",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "orix-status",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "maibara-koto",
+      "project_name": "米原湖東蓄電所",
+      "owner": null,
+      "project_vehicle": null,
+      "developer_group": "ORIX",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "滋賀県",
+      "jepx_area": "kansai",
+      "mw": 134.0,
+      "mwh": 548.0,
+      "status": "construction",
+      "announced_date": "2024-05-30",
+      "construction_start": {
+        "value": "2024-12",
+        "kind": "actual_month"
+      },
+      "expected_cod": "2027",
+      "expected_cod_year": 2027,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "2024公告曾计划11月开工，实际现况为12月，保留修订差异。",
+      "source_ids": [
+        "orix-maibara",
+        "orix-status"
+      ],
+      "duration_hours": 4.08955223880597,
+      "duration_bucket": "4h",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "orix-maibara",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "orix-status",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "mito",
+      "project_name": "SGET水戸蓄電所",
+      "owner": null,
+      "project_vehicle": "SGET水戸蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "SGET水戸蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "茨城県",
+      "jepx_area": "tokyo",
+      "mw": 50.0,
+      "mwh": 175.5,
+      "status": "planned",
+      "announced_date": "2025-09-25",
+      "construction_start": null,
+      "expected_cod": "2029-06",
+      "expected_cod_year": 2029,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-mito-hamamatsu",
+        "kepco-list"
+      ],
+      "duration_hours": 3.51,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-mito-hamamatsu",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第4；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "茨城県水戸市河和田町",
+            "商業運転開始": "2029年6月予定",
+            "定格出力": "50MW",
+            "定格容量": "175.5MWh",
+            "敷地面積": "約8,000m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "renova-fukuroi",
+      "project_name": "袋井宇刈蓄電所",
+      "owner": null,
+      "project_vehicle": "アールシックス蓄電所合同会社",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "静岡県",
+      "jepx_area": "chubu",
+      "mw": 99.9,
+      "mwh": 280.0,
+      "status": "construction",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2026年度",
+        "kind": "reported_year_or_month",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": "2029-FY",
+      "expected_cod_year": 2029,
+      "expected_cod_basis": "fiscal_year",
+      "actual_cod": null,
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-fukuroi",
+        "renova-list"
+      ],
+      "duration_hours": 2.8028028028028027,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-fukuroi",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-himeji",
+      "project_name": "姫路蓄電所",
+      "owner": null,
+      "project_vehicle": "合同会社姫路蓄電所",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "兵庫県",
+      "jepx_area": "kansai",
+      "mw": 15.0,
+      "mwh": 48.0,
+      "status": "operational",
+      "announced_date": null,
+      "construction_start": null,
+      "expected_cod": null,
+      "expected_cod_year": null,
+      "expected_cod_basis": null,
+      "actual_cod": "2025-10",
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-himeji",
+        "renova-list"
+      ],
+      "duration_hours": 3.2,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-himeji",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-ishikari",
+      "project_name": "石狩蓄電所",
+      "owner": null,
+      "project_vehicle": "アールスリー蓄電所合同会社",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "北海道",
+      "jepx_area": "hokkaido",
+      "mw": 30.0,
+      "mwh": null,
+      "status": "construction",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2026年度(予定)",
+        "kind": "planned",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": "2027-FY",
+      "expected_cod_year": 2027,
+      "expected_cod_basis": "fiscal_year",
+      "actual_cod": null,
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-ishikari",
+        "renova-list",
+        "renova-groundbreaking"
+      ],
+      "duration_hours": null,
+      "duration_bucket": "unknown",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-ishikari",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-groundbreaking",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-kikugawa",
+      "project_name": "菊川西村蓄電所",
+      "owner": null,
+      "project_vehicle": "アールワン蓄電所合同会社",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "静岡県",
+      "jepx_area": "chubu",
+      "mw": 90.0,
+      "mwh": 270.0,
+      "status": "construction",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2025年度",
+        "kind": "reported_year_or_month",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": "2028-FY",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "fiscal_year",
+      "actual_cod": null,
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-kikugawa",
+        "renova-list"
+      ],
+      "duration_hours": 3.0,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-kikugawa",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-mori",
+      "project_name": "森町睦実蓄電所",
+      "owner": null,
+      "project_vehicle": "アールツー蓄電所合同会社",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "静岡県",
+      "jepx_area": "chubu",
+      "mw": 75.0,
+      "mwh": null,
+      "status": "construction",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2026年度(予定)",
+        "kind": "planned",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": "2028-FY",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "fiscal_year",
+      "actual_cod": null,
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-mori",
+        "renova-list"
+      ],
+      "duration_hours": null,
+      "duration_bucket": "unknown",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-mori",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-shiraoi",
+      "project_name": "白老蓄電所",
+      "owner": null,
+      "project_vehicle": "アールツー蓄電所合同会社",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "北海道",
+      "jepx_area": "hokkaido",
+      "mw": 50.0,
+      "mwh": null,
+      "status": "construction",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2026年度(予定)",
+        "kind": "planned",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": "2028-FY",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "fiscal_year",
+      "actual_cod": null,
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-shiraoi",
+        "renova-list",
+        "renova-groundbreaking"
+      ],
+      "duration_hours": null,
+      "duration_bucket": "unknown",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-shiraoi",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-groundbreaking",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-tomakomai",
+      "project_name": "苫小牧蓄電所",
+      "owner": null,
+      "project_vehicle": "アールツー蓄電所合同会社",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "北海道",
+      "jepx_area": "hokkaido",
+      "mw": 90.0,
+      "mwh": null,
+      "status": "construction",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2026年度(予定)",
+        "kind": "planned",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": "2028-FY",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "fiscal_year",
+      "actual_cod": null,
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-tomakomai",
+        "renova-list",
+        "renova-groundbreaking"
+      ],
+      "duration_hours": null,
+      "duration_bucket": "unknown",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-tomakomai",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-groundbreaking",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "renova-yasugi",
+      "project_name": "安来蓄電所",
+      "owner": null,
+      "project_vehicle": "株式会社レノバ",
+      "developer_group": "RENOVA",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "島根県",
+      "jepx_area": "chugoku",
+      "mw": 2.0,
+      "mwh": 6.5,
+      "status": "operational",
+      "announced_date": null,
+      "construction_start": {
+        "value": "2026年1月",
+        "kind": "reported_year_or_month",
+        "precision": "as_disclosed"
+      },
+      "expected_cod": null,
+      "expected_cod_year": null,
+      "expected_cod_basis": null,
+      "actual_cod": "2026-04",
+      "notes": "官网列表当前列为运营/在建；详情表的计划开工年份独立保留。MWh非公表不推算。",
+      "source_ids": [
+        "renova-yasugi",
+        "renova-list"
+      ],
+      "duration_hours": 3.25,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "renova-yasugi",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "renova-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "sapporo-1",
+      "project_name": "SGET札幌1蓄電所",
+      "owner": null,
+      "project_vehicle": "SGET札幌1蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "SGET札幌1蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "北海道",
+      "jepx_area": "hokkaido",
+      "mw": 50.0,
+      "mwh": 175.5,
+      "status": "construction",
+      "announced_date": "2025-03-25",
+      "construction_start": null,
+      "expected_cod": "2028-04",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-sapporo",
+        "kepco-list",
+        "toshiba-sapporo",
+        "orem-sapporo"
+      ],
+      "duration_hours": 3.51,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-sapporo",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "orem-sapporo",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第3；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "北海道札幌市北区新琴似町",
+            "商業運転開始": "2028年4月予定",
+            "定格出力": "各50MW(合計100MW)",
+            "定格容量": "各175.5MWh(合計351MWh)",
+            "敷地面積": "各約7,000m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "sapporo-2",
+      "project_name": "SGET札幌2蓄電所",
+      "owner": null,
+      "project_vehicle": "SGET札幌2蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "SGET札幌2蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "北海道",
+      "jepx_area": "hokkaido",
+      "mw": 50.0,
+      "mwh": 175.5,
+      "status": "construction",
+      "announced_date": "2025-03-25",
+      "construction_start": null,
+      "expected_cod": "2028-04",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-sapporo",
+        "kepco-list",
+        "toshiba-sapporo",
+        "orem-sapporo"
+      ],
+      "duration_hours": 3.51,
+      "duration_bucket": "other",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-sapporo",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "orem-sapporo",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第3；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "北海道札幌市北区新琴似町",
+            "商業運転開始": "2028年4月予定",
+            "定格出力": "各50MW(合計100MW)",
+            "定格容量": "各175.5MWh(合計351MWh)",
+            "敷地面積": "各約7,000m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "tanagawa",
+      "project_name": "多奈川蓄電所",
+      "owner": null,
+      "project_vehicle": "多奈川蓄電所合同会社",
+      "developer_group": "関西電力及共同投资人",
+      "operator": "多奈川蓄電所合同会社",
+      "aggregator": "E-Flow",
+      "prefecture": "大阪府",
+      "jepx_area": "kansai",
+      "mw": 99.0,
+      "mwh": 396.0,
+      "status": "planned",
+      "announced_date": "2025-05-07",
+      "construction_start": {
+        "value": "2025-06",
+        "kind": "planned_month"
+      },
+      "expected_cod": "2028-02",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "未取得明确实际开工公告时按规划登记；不能仅因计划开工日期已过就转在建。",
+      "source_ids": [
+        "kepco-tanagawa",
+        "kepco-list"
+      ],
+      "duration_hours": 4.0,
+      "duration_bucket": "4h",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "kepco-tanagawa",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        },
+        {
+          "fields": [
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod"
+          ],
+          "source_id": "kepco-list",
+          "locator": "本电站所在地表格第2；札幌“各”功率/容量按每站取值。",
+          "selected_official_fields": {
+            "場所": "大阪府泉南郡岬町多奈川",
+            "商業運転開始": "2028年2月予定",
+            "定格出力": "99MW",
+            "定格容量": "396MWh",
+            "敷地面積": "約20,000m2"
+          }
+        }
+      ]
+    },
+    {
+      "project_id": "yonezawa",
+      "project_name": "米沢蓄電所",
+      "owner": null,
+      "project_vehicle": null,
+      "developer_group": "ORIX及共同投资人",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "山形県",
+      "jepx_area": "tohoku",
+      "mw": 75.0,
+      "mwh": 309.0,
+      "status": "construction",
+      "announced_date": "2026-09-30",
+      "construction_start": {
+        "value": "2026-09-30",
+        "kind": "construction_begun_by_announcement"
+      },
+      "expected_cod": "2030",
+      "expected_cod_year": 2030,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "",
+      "source_ids": [
+        "orix-yufu-yonezawa"
+      ],
+      "duration_hours": 4.12,
+      "duration_bucket": "4h",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "orix-yufu-yonezawa",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "orix-yufu-yonezawa",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    },
+    {
+      "project_id": "yufu",
+      "project_name": "由布蓄電所",
+      "owner": null,
+      "project_vehicle": null,
+      "developer_group": "ORIX及共同投资人",
+      "operator": null,
+      "aggregator": null,
+      "prefecture": "大分県",
+      "jepx_area": "kyushu",
+      "mw": 70.0,
+      "mwh": 280.0,
+      "status": "construction",
+      "announced_date": "2026-09-30",
+      "construction_start": {
+        "value": "2026-09-30",
+        "kind": "construction_begun_by_announcement"
+      },
+      "expected_cod": "2028",
+      "expected_cod_year": 2028,
+      "expected_cod_basis": "calendar_year",
+      "actual_cod": null,
+      "notes": "",
+      "source_ids": [
+        "orix-yufu-yonezawa"
+      ],
+      "duration_hours": 4.0,
+      "duration_bucket": "4h",
+      "evidence_type": "official_company",
+      "confidence": "high_for_disclosed_fields; no completion or commercial feasibility guarantee",
+      "field_evidence": [
+        {
+          "fields": [
+            "project_name",
+            "prefecture",
+            "mw",
+            "mwh",
+            "expected_cod",
+            "project_vehicle"
+          ],
+          "source_id": "orix-yufu-yonezawa",
+          "locator": "项目详情表/公告中的项目概要；年、月精度原样保留。事業主体/運営不自动等同资产所有者。"
+        },
+        {
+          "fields": [
+            "status"
+          ],
+          "source_id": "orix-yufu-yonezawa",
+          "locator": "本项目投运/在建/开发措辞；计划开工不视为已开工"
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "total": {
+      "projects": 22,
+      "mw": 1225.9,
+      "mwh_disclosed_sum": 3451.3,
+      "mwh_disclosed_projects": 18,
+      "mwh_unknown_projects": 4
+    },
+    "area": {
+      "chubu": {
+        "projects": 5,
+        "mw": 333.9,
+        "mwh_disclosed_sum": 741.3,
+        "mwh_disclosed_projects": 4,
+        "mwh_unknown_projects": 1,
+        "future_mw": 333.9,
+        "operational_mw": 0.0
+      },
+      "chugoku": {
+        "projects": 1,
+        "mw": 2.0,
+        "mwh_disclosed_sum": 6.5,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0,
+        "future_mw": 0,
+        "operational_mw": 2.0
+      },
+      "hokkaido": {
+        "projects": 5,
+        "mw": 270.0,
+        "mwh_disclosed_sum": 351.0,
+        "mwh_disclosed_projects": 2,
+        "mwh_unknown_projects": 3,
+        "future_mw": 270.0,
+        "operational_mw": 0.0
+      },
+      "kansai": {
+        "projects": 4,
+        "mw": 296.0,
+        "mwh_disclosed_sum": 1105.0,
+        "mwh_disclosed_projects": 4,
+        "mwh_unknown_projects": 0,
+        "future_mw": 233.0,
+        "operational_mw": 63.0
+      },
+      "kyushu": {
+        "projects": 5,
+        "mw": 199.0,
+        "mwh_disclosed_sum": 763.0,
+        "mwh_disclosed_projects": 5,
+        "mwh_unknown_projects": 0,
+        "future_mw": 199.0,
+        "operational_mw": 0.0
+      },
+      "tohoku": {
+        "projects": 1,
+        "mw": 75.0,
+        "mwh_disclosed_sum": 309.0,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0,
+        "future_mw": 75.0,
+        "operational_mw": 0.0
+      },
+      "tokyo": {
+        "projects": 1,
+        "mw": 50.0,
+        "mwh_disclosed_sum": 175.5,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0,
+        "future_mw": 50.0,
+        "operational_mw": 0.0
+      }
+    },
+    "status": {
+      "construction": {
+        "projects": 13,
+        "mw": 853.9,
+        "mwh_disclosed_sum": 2201.0,
+        "mwh_disclosed_projects": 9,
+        "mwh_unknown_projects": 4
+      },
+      "operational": {
+        "projects": 3,
+        "mw": 65.0,
+        "mwh_disclosed_sum": 167.5,
+        "mwh_disclosed_projects": 3,
+        "mwh_unknown_projects": 0
+      },
+      "planned": {
+        "projects": 6,
+        "mw": 307.0,
+        "mwh_disclosed_sum": 1082.8,
+        "mwh_disclosed_projects": 6,
+        "mwh_unknown_projects": 0
+      }
+    },
+    "cod": {
+      "2026": {
+        "projects": 0,
+        "mw": 0,
+        "mwh_disclosed_sum": 0,
+        "mwh_disclosed_projects": 0,
+        "mwh_unknown_projects": 0,
+        "fiscal_year_projects": 0,
+        "calendar_year_projects": 0
+      },
+      "2027": {
+        "projects": 3,
+        "mw": 194.0,
+        "mwh_disclosed_sum": 668.0,
+        "mwh_disclosed_projects": 2,
+        "mwh_unknown_projects": 1,
+        "fiscal_year_projects": 1,
+        "calendar_year_projects": 2
+      },
+      "2028+": {
+        "projects": 16,
+        "mw": 966.9,
+        "mwh_disclosed_sum": 2615.8,
+        "mwh_disclosed_projects": 13,
+        "mwh_unknown_projects": 3,
+        "fiscal_year_projects": 5,
+        "calendar_year_projects": 11
+      },
+      "unknown": {
+        "projects": 0,
+        "mw": 0,
+        "mwh_disclosed_sum": 0,
+        "mwh_disclosed_projects": 0,
+        "mwh_unknown_projects": 0,
+        "fiscal_year_projects": 0,
+        "calendar_year_projects": 0
+      }
+    },
+    "duration": {
+      "2h": {
+        "projects": 1,
+        "mw": 39.0,
+        "mwh_disclosed_sum": 81.0,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0
+      },
+      "4h": {
+        "projects": 5,
+        "mw": 408.0,
+        "mwh_disclosed_sum": 1653.0,
+        "mwh_disclosed_projects": 5,
+        "mwh_unknown_projects": 0
+      },
+      "other": {
+        "projects": 12,
+        "mw": 533.9,
+        "mwh_disclosed_sum": 1717.3,
+        "mwh_disclosed_projects": 12,
+        "mwh_unknown_projects": 0
+      },
+      "unknown": {
+        "projects": 4,
+        "mw": 245.0,
+        "mwh_disclosed_sum": 0,
+        "mwh_disclosed_projects": 0,
+        "mwh_unknown_projects": 4
+      }
+    },
+    "developer": {
+      "Eku Energy": {
+        "projects": 1,
+        "mw": 30.0,
+        "mwh_disclosed_sum": 120.0,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0
+      },
+      "J-POWER": {
+        "projects": 1,
+        "mw": 10.0,
+        "mwh_disclosed_sum": 43.0,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0
+      },
+      "ORIX": {
+        "projects": 1,
+        "mw": 134.0,
+        "mwh_disclosed_sum": 548.0,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0
+      },
+      "ORIX / 関西電力": {
+        "projects": 1,
+        "mw": 48.0,
+        "mwh_disclosed_sum": 113.0,
+        "mwh_disclosed_projects": 1,
+        "mwh_unknown_projects": 0
+      },
+      "ORIX及共同投资人": {
+        "projects": 2,
+        "mw": 145.0,
+        "mwh_disclosed_sum": 589.0,
+        "mwh_disclosed_projects": 2,
+        "mwh_unknown_projects": 0
+      },
+      "RENOVA": {
+        "projects": 8,
+        "mw": 451.9,
+        "mwh_disclosed_sum": 604.5,
+        "mwh_disclosed_projects": 4,
+        "mwh_unknown_projects": 4
+      },
+      "関西電力及共同投资人": {
+        "projects": 8,
+        "mw": 407.0,
+        "mwh_disclosed_sum": 1433.8,
+        "mwh_disclosed_projects": 8,
+        "mwh_unknown_projects": 0
+      }
+    },
+    "aggregator_disclosure": {
+      "projects_disclosed": 10,
+      "projects_unknown": 12,
+      "national_concentration": null,
+      "reason": "sample coverage unknown; no national market share or HHI"
+    },
+    "future": {
+      "projects": 19,
+      "mw": 1160.9,
+      "mwh_disclosed_sum": 3283.8,
+      "mwh_disclosed_projects": 15,
+      "mwh_unknown_projects": 4
+    },
+    "operational": {
+      "projects": 3,
+      "mw": 65.0,
+      "mwh_disclosed_sum": 167.5,
+      "mwh_disclosed_projects": 3,
+      "mwh_unknown_projects": 0
+    }
+  },
+  "dedup_summary": {
+    "observations": 48,
+    "physical_projects": 22,
+    "merged_duplicate_observations": 26,
+    "entity_resolution": "curated explicit canonical asset IDs with source-level names/locations/ratings; no fuzzy merge by sharedSPV"
+  },
+  "taoke_comparison": {
+    "notice": "淘科9站与更广市场样本并列；不推断淘科自持权、内部选址或市场份额。",
+    "projects": 9,
+    "mw": 18.0,
+    "mwh_selected": 72.7,
+    "source_sha256": "5bb36a61de9acbb7ad77ad4c009faaafd4e769d219b6c1f55a0d89d0574481bb",
+    "separate_ids": [
+      "gifu-kakamigahara-2",
+      "aichi-toyokawa",
+      "gifu-kakamigahara-demo",
+      "chiba-narita",
+      "fukushima-sukagawa",
+      "hyogo-kobe",
+      "kumamoto-kikuchi",
+      "tottori-tottori",
+      "tochigi-oyama"
+    ]
+  },
+  "market_context": {
+    "chubu": {
+      "ridge_gross": 15016727.05949025,
+      "days": 278,
+      "power_mw": 2,
+      "energy_mwh": 8.14,
+      "identity": "B",
+      "source": "protected lab-v2.json historical strategy"
+    },
+    "tokyo": {
+      "ridge_gross": 14091690.807402583,
+      "days": 278,
+      "power_mw": 2,
+      "energy_mwh": 8.14,
+      "identity": "B",
+      "source": "protected lab-v2.json historical strategy"
+    },
+    "kansai": {
+      "ridge_gross": 13968425.0621029,
+      "days": 278,
+      "power_mw": 2,
+      "energy_mwh": 8.14,
+      "identity": "B",
+      "source": "protected lab-v2.json historical strategy"
+    },
+    "kyushu": {
+      "ridge_gross": 19584871.31082344,
+      "days": 278,
+      "power_mw": 2,
+      "energy_mwh": 8.14,
+      "identity": "B",
+      "source": "protected lab-v2.json historical strategy"
+    },
+    "tohoku": {
+      "ridge_gross": 22336907.381946895,
+      "days": 278,
+      "power_mw": 2,
+      "energy_mwh": 8.14,
+      "identity": "B",
+      "source": "protected lab-v2.json historical strategy"
+    }
+  },
+  "sources": [
+    {
+      "id": "eku-hirohara",
+      "url": "https://www.ekuenergy.com/ja-jp/projects/hirohara-bess",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/eku-hirohara.html",
+      "retrieved_at_utc": "2026-10-07T00:22:02.503232+00:00",
+      "published_http_last_modified": "Tue, 06 Oct 2026 22:38:22 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "857b111c35750c22aafcb11f2a7de99c7766939f1fe3d5a5719eb6e852c24b61",
+      "bytes": 110797,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/eku-hirohara.txt"
+    },
+    {
+      "id": "jpower-hibikinada",
+      "url": "https://www.jpower.co.jp/news/2025/10/news251001.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/jpower-hibikinada.html",
+      "retrieved_at_utc": "2026-10-07T00:22:04.230893+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "f8a0e41631cedb7bc7ac7ee8c1a739f9c95729766f820af4fa47b7694d484770",
+      "bytes": 34036,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/jpower-hibikinada.txt"
+    },
+    {
+      "id": "kepco-aso",
+      "url": "https://www.kepco.co.jp/corporate/pr/2026/pdf/20260325_1j.pdf",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-aso.pdf",
+      "retrieved_at_utc": "2026-10-07T00:27:09.512798+00:00",
+      "published_http_last_modified": "Wed, 25 Mar 2026 05:04:27 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "3bd318e4652a3dfd0d18db3c38c29e064067cf3dec2f1724a217269c4c305e8d",
+      "bytes": 439343,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-aso.txt",
+      "pages": 4
+    },
+    {
+      "id": "kepco-chikugo",
+      "url": "https://www.kepco.co.jp/corporate/pr/2026/pdf/20260325_2j.pdf",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-chikugo.pdf",
+      "retrieved_at_utc": "2026-10-07T00:27:10.103780+00:00",
+      "published_http_last_modified": "Wed, 25 Mar 2026 05:06:53 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "e86e66a41b9cd71c4ccc81afca38f7bb74754d57e0fff86841e10e32cd31ac53",
+      "bytes": 376865,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-chikugo.txt",
+      "pages": 4
+    },
+    {
+      "id": "kepco-kasugai",
+      "url": "https://www.kepco.co.jp/corporate/notice/notice_pdf/20260805_2.pdf",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-kasugai.pdf",
+      "retrieved_at_utc": "2026-10-07T00:27:10.082322+00:00",
+      "published_http_last_modified": "Wed, 05 Aug 2026 05:53:50 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "7bb853847455c9ee6366133693ce05e63dc48ed4d3b4361f1f6a3356d747c82f",
+      "bytes": 509481,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-kasugai.txt",
+      "pages": 3
+    },
+    {
+      "id": "kepco-list",
+      "url": "https://sol.kepco.jp/kandenchi/case/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-list.html",
+      "retrieved_at_utc": "2026-10-07T00:22:03.123148+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "36c8f7c6d04d4cf8a896370c930b3a13b16327a6399d57a781892eb2c3a1991b",
+      "bytes": 71382,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-list.txt"
+    },
+    {
+      "id": "kepco-mito-hamamatsu",
+      "url": "https://www.kepco.co.jp/corporate/pr/2025/pdf/20250925_2j.pdf",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-mito-hamamatsu.pdf",
+      "retrieved_at_utc": "2026-10-07T00:27:09.730776+00:00",
+      "published_http_last_modified": "Thu, 25 Sep 2025 07:31:03 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "2ae0a60f346a56521c8d72c1267e25614ce9ddfe009363215fadad83cb7318c1",
+      "bytes": 661886,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-mito-hamamatsu.txt",
+      "pages": 3
+    },
+    {
+      "id": "kepco-sapporo",
+      "url": "https://www.kepco.co.jp/corporate/pr/2025/pdf/20250325_1j.pdf",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-sapporo.pdf",
+      "retrieved_at_utc": "2026-10-07T00:22:03.382345+00:00",
+      "published_http_last_modified": "Tue, 25 Mar 2025 05:01:19 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "2f974d79416eec32acbd8fab29af0c404eb0632443d13670f09679aadcd77859",
+      "bytes": 266449,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-sapporo.txt",
+      "pages": 3
+    },
+    {
+      "id": "kepco-tanagawa",
+      "url": "https://www.kepco.co.jp/corporate/pr/2025/pdf/20250507_1j.pdf",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/kepco-tanagawa.pdf",
+      "retrieved_at_utc": "2026-10-07T00:27:09.538726+00:00",
+      "published_http_last_modified": "Wed, 07 May 2025 05:20:25 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "4930bd1100af5257eb5d114a2990e3bea396bed546a292ac9213e29a0b0b39ee",
+      "bytes": 316511,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/kepco-tanagawa.txt",
+      "pages": 3
+    },
+    {
+      "id": "orem-sapporo",
+      "url": "https://www.orix.co.jp/orem/news/2025/news20251106.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/orem-sapporo.html",
+      "retrieved_at_utc": "2026-10-07T00:22:03.635144+00:00",
+      "published_http_last_modified": "Wed, 03 Dec 2025 08:54:07 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "b8b085f0f31ac7f517ca7ccd3c4c68f4b2311c72e50f285bc901983580cf8e0d",
+      "bytes": 12262,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/orem-sapporo.txt"
+    },
+    {
+      "id": "orix-kinokawa",
+      "url": "https://www.orix.co.jp/grp/company/newsroom/newsrelease/241129_ORIXJ.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/orix-kinokawa.html",
+      "retrieved_at_utc": "2026-10-07T00:22:01.927861+00:00",
+      "published_http_last_modified": "Thu, 27 Aug 2026 07:00:07 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "97f9664f46deb5e5e4a7c9e52f64f6cc78726eed9fd32b8f1c1e777ee61609c7",
+      "bytes": 12129,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/orix-kinokawa.txt"
+    },
+    {
+      "id": "orix-maibara",
+      "url": "https://www.orix.co.jp/grp/company/newsroom/newsrelease/240530_ORIXJ.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/orix-maibara.html",
+      "retrieved_at_utc": "2026-10-07T00:22:01.552721+00:00",
+      "published_http_last_modified": "Thu, 27 Aug 2026 06:57:33 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "14be8074ad22e1c2f130231448d2626c295b616d178f2899e89d45899efbd978",
+      "bytes": 10791,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/orix-maibara.txt"
+    },
+    {
+      "id": "orix-status",
+      "url": "https://www.orix.co.jp/grp/company/sustainability/contributing_to_society/environment_and_energy.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/orix-status.html",
+      "retrieved_at_utc": "2026-10-07T00:22:02.202400+00:00",
+      "published_http_last_modified": "Thu, 10 Sep 2026 06:00:15 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "154a4703f84453067af1a79ed866078123b160ee71a6126ef2d00cc2e620fdcd",
+      "bytes": 54240,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/orix-status.txt"
+    },
+    {
+      "id": "orix-yufu-yonezawa",
+      "url": "https://www.orix.co.jp/grp/company/newsroom/newsrelease/260930_ORIXJ.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/orix-yufu-yonezawa.html",
+      "retrieved_at_utc": "2026-10-07T00:22:02.168495+00:00",
+      "published_http_last_modified": "Wed, 30 Sep 2026 01:00:12 GMT",
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "0d5861929f936014a2cc2e54232832657d619a564069cde2009cee5b9757c1c4",
+      "bytes": 12191,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/orix-yufu-yonezawa.txt"
+    },
+    {
+      "id": "renova-fukuroi",
+      "url": "https://www.renovainc.com/business/power_plant/fukuroi-ugari_energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-fukuroi.html",
+      "retrieved_at_utc": "2026-10-07T00:24:33.599868+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "ed6fc6b433b66f661e64587072528a977ced60d77028d377f01cea9a4c7051a4",
+      "bytes": 21101,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-fukuroi.txt"
+    },
+    {
+      "id": "renova-groundbreaking",
+      "url": "https://note.renovainc.com/n/n0aaf2f1c158d",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-groundbreaking.html",
+      "retrieved_at_utc": "2026-10-07T00:22:02.958486+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "1a84160e3f919a1a95c1bdb2ef9b44d5b8df22f4adccbb57969064eaaffe83a7",
+      "bytes": 313654,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-groundbreaking.txt"
+    },
+    {
+      "id": "renova-himeji",
+      "url": "https://www.renovainc.com/business/power_plant/himeji_energy_storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-himeji.html",
+      "retrieved_at_utc": "2026-10-07T00:24:32.173858+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "ed1eafee87e737abb1b919dfce547549c50efd247f91952e57581efd84fc9491",
+      "bytes": 21450,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-himeji.txt"
+    },
+    {
+      "id": "renova-ishikari",
+      "url": "https://www.renovainc.com/business/power_plant/ishikari-energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-ishikari.html",
+      "retrieved_at_utc": "2026-10-07T00:24:31.916838+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "c0a549812cf829218d59008e1507e0de1d09e651118874c43d1164e27be405bb",
+      "bytes": 20867,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-ishikari.txt"
+    },
+    {
+      "id": "renova-kikugawa",
+      "url": "https://www.renovainc.com/business/power_plant/kikugawa-nishimura-energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-kikugawa.html",
+      "retrieved_at_utc": "2026-10-07T00:24:33.078497+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "9b1036657dcf0af50bc4a41340c8122c35e61504b849a4241fb67790faca04f6",
+      "bytes": 20912,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-kikugawa.txt"
+    },
+    {
+      "id": "renova-list",
+      "url": "https://www.renovainc.com/business/power_plant/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-list.html",
+      "retrieved_at_utc": "2026-10-07T00:22:00.698249+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "efa5658c11f961ecb5687bba3aa29d52ce9ec77539383075514da16919ae1c1e",
+      "bytes": 42014,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-list.txt"
+    },
+    {
+      "id": "renova-mori",
+      "url": "https://www.renovainc.com/business/power_plant/mori-machi_mutsumi-energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-mori.html",
+      "retrieved_at_utc": "2026-10-07T00:24:32.844062+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "a6dbfa1b3a0374f783bb5de685eb6ac0c97d66b7dd714d9562005e2382582be0",
+      "bytes": 21126,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-mori.txt"
+    },
+    {
+      "id": "renova-shiraoi",
+      "url": "https://www.renovainc.com/business/power_plant/shiraoi-energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-shiraoi.html",
+      "retrieved_at_utc": "2026-10-07T00:24:31.815853+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "cfe4b5df24cb4b1eaed1673b8cf671fe158c5eeeca42598fb02fe7f6e0772b16",
+      "bytes": 21105,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-shiraoi.txt"
+    },
+    {
+      "id": "renova-tomakomai",
+      "url": "https://www.renovainc.com/business/power_plant/tomakomai-energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-tomakomai.html",
+      "retrieved_at_utc": "2026-10-07T00:24:31.777024+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "9cd50b101e03370a74db55ba3ea375d9723fcea5556c0274908f9712bd078bc2",
+      "bytes": 21123,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-tomakomai.txt"
+    },
+    {
+      "id": "renova-yasugi",
+      "url": "https://www.renovainc.com/business/power_plant/yasugi-energy-storage/",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/renova-yasugi.html",
+      "retrieved_at_utc": "2026-10-07T00:24:34.036217+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "3aaa2559e0680463667e2d1745951cbc380646581ccfa3320f29cbc3b2ab9b18",
+      "bytes": 20425,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/renova-yasugi.txt"
+    },
+    {
+      "id": "toshiba-sapporo",
+      "url": "https://www.global.toshiba/jp/news/energy/2025/03/news-20250325-01.html",
+      "scope": "projects",
+      "evidence_type": "official_company",
+      "raw_file": "research/forward/raw/toshiba-sapporo.html",
+      "retrieved_at_utc": "2026-10-07T00:22:04.134996+00:00",
+      "published_http_last_modified": null,
+      "publication_timestamp_note": "HTTP metadata; not proof of original publication availability",
+      "sha256": "e46c87b9d0203ec8cd3c2da66201bfc93e26dcd2e10b63ac7179b7626fc545ae",
+      "bytes": 170719,
+      "status": "downloaded",
+      "body_file": "research/forward/raw/toshiba-sapporo.txt"
+    }
+  ]
+}

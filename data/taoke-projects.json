@@ -1,0 +1,1085 @@
+{
+  "schema_version": "p1-projects-1",
+  "verified_date_jst": "2026-10-07",
+  "projects": [
+    {
+      "project_id": "gifu-kakamigahara-2",
+      "project_name": "岐阜县各务原市②号2MW蓄电所",
+      "chinese_name": "岐阜县各务原市②号2MW蓄电所",
+      "japanese_name": "岐阜県各務原市②号",
+      "japanese_name_origin": "Chinese official location translated; not asserted legal plant name",
+      "prefecture": "岐阜県",
+      "city": "各務原市",
+      "jepx_area": "chubu",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "岐阜県/各務原市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8.14,
+      "duration_hours": 4.07,
+      "duration_identity": "B",
+      "public_status": "operational_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": "2026-07-07",
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": null,
+      "primary_participation_start_date": null,
+      "other_market_participation": null,
+      "market_plans": [
+        "一次调频计划（年内）"
+      ],
+      "company_role": "开发 / 并网投运",
+      "source_ids": [
+        "taoke-case"
+      ],
+      "source_title": "淘科新能源日本岐阜县电网侧储能项目顺利并网",
+      "source_url": "https://blog.taoke-web.com/article/46.cshtml",
+      "publication_date": "2026-07-17",
+      "evidence": [
+        {
+          "project_id": "gifu-kakamigahara-2",
+          "field": "rated_power_mw",
+          "source_id": "taoke-case",
+          "locator": "各务原市②号 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-2",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-case",
+          "locator": "各务原市②号 项目概况 / 表格；额定容量列",
+          "excerpt": "8.14MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-2",
+          "field": "operational",
+          "source_id": "taoke-case",
+          "locator": "各务原市②号 命名表格及开篇投运/入市段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-2",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-case",
+          "locator": "各务原市②号 项目命名表格与开篇并网段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official project-level disclosure",
+      "capacity_conflicts": [],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。 与6月自主投资示范站分别登记；9月那加大门町公告无法证明就是②号，不继承其状态。"
+    },
+    {
+      "project_id": "aichi-toyokawa",
+      "project_name": "爱知县丰川市2MW蓄电所",
+      "chinese_name": "爱知县丰川市2MW蓄电所",
+      "japanese_name": "愛知県豊川市2MW高圧蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "愛知県",
+      "city": "豊川市",
+      "jepx_area": "chubu",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "愛知県/豊川市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8,
+      "duration_hours": 4.0,
+      "duration_identity": "B",
+      "public_status": "primary_participation_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": null,
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": true,
+      "primary_qualification_publicly_stated": true,
+      "primary_actual_participation_publicly_stated": true,
+      "primary_participation_start_date": "2026-06-12",
+      "other_market_participation": null,
+      "market_plans": [],
+      "company_role": "合作伙伴SPC共同投资",
+      "source_ids": [
+        "taoke-operation",
+        "taoke-jp-operation"
+      ],
+      "source_title": "淘科新能源日本中部两个项目顺利进入一次调频市场",
+      "source_url": "https://blog.taoke-web.com/article/45.cshtml",
+      "publication_date": "2026-06-29",
+      "evidence": [
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "rated_power_mw",
+          "source_id": "taoke-operation",
+          "locator": "丰川市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-operation",
+          "locator": "丰川市 项目概况 / 表格；额定容量列",
+          "excerpt": "8MWh",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "operational",
+          "source_id": "taoke-operation",
+          "locator": "丰川市 命名表格及开篇投运/入市段落",
+          "excerpt": "自主电力运营",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-jp-operation",
+          "locator": "愛知県豊川市2MW高圧蓄電所；両案件/系統連系後段落",
+          "excerpt": "系統連系後",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "jepx_participation_publicly_stated",
+          "source_id": "taoke-operation",
+          "locator": "丰川市；两项目均参与JEPX段落",
+          "excerpt": "原有参与JEPX峰谷电价套利的基础上",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "primary_qualification_publicly_stated",
+          "source_id": "taoke-operation",
+          "locator": "丰川市；2026-06-12两项目测试和准入段落",
+          "excerpt": "顺利通过严苛的电源测试",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "aichi-toyokawa",
+          "field": "primary_actual_participation_publicly_stated",
+          "source_id": "taoke-jp-operation",
+          "locator": "愛知県豊川市2MW高圧蓄電所 项目表 / 市場参入開始日",
+          "excerpt": "2026年6月12日より一次調整力市場への参入を開始",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official project-level disclosure",
+      "capacity_conflicts": [],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。"
+    },
+    {
+      "project_id": "gifu-kakamigahara-demo",
+      "project_name": "岐阜县各务原市自主投资示范站",
+      "chinese_name": "岐阜县各务原市自主投资示范站",
+      "japanese_name": "岐阜県各務原市2MW高圧蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "岐阜県",
+      "city": "各務原市",
+      "jepx_area": "chubu",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "岐阜県/各務原市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8,
+      "duration_hours": 4.0,
+      "duration_identity": "B",
+      "public_status": "primary_participation_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": null,
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": true,
+      "primary_qualification_publicly_stated": true,
+      "primary_actual_participation_publicly_stated": true,
+      "primary_participation_start_date": "2026-06-12",
+      "other_market_participation": null,
+      "market_plans": [],
+      "company_role": "自主投资示范站",
+      "source_ids": [
+        "taoke-operation",
+        "taoke-jp-operation"
+      ],
+      "source_title": "淘科新能源日本中部两个项目顺利进入一次调频市场",
+      "source_url": "https://blog.taoke-web.com/article/45.cshtml",
+      "publication_date": "2026-06-29",
+      "evidence": [
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "rated_power_mw",
+          "source_id": "taoke-operation",
+          "locator": "各务原市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-operation",
+          "locator": "各务原市 项目概况 / 表格；额定容量列",
+          "excerpt": "8MWh",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "operational",
+          "source_id": "taoke-operation",
+          "locator": "各务原市 命名表格及开篇投运/入市段落",
+          "excerpt": "自主电力运营",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-jp-operation",
+          "locator": "岐阜県各務原市2MW高圧蓄電所；両案件/系統連系後段落",
+          "excerpt": "系統連系後",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "jepx_participation_publicly_stated",
+          "source_id": "taoke-operation",
+          "locator": "各务原市；两项目均参与JEPX段落",
+          "excerpt": "原有参与JEPX峰谷电价套利的基础上",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "primary_qualification_publicly_stated",
+          "source_id": "taoke-operation",
+          "locator": "各务原市；2026-06-12两项目测试和准入段落",
+          "excerpt": "顺利通过严苛的电源测试",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "gifu-kakamigahara-demo",
+          "field": "primary_actual_participation_publicly_stated",
+          "source_id": "taoke-jp-operation",
+          "locator": "岐阜県各務原市2MW高圧蓄電所 项目表 / 市場参入開始日",
+          "excerpt": "2026年6月12日より一次調整力市場への参入を開始",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official project-level disclosure",
+      "capacity_conflicts": [],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。"
+    },
+    {
+      "project_id": "chiba-narita",
+      "project_name": "千叶县成田市2MW蓄电所",
+      "chinese_name": "千叶县成田市2MW蓄电所",
+      "japanese_name": "千葉県成田市2MW蓄電所",
+      "japanese_name_origin": "Chinese official location translated; not asserted legal plant name",
+      "prefecture": "千葉県",
+      "city": "成田市",
+      "jepx_area": "tokyo",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "千葉県/成田市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8.14,
+      "duration_hours": 4.07,
+      "duration_identity": "B",
+      "public_status": "operational_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": "2026-09-15",
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": null,
+      "primary_participation_start_date": null,
+      "other_market_participation": null,
+      "market_plans": [
+        "需给调整市场计划（年底至翌年初）"
+      ],
+      "company_role": "交钥匙销售 / JALCO购买",
+      "source_ids": [
+        "taoke-latest"
+      ],
+      "source_title": "9月项目速递｜淘科新能源日本四座储能电站并网投运",
+      "source_url": "https://blog.taoke-web.com/article/52.cshtml",
+      "publication_date": "2026-09-28",
+      "evidence": [
+        {
+          "project_id": "chiba-narita",
+          "field": "rated_power_mw",
+          "source_id": "taoke-latest",
+          "locator": "成田市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "chiba-narita",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-latest",
+          "locator": "成田市 项目概况 / 表格；额定容量列",
+          "excerpt": "8.14MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "chiba-narita",
+          "field": "operational",
+          "source_id": "taoke-latest",
+          "locator": "成田市 命名表格及开篇投运/入市段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "chiba-narita",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-latest",
+          "locator": "成田市 项目命名表格与开篇并网段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official project-level disclosure",
+      "capacity_conflicts": [],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。"
+    },
+    {
+      "project_id": "fukushima-sukagawa",
+      "project_name": "福岛县须贺川市2MW蓄电所",
+      "chinese_name": "福岛县须贺川市2MW蓄电所",
+      "japanese_name": "福島県須賀川市2MW蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "福島県",
+      "city": "須賀川市",
+      "jepx_area": "tohoku",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "福島県/須賀川市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8.14,
+      "duration_hours": 4.07,
+      "duration_identity": "B",
+      "public_status": "operational_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": "2026-09-18",
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": null,
+      "primary_participation_start_date": null,
+      "other_market_participation": null,
+      "market_plans": [
+        "需给调整市场计划（年底至翌年初）"
+      ],
+      "company_role": "TK-GK基金 / PP7日文公告",
+      "source_ids": [
+        "taoke-latest",
+        "taoke-jp-fund2"
+      ],
+      "source_title": "9月项目速递｜淘科新能源日本四座储能电站并网投运",
+      "source_url": "https://blog.taoke-web.com/article/52.cshtml",
+      "publication_date": "2026-09-28",
+      "evidence": [
+        {
+          "project_id": "fukushima-sukagawa",
+          "field": "rated_power_mw",
+          "source_id": "taoke-latest",
+          "locator": "须贺川市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "fukushima-sukagawa",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-latest",
+          "locator": "须贺川市 项目概况 / 表格；额定容量列",
+          "excerpt": "8.14MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "fukushima-sukagawa",
+          "field": "operational",
+          "source_id": "taoke-latest",
+          "locator": "须贺川市 命名表格及开篇投运/入市段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "fukushima-sukagawa",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-latest",
+          "locator": "须贺川市 项目命名表格与开篇并网段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "fukushima-sukagawa",
+          "field": "alternate_capacity",
+          "source_id": "taoke-jp-fund2",
+          "locator": "福島県須賀川市2MW蓄電所；定格容量列",
+          "excerpt": "８MWｈ",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official; capacity conflict disclosed",
+      "capacity_conflicts": [
+        {
+          "field": "energy_capacity_mwh",
+          "selected": 8.14,
+          "selected_source_id": "taoke-latest",
+          "alternative": 8.0,
+          "alternative_source_id": "taoke-jp-fund2",
+          "resolution": "保留中文精确披露8.14MWh为主显示口径；日文8MWh并列，未确认是否取整，未经工程验收独立确认。"
+        }
+      ],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。 中日容量披露不一致，见并列来源；汇总依选定口径，另给范围。"
+    },
+    {
+      "project_id": "hyogo-kobe",
+      "project_name": "兵库县神户市2MW蓄电所",
+      "chinese_name": "兵库县神户市2MW蓄电所",
+      "japanese_name": "兵庫県神戸市2MW蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "兵庫県",
+      "city": "神戸市",
+      "jepx_area": "kansai",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "兵庫県/神戸市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8.14,
+      "duration_hours": 4.07,
+      "duration_identity": "B",
+      "public_status": "operational_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": "2026-09-18",
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": null,
+      "primary_participation_start_date": null,
+      "other_market_participation": null,
+      "market_plans": [
+        "需给调整市场计划（年底至翌年初）"
+      ],
+      "company_role": "TK-GK基金 / PP7日文公告",
+      "source_ids": [
+        "taoke-latest",
+        "taoke-jp-fund2"
+      ],
+      "source_title": "9月项目速递｜淘科新能源日本四座储能电站并网投运",
+      "source_url": "https://blog.taoke-web.com/article/52.cshtml",
+      "publication_date": "2026-09-28",
+      "evidence": [
+        {
+          "project_id": "hyogo-kobe",
+          "field": "rated_power_mw",
+          "source_id": "taoke-latest",
+          "locator": "神户市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "hyogo-kobe",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-latest",
+          "locator": "神户市 项目概况 / 表格；额定容量列",
+          "excerpt": "8.14MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "hyogo-kobe",
+          "field": "operational",
+          "source_id": "taoke-latest",
+          "locator": "神户市 命名表格及开篇投运/入市段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "hyogo-kobe",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-latest",
+          "locator": "神户市 项目命名表格与开篇并网段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "hyogo-kobe",
+          "field": "alternate_capacity",
+          "source_id": "taoke-jp-fund2",
+          "locator": "兵庫県神戸市2MW蓄電所；定格容量列",
+          "excerpt": "８MWｈ",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official; capacity conflict disclosed",
+      "capacity_conflicts": [
+        {
+          "field": "energy_capacity_mwh",
+          "selected": 8.14,
+          "selected_source_id": "taoke-latest",
+          "alternative": 8.0,
+          "alternative_source_id": "taoke-jp-fund2",
+          "resolution": "保留中文精确披露8.14MWh为主显示口径；日文8MWh并列，未确认是否取整，未经工程验收独立确认。"
+        }
+      ],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。 中日容量披露不一致，见并列来源；汇总依选定口径，另给范围。"
+    },
+    {
+      "project_id": "kumamoto-kikuchi",
+      "project_name": "熊本县菊池市2MW蓄电所",
+      "chinese_name": "熊本县菊池市2MW蓄电所",
+      "japanese_name": "熊本県菊池市2MW蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "熊本県",
+      "city": "菊池市",
+      "jepx_area": "kyushu",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "熊本県/菊池市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8.14,
+      "duration_hours": 4.07,
+      "duration_identity": "B",
+      "public_status": "operational_stated",
+      "grid_connected_publicly_stated": true,
+      "operational_publicly_stated": true,
+      "grid_connection_date": "2026-09-18",
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": null,
+      "primary_participation_start_date": null,
+      "other_market_participation": null,
+      "market_plans": [
+        "需给调整市场计划（年底至翌年初）"
+      ],
+      "company_role": "TK-GK基金 / PP7日文公告",
+      "source_ids": [
+        "taoke-latest",
+        "taoke-jp-fund2"
+      ],
+      "source_title": "9月项目速递｜淘科新能源日本四座储能电站并网投运",
+      "source_url": "https://blog.taoke-web.com/article/52.cshtml",
+      "publication_date": "2026-09-28",
+      "evidence": [
+        {
+          "project_id": "kumamoto-kikuchi",
+          "field": "rated_power_mw",
+          "source_id": "taoke-latest",
+          "locator": "菊池市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "kumamoto-kikuchi",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-latest",
+          "locator": "菊池市 项目概况 / 表格；额定容量列",
+          "excerpt": "8.14MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "kumamoto-kikuchi",
+          "field": "operational",
+          "source_id": "taoke-latest",
+          "locator": "菊池市 命名表格及开篇投运/入市段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "kumamoto-kikuchi",
+          "field": "grid_connected_publicly_stated",
+          "source_id": "taoke-latest",
+          "locator": "菊池市 项目命名表格与开篇并网段落",
+          "excerpt": "并网投运",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "kumamoto-kikuchi",
+          "field": "alternate_capacity",
+          "source_id": "taoke-jp-fund2",
+          "locator": "熊本県菊池市2MW蓄電所；定格容量列",
+          "excerpt": "８MWｈ",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official; capacity conflict disclosed",
+      "capacity_conflicts": [
+        {
+          "field": "energy_capacity_mwh",
+          "selected": 8.14,
+          "selected_source_id": "taoke-latest",
+          "alternative": 8.0,
+          "alternative_source_id": "taoke-jp-fund2",
+          "resolution": "保留中文精确披露8.14MWh为主显示口径；日文8MWh并列，未确认是否取整，未经工程验收独立确认。"
+        }
+      ],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。 中日容量披露不一致，见并列来源；汇总依选定口径，另给范围。"
+    },
+    {
+      "project_id": "tottori-tottori",
+      "project_name": "鸟取县鸟取市2MW蓄电所",
+      "chinese_name": "鸟取县鸟取市2MW蓄电所",
+      "japanese_name": "鳥取県鳥取市2MW蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "鳥取県",
+      "city": "鳥取市",
+      "jepx_area": "chugoku",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "鳥取県/鳥取市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8,
+      "duration_hours": 4.0,
+      "duration_identity": "B",
+      "public_status": "operational_stated",
+      "grid_connected_publicly_stated": null,
+      "operational_publicly_stated": true,
+      "grid_connection_date": null,
+      "energization_date": "2026-09-24",
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": null,
+      "primary_participation_start_date": null,
+      "other_market_participation": null,
+      "market_plans": [
+        "后续市场运营意向，未披露具体入市日期"
+      ],
+      "company_role": "PP7第二号GK-TK基金",
+      "source_ids": [
+        "taoke-jp-fund2"
+      ],
+      "source_title": "TAOKE ENERGY、系統用蓄電所4カ所の運転を開始",
+      "source_url": "https://blog.taoke-energy.com/article/118.cshtml",
+      "publication_date": "2026-09-28",
+      "evidence": [
+        {
+          "project_id": "tottori-tottori",
+          "field": "rated_power_mw",
+          "source_id": "taoke-jp-fund2",
+          "locator": "鳥取市 项目概况 / 表格；额定输出列",
+          "excerpt": "２MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "tottori-tottori",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-jp-fund2",
+          "locator": "鳥取市 项目概况 / 表格；额定容量列",
+          "excerpt": "８MWｈ",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "tottori-tottori",
+          "field": "operational",
+          "source_id": "taoke-jp-fund2",
+          "locator": "鳥取市 命名表格及开篇投运/入市段落",
+          "excerpt": "運転を開始",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official project-level disclosure",
+      "capacity_conflicts": [],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。"
+    },
+    {
+      "project_id": "tochigi-oyama",
+      "project_name": "栃木县小山市东野田2MW蓄电所",
+      "chinese_name": "栃木县小山市东野田2MW蓄电所",
+      "japanese_name": "栃木県小山市東野田2MW蓄電所",
+      "japanese_name_origin": "official Japanese name",
+      "prefecture": "栃木県",
+      "city": "小山市",
+      "jepx_area": "tokyo",
+      "area_mapping_identity": "B",
+      "area_mapping_rule_id": "栃木県/小山市",
+      "latitude": null,
+      "longitude": null,
+      "location_precision": "city; no verified site coordinates",
+      "map_placement": "region schematic only",
+      "rated_power_mw": 2.0,
+      "energy_capacity_mwh": 8,
+      "duration_hours": 4.0,
+      "duration_identity": "B",
+      "public_status": "primary_participation_stated",
+      "grid_connected_publicly_stated": null,
+      "operational_publicly_stated": true,
+      "grid_connection_date": null,
+      "energization_date": null,
+      "commissioning_operation_date": null,
+      "jepx_participation_publicly_stated": null,
+      "primary_qualification_publicly_stated": null,
+      "primary_actual_participation_publicly_stated": true,
+      "primary_participation_start_date": "2026-09-15",
+      "other_market_participation": null,
+      "market_plans": [],
+      "company_role": "第一号GK-TK基金 / POWER POOL",
+      "source_ids": [
+        "taoke-jp-fund1"
+      ],
+      "source_title": "TAOKE ENERGY、第一号ファンドの2案件で一次調整力市場へ参入",
+      "source_url": "https://blog.taoke-energy.com/article/117.cshtml",
+      "publication_date": "2026-09-28",
+      "evidence": [
+        {
+          "project_id": "tochigi-oyama",
+          "field": "rated_power_mw",
+          "source_id": "taoke-jp-fund1",
+          "locator": "小山市 项目概况 / 表格；额定输出列",
+          "excerpt": "2MW",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "tochigi-oyama",
+          "field": "energy_capacity_mwh",
+          "source_id": "taoke-jp-fund1",
+          "locator": "小山市 项目概况 / 表格；额定容量列",
+          "excerpt": "8MWh",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "tochigi-oyama",
+          "field": "operational",
+          "source_id": "taoke-jp-fund1",
+          "locator": "小山市 命名表格及开篇投运/入市段落",
+          "excerpt": "参入を開始",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        },
+        {
+          "project_id": "tochigi-oyama",
+          "field": "primary_actual_participation_publicly_stated",
+          "source_id": "taoke-jp-fund1",
+          "locator": "栃木県小山市東野田2MW蓄電所 表格行 / 市場参入開始日",
+          "excerpt": "2026年9月15日",
+          "identity": "A",
+          "confidence": "official project-specific disclosure"
+        }
+      ],
+      "evidence_confidence": "official project-level disclosure",
+      "capacity_conflicts": [],
+      "notes": "所有未公开字段为null，不能解读为未参与。未取得调频成交、供出或结算流水；公司称入市不等于独立验证成交收入。"
+    }
+  ],
+  "portfolio": {
+    "projects": 9,
+    "public_power_mw": 18.0,
+    "selected_energy_mwh": 72.7,
+    "energy_disclosure_range_mwh": [
+      72.28,
+      72.7
+    ],
+    "jepx_participation_stated": 2,
+    "primary_qualification_stated": 2,
+    "primary_actual_participation_stated": 3,
+    "by_area": {
+      "chubu": 3,
+      "tokyo": 2,
+      "tohoku": 1,
+      "kansai": 1,
+      "kyushu": 1,
+      "chugoku": 1
+    },
+    "population": "selected uniquely identifiable official disclosed projects; not a complete company portfolio or ownership total"
+  },
+  "area_mapping": {
+    "岐阜県/各務原市": {
+      "prefecture": "岐阜県",
+      "city": "各務原市",
+      "jepx_area": "chubu",
+      "identity": "B",
+      "source_id": "area-chubu",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "愛知県/豊川市": {
+      "prefecture": "愛知県",
+      "city": "豊川市",
+      "jepx_area": "chubu",
+      "identity": "B",
+      "source_id": "area-chubu",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "千葉県/成田市": {
+      "prefecture": "千葉県",
+      "city": "成田市",
+      "jepx_area": "tokyo",
+      "identity": "B",
+      "source_id": "area-tokyo",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "福島県/須賀川市": {
+      "prefecture": "福島県",
+      "city": "須賀川市",
+      "jepx_area": "tohoku",
+      "identity": "B",
+      "source_id": "area-tohoku",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "兵庫県/神戸市": {
+      "prefecture": "兵庫県",
+      "city": "神戸市",
+      "jepx_area": "kansai",
+      "identity": "B",
+      "source_id": "area-kansai",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "熊本県/菊池市": {
+      "prefecture": "熊本県",
+      "city": "菊池市",
+      "jepx_area": "kyushu",
+      "identity": "B",
+      "source_id": "area-kyushu",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "鳥取県/鳥取市": {
+      "prefecture": "鳥取県",
+      "city": "鳥取市",
+      "jepx_area": "chugoku",
+      "identity": "B",
+      "source_id": "area-chugoku",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    },
+    "栃木県/小山市": {
+      "prefecture": "栃木県",
+      "city": "小山市",
+      "jepx_area": "tokyo",
+      "identity": "B",
+      "source_id": "area-tokyo",
+      "rule": "命名城市与一般送配电区域对照；不把兵库/岐阜等全县无条件映射，不证明具体接入合同。"
+    }
+  },
+  "sources": [
+    {
+      "id": "taoke-case",
+      "url": "https://blog.taoke-web.com/article/46.cshtml",
+      "title": "淘科新能源日本岐阜县电网侧储能项目顺利并网",
+      "retrieved_at_utc": "2026-10-06T22:31:47.188397+00:00",
+      "http_status": 200,
+      "raw_sha256": "65af8998510ec6e8e2cf8bca19bf2afe571066871279ad37d63511f3129044bd",
+      "bytes": 64711,
+      "read_scope": "full official body",
+      "evidence_identity": "A",
+      "publication_date": "2026-07-17",
+      "publication_date_locator": "official company-news listing; full body separately verified"
+    },
+    {
+      "id": "taoke-operation",
+      "url": "https://blog.taoke-web.com/article/45.cshtml",
+      "title": "淘科新能源日本中部两个项目顺利进入一次调频市场",
+      "retrieved_at_utc": "2026-10-06T22:31:47.169018+00:00",
+      "http_status": 200,
+      "raw_sha256": "b7c6b9cffee99c2cff208e0c073411619fdc57aa314ed7550f320da22bdd9456",
+      "bytes": 39023,
+      "read_scope": "full official body",
+      "evidence_identity": "A",
+      "publication_date": "2026-06-29",
+      "publication_date_locator": "official company-news listing; full body separately verified"
+    },
+    {
+      "id": "taoke-latest",
+      "url": "https://blog.taoke-web.com/article/52.cshtml",
+      "title": "9月项目速递｜淘科新能源日本四座储能电站并网投运",
+      "retrieved_at_utc": "2026-10-06T22:31:46.989419+00:00",
+      "http_status": 200,
+      "raw_sha256": "a7197d1a33bc3c2b9cbfe530587aae96931b0005c3778e8d9e7c475ea194a4db",
+      "bytes": 95224,
+      "read_scope": "full official body",
+      "evidence_identity": "A",
+      "publication_date": "2026-09-28",
+      "publication_date_locator": "official company-news listing; full body separately verified"
+    },
+    {
+      "id": "taoke-jp-operation",
+      "url": "https://blog.taoke-energy.com/article/105.cshtml",
+      "title": "TAOKE ENERGY、2件の系統用蓄電所で一次調整力市場への参入を開始",
+      "retrieved_at_utc": "2026-10-06T22:31:46.474740+00:00",
+      "http_status": 200,
+      "raw_sha256": "043008040d4e6fff66f868e19c745c372e898de6b13376821c51d98f5e433637",
+      "bytes": 41463,
+      "read_scope": "full official body",
+      "evidence_identity": "A",
+      "publication_date": "2026-06-25",
+      "publication_date_locator": "official company-news listing; full body separately verified"
+    },
+    {
+      "id": "taoke-jp-fund1",
+      "url": "https://blog.taoke-energy.com/article/117.cshtml",
+      "title": "TAOKE ENERGY、第一号ファンドの2案件で一次調整力市場へ参入",
+      "retrieved_at_utc": "2026-10-06T22:31:48.529041+00:00",
+      "http_status": 200,
+      "raw_sha256": "a48049048ae72c7c675eb5560339a6e38a99eeab5eb38e7a7eb63b156385ecd0",
+      "bytes": 29532,
+      "read_scope": "full official body",
+      "evidence_identity": "A",
+      "publication_date": "2026-09-28",
+      "publication_date_locator": "official company-news listing; full body separately verified",
+      "notes": "页面标题/链接文本出现PP6与第一号基金两种表述；正文采用第一号基金，不用标题推断项目同一性。"
+    },
+    {
+      "id": "taoke-jp-fund2",
+      "url": "https://blog.taoke-energy.com/article/118.cshtml",
+      "title": "TAOKE ENERGY、系統用蓄電所4カ所の運転を開始",
+      "retrieved_at_utc": "2026-10-06T22:31:46.425769+00:00",
+      "http_status": 200,
+      "raw_sha256": "d6a742cb6385655949a551dec2c72216cbacc2e4fa7f020a785285e7ccc3b7e8",
+      "bytes": 35056,
+      "read_scope": "full official body",
+      "evidence_identity": "A",
+      "publication_date": "2026-09-28",
+      "publication_date_locator": "official company-news listing; full body separately verified"
+    },
+    {
+      "id": "area-chubu",
+      "url": "https://powergrid.chuden.co.jp/news/topics/1215577_3288.html",
+      "title": "「中部地方のウェルカムゾーンマップ」の公開について - ニュース｜中部電力パワーグリッド",
+      "retrieved_at_utc": "2026-10-06T22:31:49.549967+00:00",
+      "http_status": 200,
+      "raw_sha256": "6a8f42ca2876cca69d419a66be58c33cdadbb6be1ba3fa9aadf0c572764fbfac",
+      "bytes": 58611,
+      "read_scope": "full official body",
+      "evidence_identity": "A"
+    },
+    {
+      "id": "area-tokyo",
+      "url": "https://www.tepco.co.jp/pg/consignment/retailservice/index-j.html",
+      "title": "area-tokyo",
+      "retrieved_at_utc": "2026-10-06T22:31:50.000165+00:00",
+      "http_status": 403,
+      "raw_sha256": null,
+      "bytes": 0,
+      "read_scope": "official body verified via web.run; automated requests blocked",
+      "evidence_identity": "A",
+      "locator": "official supply-area / local-office table"
+    },
+    {
+      "id": "area-tohoku",
+      "url": "https://nw.tohoku-epco.co.jp/company/profile/",
+      "title": "会社概要｜東北電力ネットワーク",
+      "retrieved_at_utc": "2026-10-06T22:31:50.661629+00:00",
+      "http_status": 200,
+      "raw_sha256": "608608e78e947e0b7d00f12b355d98506e2f2c320690914d9d4cba5486d86a4a",
+      "bytes": 6228,
+      "read_scope": "full official body",
+      "evidence_identity": "A"
+    },
+    {
+      "id": "area-kansai",
+      "url": "https://www.kansai-td.co.jp/corporate/profile/office/hyogo/",
+      "title": "兵庫県 | 会社情報 | 関西電力送配電株式会社",
+      "retrieved_at_utc": "2026-10-06T22:31:50.407096+00:00",
+      "http_status": 200,
+      "raw_sha256": "ee265c0eaba9c1fcc1472f62add0db0c822fedfba60c43cee46c125c7144e064",
+      "bytes": 64358,
+      "read_scope": "full official body",
+      "evidence_identity": "A"
+    },
+    {
+      "id": "area-kyushu",
+      "url": "https://www.kyuden.co.jp/td/company/outline.html",
+      "title": "九州電力送配電　会社概要",
+      "retrieved_at_utc": "2026-10-06T22:31:50.690557+00:00",
+      "http_status": 200,
+      "raw_sha256": "e11c99e192b3bd17436748181a80e5d7568ef4e428c788ed795e687b4a8756fd",
+      "bytes": 60121,
+      "read_scope": "full official body",
+      "evidence_identity": "A"
+    },
+    {
+      "id": "area-chugoku",
+      "url": "https://www.energia.co.jp/nw/company/office/center/",
+      "title": "ネットワークセンター一覧 | 中国電力ネットワーク",
+      "retrieved_at_utc": "2026-10-06T22:31:50.893074+00:00",
+      "http_status": 200,
+      "raw_sha256": "36ce4727eeff17e0f231055c197eb4fc02e4872406f488e5c3517bb0394341a2",
+      "bytes": 46430,
+      "read_scope": "full official body",
+      "evidence_identity": "A"
+    }
+  ],
+  "exclusions": [
+    {
+      "source_id": "taoke-jp-fund1",
+      "project": "岐阜県各務原市那加大門町",
+      "reason": "与已登记②号/示范站同一性未能核实；为避免重复统计不单独计入，也不将9/17入市状态归入②号。"
+    }
+  ],
+  "parallel_display_notice": "公开项目所在地与市场指标的并列展示，不代表淘科当时依据这些指标进行选址，也不推断其内部投资逻辑。"
+}

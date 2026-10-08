@@ -1,0 +1,862 @@
+{
+  "module_id": "updates",
+  "title": "官方来源跟踪与数据刷新",
+  "question": "哪些来源已经核验，数据何时可用，变化如何通过校验进入研究？",
+  "scope": "限定官方来源的批次更新、哈希去重、重试、失败隔离、规则与项目差异；无新增后台调度器。",
+  "result": "保留检查/观察/刷新三种时间，展示有效版本、数据截止与缺口；dry-run不写文件。",
+  "maximum_limit": "这是批次更新工具；缺失逐笔/调用/日志仍不会被自动创造，来源变化需重算和验收后发布。",
+  "sources": [
+    {
+      "id": "eprx-products-2026",
+      "title": "EPRX 商品要件与交易时序第6版",
+      "url": "https://www.eprx.or.jp/outline/docs/shouhin_ver.6_20260313.pdf",
+      "last_checked_at_utc": "2026-10-07T05:46:39.698333+00:00",
+      "latest_observed_at": "2026-03-13",
+      "refreshed_at_utc": "2026-10-07T05:46:39.698333+00:00",
+      "status": "downloaded",
+      "effective_at": "2026-03-14",
+      "sha256": "08c4c173861b1ac4f3ae40dd259e5a2d567e930ea3ad9fc37bca8a587f0f83dd",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "eprx-rules-20260701",
+      "title": "EPRX 第18版本则/二次①/一次/复合约定",
+      "url": "https://www.eprx.or.jp/outline/docs/kitei_211f_ver.18_260701.pdf",
+      "last_checked_at_utc": "2026-10-07T05:46:39.699339+00:00",
+      "latest_observed_at": "2026-06-18",
+      "refreshed_at_utc": "2026-10-07T05:46:39.699339+00:00",
+      "status": "downloaded",
+      "effective_at": "2026-07-01",
+      "sha256": "73168d308c35a9fde73d9b790868001d4594475defafd3ece95b0e1932671827",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "eprx-guide-20260701",
+      "title": "EPRX 交易指南第10版",
+      "url": "https://www.eprx.or.jp/outline/docs/guide_ver.10_260701.pdf",
+      "last_checked_at_utc": "2026-10-07T05:46:39.699339+00:00",
+      "latest_observed_at": "2026-06-18",
+      "refreshed_at_utc": "2026-10-07T05:46:39.699339+00:00",
+      "status": "downloaded",
+      "effective_at": "2026-07-01",
+      "sha256": "1b34e85ca8f296eec92d816c06eae707d0b059b7d3b9f3676a750287c54cce5c",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "eprx-storage-20260314",
+      "title": "EPRX 储能和抽水参入指南第3版",
+      "url": "https://www.eprx.or.jp/outline/docs/yousuichikudenchi_guide_260314.pdf",
+      "last_checked_at_utc": "2026-10-07T05:46:44.032499+00:00",
+      "latest_observed_at": "2025-12-11",
+      "refreshed_at_utc": "2026-10-07T05:46:44.032499+00:00",
+      "status": "downloaded",
+      "effective_at": "2026-03-14",
+      "sha256": "188e7ef84dd0e3fb6a190d717bb40a4cfc5acb22a283292a1c9be989ae91ea4d",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "eprx-current-fee",
+      "title": "EPRX FY2026 容量交易手续费",
+      "url": "https://www.eprx.or.jp/outline/commission.html",
+      "last_checked_at_utc": "2026-10-07T05:46:54.484697+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:46:54.484697+00:00",
+      "status": "downloaded",
+      "effective_at": "2026-04-01",
+      "sha256": "419d321efe3361340ef72e04c6e620a7a350a131ad0b670ca1cf18786324b446",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "eprx-current-cap",
+      "title": "EPRX 现行容量价格上限入口",
+      "url": "https://www.eprx.or.jp/information/post.php",
+      "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+      "latest_observed_at": "2026-07-30",
+      "refreshed_at_utc": "2026-10-07T05:46:55.602494+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "407625b3a3ebcce221c063c73db34e0207ff71608613743f35958ea0ea9b2f76",
+      "body_status": null,
+      "identity": "A",
+      "latest_checked_response_sha256": "407625b3a3ebcce221c063c73db34e0207ff71608613743f35958ea0ea9b2f76",
+      "latest_checked_response_status": "validated",
+      "study_input_sha256": "407625b3a3ebcce221c063c73db34e0207ff71608613743f35958ea0ea9b2f76",
+      "checked_response_promoted_to_study": false
+    },
+    {
+      "id": "eprx-rule-index",
+      "title": "EPRX 现行规则索引",
+      "url": "https://www.eprx.or.jp/outline/announcement.html",
+      "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:46:56.956738+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "cbc6612a0989b18cdd6adb1c0d43dff1d4c99fc46f4abf370e3b1982602f6013",
+      "body_status": null,
+      "identity": "A",
+      "latest_checked_response_sha256": "cbc6612a0989b18cdd6adb1c0d43dff1d4c99fc46f4abf370e3b1982602f6013",
+      "latest_checked_response_status": "validated",
+      "study_input_sha256": "cbc6612a0989b18cdd6adb1c0d43dff1d4c99fc46f4abf370e3b1982602f6013",
+      "checked_response_promoted_to_study": false
+    },
+    {
+      "id": "eprx-results-terms",
+      "title": "EPRX 实绩访问与数据使用说明",
+      "url": "https://www.eprx.or.jp/information/agree_results.php",
+      "last_checked_at_utc": "2026-10-07T05:46:59.608232+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:46:59.608232+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "9a76c0172d7d85fc4894005c1241980d1bc3ddbd7cd743fb65e1ec10cd85f26f",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "jepx-outline-current",
+      "title": "JEPX 市场与交易规则入口",
+      "url": "https://www.jepx.jp/electricpower/outline/",
+      "last_checked_at_utc": "2026-10-07T05:47:01.678659+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:47:01.678659+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "ff0eb1c91258fc774f38afed9f4e9cd2003e348494ccc055c4e16b3bdbb9649b",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "jepx-system-2026",
+      "title": "JEPX 2026 系统切换与费用安排",
+      "url": "https://www.jepx.jp/system/news/pdf/jepx20251126.pdf",
+      "last_checked_at_utc": "2026-10-07T05:47:02.705263+00:00",
+      "latest_observed_at": "2025-11-26",
+      "refreshed_at_utc": "2026-10-07T05:47:02.705263+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "8c376ec9f1344ea202750b8e3ec9ed26ff93629c4a42c49648590da6387b266b",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "aemo-qed-index",
+      "title": "AEMO Quarterly Energy Dynamics 官方报告入口",
+      "url": "https://www.aemo.com.au/energy-systems/major-publications/quarterly-energy-dynamics-qed",
+      "last_checked_at_utc": "2026-10-07T06:12:59.432718+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:12:59.432718+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": "ef5e736432efb583f85b03a273a1cbc1fc92836f1b7e2a921a6d99af891d4b0c",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "eprx-cap-20260730",
+      "title": "EPRX 2026-09-01起一次容量价格上限",
+      "url": "https://www.eprx.or.jp/information/docs/14b85fbe8942da7d3bdddda80243e7e170f64d9e.pdf",
+      "last_checked_at_utc": "2026-10-07T05:48:40.790496+00:00",
+      "latest_observed_at": "2026-07-30",
+      "refreshed_at_utc": "2026-10-07T05:48:40.790496+00:00",
+      "status": "downloaded",
+      "effective_at": "2026-09-01",
+      "sha256": "06f84fe90ea852335c12ca35db613f700e36f72051953de758d5046471431d4a",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "jepx-trading-rules-current",
+      "title": "JEPX 现行交易规则",
+      "url": "https://www.jepx.jp/electricpower/outline/pdf/tr_rules.pdf",
+      "last_checked_at_utc": "2026-10-07T05:48:40.791483+00:00",
+      "latest_observed_at": "2026-08-31",
+      "refreshed_at_utc": "2026-10-07T05:48:40.791483+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "496b25bd2b6700bef24c6a46e7235e9dd63cfa2276a6e30e5f0f0430b2b5de28",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "jepx-guide",
+      "title": "JEPX 官方交易指南",
+      "url": "https://www.jepx.jp/electricpower/outline/pdf/Guide_2.00.pdf",
+      "last_checked_at_utc": "2026-10-07T05:48:40.792482+00:00",
+      "latest_observed_at": "2019-01-22",
+      "refreshed_at_utc": "2026-10-07T05:48:40.792482+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "c9dee5fa21e263492e9241a7d5780aea306c00eeabce9da366bfdc75d23aea5b",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "aemo-qed-q2-2026",
+      "title": "AEMO Q2 2026 季度报告",
+      "url": "https://www.aemo.com.au/-/media/files/major-publications/qed/2026/qed-q2-2026.pdf?hash=E46DFE92689FE582EB708D5647453DD6&rev=5cfa9aa6b7b6490ab22a13de588f9a66&sc_lang=en",
+      "last_checked_at_utc": "2026-10-07T05:48:42.680391+00:00",
+      "latest_observed_at": "2026-07",
+      "refreshed_at_utc": "2026-10-07T05:48:42.680391+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "fd3fef248b9099b1f6216f3182b34e581d24a51a45bfcb102d06801c03646c47",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "aemo-qed-q1-2026",
+      "title": "AEMO Q1 2026 季度报告",
+      "url": "https://www.aemo.com.au/-/media/files/major-publications/qed/2026/qed-q1-2026.pdf?rev=0567011109cc484c80e0d82ea40df323&sc_lang=en",
+      "last_checked_at_utc": "2026-10-07T05:48:45.444593+00:00",
+      "latest_observed_at": "2026-04-30",
+      "refreshed_at_utc": "2026-10-07T05:48:45.444593+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "5f76225b5ba6452ecb4999c7f5f5f13bbe0036ebbcd6a8ebb2a8edecbb4a6aab",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "neso-eac-data",
+      "title": "NESO EAC 公开奖售及成交数据",
+      "url": "https://www.neso.energy/data-portal/eac-auction-results",
+      "last_checked_at_utc": "2026-10-07T06:12:59.511821+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:12:59.511821+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": "f890464d9b9d944b53d7c2994b0e08a4e238f3197490ea18e2df018155d03c52",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "neso-eac-launch",
+      "title": "NESO EAC上线时约定价格变化",
+      "url": "https://www.neso.energy/news/enduring-auction-capability-platform-new-and-improved-platform-procuring-frequency-response-services",
+      "last_checked_at_utc": "2026-10-07T06:12:59.517618+00:00",
+      "latest_observed_at": "2023-11-24",
+      "refreshed_at_utc": "2026-10-07T06:12:59.517618+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": "c7f0c659f5c12912b68be76ed644706134a5e93cf5c2c6a466a02c48de0260c1",
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "neso-eac-market",
+      "title": "NESO EAC 共同优化市场设计与档案计划",
+      "url": "https://www.neso.energy/industry-information/balancing-services/enduring-auction-capability-eac",
+      "last_checked_at_utc": "2026-10-07T06:13:00.178844+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:13:00.178844+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": "954e3aecf19115a4856784e3157a7f26c680f2edc6ba64f4dc33ccd97f022868",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "aer-2025-performance",
+      "title": "AER 2025年市场表现与电池新增",
+      "url": "https://www.aer.gov.au/news/articles/news-releases/aer-report-renewables-and-battery-growth-ease-pressure-wholesale-electricity-market",
+      "last_checked_at_utc": "2026-10-07T06:13:00.254712+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:13:00.254712+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": null,
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "neso-dynamic-procurement-20260331",
+      "title": "NESO Dynamic采购规则v5",
+      "url": "https://www.neso.energy/document/378246/download",
+      "last_checked_at_utc": "2026-10-07T06:13:00.250105+00:00",
+      "latest_observed_at": "2026-03-13",
+      "refreshed_at_utc": "2026-10-07T06:13:00.250105+00:00",
+      "status": "unavailable",
+      "effective_at": "2026-03-31",
+      "sha256": "3a8ed910a5d8c27cf6352029f8d14b2d8c72be661ad1a2783b9e96da786eed3d",
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "neso-dynamic-terms-20260731",
+      "title": "NESO Dynamic服务条款（2026-07-31生效）",
+      "url": "https://www.neso.energy/document/384606/download",
+      "last_checked_at_utc": "2026-10-07T06:13:00.839091+00:00",
+      "latest_observed_at": "2026-07-23",
+      "refreshed_at_utc": "2026-10-07T06:13:00.839091+00:00",
+      "status": "unavailable",
+      "effective_at": "2026-07-31",
+      "sha256": "a6dcb0af4330c16abfdf5fb05bea99409e987abe30faf92fa3cce69669203177",
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "fluence-dnv-availability-20260609",
+      "title": "Fluence公开DNV可用率验证摘要",
+      "url": "https://ir.fluenceenergy.com/news-releases/news-release-details/dnv-validates-fluence-99-fleet-performance-availability-large",
+      "last_checked_at_utc": "2026-10-07T06:13:00.974097+00:00",
+      "latest_observed_at": "2026-06-09",
+      "refreshed_at_utc": "2026-10-07T06:13:00.974097+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": null,
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "uk-security-supply-2025",
+      "title": "DESNZ/Ofgem 2025供电安全报告",
+      "url": "https://www.gov.uk/government/publications/statutory-security-of-supply-report-2025/statutory-security-of-supply-report-2025",
+      "last_checked_at_utc": "2026-10-07T06:13:01.438284+00:00",
+      "latest_observed_at": "2025-12-17",
+      "refreshed_at_utc": "2026-10-07T06:13:01.438284+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "b9ef79a35e6a7425ca708c5bff1a422b1301206e8fcd50486e3a6aed1d4409f5",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "elexon-market-arrangements-current",
+      "title": "Elexon交易与结算入门：物理门槛和合约截止",
+      "url": "https://bscdocs.elexon.co.uk/guidance-notes/the-electricity-trading-arrangements-a-beginners-guide",
+      "last_checked_at_utc": "2026-10-07T06:13:02.898113+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:13:02.898113+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": "b633e14e1da5e5891d8447e87b0f4f3b474f855fa54131cb5b07f4a99d74e0e4",
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "aemo-five-minute",
+      "title": "AEMO NEM五分钟结算",
+      "url": "https://www.aemo.com.au/initiatives/trials-and-initiatives/past-trials-and-initiatives/nem-five-minute-settlement--program-and-global-settlement/five-minute-settlements",
+      "last_checked_at_utc": "2026-10-07T06:13:04.292621+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:13:04.292621+00:00",
+      "status": "unavailable",
+      "effective_at": "2021-10-01",
+      "sha256": "1cd9f4fec9cba23431502934c304f5c0e05db5d9f371a1738f206d915ad4e06b",
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "taoke-case",
+      "title": "淘科新能源日本岐阜县电网侧储能项目顺利并网",
+      "url": "https://blog.taoke-web.com/article/46.cshtml",
+      "last_checked_at_utc": "2026-10-07T06:31:11.934062+00:00",
+      "latest_observed_at": "2026-07-17",
+      "refreshed_at_utc": "2026-10-07T06:31:11.934062+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "65af8998510ec6e8e2cf8bca19bf2afe571066871279ad37d63511f3129044bd",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "taoke-operation",
+      "title": "淘科新能源日本中部两个项目顺利进入一次调频市场",
+      "url": "https://blog.taoke-web.com/article/45.cshtml",
+      "last_checked_at_utc": "2026-10-07T06:31:11.936062+00:00",
+      "latest_observed_at": "2026-06-29",
+      "refreshed_at_utc": "2026-10-07T06:31:11.936062+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "b7c6b9cffee99c2cff208e0c073411619fdc57aa314ed7550f320da22bdd9456",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "taoke-latest",
+      "title": "9月项目速递｜淘科新能源日本四座储能电站并网投运",
+      "url": "https://blog.taoke-web.com/article/52.cshtml",
+      "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+      "latest_observed_at": "2026-09-28",
+      "refreshed_at_utc": "2026-10-07T06:31:11.936062+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "a7197d1a33bc3c2b9cbfe530587aae96931b0005c3778e8d9e7c475ea194a4db",
+      "body_status": null,
+      "identity": "A",
+      "latest_checked_response_sha256": "a7197d1a33bc3c2b9cbfe530587aae96931b0005c3778e8d9e7c475ea194a4db",
+      "latest_checked_response_status": "validated",
+      "study_input_sha256": "a7197d1a33bc3c2b9cbfe530587aae96931b0005c3778e8d9e7c475ea194a4db",
+      "checked_response_promoted_to_study": false
+    },
+    {
+      "id": "taoke-jp-operation",
+      "title": "TAOKE ENERGY、2件の系統用蓄電所で一次調整力市場への参入を開始",
+      "url": "https://blog.taoke-energy.com/article/105.cshtml",
+      "last_checked_at_utc": "2026-10-07T06:31:14.496159+00:00",
+      "latest_observed_at": "2026-06-25",
+      "refreshed_at_utc": "2026-10-07T06:31:14.496159+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "043008040d4e6fff66f868e19c745c372e898de6b13376821c51d98f5e433637",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "taoke-jp-fund1",
+      "title": "TAOKE ENERGY、第一号ファンドの2案件で一次調整力市場へ参入",
+      "url": "https://blog.taoke-energy.com/article/117.cshtml",
+      "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+      "latest_observed_at": "2026-09-28",
+      "refreshed_at_utc": "2026-10-07T06:31:14.593660+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "a48049048ae72c7c675eb5560339a6e38a99eeab5eb38e7a7eb63b156385ecd0",
+      "body_status": null,
+      "identity": "A",
+      "latest_checked_response_sha256": "a48049048ae72c7c675eb5560339a6e38a99eeab5eb38e7a7eb63b156385ecd0",
+      "latest_checked_response_status": "validated",
+      "study_input_sha256": "a48049048ae72c7c675eb5560339a6e38a99eeab5eb38e7a7eb63b156385ecd0",
+      "checked_response_promoted_to_study": false
+    },
+    {
+      "id": "taoke-jp-fund2",
+      "title": "TAOKE ENERGY、系統用蓄電所4カ所の運転を開始",
+      "url": "https://blog.taoke-energy.com/article/118.cshtml",
+      "last_checked_at_utc": "2026-10-07T06:31:14.744220+00:00",
+      "latest_observed_at": "2026-09-28",
+      "refreshed_at_utc": "2026-10-07T06:31:14.744220+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "d6a742cb6385655949a551dec2c72216cbacc2e4fa7f020a785285e7ccc3b7e8",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "aemo-ancillary-guide-current",
+      "title": "AEMO NEM辅助服务设计指南",
+      "url": "https://www.aemo.com.au/-/media/files/electricity/nem/security_and_reliability/ancillary_services/guide-to-ancillary-services-in-the-national-electricity-market.pdf?rev=c333d31d364f4a13a3c37e904ba3a112",
+      "last_checked_at_utc": "2026-10-07T06:35:23.689395+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T06:35:23.689395+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": "59e7c4d22849d43d3fc71e1aed345a64231973dad90e6840ff56760080878c73",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "aemo-fcas-settlement-20251202",
+      "title": "AEMO FCAS和FPP结算指南",
+      "url": "https://www.aemo.com.au/-/media/files/electricity/nem/data/ancillary_services/2025/settlements-guide-to-ancillary-services-and-frequency-performance-payments.pdf?rev=e7c4fb3fc63347fca83cd07fa283f9c0&sc_lang=en",
+      "last_checked_at_utc": "2026-10-07T06:35:23.690417+00:00",
+      "latest_observed_at": "2025-12-02",
+      "refreshed_at_utc": "2026-10-07T06:35:23.690417+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "04b466f4e4d288b4ca2b6fbfe304b43001412c631c5a83ca4c09ede94ba489b9",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "dcceew-cisa-current",
+      "title": "澳洲CISA收入支持与项目合同要求",
+      "url": "https://www.dcceew.gov.au/energy/renewable/capacity-investment-scheme/open-cis-tenders/information-for-cisa-holders",
+      "last_checked_at_utc": "2026-10-07T06:35:23.691414+00:00",
+      "latest_observed_at": "2026-09-16",
+      "refreshed_at_utc": "2026-10-07T06:35:23.691414+00:00",
+      "status": "unavailable",
+      "effective_at": null,
+      "sha256": null,
+      "body_status": "alternate_official_web_read",
+      "identity": "A"
+    },
+    {
+      "id": "eprx-primary-fy2026",
+      "title": "EPRX FY2026 一次调频30min区域实绩（速報）",
+      "url": "https://www.eprx.or.jp/information/files/2026_1-0_prompt.zip",
+      "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:51:02.577789+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "939d839166c92ba92c84732ff66081160f8513a25712ac3827dfb064630a2be1",
+      "body_status": null,
+      "identity": "A",
+      "latest_checked_response_sha256": "939d839166c92ba92c84732ff66081160f8513a25712ac3827dfb064630a2be1",
+      "latest_checked_response_status": "validated",
+      "study_input_sha256": "939d839166c92ba92c84732ff66081160f8513a25712ac3827dfb064630a2be1",
+      "checked_response_promoted_to_study": false
+    },
+    {
+      "id": "neso-eac-metadata",
+      "title": "NESO EAC数据资源定义",
+      "url": "https://api.neso.energy/api/3/action/datapackage_show?id=eac-auction-results",
+      "last_checked_at_utc": "2026-10-07T05:51:15.311035+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:51:15.311035+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "f3e0763bcdd734a843f4075b937e36334979297a4ee66db96b92833064f58c6f",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "neso-eac-latest",
+      "title": "NESO EAC每日成交汇总",
+      "url": "https://api.neso.energy/dataset/291e3c28-75f2-4a8f-b5f5-008bebaac368/resource/3c51a666-1c33-450e-a6eb-c9b4a0c91584/download/neso-response-reserve-daily-results-summary.csv",
+      "last_checked_at_utc": "2026-10-07T05:51:17.217004+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:51:17.217004+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "74daac2f6c8cd59c1484a818876d8045277b84243076e8011264ebaf6c9d7576",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "neso-eac-fy2026",
+      "title": "NESO EAC 2026年度当前成交汇总",
+      "url": "https://api.neso.energy/datastore/dump/596f29ac-0387-4ba4-a6d3-95c243140707",
+      "last_checked_at_utc": "2026-10-07T05:53:55.248202+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:53:55.248202+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "3f6c22fd49b6f4d9283d2e55ef105e06ae1d47cedd24edfdf9340812f2f21cca",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "neso-dynamic-services-current",
+      "title": "NESO DC/DM/DR资格、响应和持续时间",
+      "url": "https://www.neso.energy/industry-information/balancing-services/frequency-response-services/dynamic-services-dcdmdr",
+      "last_checked_at_utc": "2026-10-07T05:57:39.653391+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T05:57:39.653391+00:00",
+      "status": "verified_web_body",
+      "effective_at": null,
+      "sha256": null,
+      "body_status": "official full extracted webpage",
+      "identity": "A"
+    },
+    {
+      "id": "jepx-fy2024",
+      "title": "JEPX FY2024原始半小时区域CSV",
+      "url": "https://www.jepx.jp/js/csv_read.php?dir=spot_summary&file=spot_summary_2024.csv",
+      "last_checked_at_utc": "2026-10-06T13:36:14.433883+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-06T13:36:14.433883+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "ddf0329827666307b3135e751e3ec5c82b67df6be1ae3441262127be9fb70e93",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "jepx-fy2025",
+      "title": "JEPX FY2025原始半小时区域CSV",
+      "url": "https://www.jepx.jp/js/csv_read.php?dir=spot_summary&file=spot_summary_2025.csv",
+      "last_checked_at_utc": "2026-10-06T13:36:21.507486+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-06T13:36:21.507486+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "85bd3b7a6fcc44c38b433fb1a7ff2f1197db2dc843feb1c17c5068bd9c49c1a2",
+      "body_status": null,
+      "identity": "A"
+    },
+    {
+      "id": "jepx-fy2026",
+      "title": "JEPX FY2026原始半小时区域CSV",
+      "url": "https://www.jepx.jp/js/csv_read.php?dir=spot_summary&file=spot_summary_2026.csv",
+      "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+      "latest_observed_at": "2026-10-08",
+      "refreshed_at_utc": "2026-10-06T13:36:26.238261+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "975d7fed3151b03bd2f3ce765746064b293c4bcb729f10ae58adf7c5a983d4f2",
+      "body_status": null,
+      "identity": "A",
+      "latest_checked_response_sha256": "06ffe385fb9c08c00836fced283e921870e4abdd09657c70945d6f3237b0a1de",
+      "latest_checked_response_status": "validated",
+      "study_input_sha256": "975d7fed3151b03bd2f3ce765746064b293c4bcb729f10ae58adf7c5a983d4f2",
+      "checked_response_promoted_to_study": false
+    },
+    {
+      "id": "taoke-public-projects-v2-3",
+      "title": "已验证Taoke公开九站规格与逐站原文证据",
+      "url": "https://blog.taoke-web.com/",
+      "last_checked_at_utc": null,
+      "latest_observed_at": null,
+      "refreshed_at_utc": null,
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "5bb36a61de9acbb7ad77ad4c009faaafd4e769d219b6c1f55a0d89d0574481bb",
+      "body_status": null,
+      "identity": "A underlying disclosures / B normalized registry"
+    },
+    {
+      "id": "meti-grid-status-v2-3",
+      "title": "METI 2026-03-31连接状态原始来源与规范化表",
+      "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/smart_power_grid_wg/pdf/012_02_00.pdf",
+      "last_checked_at_utc": "2026-10-07T02:36:35.907174+00:00",
+      "latest_observed_at": null,
+      "refreshed_at_utc": "2026-10-07T02:36:35.907174+00:00",
+      "status": "downloaded",
+      "effective_at": null,
+      "sha256": "58699d6a133b5544698c34a54b5d229cc3ec9b545be96602061327b788f25677",
+      "body_status": null,
+      "identity": "A underlying official snapshot / B normalized registry"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "aemo-qed-index",
+      "gap": "公开请求不可用；未以猜测补齐。"
+    },
+    {
+      "id": "neso-eac-data",
+      "gap": "公开请求不可用；未以猜测补齐。"
+    },
+    {
+      "id": "neso-eac-launch",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "neso-eac-market",
+      "gap": "公开请求不可用；未以猜测补齐。"
+    },
+    {
+      "id": "aer-2025-performance",
+      "gap": "公开请求不可用；未以猜测补齐。"
+    },
+    {
+      "id": "neso-dynamic-procurement-20260331",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "neso-dynamic-terms-20260731",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "fluence-dnv-availability-20260609",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "elexon-market-arrangements-current",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "aemo-five-minute",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "aemo-ancillary-guide-current",
+      "gap": "公开请求不可用；未以猜测补齐。"
+    },
+    {
+      "id": "dcceew-cisa-current",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "neso-dynamic-services-current",
+      "gap": "下载通道不可用；保留已取得的官方全文/节选和单独访问状态。"
+    },
+    {
+      "id": "japan-bid-level",
+      "gap": "无项目逐笔投标数据：能力Gate B。"
+    },
+    {
+      "id": "activation-signal",
+      "gap": "无真实高频调用：Low/Base/High均C。"
+    },
+    {
+      "id": "project-availability",
+      "gap": "无Taoke运行日志：可靠性均C。"
+    },
+    {
+      "id": "actual-intraday-fills",
+      "gap": "无实际日内成交/不平衡记录：联合回放使用C报价代理。"
+    }
+  ],
+  "source_count": 45,
+  "downloaded_count": 32,
+  "data_freshness": {
+    "jepx_delivery_end": "2026-10-05",
+    "eprx_study_end": "2026-10-05",
+    "eprx_raw_observed_delivery_end": "2026-10-08",
+    "neso_last_delivery_end_utc": "2026-10-06T02:00:00+00:00",
+    "historical_eprx_available_at": null
+  },
+  "rules": [
+    {
+      "name": "EPRX交易规则v18",
+      "effective_at": "2026-07-01"
+    },
+    {
+      "name": "EPRX一次上限10",
+      "effective_at": "2026-09-01"
+    },
+    {
+      "name": "EPRX手续费0.06",
+      "effective_at": "2026-04-01"
+    },
+    {
+      "name": "JEPX新日内系统",
+      "effective_at": "2026-10-01"
+    }
+  ],
+  "pipeline": [
+    "原始响应与哈希 → 验证schema/单位/日期/主键 → 独立模型重算 → payload/图表/报告 → 测试/Notebook/浏览器 → 源码版本 → 真实部署 → 不可变验收包"
+  ],
+  "update_validation": {
+    "version": "v2.4",
+    "performed_at_utc": "2026-10-07T07:05:54.779929+00:00",
+    "status": "passed",
+    "real_source_count": 8,
+    "real_success_count": 8,
+    "dry_run_status": {
+      "status": "passed",
+      "dry_run": true,
+      "source_count": 8,
+      "failure_count": 0,
+      "changed_sources": [],
+      "snapshot_id": "832a6d51cf9968674f8f346ace2b24611fcb16c1fb43f4ac7e22230dd2e7f431",
+      "output_directory": null
+    },
+    "dry_run_target_created": false,
+    "prior_batch_tree_unchanged": true,
+    "stable_source_hashes_on_repeat": 8,
+    "latest_observed_jepx_delivery_date": "2026-10-08",
+    "study_cutoff_retained": "2026-10-05",
+    "batch_state_path": "output/operations-evidence/updater-live/batch/latest-state.json",
+    "batch_state_sha256": "136df54338c9c261fcfbac232d87497693892328d611e758814e892e97a00fbf",
+    "sources": [
+      {
+        "id": "jepx-fy2026-current",
+        "url": "https://www.jepx.jp/js/csv_read.php?dir=spot_summary&file=spot_summary_2026.csv",
+        "status": "validated",
+        "sha256": "06ffe385fb9c08c00836fced283e921870e4abdd09657c70945d6f3237b0a1de",
+        "bytes": 1203555,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "eprx-primary-fy2026",
+        "url": "https://www.eprx.or.jp/information/files/2026_1-0_prompt.zip",
+        "status": "validated",
+        "sha256": "939d839166c92ba92c84732ff66081160f8513a25712ac3827dfb064630a2be1",
+        "bytes": 2032996,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "eprx-rule-index",
+        "url": "https://www.eprx.or.jp/outline/announcement.html",
+        "status": "validated",
+        "sha256": "cbc6612a0989b18cdd6adb1c0d43dff1d4c99fc46f4abf370e3b1982602f6013",
+        "bytes": 56884,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "eprx-current-cap",
+        "url": "https://www.eprx.or.jp/information/post.php",
+        "status": "validated",
+        "sha256": "407625b3a3ebcce221c063c73db34e0207ff71608613743f35958ea0ea9b2f76",
+        "bytes": 14922,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "taoke-latest",
+        "url": "https://blog.taoke-web.com/article/52.cshtml",
+        "status": "validated",
+        "sha256": "a7197d1a33bc3c2b9cbfe530587aae96931b0005c3778e8d9e7c475ea194a4db",
+        "bytes": 95224,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "taoke-jp-fund1",
+        "url": "https://blog.taoke-energy.com/article/117.cshtml",
+        "status": "validated",
+        "sha256": "a48049048ae72c7c675eb5560339a6e38a99eeab5eb38e7a7eb63b156385ecd0",
+        "bytes": 29532,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "meti-grid-status",
+        "url": "https://www.meti.go.jp/shingikai/enecho/denryoku_gas/saisei_kano/smart_power_grid_wg/pdf/012_02_00.pdf",
+        "status": "validated",
+        "sha256": "99f3b2c3058654ae4c81194785a740f24856fd9688be0b69cec3787acecaa345",
+        "bytes": 1912298,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      },
+      {
+        "id": "taoke-news-index",
+        "url": "https://blog.taoke-web.com/",
+        "status": "validated",
+        "sha256": "11bb764d644d201f7c99c13953ae1a25367d8e6283215c844fca23b2415bcc6a",
+        "bytes": 22750,
+        "last_checked_at_utc": "2026-10-07T07:02:57.351205+00:00",
+        "refreshed_at_utc": "2026-10-07T06:59:50.498500+00:00",
+        "actual_dry_repeat_changed": false
+      }
+    ],
+    "C_fixture_checks": "Separate73 test receipt covers deliberate failure/retry and synthetic project/rule diffs; those are not actual market changes.",
+    "candidate_rebuild": "pending separate actual candidate execution",
+    "automatic_deployment": false
+  },
+  "dry_run_contract": "验证和比较只在内存执行，不创建目录、不写缓存、不改latest-state。",
+  "publication_contract": "更新工具不自动发布；显式重建后仍需完整验证与Sites部署状态成功。",
+  "scheduling": {
+    "existing_scheduler_reused": false,
+    "new_scheduler_created": false,
+    "background_process_installed": false,
+    "credential_requirement": "none; public requests only"
+  },
+  "assumptions": [
+    "官方未提供的发布日期保持null，retrieved_at不冒充available_at。",
+    "HTTP失败和已有官方Web正文可同时展示；缓存不标成新数据。",
+    "同一批次按内容哈希去重；项目按稳定project_id判断新增/状态/容量/COD变化。"
+  ],
+  "sources_refs": [
+    {
+      "source_id": "eprx-rule-index",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-results-terms",
+      "identity": "A"
+    },
+    {
+      "source_id": "jepx-outline-current",
+      "identity": "A"
+    },
+    {
+      "source_id": "neso-eac-metadata",
+      "identity": "A"
+    }
+  ],
+  "version": "v2.4",
+  "site_route": "#operations/updates",
+  "notebook_download": "./downloads/research-operations-updates-v2-4.ipynb",
+  "report_download": "./japan-bess-markets-updates-v2-4.pdf"
+}

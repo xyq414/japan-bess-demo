@@ -1,0 +1,1498 @@
+{
+  "module_id": "markets",
+  "title": "日本、NEM与英国市场对照",
+  "question": "海外价格压缩与收益结构变化对日本有哪些可检验启示？",
+  "scope": "官方制度表、2026Q1/Q2 NEM、2026财年GB EAC、Japan188日；各市场保留本币和来源日期。",
+  "result": "按共同研究字段比较规则、增长状态、负价与收入结构，提出8个日本观察指标。",
+  "maximum_limit": "样本、计量、状态与成本分母不同；不换汇排名，不直接移植海外收益率或因果结论。",
+  "schema": [
+    {
+      "dimension": "地域与调度结构",
+      "Japan": "JEPX九区域价格；东西50/60Hz；EPRX采购区域及联络线约束",
+      "NEM": "五区域边际电价；联络线约束；电能/FCAS调度结合",
+      "GB": "全国批发价格体系；网络约束通过BM及服务规则处理",
+      "sources": [
+        "jepx-outline-current",
+        "eprx-rules-20260701",
+        "aemo-qed-q2-2026",
+        "uk-security-supply-2025"
+      ]
+    },
+    {
+      "dimension": "电能周期/计量时区",
+      "Japan": "30分钟、Asia/Tokyo，通常48段",
+      "NEM": "5分钟调度及结算（2021-10-01起）；NEM市场时间规则独立",
+      "GB": "30分钟本地结算，DST为46/48/50段；本文EAC数据为UTC",
+      "sources": [
+        "jepx-trading-rules-current",
+        "aemo-five-minute",
+        "elexon-market-arrangements-current",
+        "neso-eac-metadata"
+      ]
+    },
+    {
+      "dimension": "成交价格与日内",
+      "Japan": "日前single price；日内连续成交；容量pay-as-bid；日内T−1h截止",
+      "NEM": "区域现货与FCAS使能边际价格；重新报价受市场规则及约束",
+      "GB": "批发合约/日内＋BM；物理Gate T−1h，合约通知可至交割开始；EAC容量清算",
+      "sources": [
+        "jepx-trading-rules-current",
+        "eprx-rules-20260701",
+        "aemo-qed-q2-2026",
+        "aemo-fcas-settlement-20251202",
+        "elexon-market-arrangements-current",
+        "neso-dynamic-procurement-20260331"
+      ]
+    },
+    {
+      "dimension": "调频产品",
+      "Japan": "一次/二次①/二次②/三次①/三次②；当前采购上调",
+      "NEM": "调节＋1秒/6秒/60秒/5分钟升降FCAS；产品资格独立",
+      "GB": "DC/DM/DR升降；全响应1/1/10秒，持续15/30/60分钟",
+      "sources": [
+        "eprx-products-2026",
+        "aemo-qed-q2-2026",
+        "aemo-fcas-settlement-20251202",
+        "neso-dynamic-services-current"
+      ]
+    },
+    {
+      "dimension": "容量或长期收入",
+      "Japan": "容量市场/长期脱碳竞价等需另外核验资格；本模块不将其计入贡献",
+      "NEM": "CISA为项目特定收入支持合同，须投运并赚钱后方可获支持，最长15年；本文未计入",
+      "GB": "Capacity Market有T−4/T−1采购与多年合约；不等于EAC容量服务",
+      "sources": [
+        "eprx-rules-20260701",
+        "dcceew-cisa-current",
+        "uk-security-supply-2025"
+      ]
+    },
+    {
+      "dimension": "负价格与收益堆叠",
+      "Japan": "样本实价保留；样本负价数单列；多市场共用电池资源",
+      "NEM": "负电能价充电/能量套利/FCAS；QED净收入排除FCAS成本与FPP",
+      "GB": "EAC可为负容量价，含义是提供方付款；与负电能价不同",
+      "sources": [
+        "jepx-fy2026",
+        "aemo-qed-q2-2026",
+        "neso-dynamic-procurement-20260331"
+      ]
+    },
+    {
+      "dimension": "准入与公开透明度",
+      "Japan": "商品资格、遥测、履约及接入；公开块汇总无项目逐笔",
+      "NEM": "注册、性能标准、commissioning；公开QED及调度数据",
+      "GB": "注册资产/单元/SoE与遥测；EAC公开订单、结果，BM公开通知",
+      "sources": [
+        "eprx-products-2026",
+        "aemo-qed-q2-2026",
+        "neso-dynamic-procurement-20260331",
+        "neso-eac-metadata"
+      ]
+    }
+  ],
+  "facts": {
+    "version": "v2.4",
+    "extraction_method": "Official full-body PDFs/HTML read locally or through recorded browser retrieval. Facts carry exact source/page/date; different populations are not pooled.",
+    "nem_quarters": [
+      {
+        "quarter": "2026Q1",
+        "total_battery_net_revenue_aud_million": 96.9,
+        "arbitrage_aud_million": 93.9,
+        "fcas_aud_million": 3.0,
+        "fcas_share_pct_reported": 3,
+        "battery_price_spread_aud_mwh": 121,
+        "source_id": "aemo-qed-q1-2026",
+        "pdf_pages": [
+          36,
+          37
+        ],
+        "identity": "A AEMO estimated aggregate; excludes battery FCAS cost recovery and FPP"
+      },
+      {
+        "quarter": "2026Q2",
+        "total_battery_net_revenue_aud_million": 57.5,
+        "arbitrage_aud_million": 52.8,
+        "fcas_aud_million": 4.8,
+        "fcas_share_pct_reported": 8.3,
+        "battery_price_spread_aud_mwh": 51,
+        "source_id": "aemo-qed-q2-2026",
+        "pdf_pages": [
+          37,
+          38
+        ],
+        "identity": "A AEMO estimated aggregate; excludes battery FCAS cost recovery and FPP; components rounded"
+      }
+    ],
+    "nem_saturation_observations": [
+      {
+        "metric": "Battery share of FCAS enabled volume",
+        "prior": 54,
+        "current": 68,
+        "unit": "%",
+        "prior_period": "2025Q2",
+        "current_period": "2026Q2",
+        "source_id": "aemo-qed-q2-2026",
+        "pdf_pages": [
+          46,
+          47
+        ],
+        "identity": "A"
+      },
+      {
+        "metric": "Total NEM FCAS procurement cost",
+        "prior": 23.2,
+        "current": 9.2,
+        "unit": "AUD million",
+        "prior_period": "2025Q2",
+        "current_period": "2026Q2",
+        "source_id": "aemo-qed-q2-2026",
+        "pdf_pages": [
+          46
+        ],
+        "identity": "B prior reconstructed9.2+14.0 from A report rounded change; not precise raw prior"
+      },
+      {
+        "metric": "Battery price-setting dispatch share",
+        "prior": 17,
+        "current": 36,
+        "unit": "%",
+        "prior_period": "2025Q2",
+        "current_period": "2026Q2",
+        "source_id": "aemo-qed-q2-2026",
+        "pdf_pages": [
+          3
+        ],
+        "identity": "A"
+      }
+    ],
+    "growth": [
+      {
+        "market": "Japan",
+        "date": "2026-03-31",
+        "connected_gw": 0.84,
+        "population": "日本高压・特高压系統用蓄電所接続完了；申请/合同容量另列",
+        "source_id": "meti-grid-status-v2-3",
+        "identity": "A rounded official snapshot preserved from v2.3",
+        "pipeline_gw": null
+      },
+      {
+        "market": "NEM",
+        "date": "2026-06-30",
+        "connected_gw_lower_bound": 9,
+        "population": "全投运＋仍在commissioning；>9000MW，不等于全商业投运",
+        "source_id": "aemo-qed-q2-2026",
+        "pdf_pages": [
+          36,
+          42
+        ],
+        "pipeline_gw": 39.6,
+        "pipeline_population": "battery capacity in connection process; contains0.2GW compressed-air storage",
+        "identity": "A"
+      },
+      {
+        "market": "GB",
+        "date": "2025-12-17",
+        "connected_gw_lower_bound": 6,
+        "population": "报告称just over6GW在网；不是2026年最新实测值",
+        "cm_pipeline_gw": 17,
+        "planning_permission_gw_approx": 35,
+        "target_2030_gw_range": [
+          23,
+          27
+        ],
+        "pipeline_population": "17GW有CM协议拟2029前投运；约35GW规划许可；两者可能重叠，禁止相加",
+        "source_id": "uk-security-supply-2025",
+        "locator": "Electricity / Storage",
+        "identity": "A dated official snapshot and policy ambition"
+      }
+    ],
+    "timeline": [
+      {
+        "date": "2021-10-01",
+        "market": "NEM",
+        "event": "电能结算由30分钟转为5分钟",
+        "source_id": "aemo-five-minute",
+        "identity": "A"
+      },
+      {
+        "date": "2023-11-02",
+        "market": "GB",
+        "event": "EAC新平台首轮竞价；允许负容量价格与产品共优化",
+        "source_id": "neso-eac-launch",
+        "identity": "A; first-auction average2.46GBP was35% below previous7days, design change not a saturation-only causal estimate"
+      },
+      {
+        "date": "2026-03-14",
+        "market": "Japan",
+        "event": "EPRX日前报价与30分钟容量区间，全部产品开放",
+        "source_id": "eprx-products-2026",
+        "identity": "A"
+      },
+      {
+        "date": "2026-09-01",
+        "market": "Japan",
+        "event": "一次/二次①/复合ΔkW上限降为10JPY/kW/30min",
+        "source_id": "eprx-cap-20260730",
+        "identity": "A; cap is not clearing price"
+      }
+    ]
+  },
+  "neso_monthly": [
+    {
+      "month": "2026-03",
+      "product": "DCH",
+      "windows": 1,
+      "capacity_weighted_price_gbp_mw_hour": 1.11,
+      "price": {
+        "n": 1,
+        "mean": 1.11,
+        "p10": 1.11,
+        "p50": 1.11,
+        "p90": 1.11,
+        "min": 1.11,
+        "max": 1.11
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 4172.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-03",
+      "product": "DCL",
+      "windows": 1,
+      "capacity_weighted_price_gbp_mw_hour": 1.1,
+      "price": {
+        "n": 1,
+        "mean": 1.1,
+        "p10": 1.1,
+        "p50": 1.1,
+        "p90": 1.1,
+        "min": 1.1,
+        "max": 1.1
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 3560.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-03",
+      "product": "DMH",
+      "windows": 1,
+      "capacity_weighted_price_gbp_mw_hour": -0.4,
+      "price": {
+        "n": 1,
+        "mean": -0.4,
+        "p10": -0.4,
+        "p50": -0.4,
+        "p90": -0.4,
+        "min": -0.4,
+        "max": -0.4
+      },
+      "negative_window_fraction": 1.0,
+      "cleared_mw_hours": 2320.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-03",
+      "product": "DML",
+      "windows": 1,
+      "capacity_weighted_price_gbp_mw_hour": 4.95,
+      "price": {
+        "n": 1,
+        "mean": 4.95,
+        "p10": 4.95,
+        "p50": 4.95,
+        "p90": 4.95,
+        "min": 4.95,
+        "max": 4.95
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 2120.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-03",
+      "product": "DRH",
+      "windows": 1,
+      "capacity_weighted_price_gbp_mw_hour": -9.19,
+      "price": {
+        "n": 1,
+        "mean": -9.19,
+        "p10": -9.19,
+        "p50": -9.19,
+        "p90": -9.19,
+        "min": -9.19,
+        "max": -9.19
+      },
+      "negative_window_fraction": 1.0,
+      "cleared_mw_hours": 2000.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-03",
+      "product": "DRL",
+      "windows": 1,
+      "capacity_weighted_price_gbp_mw_hour": 18.23,
+      "price": {
+        "n": 1,
+        "mean": 18.23,
+        "p10": 18.23,
+        "p50": 18.23,
+        "p90": 18.23,
+        "min": 18.23,
+        "max": 18.23
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 1920.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-04",
+      "product": "DCH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 1.947767417465544,
+      "price": {
+        "n": 180,
+        "mean": 1.8805555555555555,
+        "p10": 0.0,
+        "p50": 1.42,
+        "p90": 4.442999999999999,
+        "min": -4.82,
+        "max": 10.44
+      },
+      "negative_window_fraction": 0.08888888888888889,
+      "cleared_mw_hours": 823656.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-04",
+      "product": "DCL",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 2.792835874817479,
+      "price": {
+        "n": 180,
+        "mean": 2.765777777777778,
+        "p10": 1.0150000000000001,
+        "p50": 2.25,
+        "p90": 5.255,
+        "min": -0.42,
+        "max": 10.0
+      },
+      "negative_window_fraction": 0.005555555555555556,
+      "cleared_mw_hours": 797172.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-04",
+      "product": "DMH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 0.3529167997198159,
+      "price": {
+        "n": 180,
+        "mean": 0.4780555555555556,
+        "p10": -2.938,
+        "p50": -0.385,
+        "p90": 5.337,
+        "min": -7.06,
+        "max": 13.25
+      },
+      "negative_window_fraction": 0.5388888888888889,
+      "cleared_mw_hours": 388316.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-04",
+      "product": "DML",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 6.356703448723076,
+      "price": {
+        "n": 180,
+        "mean": 6.375,
+        "p10": 3.5,
+        "p50": 6.32,
+        "p90": 9.64,
+        "min": 0.64,
+        "max": 14.18
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 370108.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-04",
+      "product": "DRH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": -5.910735330360945,
+      "price": {
+        "n": 180,
+        "mean": -5.825611111111112,
+        "p10": -12.530999999999999,
+        "p50": -7.9799999999999995,
+        "p90": 3.0549999999999997,
+        "min": -15.14,
+        "max": 19.25
+      },
+      "negative_window_fraction": 0.8222222222222222,
+      "cleared_mw_hours": 357064.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-04",
+      "product": "DRL",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 16.1498944542172,
+      "price": {
+        "n": 180,
+        "mean": 16.154666666666667,
+        "p10": 8.968,
+        "p50": 16.535,
+        "p90": 22.494,
+        "min": -2.19,
+        "max": 32.77
+      },
+      "negative_window_fraction": 0.005555555555555556,
+      "cleared_mw_hours": 345632.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-05",
+      "product": "DCH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 1.1890062511278405,
+      "price": {
+        "n": 186,
+        "mean": 1.1394086021505374,
+        "p10": 0.1,
+        "p50": 0.84,
+        "p90": 2.795,
+        "min": -0.72,
+        "max": 5.42
+      },
+      "negative_window_fraction": 0.03225806451612903,
+      "cleared_mw_hours": 864484.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-05",
+      "product": "DCL",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 1.8515850954226563,
+      "price": {
+        "n": 186,
+        "mean": 1.8464516129032258,
+        "p10": 0.965,
+        "p50": 1.72,
+        "p90": 2.85,
+        "min": -0.32,
+        "max": 9.7
+      },
+      "negative_window_fraction": 0.005376344086021506,
+      "cleared_mw_hours": 815320.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-05",
+      "product": "DMH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": -1.5190655565276365,
+      "price": {
+        "n": 186,
+        "mean": -1.4483333333333333,
+        "p10": -3.525,
+        "p50": -1.8650000000000002,
+        "p90": 1.405,
+        "min": -4.56,
+        "max": 5.02
+      },
+      "negative_window_fraction": 0.7956989247311828,
+      "cleared_mw_hours": 406916.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-05",
+      "product": "DML",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 5.954591648708579,
+      "price": {
+        "n": 186,
+        "mean": 5.960430107526882,
+        "p10": 4.215,
+        "p50": 5.705,
+        "p90": 8.04,
+        "min": 2.7,
+        "max": 12.31
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 384228.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-05",
+      "product": "DRH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": -11.439986983228803,
+      "price": {
+        "n": 186,
+        "mean": -11.438387096774193,
+        "p10": -16.0,
+        "p50": -11.805,
+        "p90": -6.22,
+        "min": -19.0,
+        "max": -1.02
+      },
+      "negative_window_fraction": 1.0,
+      "cleared_mw_hours": 371828.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-05",
+      "product": "DRL",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 17.174583468685938,
+      "price": {
+        "n": 186,
+        "mean": 17.178602150537632,
+        "p10": 13.129999999999999,
+        "p50": 16.63,
+        "p90": 21.865000000000002,
+        "min": 1.09,
+        "max": 35.96
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 357092.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-06",
+      "product": "DCH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 2.6573345142202047,
+      "price": {
+        "n": 180,
+        "mean": 2.4977222222222224,
+        "p10": 0.12700000000000006,
+        "p50": 1.33,
+        "p90": 6.723,
+        "min": -0.73,
+        "max": 16.25
+      },
+      "negative_window_fraction": 0.011111111111111112,
+      "cleared_mw_hours": 928116.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-06",
+      "product": "DCL",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 3.3948679838507987,
+      "price": {
+        "n": 180,
+        "mean": 3.185888888888889,
+        "p10": 0.989,
+        "p50": 2.1550000000000002,
+        "p90": 5.3439999999999985,
+        "min": 0.01,
+        "max": 35.0
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 895648.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-06",
+      "product": "DMH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": -0.18784170698684913,
+      "price": {
+        "n": 180,
+        "mean": 0.10516666666666666,
+        "p10": -3.524,
+        "p50": -1.085,
+        "p90": 6.587999999999997,
+        "min": -6.0,
+        "max": 12.19
+      },
+      "negative_window_fraction": 0.6277777777777778,
+      "cleared_mw_hours": 381116.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-06",
+      "product": "DML",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 7.133097760895643,
+      "price": {
+        "n": 180,
+        "mean": 7.493055555555555,
+        "p10": 4.5089999999999995,
+        "p50": 6.725,
+        "p90": 11.095999999999998,
+        "min": 1.42,
+        "max": 25.75
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 360144.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-06",
+      "product": "DRH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": -8.63638158335754,
+      "price": {
+        "n": 180,
+        "mean": -8.556111111111111,
+        "p10": -15.272,
+        "p50": -10.79,
+        "p90": 0.2039999999999992,
+        "min": -17.87,
+        "max": 20.54
+      },
+      "negative_window_fraction": 0.8944444444444445,
+      "cleared_mw_hours": 358024.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-06",
+      "product": "DRL",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 18.169364261566248,
+      "price": {
+        "n": 180,
+        "mean": 18.176000000000002,
+        "p10": 9.507,
+        "p50": 17.064999999999998,
+        "p90": 27.474999999999998,
+        "min": 0.77,
+        "max": 89.79
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 345488.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-07",
+      "product": "DCH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 2.2730724262059034,
+      "price": {
+        "n": 186,
+        "mean": 2.2533333333333334,
+        "p10": 0.10500000000000001,
+        "p50": 1.4849999999999999,
+        "p90": 5.71,
+        "min": -0.81,
+        "max": 10.17
+      },
+      "negative_window_fraction": 0.016129032258064516,
+      "cleared_mw_hours": 1111200.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-07",
+      "product": "DCL",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 3.1908927530600355,
+      "price": {
+        "n": 186,
+        "mean": 3.1810215053763446,
+        "p10": 1.43,
+        "p50": 2.52,
+        "p90": 5.904999999999999,
+        "min": 0.69,
+        "max": 15.27
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 1111752.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-07",
+      "product": "DMH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": -0.323974540737836,
+      "price": {
+        "n": 186,
+        "mean": -0.06634408602150543,
+        "p10": -3.5949999999999998,
+        "p50": -1.31,
+        "p90": 5.38,
+        "min": -4.62,
+        "max": 10.87
+      },
+      "negative_window_fraction": 0.6075268817204301,
+      "cleared_mw_hours": 397812.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-07",
+      "product": "DML",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 7.98227850907287,
+      "price": {
+        "n": 186,
+        "mean": 8.036236559139786,
+        "p10": 5.3149999999999995,
+        "p50": 7.555,
+        "p90": 11.55,
+        "min": 1.44,
+        "max": 16.97
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 378932.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-07",
+      "product": "DRH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": -9.890024978103611,
+      "price": {
+        "n": 186,
+        "mean": -9.773602150537634,
+        "p10": -16.685000000000002,
+        "p50": -12.309999999999999,
+        "p90": -0.035,
+        "min": -19.0,
+        "max": 24.56
+      },
+      "negative_window_fraction": 0.9032258064516129,
+      "cleared_mw_hours": 369924.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-07",
+      "product": "DRL",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 15.571399047885748,
+      "price": {
+        "n": 186,
+        "mean": 15.574731182795697,
+        "p10": 5.67,
+        "p50": 15.275,
+        "p90": 23.845,
+        "min": 0.82,
+        "max": 37.4
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 357100.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-08",
+      "product": "DCH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 2.2358414474039163,
+      "price": {
+        "n": 186,
+        "mean": 2.2405913978494625,
+        "p10": 0.21500000000000002,
+        "p50": 1.0350000000000001,
+        "p90": 5.58,
+        "min": -1.75,
+        "max": 13.2
+      },
+      "negative_window_fraction": 0.010752688172043012,
+      "cleared_mw_hours": 1112060.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-08",
+      "product": "DCL",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 3.45314973656291,
+      "price": {
+        "n": 186,
+        "mean": 3.4531720430107526,
+        "p10": 1.42,
+        "p50": 2.4299999999999997,
+        "p90": 6.18,
+        "min": 0.53,
+        "max": 28.32
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 1112220.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-08",
+      "product": "DMH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": -0.10795862385412613,
+      "price": {
+        "n": 186,
+        "mean": 0.020215053763440963,
+        "p10": -3.1900000000000004,
+        "p50": -1.57,
+        "p90": 5.6,
+        "min": -5.07,
+        "max": 19.41
+      },
+      "negative_window_fraction": 0.6989247311827957,
+      "cleared_mw_hours": 401004.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-08",
+      "product": "DML",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 8.423940605971062,
+      "price": {
+        "n": 186,
+        "mean": 8.423817204301075,
+        "p10": 5.33,
+        "p50": 7.285,
+        "p90": 12.5,
+        "min": 3.4,
+        "max": 40.99
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 379028.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-08",
+      "product": "DRH",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": -10.442557298079624,
+      "price": {
+        "n": 186,
+        "mean": -10.346881720430108,
+        "p10": -16.205,
+        "p50": -13.635000000000002,
+        "p90": -0.52,
+        "min": -17.83,
+        "max": 29.82
+      },
+      "negative_window_fraction": 0.9193548387096774,
+      "cleared_mw_hours": 370344.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-08",
+      "product": "DRL",
+      "windows": 186,
+      "capacity_weighted_price_gbp_mw_hour": 13.797195819939292,
+      "price": {
+        "n": 186,
+        "mean": 13.799086021505376,
+        "p10": 6.645,
+        "p50": 10.175,
+        "p90": 28.46,
+        "min": 3.44,
+        "max": 70.78
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 357124.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-09",
+      "product": "DCH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 3.2152896127349337,
+      "price": {
+        "n": 180,
+        "mean": 3.2150555555555558,
+        "p10": 0.289,
+        "p50": 1.8650000000000002,
+        "p90": 7.9510000000000005,
+        "min": -0.02,
+        "max": 14.75
+      },
+      "negative_window_fraction": 0.005555555555555556,
+      "cleared_mw_hours": 1076472.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-09",
+      "product": "DCL",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 5.334381831223033,
+      "price": {
+        "n": 180,
+        "mean": 5.3341666666666665,
+        "p10": 1.65,
+        "p50": 4.380000000000001,
+        "p90": 9.458999999999998,
+        "min": 1.16,
+        "max": 28.23
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 1076308.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-09",
+      "product": "DMH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 1.2193172381319293,
+      "price": {
+        "n": 180,
+        "mean": 1.7907222222222225,
+        "p10": -3.14,
+        "p50": 0.0,
+        "p90": 10.58,
+        "min": -5.48,
+        "max": 32.69
+      },
+      "negative_window_fraction": 0.49444444444444446,
+      "cleared_mw_hours": 373776.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-09",
+      "product": "DML",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 10.709420318248112,
+      "price": {
+        "n": 180,
+        "mean": 10.787833333333333,
+        "p10": 4.948,
+        "p50": 9.71,
+        "p90": 16.543,
+        "min": 2.04,
+        "max": 46.07
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 367512.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-09",
+      "product": "DRH",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": -8.445160979544283,
+      "price": {
+        "n": 180,
+        "mean": -8.295222222222222,
+        "p10": -18.482,
+        "p50": -12.59,
+        "p90": 6.946999999999994,
+        "min": -20.0,
+        "max": 38.98
+      },
+      "negative_window_fraction": 0.8111111111111111,
+      "cleared_mw_hours": 357064.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-09",
+      "product": "DRL",
+      "windows": 180,
+      "capacity_weighted_price_gbp_mw_hour": 19.629132201270963,
+      "price": {
+        "n": 180,
+        "mean": 19.62927777777778,
+        "p10": 7.425000000000001,
+        "p50": 18.815,
+        "p90": 32.15899999999999,
+        "min": 1.32,
+        "max": 80.5
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 345564.0,
+      "partial_month": false,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-10",
+      "product": "DCH",
+      "windows": 30,
+      "capacity_weighted_price_gbp_mw_hour": 2.4275167231537638,
+      "price": {
+        "n": 30,
+        "mean": 2.427333333333334,
+        "p10": 0.39200000000000007,
+        "p50": 1.86,
+        "p90": 4.449000000000002,
+        "min": 0.1,
+        "max": 10.21
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 179392.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-10",
+      "product": "DCL",
+      "windows": 30,
+      "capacity_weighted_price_gbp_mw_hour": 4.392399090138709,
+      "price": {
+        "n": 30,
+        "mean": 4.391999999999999,
+        "p10": 2.068,
+        "p50": 3.55,
+        "p90": 8.018,
+        "min": 1.36,
+        "max": 11.25
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 179368.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-10",
+      "product": "DMH",
+      "windows": 30,
+      "capacity_weighted_price_gbp_mw_hour": 0.21980640403171287,
+      "price": {
+        "n": 30,
+        "mean": 0.373,
+        "p10": -3.0100000000000002,
+        "p50": -1.62,
+        "p90": 6.880000000000007,
+        "min": -4.34,
+        "max": 16.85
+      },
+      "negative_window_fraction": 0.6333333333333333,
+      "cleared_mw_hours": 65084.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-10",
+      "product": "DML",
+      "windows": 30,
+      "capacity_weighted_price_gbp_mw_hour": 9.873558433149885,
+      "price": {
+        "n": 30,
+        "mean": 9.910666666666666,
+        "p10": 5.736000000000001,
+        "p50": 9.45,
+        "p90": 14.233000000000002,
+        "min": 4.25,
+        "max": 19.25
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 61780.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-10",
+      "product": "DRH",
+      "windows": 30,
+      "capacity_weighted_price_gbp_mw_hour": -12.759062730133229,
+      "price": {
+        "n": 30,
+        "mean": -12.680666666666669,
+        "p10": -17.784000000000002,
+        "p50": -15.265,
+        "p90": -4.0669999999999895,
+        "min": -18.63,
+        "max": 9.85
+      },
+      "negative_window_fraction": 0.9,
+      "cleared_mw_hours": 59748.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    },
+    {
+      "month": "2026-10",
+      "product": "DRL",
+      "windows": 30,
+      "capacity_weighted_price_gbp_mw_hour": 16.999999999999996,
+      "price": {
+        "n": 30,
+        "mean": 16.999999999999996,
+        "p10": 10.216,
+        "p50": 16.735,
+        "p90": 23.905,
+        "min": 8.57,
+        "max": 36.47
+      },
+      "negative_window_fraction": 0.0,
+      "cleared_mw_hours": 57600.0,
+      "partial_month": true,
+      "identity": "B official A auction results; not project realized net revenue"
+    }
+  ],
+  "japan_monthly": [
+    {
+      "month": "2026-04",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 17.846166666666665,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.04027777777777778,
+      "daily_max_min_spread_jpy_kwh": 22.742000000000004,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-05",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 16.23389112903226,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.06989247311827956,
+      "daily_max_min_spread_jpy_kwh": 20.244193548387095,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-06",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 17.924208333333333,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.002777777777777778,
+      "daily_max_min_spread_jpy_kwh": 15.984000000000002,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-07",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 18.841115591397852,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 16.296451612903226,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-08",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 21.61304435483871,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 18.66483870967742,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-09",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 23.76807638888889,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 17.653666666666666,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-10",
+      "region": "chubu",
+      "mean_price_jpy_kwh": 21.01854166666667,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.05,
+      "daily_max_min_spread_jpy_kwh": 24.712,
+      "days": 5,
+      "partial_month": true,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-04",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 20.063847222222225,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.019444444444444445,
+      "daily_max_min_spread_jpy_kwh": 35.45366666666666,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-05",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 18.01049059139785,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.04704301075268817,
+      "daily_max_min_spread_jpy_kwh": 26.656774193548387,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-06",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 20.011930555555555,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 20.186333333333334,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-07",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 19.861337365591403,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 17.506774193548384,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-08",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 21.24059811827957,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 15.095806451612905,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-09",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 23.7834375,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 17.358333333333334,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-10",
+      "region": "tokyo",
+      "mean_price_jpy_kwh": 21.187875000000002,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0625,
+      "daily_max_min_spread_jpy_kwh": 23.473999999999997,
+      "days": 5,
+      "partial_month": true,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-04",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 10.61475,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.125,
+      "daily_max_min_spread_jpy_kwh": 15.551666666666664,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-05",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 9.48108870967742,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.2856182795698925,
+      "daily_max_min_spread_jpy_kwh": 19.12096774193548,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-06",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 10.022798611111112,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.08888888888888889,
+      "daily_max_min_spread_jpy_kwh": 10.85,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-07",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 15.3722311827957,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 18.340000000000003,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-08",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 16.772540322580646,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.0,
+      "daily_max_min_spread_jpy_kwh": 21.691612903225806,
+      "days": 31,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-09",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 14.05711111111111,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.03125,
+      "daily_max_min_spread_jpy_kwh": 18.236333333333334,
+      "days": 30,
+      "partial_month": false,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    },
+    {
+      "month": "2026-10",
+      "region": "kyushu",
+      "mean_price_jpy_kwh": 11.325791666666666,
+      "negative_slot_fraction": 0.0,
+      "floor_001_slot_fraction": 0.12083333333333333,
+      "daily_max_min_spread_jpy_kwh": 19.546,
+      "days": 5,
+      "partial_month": true,
+      "identity": "B from A JEPX; max-min spread is not a capturable battery margin"
+    }
+  ],
+  "watch_metrics": [
+    {
+      "metric": "已连接MW与投运MW",
+      "source": "TSO/METI按状态快照",
+      "why": "区分排队增长和实际竞争；申请容量不能当投运容量。"
+    },
+    {
+      "metric": "调频供给/采购及TSO缺口",
+      "source": "EPRX同地域口径汇总",
+      "why": "观察可供能力变化；缺口不是项目中标概率。"
+    },
+    {
+      "metric": "各产品pay-as-bid统计分布",
+      "source": "EPRX区块价格与容量",
+      "why": "观察价格压缩；上限、均价、项目报价分别列。"
+    },
+    {
+      "metric": "JEPX日内峰谷与低价时段",
+      "source": "JEPX区域半小时数据",
+      "why": "关注现货机会能否承接调频收入变化；max-min不是可赚差价。"
+    },
+    {
+      "metric": "真实调用kWh/已中标ΔkW",
+      "source": "项目高频遥测与结算（目前缺失）",
+      "why": "校准SOC恢复和吞吐成本；公开容量不提供这一分母。"
+    },
+    {
+      "metric": "可用率、MTTR及履约损失",
+      "source": "项目日志（目前缺失）",
+      "why": "比较站点可靠性与组合共因风险，不套用海外厂家均值。"
+    },
+    {
+      "metric": "规则/上限/手续费的生效日",
+      "source": "EPRX/JEPX官方通知",
+      "why": "分开公告与生效，防止历史回放使用未来规则。"
+    },
+    {
+      "metric": "CM/长期合同与现货重叠约束",
+      "source": "OCCTO与合同条款（逐项目待核）",
+      "why": "收益堆叠要核验共享资源、可用承诺和换电成本。"
+    }
+  ],
+  "nontransferable": [
+    "EPRX的多价格容量均价不能等同GB EAC清算价。",
+    "NEM五分钟电能/FCAS共优化与日本30分钟日前容量不同。",
+    "GB负容量价格和NEM负电能价格不是同一指标。",
+    "日本连接完了、NEM含调试装机、GB已在网及CM/许可管线不能直接相除。",
+    "公开行业总收入会受新增MW和市场波动影响，不是同一站点收益率。",
+    "NEM2026Q2价格压缩同时伴随需求、可再生能源和网络变化，不能归因于电池增长一个因素。"
+  ],
+  "growth_visual_policy": "Separate dated state cards, never common-axis installed/pipeline league table. GB17GW CM and35GW permits may overlap.",
+  "saturation_interpretation": "官方报告与样本能支持价格和收益结构的描述及待检验机制；不构成电池增长导致价格下降的识别性因果估计。",
+  "sources": [
+    {
+      "source_id": "aemo-qed-q1-2026",
+      "identity": "A"
+    },
+    {
+      "source_id": "aemo-qed-q2-2026",
+      "identity": "A"
+    },
+    {
+      "source_id": "aemo-fcas-settlement-20251202",
+      "identity": "A"
+    },
+    {
+      "source_id": "dcceew-cisa-current",
+      "identity": "A"
+    },
+    {
+      "source_id": "aemo-five-minute",
+      "identity": "A"
+    },
+    {
+      "source_id": "neso-eac-metadata",
+      "identity": "A"
+    },
+    {
+      "source_id": "neso-eac-fy2026",
+      "identity": "A"
+    },
+    {
+      "source_id": "neso-dynamic-procurement-20260331",
+      "identity": "A"
+    },
+    {
+      "source_id": "neso-dynamic-services-current",
+      "identity": "A"
+    },
+    {
+      "source_id": "elexon-market-arrangements-current",
+      "identity": "A"
+    },
+    {
+      "source_id": "uk-security-supply-2025",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-primary-fy2026",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-products-2026",
+      "identity": "A"
+    }
+  ],
+  "version": "v2.4",
+  "site_route": "#operations/markets",
+  "notebook_download": "./downloads/research-operations-markets-v2-4.ipynb",
+  "report_download": "./japan-bess-markets-updates-v2-4.pdf"
+}

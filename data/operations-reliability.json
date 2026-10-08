@@ -1,0 +1,968 @@
+{
+  "module_id": "reliability",
+  "title": "可用率、停机与投资边界",
+  "question": "计划检修、非计划停机和部分失效会损失多少贡献，组合能分担哪些风险？",
+  "scope": "中部联合调度现金；High99%/Base97%/Stress90%均为C；每情景500条固定种子MTTR路径。",
+  "result": "计算贡献损失、意外履约罚金、等效停机小时、P10现金、NPV/IRR与可用率门槛。",
+  "maximum_limit": "无Taoke运营日志；停机影响按净贡献暴露代理，未模拟每次故障后的完整SOC/交易再优化。",
+  "baseline_annual_cash_jpy": 35062448.69170343,
+  "baseline_annual_capacity_jpy": 19849787.23404255,
+  "annual_efc": 228.09608434071595,
+  "deterministic": [
+    {
+      "case": "High",
+      "target_availability": 0.99,
+      "annual_equivalent_lost_hours": 87.60000000000008,
+      "planned_lost_hours": 30.660000000000025,
+      "forced_lost_hours": 56.940000000000055,
+      "retained_cash_jpy": 34518288.77925448,
+      "lost_contribution_jpy": 350624.4869170346,
+      "forced_performance_penalty_jpy": 193535.42553191507,
+      "finance": {
+        "npv_jpy": -407888879.59220946,
+        "irr": null,
+        "cashflows_jpy": [
+          -563520000,
+          24518288.77925448,
+          23913280.836675167,
+          23308272.89409585,
+          22703264.951516535,
+          22098257.00893722,
+          21493249.066357907,
+          20888241.12377859,
+          20283233.181199275,
+          19678225.23861996,
+          19073217.296040647,
+          18468209.35346133,
+          17863201.410882015,
+          -138281711.22074556,
+          23913280.836675167,
+          23308272.89409585,
+          22703264.951516535,
+          22098257.00893722,
+          21493249.066357907,
+          20888241.12377859,
+          20283233.181199275
+        ],
+        "life_path": [
+          {
+            "year": 1,
+            "opening_soh": 1.0,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 34518288.77925448,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 24518288.77925448
+          },
+          {
+            "year": 2,
+            "opening_soh": 0.9824728292167564,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 33913280.83667517,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 23913280.836675167
+          },
+          {
+            "year": 3,
+            "opening_soh": 0.9649456584335128,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 33308272.89409585,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 23308272.89409585
+          },
+          {
+            "year": 4,
+            "opening_soh": 0.9474184876502691,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 32703264.951516535,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22703264.951516535
+          },
+          {
+            "year": 5,
+            "opening_soh": 0.9298913168670255,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 32098257.00893722,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22098257.00893722
+          },
+          {
+            "year": 6,
+            "opening_soh": 0.9123641460837819,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 31493249.066357907,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 21493249.066357907
+          },
+          {
+            "year": 7,
+            "opening_soh": 0.8948369753005383,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 30888241.12377859,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 20888241.12377859
+          },
+          {
+            "year": 8,
+            "opening_soh": 0.8773098045172947,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 30283233.181199275,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 20283233.181199275
+          },
+          {
+            "year": 9,
+            "opening_soh": 0.8597826337340511,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 29678225.23861996,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19678225.23861996
+          },
+          {
+            "year": 10,
+            "opening_soh": 0.8422554629508074,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 29073217.296040647,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19073217.296040647
+          },
+          {
+            "year": 11,
+            "opening_soh": 0.8247282921675638,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 28468209.35346133,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18468209.35346133
+          },
+          {
+            "year": 12,
+            "opening_soh": 0.8072011213843202,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 27863201.410882015,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17863201.410882015
+          },
+          {
+            "year": 13,
+            "opening_soh": 1.0,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 34518288.77925448,
+            "replacement_jpy": 162800000.00000003,
+            "net_cash_jpy": -138281711.22074556
+          },
+          {
+            "year": 14,
+            "opening_soh": 0.9824728292167564,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 33913280.83667517,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 23913280.836675167
+          },
+          {
+            "year": 15,
+            "opening_soh": 0.9649456584335128,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 33308272.89409585,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 23308272.89409585
+          },
+          {
+            "year": 16,
+            "opening_soh": 0.9474184876502691,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 32703264.951516535,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22703264.951516535
+          },
+          {
+            "year": 17,
+            "opening_soh": 0.9298913168670255,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 32098257.00893722,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22098257.00893722
+          },
+          {
+            "year": 18,
+            "opening_soh": 0.9123641460837819,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 31493249.066357907,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 21493249.066357907
+          },
+          {
+            "year": 19,
+            "opening_soh": 0.8948369753005383,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 30888241.12377859,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 20888241.12377859
+          },
+          {
+            "year": 20,
+            "opening_soh": 0.8773098045172947,
+            "annual_efc_assumed": 225.81512349730878,
+            "operating_cash_jpy": 30283233.181199275,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 20283233.181199275
+          }
+        ],
+        "replacement_years": [
+          13
+        ],
+        "capex_jpy": 563520000,
+        "fixed_om_jpy": 10000000,
+        "discount_rate": 0.08,
+        "wear_double_counted": false,
+        "identity": "B under C finance assumptions"
+      }
+    },
+    {
+      "case": "Base",
+      "target_availability": 0.97,
+      "annual_equivalent_lost_hours": 262.80000000000024,
+      "planned_lost_hours": 91.98000000000008,
+      "forced_lost_hours": 170.82000000000016,
+      "retained_cash_jpy": 33429968.954356585,
+      "lost_contribution_jpy": 1051873.460751104,
+      "forced_performance_penalty_jpy": 580606.2765957452,
+      "finance": {
+        "npv_jpy": -417566627.9858424,
+        "irr": null,
+        "cashflows_jpy": [
+          -563520000,
+          23429968.954356585,
+          22849119.67589379,
+          22268270.397430997,
+          21687421.118968207,
+          21106571.840505414,
+          20525722.56204262,
+          19944873.283579826,
+          19364024.005117033,
+          18783174.72665424,
+          18202325.44819145,
+          17621476.169728655,
+          17040626.89126586,
+          -139370031.04564345,
+          22849119.67589379,
+          22268270.397430997,
+          21687421.118968207,
+          21106571.840505414,
+          20525722.56204262,
+          19944873.283579826,
+          19364024.005117033
+        ],
+        "life_path": [
+          {
+            "year": 1,
+            "opening_soh": 1.0,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 33429968.954356585,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 23429968.954356585
+          },
+          {
+            "year": 2,
+            "opening_soh": 0.9826248932729835,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 32849119.67589379,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22849119.67589379
+          },
+          {
+            "year": 3,
+            "opening_soh": 0.965249786545967,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 32268270.397430997,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22268270.397430997
+          },
+          {
+            "year": 4,
+            "opening_soh": 0.9478746798189506,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 31687421.118968207,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 21687421.118968207
+          },
+          {
+            "year": 5,
+            "opening_soh": 0.9304995730919341,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 31106571.840505414,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 21106571.840505414
+          },
+          {
+            "year": 6,
+            "opening_soh": 0.9131244663649176,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 30525722.56204262,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 20525722.56204262
+          },
+          {
+            "year": 7,
+            "opening_soh": 0.8957493596379011,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 29944873.283579826,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19944873.283579826
+          },
+          {
+            "year": 8,
+            "opening_soh": 0.8783742529108847,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 29364024.005117033,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19364024.005117033
+          },
+          {
+            "year": 9,
+            "opening_soh": 0.8609991461838682,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 28783174.72665424,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18783174.72665424
+          },
+          {
+            "year": 10,
+            "opening_soh": 0.8436240394568517,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 28202325.44819145,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18202325.44819145
+          },
+          {
+            "year": 11,
+            "opening_soh": 0.8262489327298352,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 27621476.169728655,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17621476.169728655
+          },
+          {
+            "year": 12,
+            "opening_soh": 0.8088738260028188,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 27040626.89126586,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17040626.89126586
+          },
+          {
+            "year": 13,
+            "opening_soh": 1.0,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 33429968.954356585,
+            "replacement_jpy": 162800000.00000003,
+            "net_cash_jpy": -139370031.04564345
+          },
+          {
+            "year": 14,
+            "opening_soh": 0.9826248932729835,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 32849119.67589379,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22849119.67589379
+          },
+          {
+            "year": 15,
+            "opening_soh": 0.965249786545967,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 32268270.397430997,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 22268270.397430997
+          },
+          {
+            "year": 16,
+            "opening_soh": 0.9478746798189506,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 31687421.118968207,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 21687421.118968207
+          },
+          {
+            "year": 17,
+            "opening_soh": 0.9304995730919341,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 31106571.840505414,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 21106571.840505414
+          },
+          {
+            "year": 18,
+            "opening_soh": 0.9131244663649176,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 30525722.56204262,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 20525722.56204262
+          },
+          {
+            "year": 19,
+            "opening_soh": 0.8957493596379011,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 29944873.283579826,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19944873.283579826
+          },
+          {
+            "year": 20,
+            "opening_soh": 0.8783742529108847,
+            "annual_efc_assumed": 221.25320181049446,
+            "operating_cash_jpy": 29364024.005117033,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19364024.005117033
+          }
+        ],
+        "replacement_years": [
+          13
+        ],
+        "capex_jpy": 563520000,
+        "fixed_om_jpy": 10000000,
+        "discount_rate": 0.08,
+        "wear_double_counted": false,
+        "identity": "B under C finance assumptions"
+      }
+    },
+    {
+      "case": "Stress",
+      "target_availability": 0.9,
+      "annual_equivalent_lost_hours": 875.9999999999998,
+      "planned_lost_hours": 306.5999999999999,
+      "forced_lost_hours": 569.3999999999999,
+      "retained_cash_jpy": 29620849.56721394,
+      "lost_contribution_jpy": 3506244.8691703426,
+      "forced_performance_penalty_jpy": 1935354.2553191485,
+      "finance": {
+        "npv_jpy": -451547452.82355285,
+        "irr": null,
+        "cashflows_jpy": [
+          -563520000,
+          19620849.56721394,
+          19121949.077507995,
+          18623048.58780205,
+          18124148.098096102,
+          17625247.608390156,
+          17126347.11868421,
+          16627446.628978264,
+          16128546.139272317,
+          15629645.649566371,
+          15130745.159860425,
+          14631844.670154478,
+          14132944.180448532,
+          -143179150.43278608,
+          19121949.077507995,
+          18623048.58780205,
+          18124148.098096102,
+          17625247.608390156,
+          17126347.11868421,
+          16627446.628978264,
+          16128546.139272317
+        ],
+        "life_path": [
+          {
+            "year": 1,
+            "opening_soh": 1.0,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 29620849.56721394,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19620849.56721394
+          },
+          {
+            "year": 2,
+            "opening_soh": 0.9831571174697785,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 29121949.077507995,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19121949.077507995
+          },
+          {
+            "year": 3,
+            "opening_soh": 0.966314234939557,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 28623048.58780205,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18623048.58780205
+          },
+          {
+            "year": 4,
+            "opening_soh": 0.9494713524093356,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 28124148.098096102,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18124148.098096102
+          },
+          {
+            "year": 5,
+            "opening_soh": 0.9326284698791141,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 27625247.608390156,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17625247.608390156
+          },
+          {
+            "year": 6,
+            "opening_soh": 0.9157855873488926,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 27126347.11868421,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17126347.11868421
+          },
+          {
+            "year": 7,
+            "opening_soh": 0.8989427048186711,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 26627446.628978264,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 16627446.628978264
+          },
+          {
+            "year": 8,
+            "opening_soh": 0.8820998222884496,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 26128546.139272317,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 16128546.139272317
+          },
+          {
+            "year": 9,
+            "opening_soh": 0.8652569397582281,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 25629645.64956637,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 15629645.649566371
+          },
+          {
+            "year": 10,
+            "opening_soh": 0.8484140572280067,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 25130745.159860425,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 15130745.159860425
+          },
+          {
+            "year": 11,
+            "opening_soh": 0.8315711746977852,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 24631844.67015448,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 14631844.670154478
+          },
+          {
+            "year": 12,
+            "opening_soh": 0.8147282921675637,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 24132944.180448532,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 14132944.180448532
+          },
+          {
+            "year": 13,
+            "opening_soh": 1.0,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 29620849.56721394,
+            "replacement_jpy": 162800000.00000003,
+            "net_cash_jpy": -143179150.43278608
+          },
+          {
+            "year": 14,
+            "opening_soh": 0.9831571174697785,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 29121949.077507995,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 19121949.077507995
+          },
+          {
+            "year": 15,
+            "opening_soh": 0.966314234939557,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 28623048.58780205,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18623048.58780205
+          },
+          {
+            "year": 16,
+            "opening_soh": 0.9494713524093356,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 28124148.098096102,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 18124148.098096102
+          },
+          {
+            "year": 17,
+            "opening_soh": 0.9326284698791141,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 27625247.608390156,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17625247.608390156
+          },
+          {
+            "year": 18,
+            "opening_soh": 0.9157855873488926,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 27126347.11868421,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 17126347.11868421
+          },
+          {
+            "year": 19,
+            "opening_soh": 0.8989427048186711,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 26627446.628978264,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 16627446.628978264
+          },
+          {
+            "year": 20,
+            "opening_soh": 0.8820998222884496,
+            "annual_efc_assumed": 205.28647590664437,
+            "operating_cash_jpy": 26128546.139272317,
+            "replacement_jpy": 0,
+            "net_cash_jpy": 16128546.139272317
+          }
+        ],
+        "replacement_years": [
+          13
+        ],
+        "capex_jpy": 563520000,
+        "fixed_om_jpy": 10000000,
+        "discount_rate": 0.08,
+        "wear_double_counted": false,
+        "identity": "B under C finance assumptions"
+      }
+    }
+  ],
+  "mc_summary": [
+    {
+      "case": "High",
+      "target_availability": 0.99,
+      "paths": 500,
+      "annual_cash": {
+        "n": 500,
+        "mean": 34517408.91744553,
+        "p10": 34016456.30504299,
+        "p50": 34610842.19382428,
+        "p90": 34909308.39951969,
+        "min": 31984199.2947168,
+        "max": 35062448.69170343
+      },
+      "npv": {
+        "n": 500,
+        "mean": -407896231.12330544,
+        "p10": -412392028.6717679,
+        "p50": -407061277.4296056,
+        "p90": -404387341.1673354,
+        "min": -430519577.99668306,
+        "max": -403002819.8309064
+      },
+      "lost_hours": {
+        "n": 500,
+        "mean": 88.69645611702127,
+        "p10": 37.859042553191486,
+        "p50": 78.26628989361703,
+        "p90": 150.14993351063833,
+        "min": 31.06382978723404,
+        "max": 430.5252659574468
+      },
+      "realized_availability": {
+        "n": 500,
+        "mean": 0.9898748337765958,
+        "p10": 0.9828595966312057,
+        "p50": 0.9910654920212766,
+        "p90": 0.9956781914893617,
+        "min": 0.950853280141844,
+        "max": 0.9964539007092199
+      },
+      "nonnegative_npv_paths": 0
+    },
+    {
+      "case": "Base",
+      "target_availability": 0.97,
+      "paths": 500,
+      "annual_cash": {
+        "n": 500,
+        "mean": 33473005.109155897,
+        "p10": 32563812.71369997,
+        "p50": 33586082.80486575,
+        "p90": 34263862.73719466,
+        "min": 29584880.807126477,
+        "max": 34813551.88725667
+      },
+      "npv": {
+        "n": 500,
+        "mean": -417182038.2318063,
+        "p10": -425335102.28141975,
+        "p50": -416171733.1729059,
+        "p90": -410131813.98609555,
+        "min": -452028047.0916795,
+        "max": -405153462.9523789
+      },
+      "lost_hours": {
+        "n": 500,
+        "mean": 258.8233444148936,
+        "p10": 166.45844414893617,
+        "p50": 247.78257978723403,
+        "p90": 370.8972739361703,
+        "min": 107.75265957446808,
+        "max": 733.3976063829787
+      },
+      "realized_availability": {
+        "n": 500,
+        "mean": 0.9704539561170213,
+        "p10": 0.9576601285460993,
+        "p50": 0.9717143173758865,
+        "p90": 0.9809978945035461,
+        "min": 0.9162788120567376,
+        "max": 0.9876994680851063
+      },
+      "nonnegative_npv_paths": 0
+    },
+    {
+      "case": "Stress",
+      "target_availability": 0.9,
+      "paths": 500,
+      "annual_cash": {
+        "n": 500,
+        "mean": 29926396.385087196,
+        "p10": 28516737.79036088,
+        "p50": 30009632.224419802,
+        "p90": 31352009.851429984,
+        "min": 26302940.1259108,
+        "max": 32547160.10042688
+      },
+      "npv": {
+        "n": 500,
+        "mean": -448677146.4915528,
+        "p10": -460943235.08115494,
+        "p50": -448027963.7464218,
+        "p90": -435962541.4890721,
+        "min": -478086838.92760164,
+        "max": -425280497.3935096
+      },
+      "lost_hours": {
+        "n": 500,
+        "mean": 843.5295611702127,
+        "p10": 686.8503989361702,
+        "p50": 838.1166888297872,
+        "p90": 1017.5831117021277,
+        "min": 510.3690159574468,
+        "max": 1250.8045212765958
+      },
+      "realized_availability": {
+        "n": 500,
+        "mean": 0.9037066710992908,
+        "p10": 0.8838375443262412,
+        "p50": 0.9043245789007093,
+        "p90": 0.9215924202127659,
+        "min": 0.8572140957446809,
+        "max": 0.9417386968085106
+      },
+      "nonnegative_npv_paths": 0
+    }
+  ],
+  "example_events": [
+    {
+      "kind": "计划检修",
+      "start_slot": 4450,
+      "duration_hours": 47.5,
+      "lost_fraction": 1
+    },
+    {
+      "kind": "并网/调度中断",
+      "start_slot": 4522,
+      "duration_hours": 3.0,
+      "lost_fraction": 1.0
+    },
+    {
+      "kind": "并网/调度中断",
+      "start_slot": 5861,
+      "duration_hours": 32.5,
+      "lost_fraction": 1.0
+    },
+    {
+      "kind": "电池簇部分失效",
+      "start_slot": 8677,
+      "duration_hours": 4.5,
+      "lost_fraction": 0.25
+    },
+    {
+      "kind": "并网/调度中断",
+      "start_slot": 7822,
+      "duration_hours": 22.0,
+      "lost_fraction": 1.0
+    },
+    {
+      "kind": "PCS部分失效",
+      "start_slot": 3571,
+      "duration_hours": 27.5,
+      "lost_fraction": 0.5
+    },
+    {
+      "kind": "PCS部分失效",
+      "start_slot": 4093,
+      "duration_hours": 12.0,
+      "lost_fraction": 0.5
+    },
+    {
+      "kind": "PCS部分失效",
+      "start_slot": 6857,
+      "duration_hours": 35.0,
+      "lost_fraction": 0.5
+    },
+    {
+      "kind": "PCS部分失效",
+      "start_slot": 8993,
+      "duration_hours": 16.0,
+      "lost_fraction": 0.5
+    },
+    {
+      "kind": "PCS部分失效",
+      "start_slot": 315,
+      "duration_hours": 32.0,
+      "lost_fraction": 0.5
+    },
+    {
+      "kind": "整站非计划停机",
+      "start_slot": 6348,
+      "duration_hours": 0.5,
+      "lost_fraction": 1.0
+    },
+    {
+      "kind": "整站非计划停机",
+      "start_slot": 54,
+      "duration_hours": 13.5,
+      "lost_fraction": 1.0
+    }
+  ],
+  "components": [
+    {
+      "name": "PCS部分失效",
+      "fraction": 0.5,
+      "probability": 0.3
+    },
+    {
+      "name": "电池簇部分失效",
+      "fraction": 0.25,
+      "probability": 0.2
+    },
+    {
+      "name": "并网/调度中断",
+      "fraction": 1.0,
+      "probability": 0.25
+    },
+    {
+      "name": "辅机故障",
+      "fraction": 1.0,
+      "probability": 0.1
+    },
+    {
+      "name": "整站非计划停机",
+      "fraction": 1.0,
+      "probability": 0.15
+    }
+  ],
+  "mttr_sensitivity": [
+    {
+      "mttr_hours": 4,
+      "loss": {
+        "n": 500,
+        "mean": 1583449.528637963,
+        "p10": 1009355.0591846881,
+        "p50": 1533249.4034226595,
+        "p90": 2204605.435152367,
+        "min": 616333.1316459411,
+        "max": 3166031.0200067917
+      },
+      "interpretation": "相同目标不可用率、不同维修时长/事件频次；长MTTR改变尾部，均值不强制升高。"
+    },
+    {
+      "mttr_hours": 12,
+      "loss": {
+        "n": 500,
+        "mean": 1590782.6199464505,
+        "p10": 857865.569008923,
+        "p50": 1479882.2811008503,
+        "p90": 2448621.9074632884,
+        "min": 270606.5806070079,
+        "max": 4074453.512653716
+      },
+      "interpretation": "相同目标不可用率、不同维修时长/事件频次；长MTTR改变尾部，均值不强制升高。"
+    },
+    {
+      "mttr_hours": 48,
+      "loss": {
+        "n": 500,
+        "mean": 1636114.4781298453,
+        "p10": 432811.5035495324,
+        "p50": 1308039.3773282338,
+        "p90": 3206262.8225472984,
+        "min": 153447.60994743154,
+        "max": 7247478.6855883645
+      },
+      "interpretation": "相同目标不可用率、不同维修时长/事件频次；长MTTR改变尾部，均值不强制升高。"
+    }
+  ],
+  "minimum_availability": {
+    "minimum_within_0_to_1": null,
+    "attainable": false,
+    "npv_at_100pct_jpy": -403055181.8458689,
+    "grid_step": 0.01,
+    "interpretation": "本组CAPEX/O&M与报价假设下，100%可用仍不足以使NPV转正。"
+  },
+  "finance_convention": {
+    "annualization_days": 188,
+    "years": 20,
+    "capex_jpy": 563520000,
+    "fixed_om_jpy": 10000000,
+    "discount_rate": 0.08,
+    "shadow_wear_in_dcf": false,
+    "replacement_once": true,
+    "availability_definition": "1−容量加权等效停机小时/总小时；不等同厂家performance availability"
+  },
+  "benchmark": {
+    "source_id": "fluence-dnv-availability-20260609",
+    "large_projects_reviewed_availability_pct": 99.3,
+    "global_reviewed_mw_weighted_pct": 98.7,
+    "identity": "A company-published DNV validation summary, not public Taoke uptime or an independent national census",
+    "limitations": ">50MW reviewed population and MW-weighted global population differ; full DNV study not supplied; no transfer to2MW stations."
+  },
+  "portfolio_risk": {
+    "identity": "C common grid0.6% plus independent equipment2.4% one-day illustrative failures",
+    "annual_cash_reference_jpy": 222475598.65356442,
+    "six_station_loss_fraction": {
+      "n": 500,
+      "mean": 0.028999999999999998,
+      "p10": 0.0,
+      "p50": 0.0,
+      "p90": 0.16666666666666666,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "shared_risk_removed": false,
+    "unified_bidding_claim": false
+  },
+  "assumptions": [
+    "停机损失暴露按每日可赚正净贡献分配到盈利区间；负净贡献不因停机消失，降低可用率不会凭空提高现金。",
+    "计划停机提前知晓而不加意外罚金；非计划失效按容量暴露×1.5 C代理，实际考核和豁免需高频记录。",
+    "PCS/电池簇为部分能力损失；并网、辅机与整站为全损；重叠按最大损失比例去重。",
+    "MTTR为C指数分布均值12小时，另看4/48小时；不存在维修服务承诺。",
+    "样本×365/188年化、CAPEX/O&M/衰减与换电均为C；现金DCF不再扣影子循环损耗。"
+  ],
+  "sources": [
+    {
+      "source_id": "fluence-dnv-availability-20260609",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-rules-20260701",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-storage-20260314",
+      "identity": "A"
+    }
+  ],
+  "version": "v2.4",
+  "site_route": "#operations/reliability",
+  "notebook_download": "./downloads/research-operations-reliability-v2-4.ipynb",
+  "report_download": "./japan-bess-operations-research-v2-4.pdf"
+}

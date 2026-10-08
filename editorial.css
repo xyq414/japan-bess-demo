@@ -1,0 +1,20 @@
+/* Reading hierarchy only; existing colors, fonts, chart and table styles remain. */
+.editorial-metadata{display:none!important}
+.editorial-result{margin:18px 0 24px;padding:22px 24px}
+.editorial-result h2{margin:0 0 12px;font-size:22px;line-height:1.5}
+.editorial-result p{margin:8px 0;line-height:1.8}
+.editorial-result ul{margin:12px 0 0;padding-left:21px;line-height:1.9}
+.editorial-result li{margin:7px 0}
+.editorial-essential{font-size:13px;color:var(--muted,#5c7288)}
+.editorial-methods{margin:24px 0 0;padding:16px 20px}
+.editorial-methods>summary{cursor:pointer;font-size:14px;color:var(--muted,#5c7288);line-height:1.7}
+.editorial-details-body{padding-top:15px}
+.editorial-details-body>.module-meta,.editorial-details-body>.ops-summary{margin:15px 0}
+.editorial-details-body .business-evidence{margin:12px 0}
+.editorial-details-body .editorial-metadata{display:inline!important}
+.editorial-inline-method{margin:10px 0;color:var(--muted)}
+.editorial-inline-method>summary{font-size:13px;cursor:pointer}
+.research-module-card h3,.major-card h2{overflow-wrap:anywhere}
+.major-card .editorial-card-result{margin:14px 0;font-size:16px;line-height:1.8}
+.top-actions [hidden]{display:none!important}
+@media(max-width:700px){.editorial-result{padding:18px}.editorial-result h2{font-size:19px}.editorial-methods{padding:14px}.research-head h1,.major-card h2{overflow-wrap:anywhere}.topbar #research-context{font-size:12px;line-height:1.5;max-width:42%}}

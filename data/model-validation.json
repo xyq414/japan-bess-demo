@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "comparison": "Independent SciPy HiGHS continuous LP, positive official prices",
+  "parameters": {
+    "power": 2,
+    "energy": 8.14,
+    "efficiency": 0.88,
+    "socMin": 0.1,
+    "socMax": 0.9,
+    "initialSoc": 0.1,
+    "maxCycles": 1,
+    "degradation": 0,
+    "gridSteps": 80
+  },
+  "cases": [
+    {
+      "date": "2025-01-15",
+      "region": "chubu",
+      "grid_dp_jpy": 27646.091911664902,
+      "continuous_lp_jpy": 27888.27451592748,
+      "relative_grid_loss": 0.008684029703030265
+    },
+    {
+      "date": "2025-04-13",
+      "region": "chubu",
+      "grid_dp_jpy": 9200.439067607222,
+      "continuous_lp_jpy": 9482.848715176857,
+      "relative_grid_loss": 0.029781098069997854
+    },
+    {
+      "date": "2025-07-15",
+      "region": "chubu",
+      "grid_dp_jpy": 114272.2070378207,
+      "continuous_lp_jpy": 114669.22933777043,
+      "relative_grid_loss": 0.003462326399528361
+    },
+    {
+      "date": "2025-12-15",
+      "region": "chubu",
+      "grid_dp_jpy": 32527.923538646704,
+      "continuous_lp_jpy": 32944.9308614681,
+      "relative_grid_loss": 0.01265770823969525
+    },
+    {
+      "date": "2026-01-15",
+      "region": "chubu",
+      "grid_dp_jpy": 39653.59284205582,
+      "continuous_lp_jpy": 39807.33979855956,
+      "relative_grid_loss": 0.0038622765872263196
+    },
+    {
+      "date": "2026-05-15",
+      "region": "chubu",
+      "grid_dp_jpy": 89580.13521936002,
+      "continuous_lp_jpy": 90505.57426467458,
+      "relative_grid_loss": 0.010225215991759866
+    },
+    {
+      "date": "2026-09-15",
+      "region": "chubu",
+      "grid_dp_jpy": 43643.33178168116,
+      "continuous_lp_jpy": 43681.13803285529,
+      "relative_grid_loss": 0.0008655051785897516
+    }
+  ],
+  "max_relative_grid_loss": 0.029781098069997854,
+  "caveat": "Finite SOC grid and rounded-down power/discharge budgets can understate the continuous optimum. Perfect information is optimistic relative to implementable trading."
+}

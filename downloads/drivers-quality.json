@@ -1,0 +1,89 @@
+{
+  "timezone": "Asia/Tokyo",
+  "window": {
+    "start": "2025-01-01",
+    "end": "2026-09-30",
+    "days": 638
+  },
+  "source_grain_minutes": 30,
+  "analysis_grain_minutes": 60,
+  "hourly_aggregation": "equal-duration arithmetic mean of exactly two native30min MW and price observations; not kWh sums",
+  "time_alignment": {
+    "chubu": "DATE+TIME interval start00:00..23:30",
+    "kyushu": "DATE+TIME interval end00:30..24:00; subtract30min within source DATE, map row48 to23:30 of same date",
+    "basis": "B convention resolved from complete48-row source days and00:30/24:00 endpoint sequence; source strings retained"
+  },
+  "interchange_sign": {
+    "normalized": "positive net import, negative net export",
+    "chubu_native": "positive import; preserved",
+    "kyushu_native": "positive export; negate according to official page CSV note (not graph legend)",
+    "source_id": "kyushu-page",
+    "source_locator": "CSVデータ項目の「連系線」については九州からの送電方向を正",
+    "validation": "native fuel, storage and interchange components reconcile to official supply total; raw signs and preliminary demand residual retained"
+  },
+  "regions": {
+    "chubu": {
+      "expected_30min_rows": 30624,
+      "actual_30min_rows": 30624,
+      "hourly_rows": 15312,
+      "maximum_supply_demand_difference_mw": 0.0,
+      "maximum_component_to_total_difference_mw": 0.0,
+      "supply_demand_residual_rows": 0,
+      "source_status_rows": {
+        "confirmed_label": 0,
+        "preliminary_or_unlabelled": 30624
+      }
+    },
+    "kyushu": {
+      "expected_30min_rows": 30624,
+      "actual_30min_rows": 30624,
+      "hourly_rows": 15312,
+      "maximum_supply_demand_difference_mw": 26.0,
+      "maximum_component_to_total_difference_mw": 0.0,
+      "supply_demand_residual_rows": 1298,
+      "source_status_rows": {
+        "confirmed_label": 29184,
+        "preliminary_or_unlabelled": 1440
+      }
+    }
+  },
+  "preliminary_notice": "九州2026年9月文件取回时未标確報，包含推計实绩；供给合计与需求差额原样保留。前月实绩通常在翌月末覆盖更新，当前快照不替代最终值。中部公告也可能含速報与推計实绩。",
+  "duplicates": 0,
+  "excluded": [],
+  "missing_policy": "no imputation, no zero fill; exclude incomplete observation/pair/day as recorded",
+  "not_included": [
+    "天气与气温：未引入第三方插补",
+    "燃料成本与机组可用容量：当前使用的是出力实绩，不能替代可用容量",
+    "其余三个区域：本轮未建立同质量供需快照"
+  ],
+  "revision_policy": "Chubu provisional values may be revised; Kyushu confirmed fuel-mix public CSV also may be revised without earlier vintages. Snapshots frozen at retrieval, not known-in-advance publication archives.",
+  "source_ids": [
+    "chubu-fy2024",
+    "chubu-fy2025",
+    "chubu-fy2026",
+    "kyushu-202501",
+    "kyushu-202502",
+    "kyushu-202503",
+    "kyushu-202504",
+    "kyushu-202505",
+    "kyushu-202506",
+    "kyushu-202507",
+    "kyushu-202508",
+    "kyushu-202509",
+    "kyushu-202510",
+    "kyushu-202511",
+    "kyushu-202512",
+    "kyushu-202601",
+    "kyushu-202602",
+    "kyushu-202603",
+    "kyushu-202604",
+    "kyushu-202605",
+    "kyushu-202606",
+    "kyushu-202607",
+    "kyushu-202608",
+    "kyushu-202609"
+  ],
+  "price_sha256": "58cb77975c3a0dd26dd432072c24063a3a1a450615c34d891d58738949e77b90",
+  "normalized_sha256": "e3973f1445b98e7c83330db5777510b30da8ea5e3f9456f46662ebea7525db5f",
+  "hourly_sha256": "5ba04559eb3a1694d1b7d918d983a636a4a742ce7537709e08e0bf2d14c9177e"
+}

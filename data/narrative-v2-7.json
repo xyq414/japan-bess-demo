@@ -1,0 +1,2934 @@
+{
+  "revision": "current-v2.7",
+  "routes": {
+    "#overview": {
+      "context": "以淘科公开各务原市②号的2MW / 8.14MWh规格固定资产差异，中部作为旗舰，再把同一电池放入其他区域价格。8.14MWh是铭牌库存；10–90%可用区间与效率使实际持续交付小于铭牌约四小时。区域理论套利把JEPX历史Area Price的48个半小时价格优化成可行日内路径，日收益累加得到各区区间总额。",
+      "figures": [
+        {
+          "id": "overview-selected-year",
+          "selector": "#region-bars"
+        }
+      ],
+      "result_lead": "中部2025全年区域理论套利为17.76百万JPY：同规格电池、提前知道当日价格、扣充电购电并计入88%效率后的历史机会；固定运维、建设与融资尚在下一层。",
+      "next": {
+        "href": "#lab/anatomy",
+        "text": "价格形态怎样产生机会"
+      }
+    },
+    "#market": {
+      "context": "低价买电进入电池，高价售电离开电池；2MW限制每个半小时的功率，8.14MWh、10–90% SOC和每日1次电池侧等效循环限制库存与频率。初末10%相同避免从上一日免费借能量。DP沿库存状态寻找整日路径；电网侧购售量包含效率影响，不能只用最高价减最低价。",
+      "figures": [
+        {
+          "id": "market-price",
+          "selector": "#price-chart"
+        },
+        {
+          "id": "market-power",
+          "selector": "#dispatch-chart"
+        },
+        {
+          "id": "market-soc",
+          "selector": "#soc-chart"
+        },
+        {
+          "id": "market-monthly",
+          "selector": "#monthly-chart"
+        }
+      ],
+      "cash_chain": true,
+      "bridge": "当前回测是历史完美信息基准；毛套利已经扣买电，扣放电变动成本后仍未纳入固定费用、CAPEX、更换和融资。",
+      "previous": {
+        "href": "#overview",
+        "text": "同规格区域比较"
+      },
+      "next": {
+        "href": "#lab/strategy",
+        "text": "提前知道价格的上限怎样变成事前交易"
+      }
+    },
+    "#rules": {
+      "context": "容量型调频支付的是可供调节能力；相同MW与SOC不能同时完整承诺给现货和调频。公开月均成交价只描述全国历史成交均价，不等于本站自己的报价；供出ΔkW、半小时块、履约与资源机会成本共同决定能否留下现金。",
+      "figures": [
+        {
+          "id": "memo-f03",
+          "chart_index": 0
+        }
+      ],
+      "previous": {
+        "href": "#lab/strategy",
+        "text": "先认识可捕获的现货机会"
+      },
+      "next": {
+        "href": "#lab/frontier",
+        "text": "预留容量损失多少现货价值"
+      }
+    },
+    "#sources": {
+      "context": "来源和方法服务于核验当前结果。价格输入来自JEPX历史半小时区域价格，规格来自公司公开披露，调频规则与成交汇总来自市场机构；费用、履约与寿命研究假设在对应业务页面解释。",
+      "figures": [],
+      "previous": {
+        "href": "#overview",
+        "text": "返回行业研究"
+      },
+      "next": {
+        "href": "#lab/replay",
+        "text": "检查一天如何形成现金"
+      }
+    },
+    "#lab/anatomy": {
+      "context": "先识别机会来自每天的昼夜搬运还是少数尖峰，再评估能否稳定捕获。均价热图描述同月同槽平均形态，分位曲线描述同槽跨日波动；它们没有保留一条实际交易日的顺序，因此不能直接当作可成交路径。",
+      "figures": [
+        {
+          "id": "lab-f01",
+          "selector": "#lab-heatmap"
+        },
+        {
+          "id": "lab-f02",
+          "selector": "#anatomy-quantiles"
+        },
+        {
+          "id": "lab-f03",
+          "selector": "#anatomy-monthly"
+        },
+        {
+          "id": "lab-f04",
+          "selector": "#anatomy-weekday"
+        },
+        {
+          "id": "anatomy-spread-hist",
+          "selector": "#anatomy-histogram"
+        },
+        {
+          "id": "anatomy-frequency",
+          "selector": "#anatomy-frequency"
+        }
+      ],
+      "previous": {
+        "href": "#overview",
+        "text": "同规格区域结果"
+      },
+      "next": {
+        "href": "#lab/replay",
+        "text": "把48个价格转成动作与现金"
+      }
+    },
+    "#lab/replay": {
+      "context": "把所选一天的价格、功率、SOC与累计现金按同一时间轴连起来读：充电买电使现金先减少，库存随后支持放电销售。SOC表示每槽结束后的库存，第一槽的图点不等于优化开始前10%的初始库存；当日收尾回到初始值，避免隐含跨日借能量。",
+      "figures": [
+        {
+          "id": "replay-prices",
+          "selector": "#replay-prices"
+        },
+        {
+          "id": "replay-power",
+          "selector": "#replay-power"
+        },
+        {
+          "id": "replay-soc",
+          "selector": "#replay-soc"
+        },
+        {
+          "id": "replay-cash",
+          "selector": "#replay-cumulative"
+        }
+      ],
+      "bridge": "四图及上方买卖现金均属于当前选择；报告普通日的已知价金额不用于替代当前预测策略结算。",
+      "previous": {
+        "href": "#lab/anatomy",
+        "text": "价格形态与尾部"
+      },
+      "next": {
+        "href": "#lab/strategy",
+        "text": "把已知价格换成事前决策"
+      }
+    },
+    "#lab/strategy": {
+      "context": "Perfect Information先用完整当日真实价格求可行路径，度量市场机会；事前策略只用决策时已知资料生成计划，再以实际价格结算。Capture Ratio是该真实结算金额除以同口径上限；它直接衡量捕获的钱，MAE只衡量价格预测误差，不能替代交易评价。",
+      "figures": [
+        {
+          "id": "lab-f10",
+          "selector": "#strategy-monthly"
+        },
+        {
+          "id": "lab-f11",
+          "selector": "#strategy-capture"
+        }
+      ],
+      "result_lead": "中部2026年1月1日至10月5日，完美信息机会21.01m、简单事前策略14.31m、岭回归事前策略15.02m JPY；减少部分主要是信息不完美导致的机会损失，尚未扣项目建设和固定经营成本。",
+      "previous": {
+        "href": "#lab/replay",
+        "text": "价格、功率与现金的同日链"
+      },
+      "next": {
+        "href": "#lab/risk",
+        "text": "捕获率之外还缺什么风险"
+      }
+    },
+    "#lab/risk": {
+      "context": "同样的区间总额可能来自少数高收益日，也可能经历长时间低收益。先看月度贡献、日分布和连续30日窗口，再讨论能否承担合同付款和固定支出；历史重采样保持研究口径，不生成一项可承诺的未来保底。",
+      "figures": [
+        {
+          "id": "lab-f12",
+          "selector": "#risk-monthly"
+        },
+        {
+          "id": "lab-f13",
+          "selector": "#risk-rolling"
+        },
+        {
+          "id": "risk-daily-hist",
+          "selector": "#risk-daily-hist"
+        }
+      ],
+      "previous": {
+        "href": "#lab/strategy",
+        "text": "真实结算与捕获率"
+      },
+      "next": {
+        "href": "#lab/frontier",
+        "text": "同一资源转卖调频"
+      }
+    },
+    "#lab/frontier": {
+      "context": "留1MW给调频，就失去一部分原本能做现货的功率；为正负方向调用保留SOC余量又占用了库存。机会成本是同一电池在相同基线下因此放弃的现货价值。充电、放电、reserve与headroom同时成为连续变量，LP比早期库存状态DP更自然；本例首尾50%用于对称上/下调，不沿用纯现货10%→10%。",
+      "figures": [
+        {
+          "id": "lab-f14",
+          "selector": "#frontier-chart"
+        }
+      ],
+      "bridge": "此处12小时付费、65%交付率和全天功率预留属于前沿研究设定；早期8小时、80%示例另有输入。LP现货基准与80格DP21.01m不用于直接相减归因。",
+      "previous": {
+        "href": "#lab/risk",
+        "text": "先识别现货现金波动"
+      },
+      "next": {
+        "href": "#lab/economics",
+        "text": "规则如何改变预留时点"
+      }
+    },
+    "#lab/economics": {
+      "context": "相同12小时的调频承诺，若必须以3小时块预留，可能覆盖一段高价现货机会；30分钟块更容易避开这些时段。粒度先改变可选资源安排，随后才改变现金；报价上限15→10只限制出价边界，不能代替实际成交价。",
+      "figures": [
+        {
+          "id": "lab-f15",
+          "selector": "#rule-mask-chart"
+        }
+      ],
+      "bridge": "报告普通日粒度实验的LP/MILP基准70,465 JPY与DP回放69,624 JPY是不同求解基线，本文不把差额解释为规则收益。",
+      "previous": {
+        "href": "#lab/frontier",
+        "text": "资源机会成本与LP"
+      },
+      "next": {
+        "href": "#operations/bidding",
+        "text": "按本站报价审查中标盈亏"
+      }
+    },
+    "#lab/footprint": {
+      "context": "同规格区域回测回答价格机会，公开项目图回答哪些项目位于哪些区域，两者并列用于讨论暴露与接入条件。圈中数字是项目编号，位置为区域分组示意；公开城市级披露不能推成精确站点坐标或公司投资策略。",
+      "figures": [
+        {
+          "id": "p1-project-regions",
+          "chart_index": 0
+        }
+      ],
+      "previous": {
+        "href": "#overview",
+        "text": "标准资产与跨区比较"
+      },
+      "next": {
+        "href": "#feasibility/grid",
+        "text": "地域机会还受接入约束"
+      }
+    },
+    "#lab/bridge": {
+      "context": "把同一资源安排的现货与容量现金相加，再扣聚合、网络、市场变动费用及经济损耗代理，得到靠近资产层的经营贡献。已扣过的买电和能量效率不能重复扣；贡献仍未扣年0建设投入、固定O&M、保险、更换与融资。",
+      "figures": [
+        {
+          "id": "p1-waterfall",
+          "chart_index": 0
+        }
+      ],
+      "cash_chain": true,
+      "bridge": "非现金损耗代理用于调度比较；项目DCF应加回该代理，再按实际假设的更换年份扣一次预算。银行压力CFADS另用于定债，不让实际项目收入再次减少。",
+      "previous": {
+        "href": "#operations/joint",
+        "text": "报价与调用后留下多少现金"
+      },
+      "next": {
+        "href": "#feasibility/economics",
+        "text": "把经营贡献放入多年项目现金"
+      }
+    },
+    "#forward/drivers": {
+      "context": "历史供需实绩先解释光伏多、净负荷低时价格的形态，再检查控制其他变量后关联是否仍在。分位描述统计用638日半小时样本；重要性与部分效应用2026年留出273日的小时模型，窗口和粒度不同，拟合关系不能当作光伏增长导致某幅度降价的因果预测。",
+      "figures": [
+        {
+          "id": "forward-f02",
+          "selector": "#driver-solar-chart"
+        },
+        {
+          "id": "forward-f03",
+          "selector": "#driver-importance-chart"
+        },
+        {
+          "id": "forward-f04",
+          "selector": "#driver-partial-chart"
+        }
+      ],
+      "previous": {
+        "href": "#lab/anatomy",
+        "text": "历史价格形态"
+      },
+      "next": {
+        "href": "#forward/pipeline",
+        "text": "同一市场还将加入哪些项目"
+      }
+    },
+    "#forward/pipeline": {
+      "context": "项目管线描述新增资源的时间、区域和已披露状态，再与历史价格机会并列。19个未来项目1160.9MW与22个可统计时长项目是不同子集，不能暗中把一个群体的功率与另一个群体的时长相乘；planned、construction、connected、market participation必须分开。",
+      "figures": [
+        {
+          "id": "forward-f05",
+          "selector": "#project-area-chart"
+        }
+      ],
+      "previous": {
+        "href": "#forward/drivers",
+        "text": "供需关联的解释边界"
+      },
+      "next": {
+        "href": "#forward/scenarios",
+        "text": "用明确压力参数重测收益"
+      }
+    },
+    "#forward/scenarios": {
+      "context": "竞争可能压低可搬运价差和容量价格，因此以人工压缩参数重新检查同一资产的贡献。25%、40%等值用于压力分析，没有从项目MW校准出未来价格；先看spot贡献，再看reserve组合贡献，避免把容量费无条件加在完整套利上。",
+      "figures": [
+        {
+          "id": "forward-f08",
+          "selector": "#scenario-spot-chart"
+        },
+        {
+          "id": "forward-f10",
+          "selector": "#scenario-frontier-chart"
+        }
+      ],
+      "previous": {
+        "href": "#forward/pipeline",
+        "text": "新增供给状态与时点"
+      },
+      "next": {
+        "href": "#feasibility/economics",
+        "text": "现金压力如何传到投资门槛"
+      }
+    },
+    "#feasibility/economics": {
+      "context": "多年现金沿用较早的Ridge事前计划、80格DP与简化固定预留情景（预测用截至交割日前一日的信息，65%交付，未计真实调用与恢复），不是此前50%首尾库存的LP组合贡献21.2409m；这避免把模型切换误当作项目成本扣减。市场经营贡献先恢复成现金，再加入建设、固定费用、更换和末期支出。中部278日例年化贡献22.9165m，加回损耗代理4.6512m得27.5677m现金，扣固定费9.69056m得首年自由现金17.8771m；CAPEX563.52m和第10/19年233.618m换电再进入20年8%DCF。",
+      "figures": [
+        {
+          "id": "feasibility-f01",
+          "selector": "#feas-cash-chart"
+        },
+        {
+          "id": "feasibility-f02",
+          "selector": "#feas-cumulative-chart"
+        },
+        {
+          "id": "feasibility-f04",
+          "selector": "#feas-heatmap"
+        },
+        {
+          "id": "feasibility-f05",
+          "selector": "#feas-rate-chart"
+        }
+      ],
+      "cash_chain": true,
+      "bridge": "NPV把不同时点项目现金折成同一现值，不能与一年套利金额直接比较。后期更换支出很大时，更高折现率会降低这些未来负现金的权重，原图曲线因此趋向较不负。",
+      "previous": {
+        "href": "#lab/bridge",
+        "text": "先确定已扣与未扣费用"
+      },
+      "next": {
+        "href": "#feasibility/degradation",
+        "text": "多交易一次如何改变寿命现金"
+      }
+    },
+    "#feasibility/degradation": {
+      "context": "首年多做循环可以增加现金，却消耗未来可用库存。EFC按额定容量折算使用强度，SOH表示剩余健康容量；两者把短期调度选择传进后续收入与触发更换的时间。这里3600EFC、1%日历损耗及DoD权重是寿命研究设定，不能作为厂商保证。",
+      "figures": [
+        {
+          "id": "feasibility-f08",
+          "selector": "#life-soh-chart"
+        }
+      ],
+      "previous": {
+        "href": "#feasibility/economics",
+        "text": "多年现金与投资门槛"
+      },
+      "next": {
+        "href": "#feasibility/grid",
+        "text": "收入还要等接网与投运"
+      }
+    },
+    "#feasibility/grid": {
+      "context": "好价差只有电站接入并取得交易资格后才能变成收入。全国咨询、接网检讨与已接入是不同手续阶段；区域申请量和公开空容量不能直接解释成本站可接入承诺。等待延后收入，追加工程增加CAPEX，接入容量不足又改变可做的市场。",
+      "figures": [
+        {
+          "id": "feasibility-f12",
+          "selector": "#grid-national-chart"
+        }
+      ],
+      "previous": {
+        "href": "#feasibility/degradation",
+        "text": "寿命决定后续现金"
+      },
+      "next": {
+        "href": "#business/development",
+        "text": "把市场现金变成真实电站"
+      }
+    },
+    "#operations/bidding": {
+      "context": "全国成交均价描述公开市场，本站报价是在自己的机会成本、履约成本和风险之上作出的决策。公开均价分布不包含未中标报价与逐站排序，无法识别真实本站中标概率；q参数用于研究盈亏边界，再审中标后现金能否覆盖放弃的spot机会。",
+      "figures": [
+        {
+          "id": "operations-f01",
+          "selector": "#ops-bid-distribution"
+        },
+        {
+          "id": "operations-f02",
+          "selector": "#ops-bid-heat"
+        }
+      ],
+      "previous": {
+        "href": "#lab/economics",
+        "text": "预留粒度与现货机会"
+      },
+      "next": {
+        "href": "#operations/activation",
+        "text": "中标后为何仍有成本"
+      }
+    },
+    "#operations/activation": {
+      "context": "调频中标只是承诺可供功率，实际调用会改变电池库存。恢复SOC需要后续购售电与时间，容量费因此还要扣激活、恢复、市场费和现货机会。低/基准/高基准调用强度分别为预留1MW的3%/12%/35%，上调按0.5/1/1.5/1倍循环，窗口第4/9/14/19/24槽替换下调；它们为人工工作负荷路径，用于揭示履约边界，不能从公开汇总价格推成实际调度频率。",
+      "figures": [
+        {
+          "id": "operations-f03",
+          "selector": "#ops-act-soc-plot"
+        },
+        {
+          "id": "operations-f04",
+          "selector": "#ops-act-cash"
+        }
+      ],
+      "bridge": "以下图解采用报告基准路径；改变调用强度时，图与逐槽对账展示当前选择。",
+      "previous": {
+        "href": "#operations/bidding",
+        "text": "报价与有条件中标"
+      },
+      "next": {
+        "href": "#operations/joint",
+        "text": "信息出现后重新求剩余计划"
+      }
+    },
+    "#operations/joint": {
+      "context": "现货路径、reserve、对称SOC余量和中标选择由LP联合安排；真实价格与调用逐步出现时，Rolling重新求剩余时段并恢复库存。它是一种执行过程，不是可以直接兑现整日未来价格的更高收益算法。策略比较在同一188日窗口内成立；项目寿命另按明确成本与损耗假设计算。",
+      "figures": [
+        {
+          "id": "operations-f05",
+          "selector": "#ops-joint-compare"
+        },
+        {
+          "id": "joint-monthly-web",
+          "selector": "#ops-joint-month"
+        },
+        {
+          "id": "joint-power",
+          "selector": "#ops-joint-power"
+        },
+        {
+          "id": "joint-soc",
+          "selector": "#ops-joint-soc"
+        }
+      ],
+      "cash_chain": true,
+      "bridge": "A21与A16不是同成本的调度升级比较：188/278日，6000/3600EFC，162.8/233.618m换电，第13/10与19年更换，10/9.69056m固定费以及退役与SOH现金缩放均不同。NPV −403.06m与−566.20m不能单独归因于交易改进。",
+      "previous": {
+        "href": "#operations/activation",
+        "text": "调用与库存恢复"
+      },
+      "next": {
+        "href": "#lab/bridge",
+        "text": "交易现金如何到经营贡献"
+      }
+    },
+    "#operations/portfolio": {
+      "context": "多个站分散区域价格暴露，但每站仍保留独立物理库存、接入及市场资格。先看日贡献相关性，再看等规格组合P10尾部；组合平均现金改善不代表能跨区域无约束地共享一块电池，区域相关性也不等于系统性事故或合同风险分散。",
+      "figures": [
+        {
+          "id": "operations-f09",
+          "selector": "#ops-portfolio-corr"
+        },
+        {
+          "id": "operations-f08",
+          "selector": "#ops-portfolio-risk"
+        },
+        {
+          "id": "portfolio-power",
+          "selector": "#ops-portfolio-power"
+        },
+        {
+          "id": "portfolio-soc",
+          "selector": "#ops-portfolio-soc"
+        }
+      ],
+      "previous": {
+        "href": "#operations/joint",
+        "text": "单站可执行联合现金"
+      },
+      "next": {
+        "href": "#business/use-cases",
+        "text": "连接点和客户怎样改变业务"
+      }
+    },
+    "#operations/reliability": {
+      "context": "availability与停机使本来可报价和售电的时段丢失，维修越久，收益损失与履约风险越大。将停机路径传进年化现金和NPV，才能判断冗余、维保与保险的经济边界；保险是否覆盖营业中断和等待期须依合同判断。",
+      "figures": [
+        {
+          "id": "operations-f10",
+          "selector": "#ops-reliability-cash"
+        },
+        {
+          "id": "operations-f11",
+          "selector": "#ops-reliability-mttr"
+        }
+      ],
+      "previous": {
+        "href": "#operations/joint",
+        "text": "先看无停机条件的策略现金"
+      },
+      "next": {
+        "href": "#business/safety",
+        "text": "风险最终由谁承担"
+      }
+    },
+    "#operations/markets": {
+      "context": "日本、澳大利亚和英国的产品、结算单位与收入范围不同，先对齐口径，再观察收入重心随竞争和规则改变。海外收入结构提示日本需要持续检查哪些变量：容量价格、能量价差、产品饱和、履约限制与资格条件；不直接迁移海外单位收益。",
+      "figures": [
+        {
+          "id": "markets-f02",
+          "selector": "#ops-gb-eac"
+        },
+        {
+          "id": "markets-f01",
+          "selector": "#ops-nem-cash"
+        }
+      ],
+      "previous": {
+        "href": "#forward/scenarios",
+        "text": "日本贡献的压力边界"
+      },
+      "next": {
+        "href": "#operations/updates",
+        "text": "规则变化怎样触发研究更新"
+      }
+    },
+    "#operations/updates": {
+      "context": "规则生效日、项目连接与市场参与状态分别改变报价边界、可交易资源和未来竞争。每次新披露应回到同一现金链，识别改动的是价格、资格、投运时点、可用率还是合同现金；更新记录和处理方法在下方展开核验。",
+      "figures": [],
+      "collapse_headings": [
+        "本轮真实批次与dry-run验证",
+        "更新、去重与发布边界"
+      ],
+      "previous": {
+        "href": "#operations/markets",
+        "text": "海外经验对应哪些日本假设"
+      },
+      "next": {
+        "href": "#business/safety",
+        "text": "风险、责任与现金闭环"
+      }
+    },
+    "#business/development": {
+      "context": "A回答已存在电站能形成怎样的市场与资产现金；B先解决这座电站怎样出现。土地权利、接入和许可分支可并行推进，在关键条件明确后才作FID投资决定；EPC采购施工与电网工程也有各自依赖。受电、COD与市场资格是不同完成条件。",
+      "figures": [
+        {
+          "id": "development-path",
+          "chart_index": 0
+        }
+      ],
+      "previous": {
+        "href": "#feasibility/grid",
+        "text": "机会与接入条件"
+      },
+      "next": {
+        "href": "#business/actors",
+        "text": "谁负责交付、控制与现金"
+      },
+      "collapse_headings": [
+        "许可、资金与投资放行条件"
+      ]
+    },
+    "#business/actors": {
+      "context": "SPV持有资产和合同并承接项目融资，Developer推动权利与条件，Owner承担投资风险，EPC/SI组织交付，OEM提供设备保证。交易侧的Aggregator与Trader承担不同市场接口或执行责任；电能、控制指令和现金在图中分别看，合同不能凭角色名称推定风险已转移。",
+      "figures": [
+        {
+          "id": "actors-flow",
+          "chart_index": 0
+        }
+      ],
+      "previous": {
+        "href": "#business/development",
+        "text": "电站必须先被开发交付"
+      },
+      "next": {
+        "href": "#business/commercial",
+        "text": "同一价值池怎样分给参与者"
+      }
+    },
+    "#business/commercial": {
+      "context": "市场先产生一个扣充电购电与市场变动费用后的价值池，合同再分配同一笔现金及调度权、上行、下行和履约责任。基准池20m时固定费2m与10%分成均给业主18m；8m下行时tolling业主15m需要服务方补足7m。下方工作区默认池20m，调整为8m才看到下行−7m；池金额未代表业主扣固定O&M、投资和融资后的净现金。",
+      "figures": [
+        {
+          "id": "business-commercial-allocation",
+          "chart_index": 0
+        }
+      ],
+      "result_lead": "固定费、分成和tolling主要改变现金归属及下行承担。报告比较8/20/32m JPY三档价值池；当前计算器默认20m，基准相近不代表下行风险相同。",
+      "previous": {
+        "href": "#business/actors",
+        "text": "资产、控制与结算责任"
+      },
+      "next": {
+        "href": "#business/policy",
+        "text": "政策机制改变哪种现金"
+      },
+      "collapse_headings": [
+        "固定费、分成与tolling分配"
+      ]
+    },
+    "#business/policy": {
+      "context": "建设补助是资本来源，改变净投资和到账前的融资需求；容量及LTDA是运营期履约收入，改变现金稳定性。LTDA他市场收益返还把一部分上行交回机制，返还基数、固定OPEX与付款年份须分开；本页各示例输入分别在结果旁标明。",
+      "figures": [
+        {
+          "id": "policy-workspace-web",
+          "selector": "#business-policy-results"
+        }
+      ],
+      "bridge": "返还敏感性例用20m收益基数、4m资本成本比较、2m主拍卖比较及12m LTDA，返还17.7m。报告年度例改用18m基数返还16m；本页600m建设例另用2/8/24m比较参数，返还17.9m，不沿用前两例输入。",
+      "previous": {
+        "href": "#business/commercial",
+        "text": "先看合同的现金与责任"
+      },
+      "next": {
+        "href": "#business/finance",
+        "text": "稳定现金如何改变银行贷款"
+      }
+    },
+    "#business/finance": {
+      "context": "这里独立设150m建设、20m年总收入、5m年OPEX，隔离合同化收入如何影响银行贷款；它不是A16标准电站563.52m成本，亦不是合同页20m扣变量费后的价值池。先得到项目15m年经营现金，再看储备后CFADS、银行压力保留率与本息保障；压力折扣用于定债，不减少预计市场收入。",
+      "figures": [
+        {
+          "id": "business-finance-debt",
+          "chart_index": 0
+        },
+        {
+          "id": "finance-outstanding-web",
+          "chart_index": 1
+        },
+        {
+          "id": "business-finance-dscr",
+          "chart_index": 2
+        }
+      ],
+      "cash_chain": true,
+      "bridge": "0/50/85%合同占比保持20m预计收入和项目IRR6.83%，却以60%/95%研究压力保留率支持36.096/61.364/79.051m贷款。股东现金另外计提款、换电储备、DSRA释放和本息，因此股权IRR与项目IRR不同。",
+      "previous": {
+        "href": "#business/policy",
+        "text": "稳定收入与返还的现金边界"
+      },
+      "next": {
+        "href": "#business/use-cases",
+        "text": "资产连接与客户还会改变什么"
+      },
+      "copy_changes": [
+        {
+          "before": "保留 A / v2.3 的 2MW / 8.14MWh 成本情景作为单独尺度核对：设备与EPC 68,000 JPY/kWh、站外并网预算10m，CAPEX 563.52m JPY；原C固定运维7m、用地1m、保险1.69056m，总OPEX9.69056m；第11年原C更换预算233.618m。该成本尺度与上面的150m虚拟分析项目分开显示，既有A模型不重算。",
+          "after": "标准2MW / 8.14MWh资产的独立成本尺度为设备与EPC 68,000 JPY/kWh加站外并网10m，CAPEX563.52m JPY；固定运维7m、用地1m、保险1.69056m，合计9.69056m。A16保存寿命路径在第10与19年各更换233.618m；本页150m融资例另设第11年20m更换，两组投资与更换假设分开比较。"
+        }
+      ]
+    },
+    "#business/use-cases": {
+      "context": "standalone卖系统服务，光储受共用出口约束，用户侧服务客户需量与基本费，VPP把有资格且可用的资源组合。改变的首先是接线点、计量、客户、价值来源与市场资格；同一设备容量不能无条件叠加所有收益。",
+      "figures": [
+        {
+          "id": "business-pv-energy",
+          "chart_index": 0
+        },
+        {
+          "id": "business-demand-window",
+          "chart_index": 1
+        }
+      ],
+      "previous": {
+        "href": "#business/finance",
+        "text": "现金结构先决定融资边界"
+      },
+      "next": {
+        "href": "#business/value-chain",
+        "text": "计划怎样经过设备与市场接口落地"
+      }
+    },
+    "#business/value-chain": {
+      "context": "优化给出应该怎样操作，EMS把计划校验为现场安全与SOC约束下的设定值，PCS实际执行充放电。Aggregator站在市场一侧管理资格、申报、通信、履约和结算；淘科公开SI/EM/AG分别对应交付、持续管理与市场聚合位置，披露不足以判断毛利、份额或内部战略。 本页能力筛选中的“融资”指资金提供方；开发商组织项目融资的能力另在公司卡片说明。",
+      "figures": [
+        {
+          "id": "industry-roles-web",
+          "chart_index": 0
+        }
+      ],
+      "previous": {
+        "href": "#business/use-cases",
+        "text": "接线点、客户与价值"
+      },
+      "next": {
+        "href": "#business/safety",
+        "text": "交付与持续运营的风险回到现金"
+      },
+      "collapse_headings": [
+        "公开能力与项目状态"
+      ]
+    },
+    "#business/safety": {
+      "context": "火灾、故障、延迟、额外CAPEX、更换和停机最终通过收入减少、成本增加或现金延后进入NPV、IRR和DSCR。EPC保证、保险与维保决定能否转移某一责任、何时赔付及谁承担残余；有保险不代表性能损失和所有营业中断都获覆盖。",
+      "figures": [
+        {
+          "id": "business-risk-npv",
+          "chart_index": 0
+        }
+      ],
+      "previous": {
+        "href": "#business/value-chain",
+        "text": "交付、控制与市场接口"
+      },
+      "next": {
+        "href": "#operations/updates",
+        "text": "规则和风险假设继续更新"
+      }
+    }
+  },
+  "entries": {
+    "#modules": {
+      "lead": "从同一块2MW / 8.14MWh电池开始：历史价格给多少机会，事前交易能捕获多少，加入调频和资产成本后剩多少现金，再看项目怎样交付、分配价值与融资。",
+      "cash_chain": true,
+      "bridge": "A沿市场与资产形成现金；B解决这笔现金何时出现、属于谁、能支持多少债务，以及股东最终拿到什么。银行压力折扣用于偿债分析，不是实际收入再扣一次。",
+      "path": [
+        {
+          "href": "#overview",
+          "title": "同规格资产与历史机会",
+          "why": "先把48个半小时价格变成一条受库存和功率约束的路径。"
+        },
+        {
+          "href": "#lab/strategy",
+          "title": "事前执行与多市场运营",
+          "why": "把价格上限换成真实结算，再竞争同一MW和SOC。"
+        },
+        {
+          "href": "#feasibility/economics",
+          "title": "从经营贡献到项目现金",
+          "why": "建设、寿命、并网和停机决定多年投资是否值得。"
+        },
+        {
+          "href": "#business",
+          "title": "开发、价值归属与可融资性",
+          "why": "电站先要出现，合同和资金结构再决定现金归属。"
+        }
+      ]
+    },
+    "#market-operations": {
+      "lead": "固定资产规格，先分清历史机会与可执行收益，再处理现货和调频争用功率、库存及履约成本，最终形成资产现金。",
+      "path": [
+        {
+          "href": "#overview",
+          "title": "规格固定后比较区域机会",
+          "why": "避免把不同设备与不同天数混在区域排名里。"
+        },
+        {
+          "href": "#lab/replay",
+          "title": "价格→功率→SOC→现金",
+          "why": "把历史总额接回每日物理路径。"
+        },
+        {
+          "href": "#lab/strategy",
+          "title": "真实结算检验事前策略",
+          "why": "提前知道的价格上限不能直接兑现。"
+        },
+        {
+          "href": "#operations/joint",
+          "title": "调频调用与滚动联合运营",
+          "why": "容量收入需经过预留、报价、恢复和履约。"
+        },
+        {
+          "href": "#feasibility/economics",
+          "title": "项目现金与投资门槛",
+          "why": "运营现金还要承担建设、寿命与等待。"
+        }
+      ]
+    },
+    "#business": {
+      "lead": "市场收入依赖一座按时交付、有资格交易的电站。开发先建立这项资产，合同分配同一价值池，政策改变资金时点与稳定性，银行再审可供偿债现金，风险最终回到股东分配。",
+      "path": [
+        {
+          "href": "#business/development",
+          "title": "先让电站能够存在并交易",
+          "why": "土地、接入和许可的并行条件决定何时承诺投资。"
+        },
+        {
+          "href": "#business/commercial",
+          "title": "谁控制、收款与承担下行",
+          "why": "相同20m价值池不等于相同合同风险。"
+        },
+        {
+          "href": "#business/policy",
+          "title": "建设资金与运营收入分开",
+          "why": "返还和到账时间改变可留存现金。"
+        },
+        {
+          "href": "#business/finance",
+          "title": "同IRR为何支持不同贷款",
+          "why": "预计项目现金与银行压力认可层分别回答经济性和偿债。"
+        },
+        {
+          "href": "#business/value-chain",
+          "title": "控制链与风险归属",
+          "why": "计划经过现场设备和市场接口，事故与延期重新进入现金。"
+        }
+      ]
+    },
+    "#market-operations/modules": {
+      "lead": "按研究问题进入：价格与路径→事前捕获→资源竞争及履约→项目现金。完整专题资产仍列在下方。",
+      "path": [
+        {
+          "href": "#overview",
+          "title": "规格固定后比较区域机会",
+          "why": "避免把不同设备与不同天数混在区域排名里。"
+        },
+        {
+          "href": "#lab/replay",
+          "title": "价格→功率→SOC→现金",
+          "why": "把历史总额接回每日物理路径。"
+        },
+        {
+          "href": "#lab/strategy",
+          "title": "真实结算检验事前策略",
+          "why": "提前知道的价格上限不能直接兑现。"
+        },
+        {
+          "href": "#operations/joint",
+          "title": "调频调用与滚动联合运营",
+          "why": "容量收入需经过预留、报价、恢复和履约。"
+        },
+        {
+          "href": "#feasibility/economics",
+          "title": "项目现金与投资门槛",
+          "why": "运营现金还要承担建设、寿命与等待。"
+        }
+      ]
+    },
+    "#business/modules": {
+      "lead": "按决策依赖进入：开发与责任→合同和政策→偿债与股东现金→业务控制与风险。各专题保留原入口。",
+      "path": [
+        {
+          "href": "#business/development",
+          "title": "先让电站能够存在并交易",
+          "why": "土地、接入和许可的并行条件决定何时承诺投资。"
+        },
+        {
+          "href": "#business/commercial",
+          "title": "谁控制、收款与承担下行",
+          "why": "相同20m价值池不等于相同合同风险。"
+        },
+        {
+          "href": "#business/policy",
+          "title": "建设资金与运营收入分开",
+          "why": "返还和到账时间改变可留存现金。"
+        },
+        {
+          "href": "#business/finance",
+          "title": "同IRR为何支持不同贷款",
+          "why": "预计项目现金与银行压力认可层分别回答经济性和偿债。"
+        },
+        {
+          "href": "#business/value-chain",
+          "title": "控制链与风险归属",
+          "why": "计划经过现场设备和市场接口，事故与延期重新进入现金。"
+        }
+      ]
+    }
+  },
+  "figures": {
+    "memo-f01": {
+      "display_title": "同一储能规格的区域日均毛套利机会（JPY/日）",
+      "question": "不同区域的价格路径，对同一电池产生多大现货机会？",
+      "comparison": "东京、中部、关西、九州、东北；2025完整365天与2026年1月1日至10月5日278天，均为已知当日全部价格的同一约束模型。",
+      "key_values": [
+        "2025中部48,667 JPY/日、九州61,273 JPY/日",
+        "2026截至10月5日中部75,579 JPY/日、东北94,676 JPY/日"
+      ],
+      "reading": "先在每个区域内比较两根柱，再比较同色柱的区域差异；2025年九州日均61,273 JPY最高，2026截至10月5日则为东北94,676 JPY。中部由48,667升至75,579 JPY/日，反映这两个历史窗口在同规格约束下的毛套利机会不同。它能筛选值得进一步研究的价格环境，但执行能力与项目费用尚未进入柱高。",
+      "conclusion": "区域与历史窗口都会改变同一电池的理论机会。",
+      "business_meaning": "以统一规格比较市场条件，作为进一步执行研究的起点。",
+      "misread": "两段覆盖不同月份，日均化只消除天数差异，不能把绿色柱相对蓝色柱的变化当作严格同比或全年预测。"
+    },
+    "memo-f02": {
+      "display_title": "中部2025年7月15日：价差要经过调度才能成为现金",
+      "question": "一个高低价日为何不能直接用最高价减最低价计算收益？",
+      "comparison": "中部当日48个日本时间半小时实际价格；同一2MW/8.14MWh日内调度，往返效率88%，首尾SOC10%。",
+      "key_values": [
+        "卖电214,447.81 JPY",
+        "买电100,175.60 JPY",
+        "毛套利114,272.21 JPY"
+      ],
+      "reading": "先沿时间轴看价格低谷与后续高价的先后顺序，再问电池能在这些时段买入和卖出多少电。该日卖电收入214,447.81 JPY减买电支出100,175.60 JPY，得到114,272.21 JPY毛套利；买电量8.68MWh、卖电量7.64MWh，效率损失已在能量差中体现。图中价格曲线给出机会，功率、库存与循环约束共同决定能否把机会转为这笔现金。",
+      "conclusion": "价差只是机会，时间顺序与资产约束决定可实现的调度。",
+      "business_meaning": "解释从价格观察进入可行调度研究的必要性。",
+      "misread": "本图只画单日价格，四阶段表只是直觉示意；毛套利是已知当日价格的模型卖电减买电结果，买电与效率已计入，尚未扣市场、聚合、网络、固定运维、建设或融资费用。"
+    },
+    "memo-f03": {
+      "display_title": "一次调节力历史容量价格（JPY/ΔkW·30min）",
+      "question": "一次调节力提供的是怎样的收入单位与历史价格尺度？",
+      "comparison": "官方FY2025全国月均容量价格，2025年4月至2026年3月；不是某座站的成交价。",
+      "key_values": [
+        "FY2025年度均价3.93 JPY/ΔkW·30min",
+        "月均2.85至4.77 JPY/ΔkW·30min",
+        "历史短缺率60.4%"
+      ],
+      "reading": "先看纵轴的容量单位，再沿4月至次年3月读取月均价；历史月均从2.85至4.77 JPY/ΔkW·30min，年度均价为3.93。它按承诺功率和半小时区块计价，与现货每kWh的电能价格不同，不能直接比较两条价格高低。收入规模还取决于被约定并交付的功率、区块与自身报价，因此历史均价只提供容量情景的参照。",
+      "conclusion": "容量价格必须与承诺功率、区块数量和交付条件一起解释。",
+      "business_meaning": "将容量机会与现货能量机会区分，为资源竞争比较建立单位基础。",
+      "misread": "60.4%是历史采购量相对募集量的短缺比例，不能视为本项目的中标率；报价上限也不是本图的成交价格。"
+    },
+    "lab-f01": {
+      "display_title": "中部每月各半小时时段的均价（JPY/kWh）",
+      "question": "价格机会主要出现在哪些月份和时段？",
+      "comparison": "2026年1月1日至10月5日中部实际价格；每格是同月同半小时槽的平均值，色域从0起。",
+      "key_values": [
+        "2月12:30 / 18:00：6.08 / 13.20 JPY/kWh（28天）",
+        "8月12:30 / 18:00：18.12 / 31.79 JPY/kWh（31天）",
+        "全图最高月槽均价31.79 JPY/kWh；10月仅5天"
+      ],
+      "reading": "先横向比较同月的午间与傍晚，再纵向比较同一槽跨月的价格水平。冻结月槽数据中，2月12:30均价6.08、18:00为13.20 JPY/kWh；8月同两槽为18.12和31.79，后者也是全图最高格。这显示午间到傍晚的价差结构和整体价格水平都会随月份变化。每格是同月多天平均，不是一条可直接下单的日路径；10月只有5天，也不能据此判断完整10月的季节特征。",
+      "conclusion": "月份和时段共同决定价格结构。",
+      "business_meaning": "为日内策略寻找可研究的重复结构，同时防止把均值当成可交易的一天。",
+      "misread": "横轴均为日本时间；平均值隐藏日与日之间的波动，下一图用分位数展开。"
+    },
+    "lab-f02": {
+      "display_title": "同一半小时槽的历史价格分位数（JPY/kWh）",
+      "question": "同一时段的价格规律有多稳定？",
+      "comparison": "中部2026年1月1日至10月5日的278天、13,344个实际价格槽；每个半小时槽跨日分别取P10、中位数与P90。",
+      "key_values": [
+        "48个时间槽",
+        "12:00中位数约9.97 JPY/kWh",
+        "18:30中位数约21.66 JPY/kWh"
+      ],
+      "reading": "先看中位数的日内形状，再看P10与P90之间的宽度；12:00中位数约9.97 JPY/kWh，18:30约21.66 JPY/kWh。高低时段的中位数差说明典型日内结构，分位数间距则显示同一时间槽在不同日可能偏离这一结构。三条线属于跨日统计，策略仍须在每个具体交割日前判断当天是否沿用这种形状。",
+      "conclusion": "典型时段结构存在，但具体日的价格会偏离。",
+      "business_meaning": "区分常见时间结构与交易前必须面对的价格不确定性。",
+      "misread": "P10与P90不是未来预测区间，也不能拼成同一天的低价和高价路径。"
+    },
+    "lab-f03": {
+      "display_title": "中部月均日内最高价与最低价之差（JPY/kWh）",
+      "question": "价差增大是否就意味着同幅度的储能收益增加？",
+      "comparison": "每一天先求48槽最高价减最低价，再按月取平均；仍是2026年中部278天价格窗口。",
+      "key_values": [
+        "4月22.74 JPY/kWh",
+        "2月8.51 JPY/kWh",
+        "10月24.71 JPY/kWh，仅5天"
+      ],
+      "reading": "先比较各月价差尺度：4月为22.74 JPY/kWh，2月为8.51 JPY/kWh，10月五天样本为24.71 JPY/kWh。该指标只回答一天内最高与最低价格相隔多远，不回答高价持续多久、低价是否先于高价，以及电池能否覆盖这些时段。它有助于解释为什么某些月份理论机会更大，真正的现金仍需经过功率、库存和效率约束。",
+      "conclusion": "最大最小价差不能替代调度收益。",
+      "business_meaning": "用简明价格统计定位机会，再进入可行路径计算。",
+      "misread": "10月是截至5日的样本；不能把日内价差乘铭牌容量当成毛套利。"
+    },
+    "lab-f04": {
+      "display_title": "中部工作日与周末的同槽均价（JPY/kWh）",
+      "question": "日历结构是否足以支持固定充放电时刻？",
+      "comparison": "中部2026年1月1日至10月5日278天，工作日198天与星期六、星期日80天；同槽平均价，未单列节假日。",
+      "key_values": [
+        "工作日全部槽均价18.25 JPY/kWh",
+        "周末13.62 JPY/kWh",
+        "工作日日均价差16.69、周末15.36 JPY/kWh"
+      ],
+      "reading": "先比较相同时刻两条均价线，工作日整体均价18.25 JPY/kWh，高于周末13.62 JPY/kWh。两组日均最高最低价差却较接近，分别为16.69与15.36 JPY/kWh，说明价格水平较高与可利用价差较大是两个不同问题。日历可以提供预测线索，但不能独自确定固定时间套利必然更赚钱。",
+      "conclusion": "工作日与周末的价格水平、价差尺度须分别观察。",
+      "business_meaning": "支持策略使用日历信息，同时保留对具体价格路径的判断。",
+      "misread": "此处周末仅指星期六和星期日，组间差异是历史相关性，不是因果估计。"
+    },
+    "lab-f05": {
+      "display_title": "普通日价格：中部2026年1月19日（JPY/kWh）",
+      "question": "一个中等机会日的价格如何连接到具体充放电？",
+      "comparison": "中部2026年1月19日，同一2MW/8.14MWh的80间隔DP、88%往返效率、10%→10%首尾SOC；按已知价毛套利中位位置选日，后续三图为同一路径。",
+      "key_values": [
+        "12:30价格5.50 JPY/kWh",
+        "16:30价格28.00 JPY/kWh",
+        "当日毛套利69,624.15 JPY"
+      ],
+      "reading": "先定位12:30的5.50 JPY/kWh与16:30的28.00 JPY/kWh，再将这些时间与下一图的充放电动作对应。这个代表日的可行调度产生69,624.15 JPY毛套利，选择它是因为收益接近历史中位位置，便于观察普通机会日如何运作。价格峰谷说明为什么想买卖，下一图回答功率约束下实际买卖多少。",
+      "conclusion": "普通日也须由完整价格路径生成受约束的调度。",
+      "business_meaning": "让价格、动作、库存和现金在同一日连续对应。",
+      "misread": "“普通日”是按模型收益位置选择的代表，不是将多天平均后虚构的一天。"
+    },
+    "lab-f06": {
+      "display_title": "同一普通日的电网侧充放电功率（MW）",
+      "question": "电池怎样把价格低谷和高峰变成买卖电量？",
+      "comparison": "中部2026年1月19日同一80间隔DP、首尾SOC10%的路径；负功率为从电网买电，正功率为向电网卖电，动作按半小时槽执行。",
+      "key_values": [
+        "铭牌功率上限2MW",
+        "部分充电槽约−1.91MW",
+        "部分放电槽约+1.99MW"
+      ],
+      "reading": "先读零线两侧的符号，再回到价格图核对动作发生的时段；负值表示买电，正值表示卖电。图中部分充电功率约1.91MW、放电功率约1.99MW，均低于2MW上限，这是库存离散网格和效率共同约束后的动作。每个半小时动作的功率乘0.5小时才是电网侧买卖电量，不能把纵轴MW直接当作收入。",
+      "conclusion": "可行功率路径把价格信号转成有限的能量交易。",
+      "business_meaning": "解释为什么满功率、满容量与最高最低价差不能简单相乘。",
+      "misread": "图中的正负表示电网交换方向，不表示储能资产自身的损益正负。"
+    },
+    "lab-f07": {
+      "display_title": "同一普通日的槽末荷电状态（SOC，%）",
+      "question": "充放电动作会不会用完库存或越过安全边界？",
+      "comparison": "中部2026年1月19日同一DP路径，曲线为每槽动作后的SOC；日首与日末均10%，可用范围10%–90%。",
+      "key_values": [
+        "允许区间10%–90%",
+        "初始SOC10%、首个槽末点21%",
+        "最高90%、日末10%"
+      ],
+      "reading": "先看曲线是否始终留在10%至90%区间，再顺着充电上升、放电下降的段落与功率图对应。首个点为第一槽结束后的21%，初始库存是10%，两者处于不同时间边界；日末回到10%使本日收益不靠额外卖掉跨日库存增加。达到90%后，即使价格仍低也不能继续买入，库存约束正是价格机会不能全额兑现的原因。",
+      "conclusion": "库存边界与首尾库存约定限制可交易能量。",
+      "business_meaning": "解释调度为何可能放弃低价买入或高价卖出的部分机会。",
+      "misread": "8.14MWh是铭牌容量；10%–90%可用区间只有铭牌的80%，不能将铭牌“四小时”理解为所有时刻都可连续卖出四小时。"
+    },
+    "lab-f08": {
+      "display_title": "同一普通日的累计毛套利现金（千JPY）",
+      "question": "为什么一条赚钱的调度路径中途会出现负现金？",
+      "comparison": "中部2026年1月19日同一DP路径；每槽真实价格下卖电减买电并累计，日首/日末SOC10%，未扣项目费用。",
+      "key_values": [
+        "卖电收入138,272.63 JPY",
+        "买电支出68,648.48 JPY",
+        "日末毛套利69,624.15 JPY"
+      ],
+      "reading": "先看充电时累计现金下降，再看放电时回升；当日先后产生68,648.48 JPY买电支出与138,272.63 JPY卖电收入。曲线最后落在69.62千JPY，即69,624.15 JPY毛套利，说明资金须先支持买电，收益再由后续卖电实现。往返效率88%已改变买卖电量，这个现金终点尚未扣市场手续费、聚合、网络、固定运维或资本支出。",
+      "conclusion": "毛套利包含买电支出和效率影响，但不是项目净收益。",
+      "business_meaning": "从调度路径识别交易周转和后续成本桥的起点。",
+      "misread": "累计曲线是本日交易现金的模型结算，不是银行余额，也未包含融资或项目建设资金。"
+    },
+    "lab-f09": {
+      "display_title": "中部2026年2月25日Ridge亏损日：预测与实际价格（JPY/kWh）",
+      "question": "整体预测误差较小的一天，为什么仍能执行亏损？",
+      "comparison": "中部2026年2月25日Ridge事前价格预测生成同一受约束调度，再用当天真实价格结算。",
+      "key_values": [
+        "预测下计划目标23,696.34 JPY",
+        "真实结算毛套利−6,831.20 JPY",
+        "当日MAE1.60 JPY/kWh",
+        "12:00充电：预测7.04、实际10.57 JPY/kWh",
+        "17:30放电：预测13.32、实际11.82 JPY/kWh"
+      ],
+      "reading": "先看实际交易时点的误差：12:00计划充电，预测7.04、实际10.57 JPY/kWh，购电更贵；17:30计划放电，预测13.32、实际11.82，卖电更便宜。这些动作仍按事前计划执行。该日预测目标23,696.34 JPY，实际卖电86,321.89低于买电93,153.09，毛套利−6,831.20 JPY；全日MAE仅1.60 JPY/kWh，仍不能判断关键动作是否覆盖买电和效率代价。",
+      "conclusion": "价格预测误差与交易损益不是一一对应。",
+      "business_meaning": "把事前计划与事后真实结算分开，解释执行策略的损失来源。",
+      "misread": "本图不展示功率；结算亏损来自按预测形成并冻结的同一调度，不是再次用真实价格优化后的收益。"
+    },
+    "lab-f10": {
+      "display_title": "同一中部资产的月度真实结算毛套利（百万JPY）",
+      "question": "全样本策略排名在每个月都成立吗？",
+      "comparison": "2026年1月1日至10月5日；已知价基准、28日同槽中位数策略、Ridge策略同约束调度，均以真实价格结算。",
+      "key_values": [
+        "全窗口21.01 / 14.31 / 15.02百万JPY",
+        "4月Median约1.93、Ridge约1.40百万JPY",
+        "10月仅5天"
+      ],
+      "reading": "先在同月比较三条线，再看策略差距在哪些月份扩大；4月中位数策略约1.93百万JPY，高于Ridge约1.40百万JPY。整个278天窗口的Ridge合计15.02百万JPY虽高于中位数策略14.31百万JPY，月度表现却会反转，说明更好的整体策略也会遇到不适合自身预测结构的阶段。10月只有5天，其总额与完整月份并列时应同时考虑观察天数。",
+      "conclusion": "样本合计的策略优势并不保证每月领先。",
+      "business_meaning": "识别执行效果随市场阶段变化，为策略监测保留时间维度。",
+      "misread": "三条线均为卖电减买电的毛套利；差距不等于项目费用，已知价曲线只是比较基准。"
+    },
+    "lab-f11": {
+      "display_title": "月度机会捕获率：真实结算毛套利 / 已知价基准（%）",
+      "question": "较低的月度现金是机会变小，还是策略捕获变差？",
+      "comparison": "每月先合计策略真实结算毛套利和同约束已知价毛套利，再取两者之比。",
+      "key_values": [
+        "全窗口Median68.1%、Ridge71.5%",
+        "4月Median57.4%、Ridge41.6%",
+        "10月Ridge83.5%，5天样本"
+      ],
+      "reading": "先把月度捕获率与上一图的月度金额一起读；4月机会较大，但Ridge只捕获41.6%，低于中位数策略57.4%。全窗口两者捕获率分别为71.5%和68.1%，表明金额变化可以由机会规模和捕获能力共同造成。10月Ridge达到83.5%，但仅五天的表现还不足以证明稳定改善，运营评价需要连续观察策略相对当期机会的兑现程度。",
+      "conclusion": "用捕获率区分市场机会与执行能力。",
+      "business_meaning": "帮助判断收入下降时应研究价格环境还是策略失效。",
+      "misread": "捕获率是月度金额之比，不是逐日比率平均，也不是中标率、可利用率或预测准确率。"
+    },
+    "lab-f12": {
+      "display_title": "Ridge策略月度毛套利：现金集中在哪些月份（百万JPY）",
+      "question": "全年均值会不会掩盖需要承担的低现金月份？",
+      "comparison": "中部同一Ridge策略真实结算，2026年1月至10月5日；保留完整月份与部分月份的实际总额。",
+      "key_values": [
+        "8月毛套利2.28百万JPY",
+        "2月日均29,475 JPY",
+        "10月日均99,992 JPY，但仅5天"
+      ],
+      "reading": "这次只看同一Ridge序列的月度资金规模，不重新比较三种策略。8月合计约2.28百万JPY；2月日均29,475 JPY，提示资金经过的弱收入阶段。10月合计约0.50百万JPY虽小，却只有5天，日均99,992 JPY；金额与天数一起读，才能辨别低月总额的原因。全窗收益为正也不代表每月可支配现金稳定，下一图继续检查跨月连续弱段。",
+      "conclusion": "月度现金不均匀与样本长度共同影响总额。",
+      "business_meaning": "把执行策略的时间分布连接到经营现金安排。",
+      "misread": "这张图沿用策略比较中的Ridge现金，只改变观察问题；不表示新增模型结果。"
+    },
+    "lab-f13": {
+      "display_title": "Ridge策略连续30日毛套利（百万JPY）",
+      "question": "跨月连续低收益是否被月度汇总掩盖？",
+      "comparison": "对同一历史真实结算日序列计算截至各日的连续30日合计；不预测未来30日。",
+      "key_values": [
+        "首个完整30日截至2026年1月30日，约1.24百万JPY",
+        "截至2026年10月5日约1.74百万JPY",
+        "18个亏损日、前28个高收益日贡献24.4%"
+      ],
+      "reading": "先沿日期看连续30日现金合计的上升与回落：首个完整窗口约1.24百万JPY，最后窗口约1.74百万JPY。窗口跨越日历月边界，能显示月图切开的持续强弱阶段。运营者需将这些弱段与买电周转、固定支出和债务支付日期并列，再判断资金缓冲是否足够；下面的表另外汇总亏损日和集中度。",
+      "conclusion": "滚动历史现金补充月度总额对持续弱段的观察。",
+      "business_meaning": "为流动性安排提出问题，不用历史均值替代连续现金风险。",
+      "misread": "相邻点共享29天数据；曲线平滑不等于未来收入确定，前29天也没有完整30日值。"
+    },
+    "lab-f14": {
+      "display_title": "容量预留增加时，现货机会与组合收入如何变化（百万JPY）",
+      "question": "容量收入能否直接叠加在满功率现货收入上？",
+      "comparison": "中部2026年1月1日至10月5日278天；2MW/8.14MWh连续LP，50%→50%首尾SOC，双向各5分钟库存余量；预留功率全天限制现货，容量按每天12小时、65%交付、3 JPY/ΔkW·30min支付。",
+      "key_values": [
+        "零预留现货19.36百万JPY",
+        "1MW预留现货14.71、容量扣手续费后12.75、合计27.46百万JPY",
+        "1.25MW情景合计峰值28.35百万JPY"
+      ],
+      "reading": "先看现货线随预留功率增加而下降，再看容量线和合计线：1MW预留使现货由19.36降至14.71百万JPY，牺牲4.65百万JPY现货机会，同时增加扣容量手续费后的12.75百万JPY容量情景收入。合计线在1.25MW处达到28.35百万JPY，说明新增容量收入最终会被越来越大的现货机会成本抵消。峰值只是在固定支付与库存假设下的资源分配结果，项目应比较同一资产被不同用途占用后的增量。",
+      "conclusion": "容量增收必须同时承担现货机会损失。",
+      "business_meaning": "引出资源分配和同一基线的经营贡献比较。",
+      "misread": "这一图的现货基线是50%首尾SOC的连续线性规划，不能与10%首尾SOC的离散动态规划 21.01百万JPY相减解释为预测损失；合计仅扣容量手续费，尚未扣全部经营费用。 小于1MW的容量点需要聚合安排。"
+    },
+    "lab-f15": {
+      "display_title": "中部2026年1月19日：相同12小时预留的区块选择",
+      "question": "更细的区块如何影响同一预留量的机会成本？",
+      "comparison": "中部2026年1月19日，1MW、24个半小时槽，50%→50%首尾SOC及双向库存余量；连续库存相同，3小时与30分钟区块只改变0/1时段选择。",
+      "key_values": [
+        "零预留基准70,465.31 JPY",
+        "3小时区块69,275.04 JPY",
+        "30分钟区块70,188.25 JPY，差913.21 JPY"
+      ],
+      "reading": "两条0/1标记表示各半小时槽是否预留1MW容量，不是充放电功率。两种方案都选12小时，但3小时选择会连带锁住邻近槽，30分钟可以逐槽选择；前者保留69,275.04 JPY现货毛套利，后者保留70,188.25，多出913.21 JPY。两者都与同日零预留70,465.31 JPY比较，差额只说明已知价格下时段选择的价值，不需把另一册价格图当成本册的现金输入。",
+      "conclusion": "区块粒度通过预留时段选择改变现货机会成本。",
+      "business_meaning": "说明市场时间规则需要进入资源配置，而不只是改报价标签。",
+      "misread": "0/1表示该槽是否预留容量，不是实际充放电功率；此连续优化基准70,465.31 JPY与前文离散动态规划普通日69,624.15 JPY分属不同边界。"
+    },
+    "executable-strategy-summary": {
+      "display_title": "中部策略合计：同一资产的真实结算毛套利（百万JPY）",
+      "question": "不知道未来价格时，两种事前策略捕获了多少已知价机会？",
+      "comparison": "中部2026年1月1日至10月5日278天；同一2MW/8.14MWh、DP调度边界，策略计划由各自信息集形成，现金均按实际价格结算。",
+      "key_values": [
+        "已知价21.010852593611002百万JPY，基准100%",
+        "28日中位数14.31181323758111百万JPY，捕获68.1%",
+        "Ridge15.01672705949025百万JPY，捕获71.5%"
+      ],
+      "reading": "先把已知价21.01百万JPY视为同约束的机会基准，再比较两条事前策略的真实结算金额：中位数策略14.31百万JPY、Ridge策略15.02百万JPY。它们分别捕获68.1%与71.5%，Ridge整体多兑现约0.70百万JPY，但两者仍存在亏损日。柱高衡量的是计划在真实价格下兑现的现金，选策略需要同时观察捕获率、亏损和时间稳定性。",
+      "conclusion": "可执行策略兑现的现金低于同约束已知价机会。",
+      "business_meaning": "建立执行研究的总量锚点，再用日与月解释差距来源。",
+      "misread": "“已知价”不是可实施的预测策略；全部柱为毛套利，未扣项目运营或资本费用。"
+    },
+    "p1-waterfall": {
+      "display_title": "中部2025年：从毛套利到经营贡献（百万JPY）",
+      "question": "历史毛套利扣除列示费用后，还留下多少经营贡献？",
+      "comparison": "2025完整365天同一已知价调度；基准费用情景扣减，不以费用重新优化动作。",
+      "key_values": [
+        "毛套利17.763508627631035百万JPY",
+        "损耗代理5.334812844169281、市场费0.17095650250633422、聚合0.8881754313815518、网络1.5155718307299172、其他0.365百万JPY",
+        "经营贡献9.48899201884395百万JPY"
+      ],
+      "reading": "从17.76百万JPY毛套利向右读扣减，再看9.49百万JPY经营贡献；毛套利已是卖电42.67减买电24.90百万JPY。最大扣减为5.33百万JPY非现金损耗代理，其后为市场0.17、聚合0.89和网络1.52。其他项精确为365,000 JPY，即0.365百万JPY；图内两位小数按半分位取偶显示0.36，合计按原始JPY计算，不由已取整标签相加。经营贡献说明这条交易路径扣列示费用后的剩余，仍不能直接当作项目自由现金流。",
+      "conclusion": "列示费用可显著改变毛机会兑现后的经营贡献。",
+      "business_meaning": "把市场现金与项目投资现金分层，防止以毛套利估项目回报。",
+      "misread": "损耗代理、聚合、网络和其他费用是研究情景，无经验校准；交易费用采用公开按量费率，计费选择与分摊仍需项目合同。效率损失和买电成本已在毛套利中，不能再次扣除。"
+    },
+    "p1-project-regions": {
+      "display_title": "淘科公开项目的日本区域分布",
+      "question": "已识别的公开项目位于哪些市场区域，各自处于什么阶段？",
+      "comparison": "截至2026年10月7日可唯一辨认的9个公开项目；按城市归属市场区域，图仅作区域示意。",
+      "key_values": [
+        "9个项目、18MW",
+        "中部3、东京2、东北/关西/九州/中国地方各1",
+        "选定容量72.70MWh，公开口径范围72.28–72.70MWh"
+      ],
+      "reading": "圈中1至9是项目编号，既不是站点数，也不是电站精确坐标；先用编号对应项目表，再用分区表比较站点数量。已识别子集共9个项目、18MW，其中中部3个、东京2个，其余四区各1个；中国指日本中国地方。区域分布提供公开项目与市场比较的落点，但不能据此推断企业当时的选址动机、内部收益或每站的实际入市状态。",
+      "conclusion": "公开项目地域分布与项目阶段须分别辨认。",
+      "business_meaning": "把同规格区域机会落到可识别项目场景，同时限定观察可支持的结论。",
+      "misread": "图示没有精确坐标或电网边界；该子集不等于企业全部项目，投运、受电、取得资格与实际市场入市各有不同含义。"
+    },
+    "forward-f02": {
+      "display_title": "638天午间光伏占比组与中位电价",
+      "question": "午间更高光伏占比与价格有什么共同形态？",
+      "comparison": "中部、九州各自午间光伏/负荷Q1—Q4；638天半小时，每组1,914槽",
+      "key_values": [
+        "中部13.91/11.46/10.19/6.025日元/kWh",
+        "九州9.905/8.19/7.38/0.01日元/kWh"
+      ],
+      "reading": "先沿横轴从各区域自己的低光伏占比Q1读到Q4：中部中位价从13.91降到6.025、九州从9.905降到0.01日元/kWh。Q1—Q4是638天午间半小时的占比分组，各组1,914槽，不是季度或后面的273天小时留出。高光伏组与低价共同出现，说明储能充电窗口值得观察，但不能把共变直接当作光伏因果降价。",
+      "conclusion": "较高午间光伏组具有较低中位价",
+      "business_meaning": "关注可充电时段而非全年均价"
+    },
+    "forward-f03": {
+      "display_title": "2026小时留出误差的整日置换增量",
+      "question": "解释模型主要依赖哪个实际供需变量？",
+      "comparison": "2025训练8,760小时；2026留出6,552小时；同月整日置换20次",
+      "key_values": [
+        "中部负荷+0.511351日元/kWh MAE",
+        "九州光伏+0.425349",
+        "中部风电−0.003159、限发−0.008458、核电常量0"
+      ],
+      "reading": "先找每个区域最大的正条：中部负荷被置换后MAE增加0.511351、九州光伏增加0.425349日元/kWh，表示该模型较依赖它们。横轴是273天小时留出的误差增量，不是价格系数；中部风电−0.003159、限发−0.008458保留，核电常量的0没有识别其效应。实绩供需只能支持事后解释，报价业务仍需证明这些信息在决策时可得。",
+      "conclusion": "中部更依赖负荷，九州更依赖光伏；均为模型依赖",
+      "business_meaning": "不能把解释重要性当成可执行预测能力"
+    },
+    "forward-f04": {
+      "display_title": "光伏占比拟合控制差：相对留出P50",
+      "question": "模型只改变光伏占比时拟合价格如何变？",
+      "comparison": "固定其他变量，改变2026小时留出全日光伏分位",
+      "key_values": [
+        "P90相对P50：中部−5.959184498、九州−7.628677266日元/kWh",
+        "P10/P25光伏占比均为0"
+      ],
+      "reading": "先由P50参照点看P90：两区P50拟合差均为0，P90中部为−5.959、九州−7.629日元/kWh。再看P10与P25这两个分位点：它们的光伏占比均为0，相对各区P50的正差分别为中部0.087、九州0.106；这是全日样本的平台，不是638天午间Q1/Q2组。这里固定其他变量，尚未构成可行供需状态或因果冲击，业务上用于形态敏感性而不是收益预测。",
+      "conclusion": "拟合响应在较高光伏占比处更低",
+      "business_meaning": "形态敏感性不等于未来可交易价格"
+    },
+    "forward-f05": {
+      "display_title": "公开未来19个站点的区域功率",
+      "question": "公开新增资源集中在哪里？",
+      "comparison": "未来在建/规划19站区域MW；不含3已运营站",
+      "key_values": [
+        "合计1,160.9MW",
+        "中部333.9、北海道270、关西233、九州199、东北75、东京50、中国0MW"
+      ],
+      "reading": "先看最高的中部333.9MW，再与北海道270、关西233和九州199比较；这些条合计未来19站1,160.9MW。全部22站另含3个已运营站65MW，时长表使用那个更大群体，中国的0仅表示未来样本中没有该区域条目。图提示哪些地区需观察实际投产与竞价，样本无全国分母，也没有把MW映射成价格压缩。",
+      "conclusion": "公开未来样本功率最多位于中部",
+      "business_meaning": "管线用于竞争跟踪，不能直接校准价格"
+    },
+    "forward-f06": {
+      "display_title": "未来站点按预计投运标签的功率",
+      "question": "新增功率预计何时进入市场？",
+      "comparison": "同一未来19站的CY/FY原精度投运标签",
+      "key_values": [
+        "2027：194MW、3站",
+        "2028及以后：966.9MW、16站",
+        "2026和未披露：各0MW"
+      ],
+      "reading": "先比较2027的194MW与2028及以后的966.9MW，后者来自16站，前者3站。2026与未披露均为0是这19站的标签分布，FY与CY保留原精度，预计日期尚不是实际商业投运。业务上需把接网、施工与资格推迟的可能性接到现金开始时间，不能将这些柱视为按期竞争已发生。",
+      "conclusion": "大部分公开未来功率标注2028及以后",
+      "business_meaning": "实际COD决定竞争与收入开始时间"
+    },
+    "forward-f07": {
+      "display_title": "中部2026年7月15日半小时原价与压力价",
+      "question": "人工压力具体怎样改变一天的价格形状？",
+      "comparison": "48槽原价、纯25%压缩、40%压缩加时段乘数",
+      "key_values": [
+        "07:00原12.10、25%压缩13.2975、共同14.016日元/kWh",
+        "16:00原33.02、25%压缩28.9875、共同26.568",
+        "共同10:00—16:00×0.80、17:00—21:00×1.10"
+      ],
+      "reading": "先看07:00低点，原价12.10经25%压缩抬至13.2975日元/kWh；再看16:00高点，33.02压到28.9875。共同情景同两槽为14.016和26.568，并另对10:00—16:00乘0.80、17:00—21:00乘1.10，读线时要区分压缩和时段变形。图是历史一天的人工压力示例，没有调度或未来供给价格预测，业务意义是检验能量搬移所依赖的高低价间隔。",
+      "conclusion": "人工压缩抬低价压高价，时段乘数另改形状",
+      "business_meaning": "说明压力如何影响充放电窗口"
+    },
+    "forward-f08": {
+      "display_title": "纯价差压缩后的278天现货经营贡献",
+      "question": "价差变薄会怎样削减可执行贡献？",
+      "comparison": "同DP设备与Base成本，上限与冻结岭回归策略；压缩0/10/20/25/30/40%",
+      "key_values": [
+        "策略0%8.913639、25%4.553317、30%3.710008、40%1.998741百万日元",
+        "已知价0%14.414696、40%5.097020百万日元"
+      ],
+      "reading": "先沿策略线看25%与30%：贡献4.5533与3.7100百万日元，一上一下夹住基准8.9136的一半4.4568。40%纯压缩只剩1.9987，已知价格上限仍有5.0970，但两线都已扣Base费用，不是15.02百万的策略毛收益。横轴按0/10/20/25/30/40%情景逐点排列，间隔不是数值等距；线段仅连接试验点，并不表示同样横向距离有同样压缩幅度。这一组不含共同情景的时段乘数，业务应关注贡献变薄与执行差距，而不是把40%当未来跌幅预测。",
+      "conclusion": "经营贡献对纯价差压缩敏感",
+      "business_meaning": "价格风险与执行风险共同影响可用贡献"
+    },
+    "forward-f09": {
+      "display_title": "容量单价下降时1MW组合经营贡献",
+      "question": "仅容量价格下降会损失多少组合贡献？",
+      "comparison": "现货原价/动作固定，容量价3/2.7/2.25/1.8日元，下降0/10/25/40%",
+      "key_values": [
+        "组合21.240880/20.004892/18.150910/16.296928百万日元"
+      ],
+      "reading": "先看原价3日元/ΔkW/30分钟的21.2409百万，再看降40%至1.8日元时的16.2969，贡献没有同比下降40%。这里只降容量价，现货形状和动作固定，容量费0.06保持、聚合费随毛收入变化；25%点18.1509也不是储能联合压力的14.0648。业务上容量收入能缓冲现货波动，却仍需承担单位价格下降。 横轴0/10/25/40%按情景类别等距排列，线段不能读成每单位压缩的边际变化。",
+      "conclusion": "容量降价削弱组合，但不同比缩放全部贡献",
+      "business_meaning": "容量与现货现金需要分别施压"
+    },
+    "forward-f10": {
+      "display_title": "0—2MW预留下四情景组合经营贡献",
+      "question": "怎样分配同一电池资源更有价值？",
+      "comparison": "同278天连续LP、首尾50%SOC、同Base成本；四种价格情景",
+      "key_values": [
+        "1MW基准21.240880、储能14.064788、新能源22.906929、共同13.152087百万",
+        "基准2MW23.921344；新能源1.25MW23.598733；共同1.5MW14.200965"
+      ],
+      "reading": "先在1MW竖切四条线：基准21.2409、储能压力14.0648、新能源时段22.9069、共同13.1521百万日元。再沿各线找本身峰点，基准在2MW为23.9213，新能源在1.25MW为23.5987，共同在1.5MW为14.2010；不要与只扣容量费的早期毛组合前沿混用。曲线已占用同一设备资源，却没有真实调用与秒级资格，因此峰点用于资源压力判断，不能直接成为项目报价建议。",
+      "conclusion": "贡献峰点随形态和成本改变",
+      "business_meaning": "容量承诺需要与现货机会同资源权衡"
+    },
+    "forward-f01": {
+      "display_title": "同成本1MW组合贡献的情景保留率",
+      "question": "共同压力后原组合贡献还剩多少？",
+      "comparison": "四情景对21.240880百万日元LP组合基准的比例",
+      "key_values": [
+        "100/66.215654466/107.843593221/61.918744911%"
+      ],
+      "reading": "先以100%的原价组合为分母读另外三条：储能压力66.2%、新能源时段107.8%、共同压力61.9%。分母是278天同成本1MW的21.2409百万日元，不是DP毛现货21.01或策略现货8.91。新能源时段变化可扩大搬移空间，业务需要分清“压缩价差”和“午间低、傍晚高”的作用，不能认定新能源增加必然减少所有贡献。",
+      "conclusion": "形态变化可使保留率超过100%",
+      "business_meaning": "未来压力不能只用一个容量总量解释"
+    },
+    "forward-f11": {
+      "display_title": "共同压力下五区域的1MW组合贡献",
+      "question": "相同压力与设备下区域贡献有何差异？",
+      "comparison": "统一共同情景、同278天、1MW预留、Base成本",
+      "key_values": [
+        "东北15.930258、九州13.765952、中部13.152087、东京12.872891、关西11.717181百万日元"
+      ],
+      "reading": "先比较东北15.9303与九州13.7660，再看中部13.1521、东京12.8729和关西11.7172百万日元。五区用同样的40%压缩、时段乘数、容量单价及1MW资源，差异来自各区历史价格，不来自区域新增MW校准。业务上它可定位需进一步核价形态的地区，尚缺站点投资、接网、合同和寿命，不能用作未来投资排名。",
+      "conclusion": "相同压力下区域历史贡献仍不同",
+      "business_meaning": "区域筛选还需项目成本与合同"
+    },
+    "operations-f01": {
+      "display_title": "188天有效成交区块均价的P10—P50—P90",
+      "question": "公开市场价格分布能否说明单站胜率？",
+      "comparison": "2026年4月1日至10月5日各区有效成交区块均价",
+      "key_values": [
+        "东京3.0/4.1/6.1、中部1.7/4.7/10.1、关西1.8/4.4/6.2、九州2.0/4.7/8.1日元/ΔkW/30分钟"
+      ],
+      "reading": "先看点表示的P50，再读左右P10—P90区间：中部为1.7—4.7—10.1，东京为3.0—4.1—6.1日元/ΔkW/30分钟。它们来自188天的有效成交区块加权均价，无成交的零价格没有混入分位；这些区间不是个体报价的中标概率或未来置信区间。业务报价按自己的中标价付费，仍需要逐笔报价与资格队列才能估计真实q。",
+      "conclusion": "公开汇总可以描述区块价格，不能识别项目q",
+      "business_meaning": "报价与汇总均价必须分开"
+    },
+    "operations-f02": {
+      "display_title": "1MW承诺下报价与假设中标率的期望净额",
+      "question": "什么报价与q组合覆盖履约及机会成本？",
+      "comparison": "每日24容量区间；1MW；固定费用与承诺机会成本；q为未校准的研究概率",
+      "key_values": [
+        "报价3、q70%：42,097日元/天",
+        "报价0、q70%：约−8.3千日元；报价10、q100%：约229.5千日元"
+      ],
+      "reading": "先找报价3与q70%的交叉格，期望净额42.1千日元/天；同一行报价0约−8.3千，最高报价10、q100%约229.5千。横轴是自己的容量报价，纵轴是未经验校准的情景中标率，颜色不是公开成交概率密度；承诺机会成本3,095日元在未中标时也只扣一次。业务可用它检验报价是否覆盖资源承诺，不能把70%当作市场已证明的胜率。",
+      "conclusion": "期望净额由报价、假设q和承诺成本共同决定",
+      "business_meaning": "需要自有成交证据才能把情景用于实际报价"
+    },
+    "operations-f03": {
+      "display_title": "代表日三种调用强度的SOC与恢复",
+      "question": "调用后是否仍能留在库存边界并恢复？",
+      "comparison": "中部2026年9月15日，1MW预留08:00—20:00，首尾50%；Low/Base/High人工调用",
+      "key_values": [
+        "SOC最低49.705/48.821/46.562%，最高50.035/50.207/51.008%",
+        "末SOC均50%；EFC0.018/0.074/0.235"
+      ],
+      "reading": "先看50%附近的三条曲线，再与10%和90%虚线边界比较：Low、Base、High最低分别49.705%、48.821%、46.562%，末尾都回到50%。三者都没有不足段，但EFC已从0.018增至0.074和0.235，曲线平稳不等于恢复免费。它是1MW人工调用的半小时能量示例，业务仍需真实恢复价格与秒级响应证据。",
+      "conclusion": "此1MW示例能恢复，但高调用增加吞吐",
+      "business_meaning": "库存可行与履约现金成本要同时检查"
+    },
+    "operations-f04": {
+      "display_title": "代表日Base容量收入到相对机会净额",
+      "question": "同一容量收入最后能留下多少情景贡献？",
+      "comparison": "中部2026年9月15日Base；容量、调用、恢复、现金费、非现金损耗、机会成本",
+      "key_values": [
+        "72,000＋13,140−36,229.373−4,693.575−2,395.009−1,356.225＝40,465.818日元"
+      ],
+      "reading": "先读零线两侧：容量72,000和调用13,140日元为正，恢复36,229及交易/辅机4,694为现金减项。再扣非现金影子损耗2,395和现货机会1,356，末项为40,466日元的相对机会情景净额，现金贡献本身是44,217。业务不能把72,000容量支付视为可分配利润，投资现金层还需加回影子损耗、扣固定费用并显式换电。",
+      "conclusion": "调用与恢复把容量支付变成较小贡献",
+      "business_meaning": "恢复成本及现金层必须在收入旁说明"
+    },
+    "operations-f07": {
+      "display_title": "2026年9月15日联合滚动的功率与库存",
+      "question": "交易与容量承诺是否真的共享同一物理路径？",
+      "comparison": "中部2026年9月15日JointRolling；预测使用截至9月13日信息；上图净并网功率与单独承诺的预留功率，下图为同一库存。",
+      "key_values": [
+        "预留1MW，08:00—20:00",
+        "净并网范围−2至约1.18MW；SOC10%—90%、首尾50%；日EFC0.800"
+      ],
+      "reading": "先看上图蓝线physical grid：它是实际净并网功率，负值为受电、正值为送电；金线separate reserve表示08:00—20:00的1MW预留承诺，并非第二套实际出力，不能相加。再看下图同一库存从50%升至90%、降至10%并回到50%，当日EFC0.800。这个9月15日中标示例在观察调用后只修改门槛外头寸，说明交易与恢复共享设备，但不证明真实日内流动性或秒级响应。",
+      "conclusion": "预留承诺与实际出力不同，库存只有一套",
+      "business_meaning": "兑现承诺需按时序保留可修改资源"
+    },
+    "operations-f05": {
+      "display_title": "188天同设备四策略的区域日均经济贡献",
+      "question": "联合滚动比固定预留提高了多少经济贡献？",
+      "comparison": "同价日与同费用/成交/调用情景；纯现货、固定预留、联合滚动、完全信息；经济贡献扣内部吞吐影子损耗",
+      "key_values": [
+        "中部42,431/69,466/75,714/89,889日元/天",
+        "中部联合捕获84.2%，P10仍22,306"
+      ],
+      "reading": "先在中部比较固定预留69,466与联合滚动75,714日元/天，再与完全信息89,889及纯现货42,431比较。柱高是188天情景扣内部吞吐影子损耗后的日均经济贡献，联合捕获84.2%，贡献P10仍为22,306，与固定预留相同。业务要先检查贡献和履约尾部，再加回非现金损耗到运营现金，完全信息只是知道未来调用与成交的上界。",
+      "conclusion": "同情景均值提高，尾部不保证同步改善",
+      "business_meaning": "先比较经济贡献，再接现金并评估履约风险"
+    },
+    "operations-f06": {
+      "display_title": "中部四月至十月的策略日均经济贡献",
+      "question": "贡献提升是否在每个月同样稳定？",
+      "comparison": "2026年4月至9月完整月与10月1—5日；相同三策略的经济贡献",
+      "key_values": [
+        "JointRolling：4月97,348、9月60,413、10月部分104,351日元/天",
+        "对应经济贡献2.92/1.81/0.52百万日元"
+      ],
+      "reading": "先看联合滚动日均经济贡献从4月97,348降到9月60,413日元，再比较同月固定预留与纯现货。10月104,351只来自5天，经济贡献合计0.52百万，不能与4月30天的2.92百万作同长度趋势判断。曲线已扣非现金损耗，业务年化现金前必须加回它，并保留188天样本的季节与成交、调用假设。",
+      "conclusion": "经济贡献具有月份差异，末月为部分样本",
+      "business_meaning": "贡献与现金分层，样本年化保留季节限制"
+    },
+    "operations-f10": {
+      "display_title": "97%目标可用率下500条现金路径",
+      "question": "故障与维修怎样改变运营现金的下行尾部？",
+      "comparison": "188天基底样本年化；Base97%目标、500路径、MTTR12小时等假设故障过程",
+      "key_values": [
+        "现金P10为32.563813、P50为33.586083百万日元/年",
+        "无停机现金35.062449百万日元/年"
+      ],
+      "reading": "先看金色P10虚线32.56百万日元/年，再看分布主体与P50的33.59，二者都低于无停机基底35.06。纵轴是500条情景路径计数，目标97%与故障/维修过程没有项目经验校准，不是银行预测置信区间。业务需要故障范围、失去功率与维修时长的记录，才能把可用率目标转换成可信现金尾部。",
+      "conclusion": "停机使年化现金下降并形成长尾",
+      "business_meaning": "SLA或保险价值需实际条款与故障证据"
+    },
+    "operations-f11": {
+      "display_title": "可用率0%—100%与同生命周期情景NPV",
+      "question": "只提高可用率能否使投资跨过NPV零线？",
+      "comparison": "共同563.52百万投资、20年8%及联合运营寿命/费用情景",
+      "key_values": [
+        "100%NPV−403.055182百万日元",
+        "0%—100%范围无非负点"
+      ],
+      "reading": "先看水平NPV零线，再看100%可用率端点仍为−403.06百万日元；整个0%—100%网格未跨零。局部折线并不完全单调，是循环减少推迟离散换电年等现金时点变化，不能解释成故障增加价值。业务上可靠性可保护现金，却无法单独弥补此成本与收入情景的投资缺口。",
+      "conclusion": "提高可用率不能单独使此情景NPV非负",
+      "business_meaning": "还需收入、成本或合同条件改变"
+    },
+    "operations-f08": {
+      "display_title": "同总设备量的地域组合与集中组合风险",
+      "question": "地区分散是否改善同日现金下行？",
+      "comparison": "各6台2MW/8.14MWh，总12MW/48.84MWh；188天经济贡献；六完整月CV",
+      "key_values": [
+        "六区/中部P10：305,470/133,838日元",
+        "日标准差154,615/230,539日元",
+        "完整月CV0.1394/0.1844"
+      ],
+      "reading": "先读左图同日组合P10：六区域305,470日元高于中部集中133,838，再读中图日标准差154,615低于230,539。右图完整月日均CV为0.1394对0.1844，只使用4月至9月六个月，两组合总设备量都是12MW/48.84MWh。业务可用地域分散减少部分价格相关波动，但分位必须先逐日相加再计算，也不赋予跨区共用库存的资格。",
+      "conclusion": "同总量分散组合在该情景中具有更好下行与波动指标",
+      "business_meaning": "现金分散与物理/法律资源共用不同"
+    },
+    "operations-f09": {
+      "display_title": "同日价格相关现货贡献的区域相关系数",
+      "question": "哪些区域的现金形态较同步？",
+      "comparison": "188个同日价格相关现货贡献；容量情景中标随机流另算",
+      "key_values": [
+        "九州/中国0.93、东京/中部0.71、关西/东北0.19（图四舍五入）"
+      ],
+      "reading": "先读非对角格：九州与中国约0.93、东京与中部0.71，说明同日现货贡献较同步；关西与东北约0.19较弱。对角1.00是自身相关，色阶是Pearson相关系数；容量情景中标流另算，图不是实际故障或资格相关。组合业务应分开价格共振、共因设备故障与同步区约束，低相关不表示能跨站借SOC。",
+      "conclusion": "区域现金共振程度不同",
+      "business_meaning": "组合需要分别管理价格与共因履约风险"
+    },
+    "markets-f01": {
+      "display_title": "NEM电池季度能量与FCAS收入构成",
+      "question": "电池市场收入主要来自能量还是频率服务？",
+      "comparison": "AEMO2026第一/第二季度群体估算；百万澳元，排除FCAS成本回收与FPP",
+      "key_values": [
+        "Q1：能量93.9＋FCAS3.0＝96.9",
+        "Q2：能量52.8、FCAS4.8，官方总57.5；分项相加57.6"
+      ],
+      "reading": "先比较蓝色能量部分，93.9降到52.8百万澳元；金色FCAS却由3.0升到4.8，官方总额从96.9到57.5。Q2分项四舍五入后相加57.6与官方57.5差0.1，保留原报告总额；这不是单站利润且群体可能变化。业务上应分别跟踪能量形态和频率服务竞争，不能把全部电池收入变化归因于FCAS饱和。",
+      "conclusion": "能量套利仍是收入主体，FCAS变化方向不同",
+      "business_meaning": "收入组成比分别移植单价更有用"
+    },
+    "markets-f02": {
+      "display_title": "GB EAC动态服务月加权容量价与负价窗口",
+      "question": "不同方向服务的容量价格是否同样变化？",
+      "comparison": "UTC2026年3—10月公开窗口；3/10月部分；按MW×小时加权价与窗口负价比例",
+      "key_values": [
+        "9月DCL5.334、DML10.709、DRL19.629、DRH−8.445英镑/MW/小时",
+        "9月DRH负价窗口81.1%；DCL0%；每商品180窗口"
+      ],
+      "reading": "先在9月上图对比低频DCL5.334、DML10.709、DRL19.629与高频DRH−8.445英镑/MW/小时，再读下图DRH负价窗口81.1%、DCL为0%。上图按成交MW×小时加权，下图9月每商品按180个有效窗口计数；其余月份各用自身有效窗口数，3月与10月仅部分UTC窗口。容量加权均价与窗口负价比例的分母不同。负容量价意味着服务方付款，业务需把商品方向、制度共优化、能源承诺和履约费用接到现金，不能与负电能价或项目亏损画等号。",
+      "conclusion": "同市场不同服务方向具有不同正负价格",
+      "business_meaning": "容量竞价制度与方向比一个平均价更关键"
+    },
+    "markets-f03": {
+      "display_title": "三地储能规模的日期与状态快照",
+      "question": "增长数据能否当作同一种已运营竞争供给？",
+      "comparison": "日本连接完了、NEM全投运加调试、GB较早在网快照",
+      "key_values": [
+        "日本2026-03-31：0.84GW",
+        "NEM2026-06-30：超过9GW；连接流程39.6GW含0.2GW压缩空气",
+        "GB2025-12-17：超过6GW；17GW容量协议与约35GW规划许可可能重叠"
+      ],
+      "reading": "先读每行日期与状态，再读规模：日本2026年3月31日0.84GW接续完了，NEM6月30日超过9GW含调试，GB2025年12月17日超过6GW在网。NEM连接流程39.6GW含0.2GW压缩空气，GB17GW容量协议与约35GW规划许可也不能相加。业务应把状态转换与实际资格用于竞争时间判断，不能用不同比例或排队量自动改日本价格压缩和中标率。",
+      "conclusion": "三地规模群体和日期不统一",
+      "business_meaning": "状态变化更新竞争时间，不能直接比较收益或校准价格"
+    },
+    "feasibility-f01": {
+      "display_title": "年度自由现金：第10与19年的电池更换",
+      "question": "首年正现金能否覆盖后续更换？",
+      "comparison": "中部278日基底，基准建设和寿命，运营年1–20税前自由现金。",
+      "key_values": [
+        {
+          "label": "首年自由现金",
+          "value": 17.87714256776736,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "第10/19年换电",
+          "value": 233.618,
+          "unit": "百万JPY/次"
+        },
+        {
+          "label": "换电年自由现金",
+          "value": -215.74085743223267,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "先沿横轴找第10和19年，两次自由现金从正值降至−215.74m，原因是各支付233.618m电池更换。首年17.88m与更换年负现金属于同一项目路径，图内只画运营现金，年0的563.52m建设投资另计。投资方需要为这种集中支出安排资金，首年盈利不能代替全寿命现金判断。",
+      "conclusion": "更换令运营年现金两次转负。",
+      "business_meaning": "更换资金须提前安排，不能用首年现金外推投资回收。"
+    },
+    "feasibility-f02": {
+      "display_title": "累计未折现现金：建设资金与更换共同决定回收",
+      "question": "20年内能否收回建设投资？",
+      "comparison": "同一基准累计未折现现金，含年0投资。",
+      "key_values": [
+        {
+          "label": "年0累计",
+          "value": -563.52,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "年20累计",
+          "value": -723.0861848649881,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "先看年0的−563.52m起点，再看第10和19年两次向下跳点，最后读第20年−723.09m。累计曲线从未越过零线，表示这些假设下20年仍未收回建设投资，且更换支出把已经积累的现金再次消耗。它是未折现回收视角，不是NPV，也不能用曲线局部上升称项目已回本。",
+      "conclusion": "20年内未回收初始投资。",
+      "business_meaning": "资本回收必须同时检查初始投资与后续重置。"
+    },
+    "feasibility-f03": {
+      "display_title": "三档建设预算与各自的盈亏平衡预算",
+      "question": "建设报价距离可承受预算有多远？",
+      "comparison": "低/基准/高成本的初始预算与保持同成本结构的NPV零点。",
+      "key_values": [
+        {
+          "label": "初始低/基准/高",
+          "value": [
+            289.9,
+            563.52,
+            839
+          ],
+          "unit": "百万JPY"
+        },
+        {
+          "label": "基准盈亏平衡CAPEX",
+          "value": 137.2524957971161,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "每行先比较蓝色初始预算与金色盈亏平衡预算，三档蓝条都更长；基准是563.52m对137.25m。金条随各档更换、保险及退役结构计算，不是一份通用设备报价。取得真实项目报价后，应先核对范围和预算距离，再讨论借款或补助能否解决资金来源。",
+      "conclusion": "列示预算均高于各自盈亏平衡预算。",
+      "business_meaning": "融资改变资金来源，不能自动弥补负项目价值。"
+    },
+    "feasibility-f04": {
+      "display_title": "预算与经营现金的二维压力：先定位1×1格",
+      "question": "降低预算或提高现金，哪种幅度能跨过零NPV？",
+      "comparison": "横轴全套预算系数、纵轴寿命经营现金系数，其他形状保持。",
+      "key_values": [
+        {
+          "label": "1×1格NPV",
+          "value": -566.1975907796854,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "固定预算盈亏平衡首年经营现金",
+          "value": 87.40503680852945,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "先找到横轴1.00倍、纵轴1.00倍交点的−566m，再沿行看降预算、沿列看加现金的变化。即使经营现金提高到2倍，1倍预算格仍约−305m；蓝色正值集中在大幅降预算的区域。横轴同时缩放更换、保险和拆除，0.2倍属于阈值探查，业务上不能把它当作可采购的报价或把现金系数直接当电价涨幅。",
+      "conclusion": "默认预算与现金组合远离零NPV。",
+      "business_meaning": "合同、报价及市场现金必须共同改变后重新审查。"
+    },
+    "feasibility-f05": {
+      "display_title": "后期更换支出改变折现率与NPV的关系",
+      "question": "为什么折现率升高，图中NPV反而较不负？",
+      "comparison": "固定同一20年现金路径，折现率0/4/8/12/16%。",
+      "key_values": [
+        {
+          "label": "0% NPV",
+          "value": -723.0861848649881,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "8% NPV",
+          "value": -566.1975907796854,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "先比较0%时−723.09m与8%时−566.20m，再顺着曲线看其随折现率提高而上升。这里第10和19年有大额负现金，较高折现率降低这些远期支出的现值权重，所以结果较不负。它没有增加收入或减少真实更换付款，投资判断仍须保留同一现金路径和明确的资金成本假设。",
+      "conclusion": "曲线上升来自远期负现金权重减少。",
+      "business_meaning": "不能把改变折现率称为经营改善。"
+    },
+    "feasibility-f06": {
+      "display_title": "扩大SOC与循环预算，首年现金只小幅增加",
+      "question": "更积极运行能多赚多少首年现金？",
+      "comparison": "同价格、预留1MW和基准成本寿命下，三种运营政策首年经营现金。",
+      "key_values": [
+        {
+          "label": "保守/基准/积极首年现金",
+          "value": [
+            26.338229307608735,
+            27.56770256776736,
+            27.925481686219396
+          ],
+          "unit": "百万JPY/年"
+        }
+      ],
+      "reading": "先从保守、基准、积极三行读到26.34、27.57、27.93m首年经营现金。积极策略允许更宽SOC与更多循环，但比基准只多0.36m；这里尚未扣固定年度费与实际更换。业务决策需要把这项增量接到下一图的寿命现金，不能仅按最长蓝条选控制策略。",
+      "conclusion": "积极运营首年现金最高，但增量有限。",
+      "business_meaning": "交易目标需要兼顾资产寿命成本。"
+    },
+    "feasibility-f07": {
+      "display_title": "首年排名反转：保守运营的寿命NPV较高",
+      "question": "较高首年现金是否也带来更高寿命价值？",
+      "comparison": "同基准建设和寿命，三种运营政策20年8%NPV。",
+      "key_values": [
+        {
+          "label": "保守/基准/积极NPV",
+          "value": [
+            -500.0064667917707,
+            -566.1975907796854,
+            -580.413557597918
+          ],
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "负数条应比较谁更接近零：保守−500.01m高于基准−566.20m和积极−580.41m。它与前图首年现金的排序相反，因为更积极循环使更换更早、更频繁。三者仍均为负NPV，结果支持在当前假设下减少寿命消耗，而不证明保守策略已具投资可行性。",
+      "conclusion": "寿命成本改变首年现金排序。",
+      "business_meaning": "必须以同一生命周期现金评价运行政策。"
+    },
+    "feasibility-f08": {
+      "display_title": "年末SOH的跳点对应付费更换",
+      "question": "容量恢复来自自然恢复还是电池重置？",
+      "comparison": "三种运营政策年末SOH，与80%更换阈值。",
+      "key_values": [
+        {
+          "label": "基准更换年",
+          "value": [
+            10,
+            19
+          ],
+          "unit": "运营年"
+        },
+        {
+          "label": "保守更换年",
+          "value": [
+            13
+          ],
+          "unit": "运营年"
+        },
+        {
+          "label": "积极更换年",
+          "value": [
+            9,
+            17
+          ],
+          "unit": "运营年"
+        }
+      ],
+      "reading": "先对照80%灰线看各策略何时触及阈值，再沿基准金线找第10和19年向上跳点。基准第9年末SOH约78.3%，下一年初换电后，第10年末又约97.4%；图点是年末容量，并非换电瞬间的100%。恢复必须对应现金支出，且这里整包更换、阈值和衰减曲线都是研究假设，不能当厂商质保。",
+      "conclusion": "SOH跳点由更换重置产生。",
+      "business_meaning": "容量恢复与更换CAPEX应逐年同时核对。"
+    },
+    "feasibility-f09": {
+      "display_title": "循环量增加：固定原始容量分母的EFC",
+      "question": "三种运营政策消耗多少循环量？",
+      "comparison": "原始8.14MWh作分母的首年电池侧放电EFC。",
+      "key_values": [
+        {
+          "label": "保守/基准/积极EFC",
+          "value": [
+            214.27887372737536,
+            304.5576272500299,
+            330.8986116134283
+          ],
+          "unit": "EFC/年"
+        }
+      ],
+      "reading": "从三条读到首年214.3、304.6、330.9EFC；分母始终是原始8.14MWh，不随电池老化缩小。积极相对基准多26.3EFC，而前面现金只多0.36m。多做交易的价值必须与循环消耗一起考察，EFC本身既不是利润指标，也不是未经工况核实的保证寿命。",
+      "conclusion": "更宽窗口和循环预算增加首年EFC。",
+      "business_meaning": "额外循环的收益须覆盖相应寿命消耗。"
+    },
+    "feasibility-f10": {
+      "display_title": "额外现金与循环寿命准备额比较",
+      "question": "新增交易现金能覆盖新增循环消耗吗？",
+      "comparison": "积极减基准的离散政策差额；循环准备额只用于经济比较。",
+      "key_values": [
+        {
+          "label": "额外现金",
+          "value": 0.3577791184520349,
+          "unit": "百万JPY/年"
+        },
+        {
+          "label": "额外循环准备额",
+          "value": 3.6335853655007853,
+          "unit": "百万JPY/年"
+        },
+        {
+          "label": "差额",
+          "value": -3.2758062470487506,
+          "unit": "百万JPY/年"
+        }
+      ],
+      "reading": "先比较上方额外经营现金0.36m与下方循环损耗准备额3.63m，净差约−3.28m。准备额用更换预算乘循环容量损失再除20%容量损失阈值，反映这两种离散运营政策的经济差额。它不是新增当期付款，项目现金已显式扣实际更换，不能再次扣准备额；业务意义是在下单前检查循环价值是否值得寿命消耗。",
+      "conclusion": "额外循环准备额高于新增现金。",
+      "business_meaning": "优化目标不应仅追求短期现金。"
+    },
+    "feasibility-f11": {
+      "display_title": "区域申请量：先比较阶段，再比较区域",
+      "question": "哪些区域申报多，能否据此判断接入等待？",
+      "comparison": "2026年3月末、高压及以上，审核与契约申请GW。",
+      "key_values": [
+        {
+          "label": "东北审核/契约申请",
+          "value": [
+            75.44,
+            5.77
+          ],
+          "unit": "GW"
+        },
+        {
+          "label": "中部审核/契约申请",
+          "value": [
+            17.36,
+            4.41
+          ],
+          "unit": "GW"
+        }
+      ],
+      "reading": "每个区域先分别看蓝色接入审核与金色契约申请，再做跨区域比较；东北为75.44/5.77GW，中部17.36/4.41GW。它们是不同手续阶段的申报容量，不是两批可以相加的独立电站，也不提供申请成功率。区域规模只说明开发活动和核验需求，项目工期仍要依赖具体线路、方向和接入回答。",
+      "conclusion": "申报阶段差异不能替代接入许可。",
+      "business_meaning": "选址需要逐站网络条件，不能按申请量给投资排序。"
+    },
+    "feasibility-f12": {
+      "display_title": "全国申请快速增长，已接入仍是另一状态",
+      "question": "申报增长能否直接转为供给增长？",
+      "comparison": "2023年1月至2026年3月，高压及以上三个手续阶段。",
+      "key_values": [
+        {
+          "label": "2026-03审核/契约/已接入",
+          "value": [
+            191.14,
+            35.27,
+            0.84
+          ],
+          "unit": "GW"
+        },
+        {
+          "label": "2023-01审核",
+          "value": 8.79,
+          "unit": "GW"
+        }
+      ],
+      "reading": "先沿蓝线看审核申报从2023年1月8.79GW升至2026年3月191.14GW，再读同月契约申请35.27GW与已接入0.84GW。三个阶段相差很大，但不能相加为项目管线，也不能用已接入除审核量当同一群体的转化率。市场供给、设备订单和开发权利应分别登记，不能把申报增量全部当未来已投运竞争。",
+      "conclusion": "手续阶段量不等于去重供给管线。",
+      "business_meaning": "竞争与投资研究需要实际投运状态和时间。"
+    },
+    "feasibility-f13": {
+      "display_title": "同一接入压力下，NPV变化还受更换阈值影响",
+      "question": "延后、限制或增建怎样进入同一项目现金？",
+      "comparison": "五区域统一施加无约束、80%可用量并延后1年、延后4年加30m。",
+      "key_values": [
+        {
+          "label": "中部三情景NPV",
+          "value": [
+            -566.1975907796854,
+            -551.91,
+            -605.58
+          ],
+          "unit": "百万JPY"
+        },
+        {
+          "label": "限用首年现金",
+          "value": 22.05,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "每个区域在同一行比较三条，先看中部：无约束约−566.20m、限用并延后1年约−551.91m、等待4年加增建约−605.58m。限用时首年现金从27.57m降至22.05m，却可能把一次更换移出20个运营年的窗口，使NPV较不负。这个阈值效应不证明限制有利，也不代表各区域实际限制系数；应取得限制时段和增建报价后再判断可交易现金。",
+      "conclusion": "财务方向受可用量、时间与更换共同影响。",
+      "business_meaning": "区域实际接入条件必须替换统一压力参数。"
+    },
+    "business-commercial-allocation": {
+      "display_title": "同一贡献池：先读业主收入，再查另一方义务",
+      "question": "固定费、分成与tolling怎样改变上下行归属？",
+      "comparison": "同一结算期间8/20/32m池；固定费2m、正贡献10%、业主固定15m。",
+      "key_values": [
+        {
+          "label": "8m池业主固定费/分成/tolling",
+          "value": [
+            6,
+            7.2,
+            15
+          ],
+          "unit": "百万JPY"
+        },
+        {
+          "label": "8m池toller剩余",
+          "value": -7,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "32m池业主固定费/分成/tolling",
+          "value": [
+            30,
+            28.8,
+            15
+          ],
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "先看8m池的三条业主分配：固定费后6m、分成后7.2m、tolling固定15m；图只画业主，toller在最后一种安排承担−7m补足义务。再看32m池，固定支付仍15m，业主让出上行，toller剩余升至17m。合同没有增加池内市场价值，而是改变归属和资金缺口；固定支付能否用于融资还取决于信用、可用率扣款、担保与终止条款。",
+      "conclusion": "合同分配改变价格暴露和补足责任。",
+      "business_meaning": "同一池必须在双方及信用条件下审查。"
+    },
+    "business-policy-refund": {
+      "display_title": "先给12/2/4m阈值，再读他市场收益返还",
+      "question": "为什么LTDA返还可能高于当年容量收入？",
+      "comparison": "容量年12m、主拍卖比较2m、应标资本成本4m，无上年亏损，2026返还分带。",
+      "key_values": [
+        {
+          "label": "20m他市场收益返还",
+          "value": 17.7,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "20m时容量减返还",
+          "value": -5.7,
+          "unit": "百万JPY"
+        },
+        {
+          "label": "18m年度例返还",
+          "value": 16,
+          "unit": "百万JPY"
+        }
+      ],
+      "reading": "先沿横轴找到20m他市场收益，蓝线返还17.7m，橙线12m容量收入扣返还后为−5.7m。该点由4m×95%、6m×90%、10m×85%相加，返还没有12m容量收入封顶。它是独立收益敏感性，不是下一段销售30m、收益18m年度例的16m返还；业务上必须先核定义、阈值和时点，才把容量收入放入现金。",
+      "conclusion": "高他市场收益可以形成超过容量收入的返还义务。",
+      "business_meaning": "长期容量收入不能直接加成保底利润。"
+    },
+    "business-finance-debt": {
+      "display_title": "同一预计收入下，贷款只在压力层改变",
+      "question": "为什么项目IRR不变而可支持债务不同？",
+      "comparison": "150m建设、年收入20m、年运行费5m；0/50/85%合同占比，其他参数相同。",
+      "key_values": [
+        {
+          "label": "合同占比",
+          "value": [
+            0,
+            0.5,
+            0.85
+          ],
+          "unit": "fraction"
+        },
+        {
+          "label": "贷款",
+          "value": [
+            36.09643754037834,
+            61.36394381864317,
+            79.05119821342856
+          ],
+          "unit": "百万JPY"
+        },
+        {
+          "label": "项目IRR",
+          "value": 6.832493754863944,
+          "unit": "%"
+        }
+      ],
+      "reading": "按合同占比0%、50%、85%读三条，支持贷款分别36.096、61.364、79.051m。预计年收入仍为20m，项目IRR仍为6.83%；变的是60%、77.5%、89.75%的研究压力保留率及其偿债现金。贷款多使初始股东投入减少，却增加真实本息付款，必须连同储备和股东分配审查，不能把柱高当已获批贷款。",
+      "conclusion": "合同化只改变本例压力债务支持。",
+      "business_meaning": "融资容量与项目价值是两个判断。"
+    },
+    "business-finance-dscr": {
+      "display_title": "50%合同例：储备结束后DSCR为何上移",
+      "question": "项目预计现金与贷款压力现金怎样覆盖本息？",
+      "comparison": "年收入20m、50%合同、贷款61.364m的12年债务期；不是稳定15m对照。",
+      "key_values": [
+        {
+          "label": "前10年预计/压力DSCR",
+          "value": [
+            1.988235294117647,
+            1.3
+          ],
+          "unit": "x"
+        },
+        {
+          "label": "第11/12年预计/压力DSCR",
+          "value": [
+            2.294117647058824,
+            1.6058823529411765
+          ],
+          "unit": "x"
+        }
+      ],
+      "reading": "先看前10年的蓝线1.988x与橙线1.300x：预计CFADS13m、压力CFADS8.5m，分别除以年本息6.538m。第11年起不再筹2m更换储备，CFADS升至15m与10.5m，所以两线升至2.294x与1.606x；更换由已筹储备支付。图只描述同一20m混合收入例，业务上要另查受损年份现金，而不是把稳定15m对照或1.3x研究门槛套成实际银行政策。",
+      "conclusion": "储备筹集时点决定覆盖率形状。",
+      "business_meaning": "偿债审查须明确现金层与每期资金锁定。"
+    },
+    "business-pv-energy": {
+      "display_title": "共用出口的光储：先读功率约束，再读库存",
+      "question": "回收弃光为何不等于相同售电量？",
+      "comparison": "PV2.4MW，BESS2MWh/0.8MW、出口1MW、负荷0.35MW；充放各95%、往返90.25%的人工合成日。",
+      "key_values": [
+        {
+          "label": "弃光回收/放电/损失",
+          "value": [
+            1.684211,
+            1.52,
+            0.164211
+          ],
+          "unit": "MWh/day"
+        },
+        {
+          "label": "能量库存首尾/上限",
+          "value": [
+            0.2,
+            1.8
+          ],
+          "unit": "MWh"
+        }
+      ],
+      "reading": "上图出口受1MW约束，下图按MWh画能量库存，在0.2–1.8MWh内搬移并回到0.2；这相当于2MWh电池的10%–90%SOC。充入原本弃光1.684211MWh，按充放各95%效率得到1.520000MWh放电，损失0.164211MWh；自用与出口须按各自合同计价。",
+      "conclusion": "能量回收与可售放电之间存在损失和归属边界。",
+      "business_meaning": "光储必须重做共同资源和合同现金核算。"
+    },
+    "business-demand-window": {
+      "display_title": "历史峰值退出后，削峰才降低基本费",
+      "question": "为什么峰值已削低，前11个月节约仍为零？",
+      "comparison": "TEPCO关东高压指定菜单：此前11个月含480kW峰，当月420→370kW。",
+      "key_values": [
+        {
+          "label": "基本费单价",
+          "value": 2530,
+          "unit": "JPY/kW/month"
+        },
+        {
+          "label": "前11个月节约",
+          "value": 0,
+          "unit": "JPY/month"
+        },
+        {
+          "label": "第12个月节约",
+          "value": 126500,
+          "unit": "JPY/month"
+        }
+      ],
+      "reading": "前11个月仍受历史480kW峰值约束，即使当前420kW削至370kW，基本费也不变。到第12个月历史峰退出，50kW差额才按2,530JPY/kW·月兑现；图显示的是指定菜单下的基本费节约。",
+      "conclusion": "历史需量窗口延后削峰现金兑现。",
+      "business_meaning": "用户侧收入应按合同计费规则逐月核算。"
+    },
+    "business-risk-npv": {
+      "display_title": "固定原贷款后，延期和追加支出怎样回到现金",
+      "question": "受损项目为何仍需偿付原贷款？",
+      "comparison": "50%合同基准贷款61.364m固定，独立停机、延期、追加CAPEX、保险费、更换压力。",
+      "key_values": [
+        {
+          "label": "基准/延期/追加15mNPV",
+          "value": [
+            -1.88373725907873,
+            -15.902,
+            -16.884
+          ],
+          "unit": "百万JPY"
+        },
+        {
+          "label": "延期最低DSCR",
+          "value": -0.3058823529411765,
+          "unit": "x"
+        }
+      ],
+      "reading": "先比较基准NPV−1.884m与延期一年−15.902m、追加投资15m的−16.884m，再看其他压力的差别。贷款仍固定61.364m，延期不顺延偿债，在收入为零的首年还筹2m更换储备，CFADS−2m使DSCR降至−0.306。图是各项独立压力，不是事故概率或可相加的预期损失；保险与合同赔款只有满足实际条款才能补现金，本图没有提前计入。",
+      "conclusion": "固定债务把交付与运营风险转成股东资金缺口。",
+      "business_meaning": "风险分配必须核对追索条件、付款时点与残余缺口。"
+    },
+    "cash-chain": {
+      "display_title": "从市场机会到股东现金流：现金边界与银行审查",
+      "question": "市场结果经哪些成本、时间与资金安排变成可分配现金？",
+      "comparison": "历史完美信息机会、执行结算、经营贡献、未融资项目现金、银行偿债压力及股东分配逐层对照。",
+      "key_values": "早期毛套利已经扣充电买电且效率已进入能量；经营贡献可扣影子损耗；项目DCF加回代理后显式扣一次更换。",
+      "reading": "沿主线先区分机会与现金：历史上限换成事前策略的真实结算，再扣变动费用得到经营贡献，加入建设投入、固定费用、更换与末期支出才形成多年项目现金。充电买电与效率影响已进入早期套利，不能在项目层再扣一次；若贡献用了非现金损耗代理，项目现金须加回，并在更换发生时扣真实预算。银行认可CFADS另按合同与商户收入的压力保留率审查偿债、确定贷款额度，这个分析折扣不减少预计项目收入。股东分配使用真实现金，纳入贷款提款、储备筹集和释放，再扣本金与利息，因此项目IRR与股权IRR回答不同的投资问题。",
+      "conclusion": "A提供市场及资产现金条件；B决定资产何时出现、价值归属与资金结构，两者在同一项目现金流上汇合。",
+      "business_meaning": "以现金边界识别费用是否重复、收益是否可实现、偿债是否足够与剩余现金归谁，避免用单年毛套利代替股东回报。",
+      "misread": "银行压力折扣是定债分析分支，储备筹资是现金时点安排；二者都不应重复计为未融资项目成本。"
+    },
+    "development-path": {
+      "display_title": "开发路径：资产交付与市场资格分别推进",
+      "question": "怎样避免把电站开发误读成所有阶段依次串行？",
+      "comparison": "土地、接入设计与许可路径的并行工作，以及资产交付与具体商品资格两条放行线。",
+      "key_values": "FID以接网方案、设计与目标市场路径为前提；资格准备可在设计阶段启动，商品资格与COD分别放行。",
+      "reading": "从机会与选址向下看，土地权利、接入方案和许可路径分支共同提供投资放行条件，箭头表示前提而非固定工期。FID之后，资金、EPC采购与站内施工和电网工程按各自合同推进，设备测试、受电与试运转完成后形成COD条件。右侧资格准备可从设计和目标市场路径并行启动，具体商品的申报、测试和放行另行满足要求，不能等同于受电或COD。只有资产与交易条件都到位，市场研究中的经营现金才有实现的起点。",
+      "conclusion": "关键是识别不可撤销支出前的条件，以及现金起算所需的两条放行线。",
+      "business_meaning": "并网、交付或资格任一延迟，都可能延后收入和触发追加资金，项目不能因设备已经到场就被视为可交易。",
+      "misread": "图压缩为主要工作分支；详细启动依赖和分阶段测试仍按具体项目及商品条件判断，箭头不承诺耗时。"
+    },
+    "actors-flow": {
+      "display_title": "分别读电能、控制与资金，角色才形成合同责任",
+      "question": "同一项目里的资产、调度权和结算义务怎样连接？",
+      "comparison": "图中当前所选电能/控制/资金层的付款人、收款人及触发条件。",
+      "key_values": "SPV持有资产和合同；投资、设备付款、市场结算与贷款本息不是同一条资金边。",
+      "reading": "先看当前选择的流向层：电能连接物理资产与电网，控制层连接调度授权和设备执行，资金层连接合同付款人、收款人与触发条件。SPV承接项目资产与融资，EPC/SI承担约定交付，Aggregator承担约定市场接口；同一家公司可以兼任角色，名称本身不转移义务。把图中每条资金边与下方契约对应，才能判断建设付款、市场结算、本息或保险赔付何时成立。投资人应同时核对谁能控制风险，以及发生缺口时谁仍有支付责任。",
+      "conclusion": "三类流向分别成立，现金归属由合同而非角色名称确定。",
+      "business_meaning": "避免把市场资格、调度授权和资产所有权混为一种权利，识别残余项目风险。"
+    },
+    "control-chain": {
+      "display_title": "Quant、EMS、PCS与Aggregator怎样接成一条业务链",
+      "question": "优化结果怎样变成现场可交付且可结算的电力服务？",
+      "comparison": "计划决策、现场约束管理、物理执行与市场接口的不同责任。",
+      "key_values": "Quant目标计划→EMS校验与设定值→PCS执行充放电；Aggregator管理资源资格、申报、通信、履约与结算。",
+      "reading": "沿物理控制链读：Quant利用价格与资产约束给出目标计划，EMS再按现场SOC、可用功率及安全状态校验和下发设定值，PCS执行实际充放电。BMS和保护条件优先于计划，软件收益最优并不能越过设备与接入边界。Aggregator连接市场资格、申报、通信、履约和结算，可以服务一个或多个资产，未必是资产的法人所有者。业务判断需要把调度权与履约责任接回合同，避免把四个名称当成可互换的并列服务。",
+      "conclusion": "计划价值经过现场约束与市场资格，才可能兑现为现金。",
+      "business_meaning": "SI交付、EM持续管理和AG市场聚合需要不同能力与责任边界，公开服务定位不直接推得毛利或市场份额。"
+    },
+    "market-price": {
+      "display_title": "所选日价格路径",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "所选日价格路径",
+      "key_values": "先按JST时间看48个半小时的Area Price，而不是只取最高与最低两个点。低价在高价之前才便于先充后放；即使价差很宽，2MW功率与库存仍限制能够搬运的电量。与下一张功率图逐槽配对，才能判断价格变化怎样形成真实可行的买卖动作。",
+      "reading": "先按JST时间看48个半小时的Area Price，而不是只取最高与最低两个点。低价在高价之前才便于先充后放；即使价差很宽，2MW功率与库存仍限制能够搬运的电量。与下一张功率图逐槽配对，才能判断价格变化怎样形成真实可行的买卖动作。",
+      "conclusion": "与下一张功率图逐槽配对，才能判断价格变化怎样形成真实可行的买卖动作。",
+      "business_meaning": "与下一张功率图逐槽配对，才能判断价格变化怎样形成真实可行的买卖动作。"
+    },
+    "market-power": {
+      "display_title": "受约束的充放电动作",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "受约束的充放电动作",
+      "key_values": "蓝色购电和放电动作按半小时排列，2MW限值限定每槽最多可用的功率。放电之前要有库存，充电也需要SOC余量；两方向由同一电池承担，不能把所有低价槽和高价槽同时按满功率累加。把动作接到SOC与现金表，才能看见效率和日循环预算怎样限制机会。",
+      "reading": "蓝色购电和放电动作按半小时排列，2MW限值限定每槽最多可用的功率。放电之前要有库存，充电也需要SOC余量；两方向由同一电池承担，不能把所有低价槽和高价槽同时按满功率累加。把动作接到SOC与现金表，才能看见效率和日循环预算怎样限制机会。",
+      "conclusion": "把动作接到SOC与现金表，才能看见效率和日循环预算怎样限制机会。",
+      "business_meaning": "把动作接到SOC与现金表，才能看见效率和日循环预算怎样限制机会。"
+    },
+    "market-soc": {
+      "display_title": "逐槽库存守恒",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "逐槽库存守恒",
+      "key_values": "当前图含日初库存与48个槽后的SOC，10%–90%限定可用库存边界。默认日末回到日初10%，避免隐含从前后日期免费借能量；改变参数后，应先检查新边界和收尾，再解释收益变化。库存约束把看似可买卖的价格机会变为实际可行或不可行的路径。",
+      "reading": "当前图含日初库存与48个槽后的SOC，10%–90%限定可用库存边界。默认日末回到日初10%，避免隐含从前后日期免费借能量；改变参数后，应先检查新边界和收尾，再解释收益变化。库存约束把看似可买卖的价格机会变为实际可行或不可行的路径。",
+      "conclusion": "库存约束把看似可买卖的价格机会变为实际可行或不可行的路径。",
+      "business_meaning": "库存约束把看似可买卖的价格机会变为实际可行或不可行的路径。"
+    },
+    "market-monthly": {
+      "display_title": "区域与系统价格的月均值",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "区域与系统价格的月均值",
+      "key_values": "先按月份分别看所选Area Price与系统价格，两条均价线描述价格水平而非当天可搬运的价差。2025全年与2026截至10月5日的样本长度不同，最后一个月也可能不完整。储能收入仍需要回到半小时路径，不能以月均价格差直接代替套利现金。",
+      "reading": "先按月份分别看所选Area Price与系统价格，两条均价线描述价格水平而非当天可搬运的价差。2025全年与2026截至10月5日的样本长度不同，最后一个月也可能不完整。储能收入仍需要回到半小时路径，不能以月均价格差直接代替套利现金。",
+      "conclusion": "储能收入仍需要回到半小时路径，不能以月均价格差直接代替套利现金。",
+      "business_meaning": "储能收入仍需要回到半小时路径，不能以月均价格差直接代替套利现金。"
+    },
+    "anatomy-spread-hist": {
+      "display_title": "每日价差分布",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "每日价差分布",
+      "key_values": "每个交易日先取48个半小时最高价减最低价，再把这些日价差分箱；横轴是价差，纵轴是落入各箱的天数。尾部说明宽价差是否集中在少数日，不能直接读成电池利润分布。因为买卖顺序、2MW功率、效率和库存仍未进入这项描述统计，投资判断还须看策略收益和现金尾部。",
+      "reading": "每个交易日先取48个半小时最高价减最低价，再把这些日价差分箱；横轴是价差，纵轴是落入各箱的天数。尾部说明宽价差是否集中在少数日，不能直接读成电池利润分布。因为买卖顺序、2MW功率、效率和库存仍未进入这项描述统计，投资判断还须看策略收益和现金尾部。",
+      "conclusion": "因为买卖顺序、2MW功率、效率和库存仍未进入这项描述统计，投资判断还须看策略收益和现金尾部。",
+      "business_meaning": "因为买卖顺序、2MW功率、效率和库存仍未进入这项描述统计，投资判断还须看策略收益和现金尾部。"
+    },
+    "anatomy-frequency": {
+      "display_title": "高低价格出现时段",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "高低价格出现时段",
+      "key_values": "先比较各半小时槽中≥30与≤5 JPY/kWh事件的跨日频率，识别高低价更常出现在哪些时段。30与5是研究分类阈值，改变分类不等于改变市场成交价，也不构成自动交易门槛。频率需要与连续持续时间和可行调度相连，才能判断是否存在足够的充放电窗口。",
+      "reading": "先比较各半小时槽中≥30与≤5 JPY/kWh事件的跨日频率，识别高低价更常出现在哪些时段。30与5是研究分类阈值，改变分类不等于改变市场成交价，也不构成自动交易门槛。频率需要与连续持续时间和可行调度相连，才能判断是否存在足够的充放电窗口。",
+      "conclusion": "频率需要与连续持续时间和可行调度相连，才能判断是否存在足够的充放电窗口。",
+      "business_meaning": "频率需要与连续持续时间和可行调度相连，才能判断是否存在足够的充放电窗口。"
+    },
+    "risk-daily-hist": {
+      "display_title": "真实结算日收益分布",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "真实结算日收益分布",
+      "key_values": "横轴是日收益分箱中点，负收益按实际价格结算保留；先看零附近和负值区，再看高收益尾部。中部2026岭回归报告基准有18个亏损日，区间总收入15.02m并不代表每一天都提供正现金。固定合同付款和运维需要覆盖低收益时期，因此总额与尾部应共同审查。",
+      "reading": "横轴是日收益分箱中点，负收益按实际价格结算保留；先看零附近和负值区，再看高收益尾部。中部2026岭回归报告基准有18个亏损日，区间总收入15.02m并不代表每一天都提供正现金。固定合同付款和运维需要覆盖低收益时期，因此总额与尾部应共同审查。",
+      "conclusion": "固定合同付款和运维需要覆盖低收益时期，因此总额与尾部应共同审查。",
+      "business_meaning": "固定合同付款和运维需要覆盖低收益时期，因此总额与尾部应共同审查。"
+    },
+    "joint-soc": {
+      "display_title": "滚动联合计划的库存",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "滚动联合计划的库存",
+      "key_values": "沿48个半小时看库存怎样随现货动作、调频调用与恢复变化；当前控制显示的策略决定哪条路径被执行。50%目标用于对称上、下调的能量余量，不能直接套用纯现货日的10%→10%基线。功率图上的计划优势只有在SOC边界和履约余量同时成立时，才可能留下联合现金。",
+      "reading": "沿48个半小时看库存怎样随现货动作、调频调用与恢复变化；当前控制显示的策略决定哪条路径被执行。50%目标用于对称上、下调的能量余量，不能直接套用纯现货日的10%→10%基线。功率图上的计划优势只有在SOC边界和履约余量同时成立时，才可能留下联合现金。",
+      "conclusion": "功率图上的计划优势只有在SOC边界和履约余量同时成立时，才可能留下联合现金。",
+      "business_meaning": "功率图上的计划优势只有在SOC边界和履约余量同时成立时，才可能留下联合现金。"
+    },
+    "portfolio-power": {
+      "display_title": "多站实际购售功率",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "多站实际购售功率",
+      "key_values": "图将各站的实际电网侧功率相加；同规格站点仍分别承担2MW功率、库存和区域市场限制。区域分散可以改变组合现金波动，却不能把某站缺少的SOC无条件从另一站借来。对组合调度的判断应与逐站库存、分别中标容量和相关性图一起进行。",
+      "reading": "图将各站的实际电网侧功率相加；同规格站点仍分别承担2MW功率、库存和区域市场限制。区域分散可以改变组合现金波动，却不能把某站缺少的SOC无条件从另一站借来。对组合调度的判断应与逐站库存、分别中标容量和相关性图一起进行。",
+      "conclusion": "对组合调度的判断应与逐站库存、分别中标容量和相关性图一起进行。",
+      "business_meaning": "对组合调度的判断应与逐站库存、分别中标容量和相关性图一起进行。"
+    },
+    "portfolio-soc": {
+      "display_title": "逐站库存与分别中标",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "逐站库存与分别中标",
+      "key_values": "先区分各站库存与对应reserve容量，再审同一站能量、功率和履约是否一致。2MW / 8.14MWh是每站标准规格，组合不等于一座可跨区域自由共享库存的大电池。分散收益来自区域现金相关性与各站策略，并不自动消除共同市场或合同风险。",
+      "reading": "先区分各站库存与对应reserve容量，再审同一站能量、功率和履约是否一致。2MW / 8.14MWh是每站标准规格，组合不等于一座可跨区域自由共享库存的大电池。分散收益来自区域现金相关性与各站策略，并不自动消除共同市场或合同风险。",
+      "conclusion": "分散收益来自区域现金相关性与各站策略，并不自动消除共同市场或合同风险。",
+      "business_meaning": "分散收益来自区域现金相关性与各站策略，并不自动消除共同市场或合同风险。"
+    },
+    "finance-equity-cash": {
+      "display_title": "贷款之后的股东现金",
+      "question": "怎样从该图的输入、单位和比较读出业务判断？",
+      "comparison": "贷款之后的股东现金",
+      "key_values": "以50%合同基准先看年0资本金：150m建设减61.364m贷款，再加3.269m偿债储备，股东需约91.905m。前十年15m经营现金先筹2m更换储备，再付6.538m本息，分配约6.462m；第11年用积累储备支付20m更换，第12年贷款清偿并释放DSRA。贷款、储备和本金利息改变股东现金的金额与时点，所以股权IRR与未融资项目6.83% IRR分别计算。",
+      "reading": "以50%合同基准先看年0资本金：150m建设减61.364m贷款，再加3.269m偿债储备，股东需约91.905m。前十年15m经营现金先筹2m更换储备，再付6.538m本息，分配约6.462m；第11年用积累储备支付20m更换，第12年贷款清偿并释放DSRA。贷款、储备和本金利息改变股东现金的金额与时点，所以股权IRR与未融资项目6.83% IRR分别计算。",
+      "conclusion": "贷款、储备和本金利息改变股东现金的金额与时点，所以股权IRR与未融资项目6.83% IRR分别计算。",
+      "business_meaning": "贷款、储备和本金利息改变股东现金的金额与时点，所以股权IRR与未融资项目6.83% IRR分别计算。"
+    },
+    "joint-power": {
+      "display_title": "联合滚动的实际净并网功率与调用",
+      "question": "调用与交易是否共享同一电池出力？",
+      "comparison": "同一代表日实际净并网功率与已交付调频调用",
+      "key_values": [
+        "MW；正为送电、负为受电",
+        "调用已经包含于净并网功率"
+      ],
+      "reading": "先看蓝线实际净并网功率：负值是受电，正值是送电；再看金线，它是已经交付的调用功率，已计入蓝线，不能再次相加。调用期间，现货头寸、调频交付与库存恢复共同受同一台电池的功率和能量约束。结合相邻SOC图检查库存能否在调用后恢复，才能判断容量承诺是否可持续兑现。",
+      "conclusion": "市场头寸最终汇入一条物理功率路径",
+      "business_meaning": "容量承诺须经过交付与库存恢复检验",
+      "misread": "金线是调用执行量，与报告功率图另示的预留容量承诺不同。"
+    },
+    "replay-prices": {
+      "display_title": "实际价格与当前策略的决策输入",
+      "question": "当前所选日、区域与策略怎样从价格走到现金？",
+      "comparison": "当前界面选择的区域、交割日与策略；48个日本时间半小时槽，原科学数据及控制保持。",
+      "key_values": "先看页内标出的区域、交割日和策略，再对照48个半小时的实际价与决策价。已知价策略两条价格重合，预测策略则可能错判高低价位置；决定现金的是用实际价结算后的买卖差额，不是预测线本身。比较这两条线可以定位决策偏差，随后必须沿同一选择的功率、库存和现金图检验其影响。",
+      "reading": "先看页内标出的区域、交割日和策略，再对照48个半小时的实际价与决策价。已知价策略两条价格重合，预测策略则可能错判高低价位置；决定现金的是用实际价结算后的买卖差额，不是预测线本身。比较这两条线可以定位决策偏差，随后必须沿同一选择的功率、库存和现金图检验其影响。",
+      "conclusion": "比较这两条线可以定位决策偏差，随后必须沿同一选择的功率、库存和现金图检验其影响。",
+      "business_meaning": "比较这两条线可以定位决策偏差，随后必须沿同一选择的功率、库存和现金图检验其影响。"
+    },
+    "replay-power": {
+      "display_title": "当前选择的一条充放电路径",
+      "question": "当前所选日、区域与策略怎样从价格走到现金？",
+      "comparison": "当前界面选择的区域、交割日与策略；48个日本时间半小时槽，原科学数据及控制保持。",
+      "key_values": "沿48个半小时先辨动作符号：负值充电买入，正值放电卖出，幅度受同一2MW电池的有效功率限制。把动作与上图当前策略的决策价格对齐，再与实际结算价对齐，才能分清计划合理与最后赚到现金是两个判断。这里的可行库存限制仍是8.14MWh、10%—90% SOC和每日循环预算，不能用最高减最低价代替整条路径。",
+      "reading": "沿48个半小时先辨动作符号：负值充电买入，正值放电卖出，幅度受同一2MW电池的有效功率限制。把动作与上图当前策略的决策价格对齐，再与实际结算价对齐，才能分清计划合理与最后赚到现金是两个判断。这里的可行库存限制仍是8.14MWh、10%—90% SOC和每日循环预算，不能用最高减最低价代替整条路径。",
+      "conclusion": "这里的可行库存限制仍是8.14MWh、10%—90% SOC和每日循环预算，不能用最高减最低价代替整条路径。",
+      "business_meaning": "这里的可行库存限制仍是8.14MWh、10%—90% SOC和每日循环预算，不能用最高减最低价代替整条路径。"
+    },
+    "replay-soc": {
+      "display_title": "当前路径的槽末库存",
+      "question": "当前所选日、区域与策略怎样从价格走到现金？",
+      "comparison": "当前界面选择的区域、交割日与策略；48个日本时间半小时槽，原科学数据及控制保持。",
+      "key_values": "曲线记录每个半小时动作完成后的库存，第一点不等于动作开始前10%的初始SOC。先检查是否始终留在10%—90%，再把上升段与充电、下降段与放电对应；日末回到10%避免通过额外消耗跨日库存提高本日收入。更换日期或策略会改变曲线，但铭牌8.14MWh及这组库存边界不会因此扩大。",
+      "reading": "曲线记录每个半小时动作完成后的库存，第一点不等于动作开始前10%的初始SOC。先检查是否始终留在10%—90%，再把上升段与充电、下降段与放电对应；日末回到10%避免通过额外消耗跨日库存提高本日收入。更换日期或策略会改变曲线，但铭牌8.14MWh及这组库存边界不会因此扩大。",
+      "conclusion": "更换日期或策略会改变曲线，但铭牌8.14MWh及这组库存边界不会因此扩大。",
+      "business_meaning": "更换日期或策略会改变曲线，但铭牌8.14MWh及这组库存边界不会因此扩大。"
+    },
+    "replay-cash": {
+      "display_title": "当前策略按实际价格结算的累计现金",
+      "question": "当前所选日、区域与策略怎样从价格走到现金？",
+      "comparison": "当前界面选择的区域、交割日与策略；48个日本时间半小时槽，原科学数据及控制保持。",
+      "key_values": "充电时累计现金因买电下降，放电时按实际价售电回升，最后一点应与上方同一选择的套利毛收益相等。48槽买卖现金已经包含购电与88%往返效率的电量影响，尚未扣市场变动费、固定运维、建设或融资。先看低谷所需的买电周转资金，再看日末余额，才能避免把可行功率计划直接当成项目利润。",
+      "reading": "充电时累计现金因买电下降，放电时按实际价售电回升，最后一点应与上方同一选择的套利毛收益相等。48槽买卖现金已经包含购电与88%往返效率的电量影响，尚未扣市场变动费、固定运维、建设或融资。先看低谷所需的买电周转资金，再看日末余额，才能避免把可行功率计划直接当成项目利润。",
+      "conclusion": "先看低谷所需的买电周转资金，再看日末余额，才能避免把可行功率计划直接当成项目利润。",
+      "business_meaning": "先看低谷所需的买电周转资金，再看日末余额，才能避免把可行功率计划直接当成项目利润。"
+    },
+    "overview-selected-year": {
+      "display_title": "当前所选年份的同规格区域机会",
+      "question": "当前所选年份的同规格区域机会？",
+      "comparison": "当前所选年份/区域的日均JPY条图；顶部卡片为窗口合计，一根条对应一个地区。",
+      "key_values": "先看选中地区的深蓝条及条末日均JPY，再与同一窗口其他地区比较；顶部金额卡另给全期合计。选2025可见中部合计17.76m JPY完整年机会，换2026为1月1日至10月5日窗口，东北合计约26.32m；图始终显示日均强度，年份通过选项分别比较。合计受窗口天数影响，日均能帮助比较同单位强度；两者都是扣买电并计效率的历史毛机会，尚未扣固定费用、建设和融资。",
+      "reading": "先看选中地区的深蓝条及条末日均JPY，再与同一窗口其他地区比较；顶部金额卡另给全期合计。选2025可见中部合计17.76m JPY完整年机会，换2026为1月1日至10月5日窗口，东北合计约26.32m；图始终显示日均强度，年份通过选项分别比较。合计受窗口天数影响，日均能帮助比较同单位强度；两者都是扣买电并计效率的历史毛机会，尚未扣固定费用、建设和融资。",
+      "conclusion": "同设备、同窗口的日均比较帮助区分价格机会强度；合计仍保留各自天数。",
+      "business_meaning": "年份和区域分别选择，日均机会与全期合计均不等于项目现金。"
+    },
+    "joint-monthly-web": {
+      "display_title": "当前地区的现货与联合滚动月度贡献",
+      "question": "当前地区的现货与联合滚动月度贡献？",
+      "comparison": "2026年4月至10月5日；当前网页两线为Spot-only与JointRolling，原报告三策略图另含FixedReserve。",
+      "key_values": "先按图例比较同月Spot-only与JointRolling两条线，再看联合滚动从4月日均97,348降到9月60,413 JPY的变化。10月104,351只覆盖5天，不能把该段月累计与完整月相比，也不能在这张两线图寻找固定预留策略。曲线是扣影子损耗后的经济贡献；现金年化需加回非现金损耗，且保留188日样本的季节局限。",
+      "reading": "先按图例比较同月Spot-only与JointRolling两条线，再看联合滚动从4月日均97,348降到9月60,413 JPY的变化。10月104,351只覆盖5天，不能把该段月累计与完整月相比，也不能在这张两线图寻找固定预留策略。曲线是扣影子损耗后的经济贡献；现金年化需加回非现金损耗，且保留188日样本的季节局限。",
+      "conclusion": "曲线是扣影子损耗后的经济贡献；现金年化需加回非现金损耗，且保留188日样本的季节局限。",
+      "business_meaning": "曲线是扣影子损耗后的经济贡献；现金年化需加回非现金损耗，且保留188日样本的季节局限。"
+    },
+    "policy-workspace-web": {
+      "display_title": "利润结转后，返还怎样改变可留现金",
+      "question": "利润结转后，返还怎样改变可留现金？",
+      "comparison": "当前利润与亏损结转输入；工作区显示结果卡和分档表，不是利润敏感性折线图。",
+      "key_values": "先看利润扣结转后的结果，再沿分档表核对返还：默认20m利润、零结转，12m LTDA年收入、2m主拍卖比较及4m资本成本比较产生17.7m返还。12m减返还后为−5.7m，表示该年度仍需准备返还现金，不能以容量支付为上限截断。改变利润或结转后应读取当前结果卡；报告18m年度例及下方600m建设例有各自输入，不把它们的金额移入此工作区。",
+      "reading": "先看利润扣结转后的结果，再沿分档表核对返还：默认20m利润、零结转，12m LTDA年收入、2m主拍卖比较及4m资本成本比较产生17.7m返还。12m减返还后为−5.7m，表示该年度仍需准备返还现金，不能以容量支付为上限截断。改变利润或结转后应读取当前结果卡；报告18m年度例及下方600m建设例有各自输入，不把它们的金额移入此工作区。",
+      "conclusion": "改变利润或结转后应读取当前结果卡；报告18m年度例及下方600m建设例有各自输入，不把它们的金额移入此工作区。",
+      "business_meaning": "改变利润或结转后应读取当前结果卡；报告18m年度例及下方600m建设例有各自输入，不把它们的金额移入此工作区。"
+    },
+    "finance-outstanding-web": {
+      "display_title": "按原贷款与期限，债务本金怎样归零",
+      "question": "按原贷款与期限，债务本金怎样归零？",
+      "comparison": "独立150m建设、20m年收入、5m OPEX例；当前合同占比形成的贷款与12年偿债安排。",
+      "key_values": "先看本金余额逐年下降，再看第12年归零；在50%合同基准，最初贷款为61.364m JPY。纵轴是百万JPY本金，不是DSCR倍数，也不是股东现金。贷款减少对应每年本金支出，是否有足够现金支付本息需接着看下方覆盖率图。",
+      "reading": "先看本金余额逐年下降，再看第12年归零；在50%合同基准，最初贷款为61.364m JPY。纵轴是百万JPY本金，不是DSCR倍数，也不是股东现金。贷款减少对应每年本金支出，是否有足够现金支付本息需接着看下方覆盖率图。",
+      "conclusion": "贷款减少对应每年本金支出，是否有足够现金支付本息需接着看下方覆盖率图。",
+      "business_meaning": "贷款减少对应每年本金支出，是否有足够现金支付本息需接着看下方覆盖率图。"
+    },
+    "industry-roles-web": {
+      "display_title": "设备、工程、运营、资产与资金接口怎样连接",
+      "question": "设备、工程、运营、资产与资金接口怎样连接？",
+      "comparison": "原13角色与公开公司能力框架；连接表示产业交付和现金接口，不表示调度指令的先后次序。",
+      "key_values": "先分别定位设备系统、工程交付、现场运营、资产业主和市场/资金接口，再沿连接看交付与现金责任。PCS、BMS与EMS在图中是产业角色位置，不能按从左到右当成Quant的控制执行流程；实际计划经EMS校验后由PCS执行，Aggregator另管市场资格、申报、履约与结算。淘科公开SI/EM/AG可据此讨论交付和持续服务位置，公开能力不提供公司毛利或份额。",
+      "reading": "先分别定位设备系统、工程交付、现场运营、资产业主和市场/资金接口，再沿连接看交付与现金责任。PCS、BMS与EMS在图中是产业角色位置，不能按从左到右当成Quant的控制执行流程；实际计划经EMS校验后由PCS执行，Aggregator另管市场资格、申报、履约与结算。淘科公开SI/EM/AG可据此讨论交付和持续服务位置，公开能力不提供公司毛利或份额。",
+      "conclusion": "淘科公开SI/EM/AG可据此讨论交付和持续服务位置，公开能力不提供公司毛利或份额。",
+      "business_meaning": "淘科公开SI/EM/AG可据此讨论交付和持续服务位置，公开能力不提供公司毛利或份额。"
+    }
+  },
+  "report_links": {
+    "research-memo.pdf": {
+      "current_href": "japan-bess-research-memo-v2-7.pdf",
+      "title": "日本储能市场：机会、执行与现金边界",
+      "id": "memo"
+    },
+    "japan-bess-research-lab-v2.pdf": {
+      "current_href": "japan-bess-research-lab-v2-7.pdf",
+      "title": "日本储能市场实证：价格路径与执行捕获",
+      "id": "lab"
+    },
+    "japan-bess-research-lab-v2-1.pdf": {
+      "current_href": "japan-bess-market-economics-v2-7.pdf",
+      "title": "日本储能市场经营贡献与公开项目",
+      "id": "p1"
+    },
+    "japan-bess-forward-research-v2-2.pdf": {
+      "current_href": "japan-bess-forward-research-v2-7.pdf",
+      "title": "新增储能与新能源形态怎样改变日本储能的收益空间",
+      "id": "forward"
+    },
+    "japan-bess-project-feasibility-v2-3.pdf": {
+      "current_href": "japan-bess-project-feasibility-v2-7.pdf",
+      "title": "日本储能项目可行性、寿命与并网研究",
+      "id": "feasibility"
+    },
+    "japan-bess-operations-research-v2-4.pdf": {
+      "current_href": "japan-bess-operations-research-v2-7.pdf",
+      "title": "同一电池如何兑现报价、调用与运营现金",
+      "id": "operations"
+    },
+    "japan-bess-markets-updates-v2-4.pdf": {
+      "current_href": "japan-bess-markets-updates-v2-7.pdf",
+      "title": "海外市场变化能怎样更新日本储能的经营假设",
+      "id": "markets"
+    },
+    "project-business-v2-5-report.pdf": {
+      "current_href": "japan-bess-project-business-v2-7.pdf",
+      "title": "日本储能项目开发、商业模式与投融资研究",
+      "id": "business"
+    }
+  },
+  "current_reports": {
+    "operations": {
+      "href": "japan-bess-operations-research-v2-7.pdf",
+      "title": "同一电池如何兑现报价、调用与运营现金"
+    },
+    "business": {
+      "href": "japan-bess-project-business-v2-7.pdf",
+      "title": "日本储能项目开发、商业模式与投融资研究"
+    }
+  },
+  "historical_reports": [
+    {
+      "major": "A",
+      "href": "research-memo.pdf",
+      "title": "日本储能市场：机会、执行与现金边界"
+    },
+    {
+      "major": "A",
+      "href": "japan-bess-research-lab-v2.pdf",
+      "title": "日本储能市场实证：价格路径与执行捕获"
+    },
+    {
+      "major": "A",
+      "href": "japan-bess-research-lab-v2-1.pdf",
+      "title": "日本储能市场经营贡献与公开项目"
+    },
+    {
+      "major": "A",
+      "href": "japan-bess-forward-research-v2-2.pdf",
+      "title": "新增储能与新能源形态怎样改变日本储能的收益空间"
+    },
+    {
+      "major": "A",
+      "href": "japan-bess-project-feasibility-v2-3.pdf",
+      "title": "日本储能项目可行性、寿命与并网研究"
+    },
+    {
+      "major": "A",
+      "href": "japan-bess-operations-research-v2-4.pdf",
+      "title": "同一电池如何兑现报价、调用与运营现金"
+    },
+    {
+      "major": "A",
+      "href": "japan-bess-markets-updates-v2-4.pdf",
+      "title": "海外市场变化能怎样更新日本储能的经营假设"
+    },
+    {
+      "major": "B",
+      "href": "project-business-v2-5-report.pdf",
+      "title": "日本储能项目开发、商业模式与投融资研究"
+    }
+  ],
+  "report_index": {
+    "memo": {
+      "id": "memo",
+      "title": "日本储能市场：机会、执行与现金边界",
+      "file": "output/pdf/current-v2-7/japan-bess-research-memo-v2-7.pdf",
+      "bytes": 346937,
+      "sha256": "1cf17c3ffffd53f00f329eef24a032bb6b964ba665f9437832ca9cf1fa677a3e",
+      "chapters": [
+        {
+          "chapter_id": "memo-asset",
+          "page": 1
+        },
+        {
+          "chapter_id": "memo-path",
+          "page": 2
+        },
+        {
+          "chapter_id": "memo-execution",
+          "page": 3
+        },
+        {
+          "chapter_id": "memo-resources",
+          "page": 4
+        },
+        {
+          "chapter_id": "memo-cash",
+          "page": 6
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "memo-f01",
+          "page": 2,
+          "chart_payload_sha256": "7cc8e63612a4e8465609ae74d2030339f0e39dcba16e7ceee564370a804b35b5"
+        },
+        {
+          "figure_id": "memo-f02",
+          "page": 3,
+          "chart_payload_sha256": "547f2e55b83419c51a77abc325ecb68aeba9d593f7129796e5ee1cec16bde060"
+        },
+        {
+          "figure_id": "executable-strategy-summary",
+          "page": 4,
+          "chart_payload_sha256": "7d8ec4a5b6f0136759c4fe29a25f747392c2f8872683376161af84c4763e27fe"
+        },
+        {
+          "figure_id": "memo-f03",
+          "page": 5,
+          "chart_payload_sha256": "963c25f1d3e07e4197bf6a9ebbcda54cee38885ac6efb6ff0d1e563705838584"
+        },
+        {
+          "figure_id": "lab-f14",
+          "page": 6,
+          "chart_payload_sha256": "25227dafea56da4487eb71c215b974dfad14eae61d9fbf3e77c2ef3d195508e8"
+        },
+        {
+          "figure_id": "cash-chain",
+          "page": 7,
+          "chart_payload_sha256": "02d9f91ae13a5d2447cb88c80522cb29013a675e5f2e3cbb4459de290f87ed2c"
+        }
+      ]
+    },
+    "lab": {
+      "id": "lab",
+      "title": "日本储能市场实证：价格路径与执行捕获",
+      "file": "output/pdf/current-v2-7/japan-bess-research-lab-v2-7.pdf",
+      "bytes": 435254,
+      "sha256": "eed96e05ad9716eb05b5fe939d06882de520069e7890e43f6c7133c44e1720f0",
+      "chapters": [
+        {
+          "chapter_id": "lab-price-structure",
+          "page": 1
+        },
+        {
+          "chapter_id": "lab-path",
+          "page": 3
+        },
+        {
+          "chapter_id": "lab-execution",
+          "page": 6
+        },
+        {
+          "chapter_id": "lab-capture-time",
+          "page": 7
+        },
+        {
+          "chapter_id": "lab-risk",
+          "page": 9
+        },
+        {
+          "chapter_id": "lab-resource",
+          "page": 10
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "lab-f01",
+          "page": 1,
+          "chart_payload_sha256": "ad8167dd533c50aa761d27f04e89da6bc7e785ec71b294933f24929bda9bf9bf"
+        },
+        {
+          "figure_id": "lab-f02",
+          "page": 2,
+          "chart_payload_sha256": "af34c2379aabd955c2fd79f0b62d1055189544e53cf706fb5b64b9d5a2fd1b58"
+        },
+        {
+          "figure_id": "lab-f03",
+          "page": 2,
+          "chart_payload_sha256": "10e1a8b13a4d363b37fa4d155d56e878a99041906f001a1a69e3a0aff378f336"
+        },
+        {
+          "figure_id": "lab-f04",
+          "page": 3,
+          "chart_payload_sha256": "ae2b211c9d16e92021f6706edab6aa46713a6ea91e1f4b134d75293093aa74de"
+        },
+        {
+          "figure_id": "lab-f05",
+          "page": 4,
+          "chart_payload_sha256": "e17869b31a46fd556a916e006afad8203f87372d417aa1ce5af235f702754ef1"
+        },
+        {
+          "figure_id": "lab-f06",
+          "page": 4,
+          "chart_payload_sha256": "8a79648908ff3c2d2a6e1707eecda661ca8f001364b0d64f139f1a6d87d62ee4"
+        },
+        {
+          "figure_id": "lab-f07",
+          "page": 5,
+          "chart_payload_sha256": "29ac463be697bbd82d7d2a1c6b5a21ef696867e08690f45b57f4a990b0473233"
+        },
+        {
+          "figure_id": "lab-f08",
+          "page": 5,
+          "chart_payload_sha256": "6eb75bff2bb690ce89eb61b3da2cf5d2ea3c5dc32db9167bf0b2aab514712c9f"
+        },
+        {
+          "figure_id": "executable-strategy-summary",
+          "page": 6,
+          "chart_payload_sha256": "7d8ec4a5b6f0136759c4fe29a25f747392c2f8872683376161af84c4763e27fe"
+        },
+        {
+          "figure_id": "lab-f09",
+          "page": 7,
+          "chart_payload_sha256": "8ce44b2b086b8bf1669effd022b036e1bd1fa650e46b4dd41c97f9e5e8eed564"
+        },
+        {
+          "figure_id": "lab-f10",
+          "page": 8,
+          "chart_payload_sha256": "1e3913869fcc7837245723569cf32d800aa1177526a96f32cd977d29a7199525"
+        },
+        {
+          "figure_id": "lab-f11",
+          "page": 8,
+          "chart_payload_sha256": "98a5d62d9bc5f59877819143b5d67c1f74830a575901876efb2cd3b1a1c63127"
+        },
+        {
+          "figure_id": "lab-f12",
+          "page": 9,
+          "chart_payload_sha256": "2fd16dc6a55a15b324cd2615e9f863de915505679b3f61803f73f88fe3c49d91"
+        },
+        {
+          "figure_id": "lab-f13",
+          "page": 10,
+          "chart_payload_sha256": "18cbe48e6ce33210cdaada66785dbb9ce82466882230b672f63b2569cfa1044b"
+        },
+        {
+          "figure_id": "lab-f14",
+          "page": 11,
+          "chart_payload_sha256": "25227dafea56da4487eb71c215b974dfad14eae61d9fbf3e77c2ef3d195508e8"
+        },
+        {
+          "figure_id": "lab-f15",
+          "page": 12,
+          "chart_payload_sha256": "e3a9277d0300619dfc58c07bd0e93bfdc8348f46446c449e8e89dc3d730aae6a"
+        }
+      ]
+    },
+    "p1": {
+      "id": "p1",
+      "title": "日本储能市场经营贡献与公开项目",
+      "file": "output/pdf/current-v2-7/japan-bess-market-economics-v2-7.pdf",
+      "bytes": 409940,
+      "sha256": "183a38e0e998d973b277e3395df0a1325e239db96c76b82fe23d65929d5fca58",
+      "chapters": [
+        {
+          "chapter_id": "p1-resource",
+          "page": 1
+        },
+        {
+          "chapter_id": "p1-cost-bridge",
+          "page": 2
+        },
+        {
+          "chapter_id": "p1-combined",
+          "page": 4
+        },
+        {
+          "chapter_id": "p1-projects",
+          "page": 5
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "lab-f14",
+          "page": 1,
+          "chart_payload_sha256": "25227dafea56da4487eb71c215b974dfad14eae61d9fbf3e77c2ef3d195508e8"
+        },
+        {
+          "figure_id": "lab-f15",
+          "page": 2,
+          "chart_payload_sha256": "e3a9277d0300619dfc58c07bd0e93bfdc8348f46446c449e8e89dc3d730aae6a"
+        },
+        {
+          "figure_id": "p1-waterfall",
+          "page": 3,
+          "chart_payload_sha256": "30720e603dd468c56769167ef930fd2f977c53c517be4480366aed8fb3158e9b"
+        },
+        {
+          "figure_id": "p1-project-regions",
+          "page": 5,
+          "chart_payload_sha256": "7ab7f282debd07693f1c6ceff480f0c87e1d21d59ec174b9aa9ca2a687f277f4"
+        }
+      ]
+    },
+    "forward": {
+      "id": "forward",
+      "title": "新增储能与新能源形态怎样改变日本储能的收益空间",
+      "file": "output/pdf/current-v2-7/japan-bess-forward-research-v2-7.pdf",
+      "bytes": 447080,
+      "sha256": "0f10f16b9f25054e0655ff08844ad3aee0e0cec3b8a89d2c29534f979f731b8b",
+      "chapters": [
+        {
+          "chapter_id": "forward-shape",
+          "page": 1
+        },
+        {
+          "chapter_id": "forward-supply",
+          "page": 4
+        },
+        {
+          "chapter_id": "forward-pressure",
+          "page": 7
+        },
+        {
+          "chapter_id": "forward-reserve",
+          "page": 10
+        },
+        {
+          "chapter_id": "forward-combination",
+          "page": 12
+        },
+        {
+          "chapter_id": "forward-learning",
+          "page": 13
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "forward-f02",
+          "page": 2,
+          "chart_payload_sha256": "2a6f140084b7e76565ab4b9674d7ed7f4b7370a256648be6cf9fc5f3436c0aac"
+        },
+        {
+          "figure_id": "forward-f03",
+          "page": 3,
+          "chart_payload_sha256": "bd7fdd59090f0c496688f6630c24e3c25d8b574a5577b7cede09c475af14c606"
+        },
+        {
+          "figure_id": "forward-f04",
+          "page": 4,
+          "chart_payload_sha256": "98ecaed116f89be40113fe9dd8053b5e504aeddbbf68c3e5f42f213494b63441"
+        },
+        {
+          "figure_id": "forward-f05",
+          "page": 5,
+          "chart_payload_sha256": "92d3a4812f66c5f400956cbc047af9a11c1994bfe31c2e19def3a44cb4d048f9"
+        },
+        {
+          "figure_id": "forward-f06",
+          "page": 6,
+          "chart_payload_sha256": "479017ca830f944b82da082eb1391236c207c8b20a72b2af12428c5aaf22f29e"
+        },
+        {
+          "figure_id": "forward-f07",
+          "page": 8,
+          "chart_payload_sha256": "6714230ae31df4f9fddbd0a41030f3c16b4d840d8c57b9475d56fbd188e65d83"
+        },
+        {
+          "figure_id": "forward-f08",
+          "page": 9,
+          "chart_payload_sha256": "39fee0f0931b8ffbd938fab24557cccec3dcdde449ac493fb34ba424d1496c6a"
+        },
+        {
+          "figure_id": "forward-f09",
+          "page": 10,
+          "chart_payload_sha256": "446b6c4413493cab2372afb6fc32d3c2340b87edddda9df62b5402d7d7748202"
+        },
+        {
+          "figure_id": "forward-f10",
+          "page": 11,
+          "chart_payload_sha256": "cd1da0c09c6280b6d1ee6f0833aeff26736ca065691f4eee41d2e4153bc474d4"
+        },
+        {
+          "figure_id": "forward-f01",
+          "page": 12,
+          "chart_payload_sha256": "b2b5a0caae09aae20859dac4f67d97b7edfbef1e8f9cd08e08a0b182b78d4e32"
+        },
+        {
+          "figure_id": "forward-f11",
+          "page": 13,
+          "chart_payload_sha256": "62c024a45833feffb9a0d5d3b63e800d928268982d9dee2951f8f42d7bc45a42"
+        }
+      ]
+    },
+    "feasibility": {
+      "id": "feasibility",
+      "title": "日本储能项目可行性、寿命与并网研究",
+      "file": "output/pdf/current-v2-7/japan-bess-project-feasibility-v2-7.pdf",
+      "bytes": 1215831,
+      "sha256": "135407f293202f6a6f2e9beccacd2db81479e90ff0fdef9d62823a865a6ddb62",
+      "chapters": [
+        {
+          "chapter_id": "feasibility-cash-budget",
+          "page": 1
+        },
+        {
+          "chapter_id": "feasibility-yearly-cash",
+          "page": 2
+        },
+        {
+          "chapter_id": "feasibility-thresholds",
+          "page": 4
+        },
+        {
+          "chapter_id": "feasibility-lifetime",
+          "page": 6
+        },
+        {
+          "chapter_id": "feasibility-grid",
+          "page": 10
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "feasibility-f01",
+          "page": 2,
+          "chart_payload_sha256": "b918c9b629b1564efa65a0cc273d2cd90d081fce874ff9758fb5e237429c6c2a"
+        },
+        {
+          "figure_id": "feasibility-f02",
+          "page": 3,
+          "chart_payload_sha256": "db46c1eee27fd2e27369e158c8d174ab9adbccf108dd4615bda5d61ddb6f0c99"
+        },
+        {
+          "figure_id": "feasibility-f03",
+          "page": 4,
+          "chart_payload_sha256": "6b2dd58d993c5244fda90e29d2242fc7d0f7699bd99d8bb5a61688d9bc73d2b9"
+        },
+        {
+          "figure_id": "feasibility-f04",
+          "page": 5,
+          "chart_payload_sha256": "608b298e77780975bcc91d185333c797c3e2a7cd55d6d8ed107e6d130b5a44cc"
+        },
+        {
+          "figure_id": "feasibility-f05",
+          "page": 6,
+          "chart_payload_sha256": "f126196678a8591a39def656ecfc3d2b027b937fa50c8cbb88347371c46203dc"
+        },
+        {
+          "figure_id": "feasibility-f06",
+          "page": 7,
+          "chart_payload_sha256": "6badfbe39ea68385dda075cb754355379b2d4a08bc6a7622e5635c81aba64643"
+        },
+        {
+          "figure_id": "feasibility-f07",
+          "page": 8,
+          "chart_payload_sha256": "0798c42dc17c100d579e17b1807ae70f4914004471341ae24a147c0bb9b041da"
+        },
+        {
+          "figure_id": "feasibility-f08",
+          "page": 8,
+          "chart_payload_sha256": "292fc90cb63989923726730d7381c055d050980b3a499ac80a4e0f64a260ac34"
+        },
+        {
+          "figure_id": "feasibility-f09",
+          "page": 9,
+          "chart_payload_sha256": "f8da4de0e06702d27fd348a329065869ce431f390c602ab7928a2790b0b97ce8"
+        },
+        {
+          "figure_id": "feasibility-f10",
+          "page": 9,
+          "chart_payload_sha256": "49be2069b5bd1c7673b6b2e519a267fce040cd68825cf081a1a24626989239a0"
+        },
+        {
+          "figure_id": "feasibility-f11",
+          "page": 11,
+          "chart_payload_sha256": "20c857c37614f0506042874955f874f6296d20580bc7474e5d8c9fa2ecd11864"
+        },
+        {
+          "figure_id": "feasibility-f12",
+          "page": 12,
+          "chart_payload_sha256": "f9e3899dc9b137fd04e346d9d9689ddcdc704daca118f45650c622fb71db62b4"
+        },
+        {
+          "figure_id": "feasibility-f13",
+          "page": 13,
+          "chart_payload_sha256": "1789e35da1e86c91c34bc5a407a881590dc658eb1104b1048aadbc50b1aa297f"
+        }
+      ]
+    },
+    "operations": {
+      "id": "operations",
+      "title": "同一电池如何兑现报价、调用与运营现金",
+      "file": "output/pdf/current-v2-7/japan-bess-operations-research-v2-7.pdf",
+      "bytes": 1265591,
+      "sha256": "4fad6d9cf2bb8961ea442878508561028329e2543947a8dce4bca0b423c13311",
+      "chapters": [
+        {
+          "chapter_id": "operations-resource",
+          "page": 1
+        },
+        {
+          "chapter_id": "operations-bidding",
+          "page": 2
+        },
+        {
+          "chapter_id": "operations-activation",
+          "page": 4
+        },
+        {
+          "chapter_id": "operations-rolling",
+          "page": 7
+        },
+        {
+          "chapter_id": "operations-cash",
+          "page": 8
+        },
+        {
+          "chapter_id": "operations-life",
+          "page": 10
+        },
+        {
+          "chapter_id": "operations-reliability",
+          "page": 12
+        },
+        {
+          "chapter_id": "operations-portfolio",
+          "page": 13
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "operations-f01",
+          "page": 3,
+          "chart_payload_sha256": "2b68a839ba5e12af9215c5e180f725a70ef5b4e9f7b5c494c7cf00f5105be3da"
+        },
+        {
+          "figure_id": "operations-f02",
+          "page": 4,
+          "chart_payload_sha256": "1610c118ddfcc01b64705dca3897db6858662925172cd6297d7568b2ae4e9e44"
+        },
+        {
+          "figure_id": "operations-f03",
+          "page": 5,
+          "chart_payload_sha256": "9b5101245363c9b5aa977604c102cb932785eaf654a6ccdc6de5e12c43d26c7c"
+        },
+        {
+          "figure_id": "operations-f04",
+          "page": 6,
+          "chart_payload_sha256": "cb1f70c0ad134d92137668aebe5b74289607d2819fc9f7bc84758cedcfad17ca"
+        },
+        {
+          "figure_id": "operations-f07",
+          "page": 8,
+          "chart_payload_sha256": "87ab28ffff6065a27ae57869bf9b210918ee47e0cd655b0a44052ddd7e0f58db"
+        },
+        {
+          "figure_id": "operations-f05",
+          "page": 9,
+          "chart_payload_sha256": "8bcf2e25c243964ec62a39c91ac0142b03c4fdc256b3622ce43b8530a4f3b702",
+          "presentation_path": "research/narrative-v2-7/figures/joint-comparison-readable.png",
+          "presentation_sha256": "b1f5009c96216299cd13414fd1b9cb1ebf4b753f3e00ca6aa2223c985ab9870c"
+        },
+        {
+          "figure_id": "operations-f06",
+          "page": 10,
+          "chart_payload_sha256": "df8d6c84ee245d8de91decbf40a8db4d7c4b758b18164eacb5e8cc54bce037f4"
+        },
+        {
+          "figure_id": "operations-f10",
+          "page": 12,
+          "chart_payload_sha256": "f0b537eff95c5b10945eba8286193a985ed273c3b68f0faec7d4b19cbf156750"
+        },
+        {
+          "figure_id": "operations-f11",
+          "page": 13,
+          "chart_payload_sha256": "cfa474c371ca4c720c7fae788c45f78fab987e90cc7300d2fc26c6cf8464bd9e"
+        },
+        {
+          "figure_id": "operations-f08",
+          "page": 15,
+          "chart_payload_sha256": "1bcaa0144f4b656d1dcbaeff83ad13cbbecd9ad349a45ad1665f74a00ec1dccd"
+        },
+        {
+          "figure_id": "operations-f09",
+          "page": 16,
+          "chart_payload_sha256": "a4955ddd69ee1118af474e81b1deabbc3d33d4da293a52741c994ee50e60f0f0"
+        }
+      ]
+    },
+    "markets": {
+      "id": "markets",
+      "title": "海外市场变化能怎样更新日本储能的经营假设",
+      "file": "output/pdf/current-v2-7/japan-bess-markets-updates-v2-7.pdf",
+      "bytes": 666993,
+      "sha256": "3c1f3aafec798ba1c86442fa07860039f304ca57d134a6b9c246589f6786c143",
+      "chapters": [
+        {
+          "chapter_id": "markets-units",
+          "page": 1
+        },
+        {
+          "chapter_id": "markets-nem",
+          "page": 2
+        },
+        {
+          "chapter_id": "markets-gb",
+          "page": 3
+        },
+        {
+          "chapter_id": "markets-growth",
+          "page": 5
+        },
+        {
+          "chapter_id": "markets-update",
+          "page": 6
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "markets-f01",
+          "page": 2,
+          "chart_payload_sha256": "bd8b9513f356f1a400615fbf3ab1ef211a0989451a2d9d7731a41236c8e11bbb"
+        },
+        {
+          "figure_id": "markets-f02",
+          "page": 4,
+          "chart_payload_sha256": "96a9a907611deafbef20c19f61c23317f31d71d43279a5a4177bfd6f48ffb05f",
+          "presentation_path": "research/narrative-v2-7/figures/gb-eac-readable.png",
+          "presentation_sha256": "67ec032e48559dfc407d172296422d61dff1d0f9e1e2a05bb8bbf6cdb50d230e"
+        },
+        {
+          "figure_id": "markets-f03",
+          "page": 5,
+          "chart_payload_sha256": "0252cd23d290b2eb2cfe56ff4f9934d21d5cb90983502fa796d9250f4d5a42f2"
+        }
+      ]
+    },
+    "business": {
+      "id": "business",
+      "title": "日本储能项目开发、商业模式与投融资研究",
+      "file": "output/pdf/current-v2-7/japan-bess-project-business-v2-7.pdf",
+      "bytes": 944147,
+      "sha256": "fdf69e97a9052305b2a8a8bbd8564c604d599546b1f2abb5dc9adb5a9abe2e13",
+      "chapters": [
+        {
+          "chapter_id": "business-development",
+          "page": 1
+        },
+        {
+          "chapter_id": "business-actors",
+          "page": 3
+        },
+        {
+          "chapter_id": "business-contracts",
+          "page": 4
+        },
+        {
+          "chapter_id": "business-policy",
+          "page": 6
+        },
+        {
+          "chapter_id": "business-finance",
+          "page": 8
+        },
+        {
+          "chapter_id": "business-use-cases",
+          "page": 12
+        },
+        {
+          "chapter_id": "business-control-value",
+          "page": 14
+        },
+        {
+          "chapter_id": "business-risk",
+          "page": 16
+        }
+      ],
+      "figures": [
+        {
+          "figure_id": "development-path",
+          "page": 2,
+          "chart_payload_sha256": "3919e28ccab59673846ec7f30242fe42da68d1d06fbc6461aac1a52e0737ba08"
+        },
+        {
+          "figure_id": "business-commercial-allocation",
+          "page": 5,
+          "chart_payload_sha256": "4ee51a9e16351752e6202efaae824486f75f5a80df9a59425752144c7cf84060"
+        },
+        {
+          "figure_id": "business-policy-refund",
+          "page": 7,
+          "chart_payload_sha256": "a84de3bb85e0fa4edb262dd75623eae048b18d80b4ad080f7a86f946ba95051a"
+        },
+        {
+          "figure_id": "cash-chain",
+          "page": 8,
+          "chart_payload_sha256": "02d9f91ae13a5d2447cb88c80522cb29013a675e5f2e3cbb4459de290f87ed2c"
+        },
+        {
+          "figure_id": "business-finance-debt",
+          "page": 10,
+          "chart_payload_sha256": "364119941a2163df1d477ee0f920231a65bc451614164ad6b171532a7cc53e1b"
+        },
+        {
+          "figure_id": "business-finance-dscr",
+          "page": 11,
+          "chart_payload_sha256": "e696b1fec1c7b30f938d35ed34e2779f7753bb77c62485bdc72ea1457acac574"
+        },
+        {
+          "figure_id": "business-pv-energy",
+          "page": 13,
+          "chart_payload_sha256": "661987208f4a07a5cabeb130efbf9c998e72b45b95ff25a2bf5093f791ac320e"
+        },
+        {
+          "figure_id": "business-demand-window",
+          "page": 14,
+          "chart_payload_sha256": "1ab1b3f318b70b5e63736ebb80c964a41734b1bd3e5ab9c200fcb451b65ff6d3"
+        },
+        {
+          "figure_id": "control-chain",
+          "page": 15,
+          "chart_payload_sha256": "1ab4b5036af0fb36f24a70e66cf013dc7ccc865ced8a31a6b4474422b4eeec6e"
+        },
+        {
+          "figure_id": "business-risk-npv",
+          "page": 18,
+          "chart_payload_sha256": "efbe0ba3bbc21dc8c06a7562c21bd2870888f523d7d6a82c8182c7931119ed1d"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "schema_version": "research-modules-2",
+  "site_version": "v2.4",
+  "as_of_jst": "2026-10-07",
+  "modules": [
+    {
+      "module_id": "overview",
+      "title": "研究总览",
+      "version": "v1",
+      "question": "同一块储能设备在不同区域的历史收益相差多少？",
+      "data_scope": "JEPX五区域；2025全年与2026年截至10月5日；相同2MW/8.14MWh设备。",
+      "route": "#overview",
+      "report_section": "v1 / 研究结论",
+      "status": "published_snapshot",
+      "group": "基础研究"
+    },
+    {
+      "module_id": "spot",
+      "title": "现货与储能回测",
+      "version": "v1",
+      "question": "设备、效率和循环限制如何影响历史套利收入？",
+      "data_scope": "643个完整JST受渡日；48个半小时槽；有限SOC网格调度。",
+      "route": "#market",
+      "report_section": "v1 / 调度与敏感性",
+      "status": "published_snapshot",
+      "group": "基础研究"
+    },
+    {
+      "module_id": "rules",
+      "title": "规则与调频情景",
+      "version": "v1",
+      "question": "一次调频规则改变了哪些报价和履约条件？",
+      "data_scope": "EPRX/METI官方规则与FY2025月度成交汇总；容量参数C。",
+      "route": "#rules",
+      "report_section": "v1 / 规则与调频",
+      "status": "published_snapshot",
+      "group": "基础研究"
+    },
+    {
+      "module_id": "sources",
+      "title": "来源与方法",
+      "version": "v1",
+      "question": "哪些是官方事实，哪些是计算或研究假设？",
+      "data_scope": "价格、公司公告、规则、质量检查和复算说明。",
+      "route": "#sources",
+      "report_section": "v1 / 证据与边界",
+      "status": "published_snapshot",
+      "group": "基础研究"
+    },
+    {
+      "module_id": "lab-anatomy",
+      "title": "市场结构",
+      "version": "v2",
+      "question": "价差、高低价时段与季节分布如何变化？",
+      "data_scope": "五区域JEPX；2025全年、2025同期和2026 YTD。",
+      "route": "#lab/anatomy",
+      "report_section": "v2报告 / 市场结构",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-replay",
+      "title": "单日回放",
+      "version": "v2",
+      "question": "一天的充放电动作怎样形成现金流？",
+      "data_scope": "643天；2026可选预测策略；48槽价格、功率和SOC。",
+      "route": "#lab/replay",
+      "report_section": "v2报告 / 单日回放",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-strategy",
+      "title": "可执行策略",
+      "version": "v2",
+      "question": "不知道当天实际价格时，策略还能获得多少毛收益？",
+      "data_scope": "2025初始历史；2026 YTD278天；月度扩展训练与实际结算。",
+      "route": "#lab/strategy",
+      "report_section": "v2报告 / 策略比较",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-risk",
+      "title": "收益风险",
+      "version": "v2",
+      "question": "收益集中在多少天，亏损和月度波动有多大？",
+      "data_scope": "278天完整策略收益；按月的7日块历史重采样，固定种子。",
+      "route": "#lab/risk",
+      "report_section": "v2报告 / 收益风险",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-frontier",
+      "title": "资源分配",
+      "version": "v2",
+      "question": "给一次调频预留功率后，现货收入减少多少？",
+      "data_scope": "五区域、9档预留功率；连续LP；首尾SOC50%；容量参数C。",
+      "route": "#lab/frontier",
+      "report_section": "v2报告 / 资源分配",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-economics",
+      "title": "规则与经济结果",
+      "version": "v2",
+      "question": "相同12小时预留要求下，市场时段粒度有何影响？",
+      "data_scope": "30分钟/180分钟MILP；相同资源、时间、费用和容量情景。",
+      "route": "#lab/economics",
+      "report_section": "v2报告 / 规则实验",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-footprint",
+      "title": "淘科公开项目",
+      "version": "v2.1",
+      "question": "公司公开项目分布在哪里，各站披露了哪些阶段？",
+      "data_scope": "9座可识别官方公开电站；区域示意地图；市场状态按站记录。",
+      "route": "#lab/footprint",
+      "report_section": "v2.1报告 / 项目布局",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "lab-bridge",
+      "title": "经营贡献",
+      "version": "v2.1",
+      "question": "列示成本后，历史毛收益还剩多少？",
+      "data_scope": "既有DP/预测策略/预留LP；Low/Base/High成本C；公开费率A。",
+      "route": "#lab/bridge",
+      "report_section": "v2.1报告 / 经营贡献",
+      "status": "published_snapshot",
+      "group": "研究实验室"
+    },
+    {
+      "module_id": "forward-drivers",
+      "title": "价格驱动因素",
+      "version": "1.0",
+      "question": "负荷、发电结构和跨区交换与电价如何共变？",
+      "data_scope": "中部/九州；2025-01-01至2026-09-30供需实绩；2026留出检验。",
+      "route": "#forward/drivers",
+      "report_section": "前瞻报告 / 3–4",
+      "status": "published_snapshot",
+      "group": "前瞻研究"
+    },
+    {
+      "module_id": "forward-pipeline",
+      "title": "日本储能新增与竞争",
+      "version": "1.0",
+      "question": "哪些区域公开新增储能较多，预计何时投运？",
+      "data_scope": "22座官方可识别市场项目；48条公告记录去重；淘科9站另列。",
+      "route": "#forward/pipeline",
+      "report_section": "前瞻报告 / 5–6",
+      "status": "published_snapshot",
+      "group": "前瞻研究"
+    },
+    {
+      "module_id": "forward-scenarios",
+      "title": "2030 收益压缩情景",
+      "version": "1.0",
+      "question": "价差和容量价格承压时，历史经营贡献还能保留多少？",
+      "data_scope": "2026 YTD278日；4个透明情景、6档价差敏感性；沿用原调度和成本模型。",
+      "route": "#forward/scenarios",
+      "report_section": "前瞻报告 / 7–13",
+      "status": "published_snapshot",
+      "group": "前瞻研究"
+    },
+    {
+      "module_id": "feasibility-economics",
+      "title": "项目经济性",
+      "version": "v2.3",
+      "question": "经营现金能否覆盖投资、固定费用和更换预算？",
+      "research_question": "经营现金能否覆盖投资、固定费用和更换预算？",
+      "data_scope": "既有2MW/8.14MWh可执行调度；公开成本参考A、项目预算C；20年税前DCF。",
+      "main_inputs": [
+        "已执行现货与共享容量结果",
+        "METI公开成本参考",
+        "投资/固定费用/折现与融资C参数"
+      ],
+      "main_outputs": [
+        "年度现金流",
+        "NPV与项目IRR",
+        "累计回收、盈亏平衡与敏感性"
+      ],
+      "major_assumptions": [
+        "278日年化与重复历史",
+        "没有项目真实费用或WACC",
+        "不计补贴、税务及未建模市场"
+      ],
+      "limitations": [
+        "行业参考不是淘科数据",
+        "IRR可能无解或多解，不能任选根"
+      ],
+      "route": "#feasibility/economics",
+      "report_section": "项目可行性报告",
+      "report_pages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "status": "validated_snapshot",
+      "group": "项目可行性"
+    },
+    {
+      "module_id": "feasibility-degradation",
+      "title": "电池寿命与衰减",
+      "version": "v2.3",
+      "question": "额外充放电收入是否覆盖增加的寿命损耗？",
+      "research_question": "额外充放电收入是否覆盖增加的寿命损耗？",
+      "data_scope": "同一D-1预测与实际受渡价；3种运营策略、3种寿命假设；EFC/DoD/SOH与更换C。",
+      "main_inputs": [
+        "33,360次已执行调度",
+        "PNNL/NREL公开资料",
+        "日历/循环/DoD与更换C参数"
+      ],
+      "main_outputs": [
+        "EFC和DoD结构",
+        "SOH、可用容量、更换年份",
+        "首年与寿命价值、边际循环比较"
+      ],
+      "major_assumptions": [
+        "年度分步衰减",
+        "首年轨迹可行比例缩放，后续不重优化",
+        "80%SOH后次年初整组电池更换"
+      ],
+      "limitations": [
+        "不是电芯厂家保证模型",
+        "未计温度、调频激活循环和等待期电芯老化"
+      ],
+      "route": "#feasibility/degradation",
+      "report_section": "项目可行性报告",
+      "report_pages": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "status": "validated_snapshot",
+      "group": "项目可行性"
+    },
+    {
+      "module_id": "feasibility-grid",
+      "title": "并网与区域可行性",
+      "version": "v2.3",
+      "question": "市场价值较高的地区，有哪些接入及开发证据缺口？",
+      "research_question": "市场价值较高的地区，有哪些接入及开发证据缺口？",
+      "data_scope": "METI同一2026-03-31高压以上申请口径；5区域地方原件及缺失；旧22站公告样本另列。",
+      "main_inputs": [
+        "官方申请及接入资料",
+        "既有区域市场与项目样本",
+        "并网等待、增建与可用量C压力"
+      ],
+      "main_outputs": [
+        "市场/并网/开发证据并列",
+        "同口径申请量",
+        "具体场址缺口与财务压力对照"
+      ],
+      "major_assumptions": [
+        "统一C等待和可用量参数",
+        "不同群体和日期不静默相加",
+        "不设综合评分"
+      ],
+      "limitations": [
+        "区域公开信息不能证明站点获批",
+        "缺少场址空容量、报价与实际队列工期，东京本地页原件403"
+      ],
+      "route": "#feasibility/grid",
+      "report_section": "项目可行性报告",
+      "report_pages": [
+        12,
+        13,
+        14
+      ],
+      "status": "validated_snapshot",
+      "group": "项目可行性"
+    },
+    {
+      "module_id": "operations-bidding",
+      "title": "报价与中标情景",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "公开统计支持怎样的报价分析，容量收入能否覆盖机会成本？",
+      "route": "#operations/bidding",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/bidding.json.gz",
+        "dist/data/operations-bidding.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-operations-research-v2-4.pdf",
+      "report_pages": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "tests": [
+        "tests/operations/test_bidding.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-bidding-v2-4.ipynb"
+    },
+    {
+      "module_id": "operations-activation",
+      "title": "调用、SOC与履约损耗",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "调用能量、SOC恢复和履约损耗怎样改变贡献？",
+      "route": "#operations/activation",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/activation.json.gz",
+        "dist/data/operations-activation.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-operations-research-v2-4.pdf",
+      "report_pages": [
+        7,
+        8,
+        9
+      ],
+      "tests": [
+        "tests/operations/test_activation.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-activation-v2-4.ipynb"
+    },
+    {
+      "module_id": "operations-joint",
+      "title": "日前、调频与调用后滚动调度",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "按实际报价顺序、共享电池资源的联合情景贡献是多少？",
+      "route": "#operations/joint",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/joint.json.gz",
+        "dist/data/operations-joint.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-operations-research-v2-4.pdf",
+      "report_pages": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "tests": [
+        "tests/operations/test_joint.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-joint-v2-4.ipynb"
+    },
+    {
+      "module_id": "operations-portfolio",
+      "title": "多站组合与区域分散",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "同规格跨区域组合是否降低波动与集中度？",
+      "route": "#operations/portfolio",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/portfolio.json.gz",
+        "dist/data/operations-portfolio.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-operations-research-v2-4.pdf",
+      "report_pages": [
+        14,
+        15
+      ],
+      "tests": [
+        "tests/operations/test_portfolio.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-portfolio-v2-4.ipynb"
+    },
+    {
+      "module_id": "operations-reliability",
+      "title": "可用率、停机与投资边界",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "可用率与维修时长损失多少贡献，NPV门槛是否可达？",
+      "route": "#operations/reliability",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/reliability.json.gz",
+        "dist/data/operations-reliability.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-operations-research-v2-4.pdf",
+      "report_pages": [
+        16,
+        17
+      ],
+      "tests": [
+        "tests/operations/test_reliability.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-reliability-v2-4.ipynb"
+    },
+    {
+      "module_id": "operations-markets",
+      "title": "日本、NEM与英国市场对照",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "海外价格压缩和收益结构有哪些可检验的日本启示？",
+      "route": "#operations/markets",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/markets.json.gz",
+        "dist/data/operations-markets.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-markets-updates-v2-4.pdf",
+      "report_pages": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "tests": [
+        "tests/operations/test_markets.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-markets-v2-4.ipynb"
+    },
+    {
+      "module_id": "operations-updates",
+      "title": "官方来源跟踪与数据刷新",
+      "group": "运营与比较研究",
+      "version": "v2.4",
+      "question": "来源变化如何通过哈希、差异检测和校验进入研究？",
+      "route": "#operations/updates",
+      "data_scope": "官方事实A、计算B与情景C分列；窗口2026-04-01—10-05。",
+      "inputs": [
+        "research/operations-v2-4/normalized",
+        "research/operations-v2-4/assumptions.json"
+      ],
+      "outputs": [
+        "research/operations-v2-4/results/updates.json.gz",
+        "dist/data/operations-updates.json"
+      ],
+      "assumptions": "research/operations-v2-4/assumptions.json",
+      "limits": "各模块首屏最大限制与独立报告末章，缺失数据不补造。",
+      "report": "japan-bess-markets-updates-v2-4.pdf",
+      "report_pages": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "tests": [
+        "tests/operations/test_updates.py"
+      ],
+      "status": "implemented",
+      "acceptance_receipt": "acceptance-v2-4/release-gates.json",
+      "notebook": "research/research-operations-updates-v2-4.ipynb"
+    }
+  ],
+  "overview_route": "#feasibility",
+  "prior_frozen_manifest": "module-manifest.json",
+  "current_manifest": "module-manifest-v2-3.json",
+  "boundary": "原15条研究入口保留；旧目录快照不覆盖，当前目录使用新增版本文件。",
+  "module_count": 25,
+  "updated_at_utc": "2026-10-07T07:23:16.353162+00:00",
+  "preserved_module_count": 18,
+  "new_module_count": 7,
+  "version_boundary": "Original18 module metadata and computation assets are preserved; directory integrates7 additional independently computed modules."
+}

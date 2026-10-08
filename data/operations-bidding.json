@@ -1,0 +1,1729 @@
+{
+  "module_id": "bidding",
+  "title": "报价与中标情景",
+  "data_gate": "B",
+  "question": "公开调频统计支持怎样的报价分析，容量收入能否覆盖机会成本？",
+  "scope": "2026-04-01—10-05，9区域＋全国、30分钟一次调频汇总；项目EV为C情景。",
+  "result": "发布分位数与采购缺口，并在报价×假设中标率网格中计算盈亏边界。",
+  "maximum_limit": "没有逐笔日本投标记录，不能估计真实中标概率或报价—中标响应曲线。",
+  "summary": [
+    {
+      "region": "hokkaido",
+      "label": "北海道",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9024,
+        "mean": 2.9776462765957445,
+        "p10": 0.92,
+        "p50": 1.99,
+        "p90": 6.28,
+        "min": 0.6,
+        "max": 14.55
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 66.12943262411348,
+        "p10": 60.0,
+        "p50": 65.0,
+        "p90": 75.0,
+        "min": 46.0,
+        "max": 77.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 1.6693787615021154,
+        "p10": 1.0597014925373134,
+        "p50": 1.6290322580645162,
+        "p90": 2.268333333333333,
+        "min": 0.095,
+        "max": 4.01106
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.6954348090221354,
+        "p10": 0.4614180127459074,
+        "p50": 0.693306350613119,
+        "p90": 0.9591093470580538,
+        "min": 0.21874207456251585,
+        "max": 1.0
+      },
+      "shortage_blocks": 325,
+      "shortage_block_fraction": 0.03601507092198582,
+      "shortage_mw_sum": 7069.342,
+      "bid_count": 67907.0,
+      "award_count": 40865.0
+    },
+    {
+      "region": "tohoku",
+      "label": "东北",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9012,
+        "mean": 8.25714935641367,
+        "p10": 5.58,
+        "p50": 8.37,
+        "p90": 10.85,
+        "min": 2.03,
+        "max": 15.0
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 162.66234485815602,
+        "p10": 99.0,
+        "p50": 177.0,
+        "p90": 203.0,
+        "min": 32.0,
+        "max": 225.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.5900391009457842,
+        "p10": 0.26136125654450265,
+        "p50": 0.5466538461538462,
+        "p90": 1.0,
+        "min": 0.02927927927927928,
+        "max": 1.972972972972973
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.9617448702598675,
+        "p10": 0.8539967034740799,
+        "p50": 1.0,
+        "p90": 1.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "shortage_blocks": 7467,
+      "shortage_block_fraction": 0.8274601063829787,
+      "shortage_mw_sum": 651062.833,
+      "bid_count": 124427.0,
+      "award_count": 112510.0
+    },
+    {
+      "region": "tokyo",
+      "label": "东京",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9024,
+        "mean": 4.374945700354609,
+        "p10": 2.95,
+        "p50": 4.06,
+        "p90": 6.08,
+        "min": 0.71,
+        "max": 13.48
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 538.1079343971631,
+        "p10": 438.0,
+        "p50": 563.0,
+        "p90": 637.0,
+        "min": 170.0,
+        "max": 664.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.7204130745764783,
+        "p10": 0.3509608763693271,
+        "p50": 0.7528237885462555,
+        "p90": 1.0,
+        "min": 0.057027552674230146,
+        "max": 1.85181338028169
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.9716253448154737,
+        "p10": 0.912675452394779,
+        "p50": 1.0,
+        "p90": 1.0,
+        "min": 0.3825834228929941,
+        "max": 1.0
+      },
+      "shortage_blocks": 6701,
+      "shortage_block_fraction": 0.7425753546099291,
+      "shortage_mw_sum": 1476116.611,
+      "bid_count": 535147.0,
+      "award_count": 493143.0
+    },
+    {
+      "region": "chubu",
+      "label": "中部",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9022,
+        "mean": 5.365435601862115,
+        "p10": 1.68,
+        "p50": 4.71,
+        "p90": 10.14,
+        "min": 0.39,
+        "max": 14.92
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 109.4813829787234,
+        "p10": 57.0,
+        "p50": 74.0,
+        "p90": 191.69999999999982,
+        "min": 47.0,
+        "max": 265.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.9111384014460199,
+        "p10": 0.5715861283798966,
+        "p50": 1.0,
+        "p90": 1.0,
+        "min": 0.15532828282828282,
+        "max": 3.9574788732394364
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.8217195607758533,
+        "p10": 0.47930068510107365,
+        "p50": 0.9048500665976289,
+        "p90": 1.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "shortage_blocks": 2721,
+      "shortage_block_fraction": 0.3015292553191489,
+      "shortage_mw_sum": 114825.643,
+      "bid_count": 410725.0,
+      "award_count": 277104.0
+    },
+    {
+      "region": "hokuriku",
+      "label": "北陆",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 6925,
+        "mean": 4.148290252707581,
+        "p10": 0.39,
+        "p50": 2.83,
+        "p90": 10.054000000000014,
+        "min": 0.39,
+        "max": 15.0
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 59.99080230496454,
+        "p10": 53.0,
+        "p50": 61.0,
+        "p90": 65.0,
+        "min": 53.0,
+        "max": 67.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.7598507582075752,
+        "p10": 0.1506984126984127,
+        "p50": 1.0,
+        "p90": 1.0,
+        "min": 0.0,
+        "max": 1.5901639344262295
+      },
+      "supplier_award_bid_ratio": {
+        "n": 7460,
+        "mean": 0.8931968219988984,
+        "p10": 0.5086558044806517,
+        "p50": 1.0,
+        "p90": 1.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "shortage_blocks": 4142,
+      "shortage_block_fraction": 0.45899822695035464,
+      "shortage_mw_sum": 133352.97,
+      "bid_count": 15662.0,
+      "award_count": 13246.0
+    },
+    {
+      "region": "kansai",
+      "label": "关西",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9011,
+        "mean": 4.214645433359228,
+        "p10": 1.8,
+        "p50": 4.37,
+        "p90": 6.25,
+        "min": 0.31,
+        "max": 15.0
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 181.9966755319149,
+        "p10": 137.0,
+        "p50": 160.0,
+        "p90": 257.0,
+        "min": 127.0,
+        "max": 290.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.8728736075359533,
+        "p10": 0.458146741556316,
+        "p50": 1.0,
+        "p90": 1.1095615830115826,
+        "min": 0.13855670103092782,
+        "max": 1.6797350993377482
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.8870602670987732,
+        "p10": 0.6279440108128498,
+        "p50": 1.0,
+        "p90": 1.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "shortage_blocks": 3714,
+      "shortage_block_fraction": 0.4115691489361702,
+      "shortage_mw_sum": 290606.47,
+      "bid_count": 140490.0,
+      "award_count": 106310.0
+    },
+    {
+      "region": "chugoku",
+      "label": "中国地区",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9023,
+        "mean": 3.8239354981713403,
+        "p10": 1.08,
+        "p50": 2.83,
+        "p90": 8.27,
+        "min": 0.39,
+        "max": 21.07
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 135.59109042553192,
+        "p10": 107.0,
+        "p50": 143.0,
+        "p90": 148.0,
+        "min": 99.0,
+        "max": 152.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 1.0231591766894337,
+        "p10": 0.7724671695668271,
+        "p50": 1.0,
+        "p90": 1.331722060502283,
+        "min": 0.05940666666666666,
+        "max": 2.1943125
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.8726614702145192,
+        "p10": 0.6387323757661427,
+        "p50": 0.9277023627360506,
+        "p90": 1.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "shortage_blocks": 1437,
+      "shortage_block_fraction": 0.15924202127659576,
+      "shortage_mw_sum": 75079.359,
+      "bid_count": 159179.0,
+      "award_count": 94913.0
+    },
+    {
+      "region": "shikoku",
+      "label": "四国",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9024,
+        "mean": 1.4103235815602837,
+        "p10": 0.54,
+        "p50": 1.11,
+        "p90": 2.52,
+        "min": 0.36,
+        "max": 13.9
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 43.497562056737586,
+        "p10": 40.0,
+        "p50": 42.5,
+        "p90": 48.0,
+        "min": 39.0,
+        "max": 49.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 1.1017247456614523,
+        "p10": 1.0,
+        "p50": 1.05,
+        "p90": 1.238575,
+        "min": 0.13177777777777777,
+        "max": 2.75
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.5656209470629249,
+        "p10": 0.23577491354919836,
+        "p50": 0.47260842108212925,
+        "p90": 1.0,
+        "min": 0.18633292369666776,
+        "max": 1.0
+      },
+      "shortage_blocks": 242,
+      "shortage_block_fraction": 0.026817375886524823,
+      "shortage_mw_sum": 2096.623,
+      "bid_count": 61558.0,
+      "award_count": 36919.0
+    },
+    {
+      "region": "kyushu",
+      "label": "九州",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9024,
+        "mean": 4.880405585106383,
+        "p10": 2.03,
+        "p50": 4.655,
+        "p90": 8.06,
+        "min": 0.39,
+        "max": 17.33
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 170.41566932624113,
+        "p10": 164.0,
+        "p50": 170.0,
+        "p90": 178.0,
+        "min": 161.0,
+        "max": 182.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.9974715786492603,
+        "p10": 0.8554921821774083,
+        "p50": 1.0,
+        "p90": 1.1191987919132147,
+        "min": 0.15586904761904763,
+        "max": 2.91812865497076
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.8336823038078751,
+        "p10": 0.6305927398446485,
+        "p50": 0.8502043256941191,
+        "p90": 1.0,
+        "min": 0.3091445765400402,
+        "max": 1.0
+      },
+      "shortage_blocks": 1316,
+      "shortage_block_fraction": 0.14583333333333334,
+      "shortage_mw_sum": 60364.18,
+      "bid_count": 293944.0,
+      "award_count": 172984.0
+    },
+    {
+      "region": "total",
+      "label": "全国",
+      "blocks": 9024,
+      "published_mean_pay_as_bid_price": {
+        "n": 9024,
+        "mean": 4.193410904255319,
+        "p10": 2.92,
+        "p50": 4.09,
+        "p90": 5.49,
+        "min": 1.22,
+        "max": 11.94
+      },
+      "procurement_mw": {
+        "n": 9024,
+        "mean": 1467.8728945035461,
+        "p10": 1271.0,
+        "p50": 1493.0,
+        "p90": 1645.0,
+        "min": 844.0,
+        "max": 1879.0
+      },
+      "procurement_award_ratio": {
+        "n": 9024,
+        "mean": 0.846141921503441,
+        "p10": 0.5973878481070323,
+        "p50": 0.8737795744984651,
+        "p90": 1.0430462356100236,
+        "min": 0.32938867509620673,
+        "max": 1.3362540633019675
+      },
+      "supplier_award_bid_ratio": {
+        "n": 9024,
+        "mean": 0.8332361696128191,
+        "p10": 0.7323111834232037,
+        "p50": 0.8330453999852445,
+        "p90": 0.9413702043999602,
+        "min": 0.4977340556894659,
+        "max": 1.0
+      },
+      "shortage_blocks": 7018,
+      "shortage_block_fraction": 0.7777039007092199,
+      "shortage_mw_sum": 2303539.515,
+      "bid_count": 1809039.0,
+      "award_count": 1347994.0
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-04",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 4.248478550327186,
+      "procurement_total_mw_blocks": 125550.0,
+      "shortage_block_fraction": 0.5236111111111111,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 3.5896474009048296,
+      "procurement_total_mw_blocks": 209400.0,
+      "shortage_block_fraction": 0.39861111111111114,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 3.624735099810095,
+      "procurement_total_mw_blocks": 109020.0,
+      "shortage_block_fraction": 0.02638888888888889,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 2.137736615627665,
+      "procurement_total_mw_blocks": 89670.0,
+      "shortage_block_fraction": 0.6791666666666667,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 4.812282309935914,
+      "procurement_total_mw_blocks": 310600.0,
+      "shortage_block_fraction": 0.6597222222222222,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 5.2443704710417425,
+      "procurement_total_mw_blocks": 240990.0,
+      "shortage_block_fraction": 0.3548611111111111,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 2.30555552686863,
+      "procurement_total_mw_blocks": 62580.0,
+      "shortage_block_fraction": 0.034027777777777775,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 6.844231479597415,
+      "procurement_total_mw_blocks": 252750.0,
+      "shortage_block_fraction": 1.0,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 4.226297708547156,
+      "procurement_total_mw_blocks": 901184.0,
+      "shortage_block_fraction": 1.0,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-04",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 4.270871463619108,
+      "procurement_total_mw_blocks": 2301744.0,
+      "shortage_block_fraction": 1.0,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 5.816106720587625,
+      "procurement_total_mw_blocks": 154041.0,
+      "shortage_block_fraction": 0.5725806451612904,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 4.219277194833094,
+      "procurement_total_mw_blocks": 210645.0,
+      "shortage_block_fraction": 0.4442204301075269,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 4.724532343681847,
+      "procurement_total_mw_blocks": 105958.0,
+      "shortage_block_fraction": 0.1364247311827957,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 3.0488337774776855,
+      "procurement_total_mw_blocks": 89590.0,
+      "shortage_block_fraction": 0.7439516129032258,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 5.4044094727028025,
+      "procurement_total_mw_blocks": 324758.0,
+      "shortage_block_fraction": 0.6935483870967742,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 5.256770955634898,
+      "procurement_total_mw_blocks": 254355.0,
+      "shortage_block_fraction": 0.3588709677419355,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 2.2908361149225414,
+      "procurement_total_mw_blocks": 64387.0,
+      "shortage_block_fraction": 0.12768817204301075,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 7.599828103330785,
+      "procurement_total_mw_blocks": 250333.0,
+      "shortage_block_fraction": 1.0,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 4.1990271827652395,
+      "procurement_total_mw_blocks": 898569.0,
+      "shortage_block_fraction": 0.9919354838709677,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-05",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 4.843500650645157,
+      "procurement_total_mw_blocks": 2352636.0,
+      "shortage_block_fraction": 0.9966397849462365,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 5.165902473300812,
+      "procurement_total_mw_blocks": 102084.0,
+      "shortage_block_fraction": 0.27708333333333335,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 2.7219105358433384,
+      "procurement_total_mw_blocks": 195006.0,
+      "shortage_block_fraction": 0.044444444444444446,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 3.544674883161697,
+      "procurement_total_mw_blocks": 94680.0,
+      "shortage_block_fraction": 0.018055555555555554,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 2.037882939290794,
+      "procurement_total_mw_blocks": 87390.0,
+      "shortage_block_fraction": 0.5076388888888889,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 4.178893865521472,
+      "procurement_total_mw_blocks": 309862.0,
+      "shortage_block_fraction": 0.4930555555555556,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 4.255343611377418,
+      "procurement_total_mw_blocks": 246210.0,
+      "shortage_block_fraction": 0.09305555555555556,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 1.1688902397179297,
+      "procurement_total_mw_blocks": 63750.0,
+      "shortage_block_fraction": 0.0,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 8.553599538434703,
+      "procurement_total_mw_blocks": 235154.0,
+      "shortage_block_fraction": 0.91875,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 3.937600262410971,
+      "procurement_total_mw_blocks": 664529.0,
+      "shortage_block_fraction": 0.74375,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-06",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 3.9978334675305365,
+      "procurement_total_mw_blocks": 1998665.0,
+      "shortage_block_fraction": 0.8756944444444444,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 4.685995125643764,
+      "procurement_total_mw_blocks": 219767.0,
+      "shortage_block_fraction": 0.17271505376344087,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 3.622868928193046,
+      "procurement_total_mw_blocks": 161473.0,
+      "shortage_block_fraction": 0.02217741935483871,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 2.5605502835093454,
+      "procurement_total_mw_blocks": 90334.0,
+      "shortage_block_fraction": 0.004704301075268817,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 2.091137526384727,
+      "procurement_total_mw_blocks": 87234.0,
+      "shortage_block_fraction": 0.31518817204301075,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 3.683583201189867,
+      "procurement_total_mw_blocks": 226548.0,
+      "shortage_block_fraction": 0.25873655913978494,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 4.932988180685267,
+      "procurement_total_mw_blocks": 255254.0,
+      "shortage_block_fraction": 0.010752688172043012,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 0.9446510648894262,
+      "procurement_total_mw_blocks": 64077.0,
+      "shortage_block_fraction": 0.0,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 8.777603275273975,
+      "procurement_total_mw_blocks": 229644.0,
+      "shortage_block_fraction": 0.6935483870967742,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 4.613118408555494,
+      "procurement_total_mw_blocks": 761471.0,
+      "shortage_block_fraction": 0.5436827956989247,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-07",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 4.347487392036642,
+      "procurement_total_mw_blocks": 2095802.0,
+      "shortage_block_fraction": 0.6297043010752689,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 4.942683952209807,
+      "procurement_total_mw_blocks": 230944.0,
+      "shortage_block_fraction": 0.3064516129032258,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 3.9806481454014127,
+      "procurement_total_mw_blocks": 203405.0,
+      "shortage_block_fraction": 0.030913978494623656,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 2.197656067593356,
+      "procurement_total_mw_blocks": 91760.0,
+      "shortage_block_fraction": 0.02956989247311828,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 3.587188068854103,
+      "procurement_total_mw_blocks": 87513.0,
+      "shortage_block_fraction": 0.48723118279569894,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 4.654103442716954,
+      "procurement_total_mw_blocks": 225525.0,
+      "shortage_block_fraction": 0.3958333333333333,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 4.945326086100962,
+      "procurement_total_mw_blocks": 255812.0,
+      "shortage_block_fraction": 0.0396505376344086,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 0.8056873903008116,
+      "procurement_total_mw_blocks": 64108.0,
+      "shortage_block_fraction": 0.0,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 9.904319435078012,
+      "procurement_total_mw_blocks": 238606.0,
+      "shortage_block_fraction": 0.6653225806451613,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 4.152782677009291,
+      "procurement_total_mw_blocks": 845976.0,
+      "shortage_block_fraction": 0.6196236559139785,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-08",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 4.39691297679873,
+      "procurement_total_mw_blocks": 2243649.0,
+      "shortage_block_fraction": 0.6538978494623656,
+      "blocks": 1488,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 2.5047170618564616,
+      "procurement_total_mw_blocks": 135948.0,
+      "shortage_block_fraction": 0.0,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 2.696350269993743,
+      "procurement_total_mw_blocks": 208620.0,
+      "shortage_block_fraction": 0.03611111111111111,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 1.3565245951312257,
+      "procurement_total_mw_blocks": 93330.0,
+      "shortage_block_fraction": 0.004861111111111111,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 1.4405644716751,
+      "procurement_total_mw_blocks": 84900.0,
+      "shortage_block_fraction": 0.06388888888888888,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 2.4293485686507337,
+      "procurement_total_mw_blocks": 211110.0,
+      "shortage_block_fraction": 0.02638888888888889,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 4.40336111129685,
+      "procurement_total_mw_blocks": 243510.0,
+      "shortage_block_fraction": 0.035416666666666666,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 0.9113007523817923,
+      "procurement_total_mw_blocks": 63060.0,
+      "shortage_block_fraction": 0.0,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 8.16136470941312,
+      "procurement_total_mw_blocks": 236340.0,
+      "shortage_block_fraction": 0.8111111111111111,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 4.0612551724958195,
+      "procurement_total_mw_blocks": 718556.0,
+      "shortage_block_fraction": 0.6604166666666667,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-09",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 3.440554936596229,
+      "procurement_total_mw_blocks": 1995374.0,
+      "shortage_block_fraction": 0.6347222222222222,
+      "blocks": 1440,
+      "partial_month": false
+    },
+    {
+      "month": "2026-10",
+      "region": "chubu",
+      "pay_as_bid_volume_weighted_mean": 2.1086799145365727,
+      "procurement_total_mw_blocks": 19626.0,
+      "shortage_block_fraction": 0.0125,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "chugoku",
+      "pay_as_bid_volume_weighted_mean": 2.511576151851004,
+      "procurement_total_mw_blocks": 35025.0,
+      "shortage_block_fraction": 0.029166666666666667,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "hokkaido",
+      "pay_as_bid_volume_weighted_mean": 1.4381519079823575,
+      "procurement_total_mw_blocks": 11670.0,
+      "shortage_block_fraction": 0.0,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "hokuriku",
+      "pay_as_bid_volume_weighted_mean": 0.9077040663585061,
+      "procurement_total_mw_blocks": 15060.0,
+      "shortage_block_fraction": 0.16666666666666666,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "kansai",
+      "pay_as_bid_volume_weighted_mean": 2.0843812060087115,
+      "procurement_total_mw_blocks": 33935.0,
+      "shortage_block_fraction": 0.041666666666666664,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "kyushu",
+      "pay_as_bid_volume_weighted_mean": 4.225518415679243,
+      "procurement_total_mw_blocks": 41700.0,
+      "shortage_block_fraction": 0.04583333333333333,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "shikoku",
+      "pay_as_bid_volume_weighted_mean": 0.8857451044153227,
+      "procurement_total_mw_blocks": 10560.0,
+      "shortage_block_fraction": 0.0125,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "tohoku",
+      "pay_as_bid_volume_weighted_mean": 6.777279324298807,
+      "procurement_total_mw_blocks": 25038.0,
+      "shortage_block_fraction": 0.10833333333333334,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "tokyo",
+      "pay_as_bid_volume_weighted_mean": 3.7632621649289013,
+      "procurement_total_mw_blocks": 65601.0,
+      "shortage_block_fraction": 0.13333333333333333,
+      "blocks": 240,
+      "partial_month": true
+    },
+    {
+      "month": "2026-10",
+      "region": "total",
+      "pay_as_bid_volume_weighted_mean": 2.9934943010824235,
+      "procurement_total_mw_blocks": 258215.0,
+      "shortage_block_fraction": 0.041666666666666664,
+      "blocks": 240,
+      "partial_month": true
+    }
+  ],
+  "spot_opportunity": {
+    "tokyo": {
+      "n": 188,
+      "mean": 9808.657723264982,
+      "p10": 596.574858504087,
+      "p50": 5289.986526330511,
+      "p90": 25655.31187296625,
+      "min": 0.0,
+      "max": 48295.140114607406
+    },
+    "chubu": {
+      "n": 188,
+      "mean": 5732.694764057045,
+      "p10": 380.0000000000025,
+      "p50": 3094.5593897161816,
+      "p90": 13827.948273896132,
+      "min": 0.0,
+      "max": 46836.27791723206
+    },
+    "kansai": {
+      "n": 188,
+      "mean": 6969.192769376711,
+      "p10": 285.43979700934216,
+      "p50": 3887.261483425883,
+      "p90": 16260.906520312803,
+      "min": 0.0,
+      "max": 46852.597540071176
+    },
+    "kyushu": {
+      "n": 188,
+      "mean": 5849.656284588399,
+      "p10": 156.49999999999997,
+      "p50": 2395.824630027758,
+      "p90": 15670.913972236776,
+      "min": 0.0,
+      "max": 45661.181790751
+    },
+    "tohoku": {
+      "n": 188,
+      "mean": 5869.507487492671,
+      "p10": 375.8394028285829,
+      "p50": 3666.5422889038346,
+      "p90": 15154.202388774773,
+      "min": 0.0,
+      "max": 39950.978573072134
+    },
+    "chugoku": {
+      "n": 188,
+      "mean": 6039.773485503879,
+      "p10": 235.97999999999402,
+      "p50": 2467.031365760796,
+      "p90": 16347.397526437713,
+      "min": 0.0,
+      "max": 45198.22478784388
+    }
+  },
+  "ev_grid": [
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 0,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": -7440.0,
+      "expected_net_jpy": -4954.559389716182,
+      "break_even_q": null,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 0,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": -7440.0,
+      "expected_net_jpy": -6814.559389716182,
+      "break_even_q": null,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 0,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": -7440.0,
+      "expected_net_jpy": -8302.559389716182,
+      "break_even_q": null,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 0,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": -7440.0,
+      "expected_net_jpy": -10534.559389716182,
+      "break_even_q": null,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 1,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 24000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 16560.0,
+      "expected_net_jpy": 1045.4406102838184,
+      "break_even_q": 0.1868695283645037,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 1,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 24000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 16560.0,
+      "expected_net_jpy": 5185.440610283818,
+      "break_even_q": 0.1868695283645037,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 1,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 24000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 16560.0,
+      "expected_net_jpy": 8497.440610283818,
+      "break_even_q": 0.1868695283645037,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 1,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 24000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 16560.0,
+      "expected_net_jpy": 13465.440610283818,
+      "break_even_q": 0.1868695283645037,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 2,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 48000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 40560.0,
+      "expected_net_jpy": 7045.440610283818,
+      "break_even_q": 0.07629584294172045,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 2,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 48000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 40560.0,
+      "expected_net_jpy": 17185.44061028382,
+      "break_even_q": 0.07629584294172045,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 2,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 48000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 40560.0,
+      "expected_net_jpy": 25297.44061028382,
+      "break_even_q": 0.07629584294172045,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 2,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 48000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 40560.0,
+      "expected_net_jpy": 37465.44061028382,
+      "break_even_q": 0.07629584294172045,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 3,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 72000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 64560.0,
+      "expected_net_jpy": 13045.440610283818,
+      "break_even_q": 0.04793307604888757,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 3,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 72000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 64560.0,
+      "expected_net_jpy": 29185.44061028382,
+      "break_even_q": 0.04793307604888757,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 3,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 72000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 64560.0,
+      "expected_net_jpy": 42097.44061028382,
+      "break_even_q": 0.04793307604888757,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 3,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 72000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 64560.0,
+      "expected_net_jpy": 61465.44061028382,
+      "break_even_q": 0.04793307604888757,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 5,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 120000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 112560.0,
+      "expected_net_jpy": 25045.44061028382,
+      "break_even_q": 0.02749253189157944,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 5,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 120000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 112560.0,
+      "expected_net_jpy": 53185.44061028382,
+      "break_even_q": 0.02749253189157944,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 5,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 120000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 112560.0,
+      "expected_net_jpy": 75697.44061028381,
+      "break_even_q": 0.02749253189157944,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 5,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 120000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 112560.0,
+      "expected_net_jpy": 109465.44061028381,
+      "break_even_q": 0.02749253189157944,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 7.21,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 173040.0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 165600.0,
+      "expected_net_jpy": 38305.44061028382,
+      "break_even_q": 0.01868695283645037,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 7.21,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 173040.0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 165600.0,
+      "expected_net_jpy": 79705.44061028381,
+      "break_even_q": 0.01868695283645037,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 7.21,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 173040.0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 165600.0,
+      "expected_net_jpy": 112825.44061028381,
+      "break_even_q": 0.01868695283645037,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 7.21,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 173040.0,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 165600.0,
+      "expected_net_jpy": 162505.4406102838,
+      "break_even_q": 0.01868695283645037,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 10,
+      "assumed_award_q": 0.25,
+      "capacity_if_awarded_jpy": 240000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 232560.0,
+      "expected_net_jpy": 55045.44061028382,
+      "break_even_q": 0.01330649892378819,
+      "break_even_bid_price": 0.8257598982860302,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 10,
+      "assumed_award_q": 0.5,
+      "capacity_if_awarded_jpy": 240000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 232560.0,
+      "expected_net_jpy": 113185.44061028381,
+      "break_even_q": 0.01330649892378819,
+      "break_even_bid_price": 0.5678799491430151,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 10,
+      "assumed_award_q": 0.7,
+      "capacity_if_awarded_jpy": 240000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 232560.0,
+      "expected_net_jpy": 159697.4406102838,
+      "break_even_q": 0.01330649892378819,
+      "break_even_bid_price": 0.49419996367358227,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    },
+    {
+      "identity": "B under C bid, q, delivery and opportunity assumptions",
+      "bid_price_jpy_kw_block": 10,
+      "assumed_award_q": 1,
+      "capacity_if_awarded_jpy": 240000,
+      "fee_if_awarded_jpy": 1440.0,
+      "delivery_cost_if_awarded_jpy": 4000,
+      "wear_if_awarded_jpy": 2000,
+      "committed_spot_opportunity_jpy": 3094.5593897161816,
+      "conditional_net_jpy": 232560.0,
+      "expected_net_jpy": 229465.4406102838,
+      "break_even_q": 0.01330649892378819,
+      "break_even_bid_price": 0.4389399745715076,
+      "q_is_empirical": false,
+      "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+    }
+  ],
+  "default_ev": {
+    "identity": "B under C bid, q, delivery and opportunity assumptions",
+    "bid_price_jpy_kw_block": 3,
+    "assumed_award_q": 0.7,
+    "capacity_if_awarded_jpy": 72000,
+    "fee_if_awarded_jpy": 1440.0,
+    "delivery_cost_if_awarded_jpy": 4000,
+    "wear_if_awarded_jpy": 2000,
+    "committed_spot_opportunity_jpy": 3094.5593897161816,
+    "conditional_net_jpy": 64560.0,
+    "expected_net_jpy": 42097.44061028382,
+    "break_even_q": 0.04793307604888757,
+    "break_even_bid_price": 0.49419996367358227,
+    "q_is_empirical": false,
+    "opportunity_timing": "Committed before the C award outcome; therefore subtracted once, outside q."
+  },
+  "products": [
+    {
+      "product": "一次调频",
+      "response": "在线10秒；离线例外30秒",
+      "sustain": "在线至少5分钟",
+      "minimum_mw": 1,
+      "increment_kw": 1,
+      "current_cap": 10,
+      "direction": "募集为上调；GF自端控制",
+      "qualification": "GF/LFC跟踪、在线遥测或获准离线方式"
+    },
+    {
+      "product": "二次调频①",
+      "response": "5分钟",
+      "sustain": "30分钟",
+      "minimum_mw": 1,
+      "increment_kw": 1,
+      "current_cap": 10,
+      "direction": "上调",
+      "qualification": "LFC指令跟踪；当前区域内采购"
+    },
+    {
+      "product": "二次调频②",
+      "response": "5分钟",
+      "sustain": "30分钟",
+      "minimum_mw": 1,
+      "increment_kw": 1,
+      "current_cap": 7.21,
+      "direction": "上调",
+      "qualification": "EDC指令跟踪、在线遥测"
+    },
+    {
+      "product": "三次调频①",
+      "response": "15分钟",
+      "sustain": "30分钟",
+      "minimum_mw": 1,
+      "increment_kw": 1,
+      "current_cap": 7.21,
+      "direction": "上调",
+      "qualification": "EDC或调度指令、在线遥测"
+    },
+    {
+      "product": "三次调频②",
+      "response": "60分钟",
+      "sustain": "30分钟",
+      "minimum_mw": 1,
+      "increment_kw": 1,
+      "current_cap": null,
+      "direction": "上调",
+      "qualification": "简易指令等获准方式；无现行ΔkW上限"
+    }
+  ],
+  "fee_jpy_kw_30min": 0.06,
+  "current_cap_effective_date": "2026-09-01",
+  "cap_timeline": [
+    {
+      "from": "2026-03-14",
+      "to": "2026-08-31",
+      "primary_jpy_kw_block": 15
+    },
+    {
+      "from": "2026-09-01",
+      "to": null,
+      "primary_jpy_kw_block": 10
+    }
+  ],
+  "calibration": {
+    "status": "not_applicable_gate_B",
+    "reason": "No bid-level records; no synthetic observations substituted; no AUC/calibration reported."
+  },
+  "shortage_warning": "缺口描述TSO采购结果，不代表某个项目的中标概率。",
+  "price_warning": "公开平均成交价是多价格约定的统计；项目情景按自己的报价收款。",
+  "assumptions": [
+    "q=.25/.50/.70/1.00 全部为C。",
+    "容量报价3 JPY/ΔkW/30min为C；现行10是上限A。",
+    "机会成本分布为知道当日价格的物理包络B，不是可执行交易业绩。",
+    "履约成本4000JPY/日与影子损耗2000JPY/日为C。"
+  ],
+  "sources": [
+    {
+      "source_id": "eprx-primary-fy2026",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-products-2026",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-rules-20260701",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-current-fee",
+      "identity": "A"
+    },
+    {
+      "source_id": "eprx-cap-20260730",
+      "identity": "A"
+    }
+  ],
+  "version": "v2.4",
+  "site_route": "#operations/bidding",
+  "notebook_download": "./downloads/research-operations-bidding-v2-4.ipynb",
+  "report_download": "./japan-bess-operations-research-v2-4.pdf"
+}

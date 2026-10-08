@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+.access-page,
+.access-page * {
+  box-sizing: border-box;
+}
+
+.access-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 40px 24px;
+  background: #12243b;
+  color: #183047;
+  font: 16px/1.65 "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  overscroll-behavior: contain;
+}
+
+.access-page[hidden] {
+  display: none;
+}
+
+.access-card {
+  width: 100%;
+  max-width: 560px;
+  margin: auto;
+  padding: 42px 44px 40px;
+  border: 1px solid #dae3ed;
+  border-top: 4px solid #54c7b9;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 20px 64px #07132240;
+}
+
+.access-heading {
+  text-align: center;
+}
+
+.access-welcome {
+  margin: 0 0 14px;
+  color: #087f79;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.access-title {
+  margin: 0;
+  color: #12243b;
+  font-size: 30px;
+  font-weight: 650;
+  line-height: 1.45;
+  letter-spacing: -.6px;
+  text-wrap: balance;
+}
+
+.access-subtitle {
+  margin: 14px 0 0;
+  color: #183047;
+  font-size: 16px;
+  line-height: 1.75;
+  text-wrap: balance;
+}
+
+.access-description {
+  margin: 17px 0 0;
+  color: #65778b;
+  font-size: 14px;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.access-form {
+  margin: 30px 0 0;
+  padding-top: 25px;
+  border-top: 1px solid #e5ebf2;
+}
+
+.access-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #183047;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.access-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px 15px;
+  border: 1px solid #b9c8d9;
+  border-radius: 6px;
+  background: #fff;
+  color: #183047;
+  font: 18px/1.5 "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  letter-spacing: 2px;
+  touch-action: manipulation;
+}
+
+.access-input::placeholder {
+  color: #7a8a9b;
+  font-size: 16px;
+  letter-spacing: 0;
+  opacity: 1;
+}
+
+.access-input[aria-invalid="true"] {
+  border-color: #b2473d;
+  background: #fffaf9;
+}
+
+.access-input:focus-visible,
+.access-submit:focus-visible {
+  outline: 3px solid #36a9dd;
+  outline-offset: 3px;
+}
+
+.access-error {
+  min-height: 24px;
+  margin: 8px 0 10px;
+  color: #b2473d;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.access-error:empty {
+  visibility: hidden;
+}
+
+.access-submit {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 18px;
+  border: 1px solid #245edb;
+  border-radius: 6px;
+  background: #245edb;
+  color: #fff;
+  font: 600 16px/1.5 "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.access-submit:hover {
+  border-color: #194bb5;
+  background: #194bb5;
+}
+
+.access-submit:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.access-note {
+  margin: 17px 0 0;
+  color: #65778b;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .access-page {
+    padding: 24px 16px;
+  }
+
+  .access-card {
+    padding: 31px 24px 29px;
+    border-radius: 10px;
+  }
+
+  .access-title {
+    font-size: 26px;
+    letter-spacing: -.4px;
+  }
+
+  .access-subtitle {
+    font-size: 15px;
+  }
+
+  .access-form {
+    margin-top: 25px;
+    padding-top: 22px;
+  }
+}
+
+@media (max-height: 540px) {
+  .access-page {
+    align-items: start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

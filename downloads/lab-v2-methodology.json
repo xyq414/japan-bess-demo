@@ -1,0 +1,702 @@
+{
+  "lineage.json": {
+    "generated_at": "2026-10-06T20:59:07.015800+00:00",
+    "source": "research/jepx-normalized.csv",
+    "source_sha256": "58cb77975c3a0dd26dd432072c24063a3a1a450615c34d891d58738949e77b90",
+    "days": 643,
+    "slots": 30864,
+    "timezone": "Asia/Tokyo",
+    "price_unit": "JPY/kWh",
+    "seed": 20261007,
+    "path": [
+      "official archived FY CSV.gz",
+      "normalized JST delivery days",
+      "past-only features/monthly ridge",
+      "prediction-driven v1 DP schedules",
+      "settlement at realized prices",
+      "risk/frontier/rule metrics",
+      "lazy website payload",
+      "report figures"
+    ],
+    "heavy_tasks": "offline Python NumPy/SciPy and Node, no deployed model training",
+    "p1_status": "deferred"
+  },
+  "training-audit.json": {
+    "method": "fixed-alpha ridge, monthly expanding walk-forward",
+    "alpha": 100.0,
+    "features": [
+      "sin_slot_1",
+      "cos_slot_1",
+      "sin_slot_2",
+      "cos_slot_2",
+      "sin_slot_3",
+      "cos_slot_3",
+      "sin_weekday",
+      "cos_weekday",
+      "weekend",
+      "sin_year",
+      "cos_year",
+      "lag1_slot",
+      "lag2_slot",
+      "lag7_slot",
+      "median28_slot",
+      "mean7_slot",
+      "mean28_slot",
+      "mean7_daily",
+      "spread7_daily",
+      "weekend_sin_slot",
+      "weekend_cos_slot",
+      "year_sin_slot",
+      "year_cos_slot"
+    ],
+    "regions": {
+      "chubu": [
+        {
+          "model_month": "2026-01",
+          "training_start": "2025-01-29",
+          "training_end": "2025-12-31",
+          "first_prediction": "2026-01-01",
+          "training_rows": 16176,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-02",
+          "training_start": "2025-01-29",
+          "training_end": "2026-01-31",
+          "first_prediction": "2026-02-01",
+          "training_rows": 17664,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-03",
+          "training_start": "2025-01-29",
+          "training_end": "2026-02-28",
+          "first_prediction": "2026-03-01",
+          "training_rows": 19008,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-04",
+          "training_start": "2025-01-29",
+          "training_end": "2026-03-31",
+          "first_prediction": "2026-04-01",
+          "training_rows": 20496,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-05",
+          "training_start": "2025-01-29",
+          "training_end": "2026-04-30",
+          "first_prediction": "2026-05-01",
+          "training_rows": 21936,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-06",
+          "training_start": "2025-01-29",
+          "training_end": "2026-05-31",
+          "first_prediction": "2026-06-01",
+          "training_rows": 23424,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-07",
+          "training_start": "2025-01-29",
+          "training_end": "2026-06-30",
+          "first_prediction": "2026-07-01",
+          "training_rows": 24864,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-08",
+          "training_start": "2025-01-29",
+          "training_end": "2026-07-31",
+          "first_prediction": "2026-08-01",
+          "training_rows": 26352,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-09",
+          "training_start": "2025-01-29",
+          "training_end": "2026-08-31",
+          "first_prediction": "2026-09-01",
+          "training_rows": 27840,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-10",
+          "training_start": "2025-01-29",
+          "training_end": "2026-09-30",
+          "first_prediction": "2026-10-01",
+          "training_rows": 29280,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        }
+      ],
+      "tokyo": [
+        {
+          "model_month": "2026-01",
+          "training_start": "2025-01-29",
+          "training_end": "2025-12-31",
+          "first_prediction": "2026-01-01",
+          "training_rows": 16176,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-02",
+          "training_start": "2025-01-29",
+          "training_end": "2026-01-31",
+          "first_prediction": "2026-02-01",
+          "training_rows": 17664,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-03",
+          "training_start": "2025-01-29",
+          "training_end": "2026-02-28",
+          "first_prediction": "2026-03-01",
+          "training_rows": 19008,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-04",
+          "training_start": "2025-01-29",
+          "training_end": "2026-03-31",
+          "first_prediction": "2026-04-01",
+          "training_rows": 20496,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-05",
+          "training_start": "2025-01-29",
+          "training_end": "2026-04-30",
+          "first_prediction": "2026-05-01",
+          "training_rows": 21936,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-06",
+          "training_start": "2025-01-29",
+          "training_end": "2026-05-31",
+          "first_prediction": "2026-06-01",
+          "training_rows": 23424,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-07",
+          "training_start": "2025-01-29",
+          "training_end": "2026-06-30",
+          "first_prediction": "2026-07-01",
+          "training_rows": 24864,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-08",
+          "training_start": "2025-01-29",
+          "training_end": "2026-07-31",
+          "first_prediction": "2026-08-01",
+          "training_rows": 26352,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-09",
+          "training_start": "2025-01-29",
+          "training_end": "2026-08-31",
+          "first_prediction": "2026-09-01",
+          "training_rows": 27840,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-10",
+          "training_start": "2025-01-29",
+          "training_end": "2026-09-30",
+          "first_prediction": "2026-10-01",
+          "training_rows": 29280,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        }
+      ],
+      "kansai": [
+        {
+          "model_month": "2026-01",
+          "training_start": "2025-01-29",
+          "training_end": "2025-12-31",
+          "first_prediction": "2026-01-01",
+          "training_rows": 16176,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-02",
+          "training_start": "2025-01-29",
+          "training_end": "2026-01-31",
+          "first_prediction": "2026-02-01",
+          "training_rows": 17664,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-03",
+          "training_start": "2025-01-29",
+          "training_end": "2026-02-28",
+          "first_prediction": "2026-03-01",
+          "training_rows": 19008,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-04",
+          "training_start": "2025-01-29",
+          "training_end": "2026-03-31",
+          "first_prediction": "2026-04-01",
+          "training_rows": 20496,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-05",
+          "training_start": "2025-01-29",
+          "training_end": "2026-04-30",
+          "first_prediction": "2026-05-01",
+          "training_rows": 21936,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-06",
+          "training_start": "2025-01-29",
+          "training_end": "2026-05-31",
+          "first_prediction": "2026-06-01",
+          "training_rows": 23424,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-07",
+          "training_start": "2025-01-29",
+          "training_end": "2026-06-30",
+          "first_prediction": "2026-07-01",
+          "training_rows": 24864,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-08",
+          "training_start": "2025-01-29",
+          "training_end": "2026-07-31",
+          "first_prediction": "2026-08-01",
+          "training_rows": 26352,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-09",
+          "training_start": "2025-01-29",
+          "training_end": "2026-08-31",
+          "first_prediction": "2026-09-01",
+          "training_rows": 27840,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-10",
+          "training_start": "2025-01-29",
+          "training_end": "2026-09-30",
+          "first_prediction": "2026-10-01",
+          "training_rows": 29280,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        }
+      ],
+      "kyushu": [
+        {
+          "model_month": "2026-01",
+          "training_start": "2025-01-29",
+          "training_end": "2025-12-31",
+          "first_prediction": "2026-01-01",
+          "training_rows": 16176,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-02",
+          "training_start": "2025-01-29",
+          "training_end": "2026-01-31",
+          "first_prediction": "2026-02-01",
+          "training_rows": 17664,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-03",
+          "training_start": "2025-01-29",
+          "training_end": "2026-02-28",
+          "first_prediction": "2026-03-01",
+          "training_rows": 19008,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-04",
+          "training_start": "2025-01-29",
+          "training_end": "2026-03-31",
+          "first_prediction": "2026-04-01",
+          "training_rows": 20496,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-05",
+          "training_start": "2025-01-29",
+          "training_end": "2026-04-30",
+          "first_prediction": "2026-05-01",
+          "training_rows": 21936,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-06",
+          "training_start": "2025-01-29",
+          "training_end": "2026-05-31",
+          "first_prediction": "2026-06-01",
+          "training_rows": 23424,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-07",
+          "training_start": "2025-01-29",
+          "training_end": "2026-06-30",
+          "first_prediction": "2026-07-01",
+          "training_rows": 24864,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-08",
+          "training_start": "2025-01-29",
+          "training_end": "2026-07-31",
+          "first_prediction": "2026-08-01",
+          "training_rows": 26352,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-09",
+          "training_start": "2025-01-29",
+          "training_end": "2026-08-31",
+          "first_prediction": "2026-09-01",
+          "training_rows": 27840,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-10",
+          "training_start": "2025-01-29",
+          "training_end": "2026-09-30",
+          "first_prediction": "2026-10-01",
+          "training_rows": 29280,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        }
+      ],
+      "tohoku": [
+        {
+          "model_month": "2026-01",
+          "training_start": "2025-01-29",
+          "training_end": "2025-12-31",
+          "first_prediction": "2026-01-01",
+          "training_rows": 16176,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-02",
+          "training_start": "2025-01-29",
+          "training_end": "2026-01-31",
+          "first_prediction": "2026-02-01",
+          "training_rows": 17664,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-03",
+          "training_start": "2025-01-29",
+          "training_end": "2026-02-28",
+          "first_prediction": "2026-03-01",
+          "training_rows": 19008,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-04",
+          "training_start": "2025-01-29",
+          "training_end": "2026-03-31",
+          "first_prediction": "2026-04-01",
+          "training_rows": 20496,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-05",
+          "training_start": "2025-01-29",
+          "training_end": "2026-04-30",
+          "first_prediction": "2026-05-01",
+          "training_rows": 21936,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-06",
+          "training_start": "2025-01-29",
+          "training_end": "2026-05-31",
+          "first_prediction": "2026-06-01",
+          "training_rows": 23424,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-07",
+          "training_start": "2025-01-29",
+          "training_end": "2026-06-30",
+          "first_prediction": "2026-07-01",
+          "training_rows": 24864,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-08",
+          "training_start": "2025-01-29",
+          "training_end": "2026-07-31",
+          "first_prediction": "2026-08-01",
+          "training_rows": 26352,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-09",
+          "training_start": "2025-01-29",
+          "training_end": "2026-08-31",
+          "first_prediction": "2026-09-01",
+          "training_rows": 27840,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        },
+        {
+          "model_month": "2026-10",
+          "training_start": "2025-01-29",
+          "training_end": "2026-09-30",
+          "first_prediction": "2026-10-01",
+          "training_rows": 29280,
+          "alpha": 100.0,
+          "standardization": "fit on training rows only",
+          "hyperparameter_selection": "fixed before OOS; no 2026 tuning"
+        }
+      ]
+    },
+    "decision_time": "D-1 08:00 JST; target auction price excluded",
+    "baseline": "previous28 delivery-day same-slot median",
+    "evaluation": "2026-01-01 to2026-10-05; 278days",
+    "vintage_caveat": "official archive lacks contemporaneous revision vintages; data availability is a disclosed day-ahead assumption"
+  },
+  "no-lookahead-validation.json": {
+    "status": "passed",
+    "cases": [
+      {
+        "region": "chubu",
+        "target": "2026-01-01",
+        "training_end": "2025-12-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "chubu",
+        "target": "2026-06-17",
+        "training_end": "2026-05-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "chubu",
+        "target": "2026-10-05",
+        "training_end": "2026-09-30",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "tokyo",
+        "target": "2026-01-01",
+        "training_end": "2025-12-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "tokyo",
+        "target": "2026-06-17",
+        "training_end": "2026-05-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "tokyo",
+        "target": "2026-10-05",
+        "training_end": "2026-09-30",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "kansai",
+        "target": "2026-01-01",
+        "training_end": "2025-12-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "kansai",
+        "target": "2026-06-17",
+        "training_end": "2026-05-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "kansai",
+        "target": "2026-10-05",
+        "training_end": "2026-09-30",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "kyushu",
+        "target": "2026-01-01",
+        "training_end": "2025-12-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "kyushu",
+        "target": "2026-06-17",
+        "training_end": "2026-05-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "kyushu",
+        "target": "2026-10-05",
+        "training_end": "2026-09-30",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "tohoku",
+        "target": "2026-01-01",
+        "training_end": "2025-12-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "tohoku",
+        "target": "2026-06-17",
+        "training_end": "2026-05-31",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      },
+      {
+        "region": "tohoku",
+        "target": "2026-10-05",
+        "training_end": "2026-09-30",
+        "future_mutation": "target and later actual prices*100+9999",
+        "feature_and_forecast_equal": true
+      }
+    ],
+    "feature_prices": "strictly delivery dates < target",
+    "training": "monthly cutoff prior delivery day",
+    "limitation": "vintage publication timestamps not present in archive; D-1 curves assumed already auctioned D-2"
+  },
+  "settlement-validation.json": {
+    "status": "passed",
+    "schedules": 2780,
+    "slots": 133440,
+    "future_realized_prices_used_for_schedule": false,
+    "parameters": {
+      "power": 2,
+      "energy": 8.14,
+      "efficiency": 0.88,
+      "socMin": 0.1,
+      "socMax": 0.9,
+      "initialSoc": 0.1,
+      "maxCycles": 1,
+      "degradation": 0,
+      "gridSteps": 80
+    },
+    "information_set": "D-1 08:00 JST",
+    "price_settlement": "actual JEPX area prices",
+    "no_action": 0
+  }
+}

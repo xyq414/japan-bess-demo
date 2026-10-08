@@ -1,0 +1,631 @@
+{
+  "schema_version": "research-topic-directory-1",
+  "research_version": "R3 v2.8",
+  "sources": [
+    "dist/data/module-manifest-v2-5.json",
+    "dist/data/website-copy-v2-8.json",
+    "dist/data/narrative-v2-8.json"
+  ],
+  "major_routes": {
+    "project_business": "#business",
+    "market_operations": "#market-operations"
+  },
+  "directory_root": "#modules",
+  "topics": [
+    {
+      "key": "memo",
+      "title": "市场概览",
+      "route": "#modules/memo",
+      "primary_routes": [
+        "#overview",
+        "#market",
+        "#rules",
+        "#sources"
+      ],
+      "cross_routes": [
+        "#lab/anatomy",
+        "#lab/strategy"
+      ],
+      "cross_links": [
+        {
+          "route": "#lab/anatomy",
+          "primary_topic": "lab",
+          "reason": "从区域差额继续看日内价格结构"
+        },
+        {
+          "route": "#lab/strategy",
+          "primary_topic": "lab",
+          "reason": "从历史理论机会进入事前交易兑现"
+        }
+      ],
+      "module_count": 4,
+      "question": "日本不同地区的现货价格，能给同一座储能电站留下多大的买卖差额？为什么领先区域会随时间变化？",
+      "lead": "同一设备的区域比较把关注点放在价格环境：卖电收入高，不一定意味着买卖差额更大。这里也解释现货安排和调节力市场的基本收入逻辑。"
+    },
+    {
+      "key": "lab",
+      "title": "价格与执行",
+      "route": "#modules/lab",
+      "primary_routes": [
+        "#lab/anatomy",
+        "#lab/replay",
+        "#lab/strategy",
+        "#lab/risk",
+        "#lab/frontier",
+        "#lab/economics"
+      ],
+      "cross_routes": [
+        "#lab/bridge",
+        "#operations/joint"
+      ],
+      "cross_links": [
+        {
+          "route": "#lab/bridge",
+          "primary_topic": "p1",
+          "reason": "从买卖差额继续看费用后的经营贡献"
+        },
+        {
+          "route": "#operations/joint",
+          "primary_topic": "operations",
+          "reason": "从单一交易计划进入多市场滚动运营"
+        }
+      ],
+      "module_count": 6,
+      "question": "历史电价里看得到的赚钱机会，提前制定交易计划能抓住多少？日内价格结构和收入较弱的阶段，会怎样影响交易安排与现金缓冲？",
+      "lead": "先看交易前怎样制定一天的买卖计划，再用实际电价检验这份计划挣到了多少。价格热图、单日回放和策略比较也说明，给调节力预留资源时，会放弃多少现货机会。"
+    },
+    {
+      "key": "operations",
+      "title": "报价与运营",
+      "route": "#modules/operations",
+      "primary_routes": [
+        "#operations/bidding",
+        "#operations/activation",
+        "#operations/joint",
+        "#operations/portfolio",
+        "#operations/reliability"
+      ],
+      "cross_routes": [
+        "#rules",
+        "#lab/frontier",
+        "#lab/economics"
+      ],
+      "cross_links": [
+        {
+          "route": "#rules",
+          "primary_topic": "memo",
+          "reason": "核对调节力承诺对应的市场规则"
+        },
+        {
+          "route": "#lab/frontier",
+          "primary_topic": "lab",
+          "reason": "比较调节力预留与现货机会成本"
+        },
+        {
+          "route": "#lab/economics",
+          "primary_topic": "lab",
+          "reason": "理解交易区块怎样改变资源安排"
+        }
+      ],
+      "module_count": 5,
+      "question": "电池进入持续运营以后，怎样兼顾现货交易和调节力交付？报价、调用后的补电、连续调整和停机，如何改变运营收入？",
+      "lead": "获得调节力收入，电站也要按约交付。这里看电网调用后怎样补电、下一轮交易怎样调整，以及多站协同和停机如何影响最后留下的现金。"
+    },
+    {
+      "key": "p1",
+      "title": "经营贡献",
+      "route": "#modules/p1",
+      "primary_routes": [
+        "#lab/footprint",
+        "#lab/bridge"
+      ],
+      "cross_routes": [
+        "#operations/activation",
+        "#feasibility/economics"
+      ],
+      "cross_links": [
+        {
+          "route": "#operations/activation",
+          "primary_topic": "operations",
+          "reason": "将调用与恢复支出接回经营贡献"
+        },
+        {
+          "route": "#feasibility/economics",
+          "primary_topic": "feasibility",
+          "reason": "从年度现金进入全寿命投资回收"
+        }
+      ],
+      "module_count": 2,
+      "question": "市场上的买卖差额，扣除交易、网络和电池使用成本后，还能给项目留下多少钱？",
+      "lead": "历史套利机会较大的地区，未必给项目留下同样多的现金。"
+    },
+    {
+      "key": "feasibility",
+      "title": "项目可行性",
+      "route": "#modules/feasibility",
+      "primary_routes": [
+        "#feasibility/economics",
+        "#feasibility/degradation",
+        "#feasibility/grid"
+      ],
+      "cross_routes": [
+        "#lab/bridge",
+        "#operations/reliability",
+        "#business/safety"
+      ],
+      "cross_links": [
+        {
+          "route": "#lab/bridge",
+          "primary_topic": "p1",
+          "reason": "从投资回收追溯年度经营现金的来源"
+        },
+        {
+          "route": "#operations/reliability",
+          "primary_topic": "operations",
+          "reason": "把停机损失连接到项目净现值"
+        },
+        {
+          "route": "#business/safety",
+          "primary_topic": "business",
+          "reason": "进一步看风险转移后仍由项目承担的缺口"
+        }
+      ],
+      "module_count": 3,
+      "question": "电站每年有正的经营现金，为什么仍可能收不回建站投资？建设成本、电池寿命与并网等待，会怎样改变项目价值？",
+      "lead": "投资判断需要看电站完整寿命：建设和更换要花多少钱，现金何时开始流入，今天多做交易是否值得付出更早更换的代价。"
+    },
+    {
+      "key": "business",
+      "title": "开发与投融资",
+      "route": "#modules/business",
+      "primary_routes": [
+        "#business/development",
+        "#business/actors",
+        "#business/commercial",
+        "#business/policy",
+        "#business/finance",
+        "#business/use-cases",
+        "#business/value-chain",
+        "#business/safety"
+      ],
+      "cross_routes": [
+        "#feasibility/economics",
+        "#feasibility/grid",
+        "#lab/footprint"
+      ],
+      "cross_links": [
+        {
+          "route": "#feasibility/economics",
+          "primary_topic": "feasibility",
+          "reason": "区分投资回收与独立融资例的现金判断"
+        },
+        {
+          "route": "#feasibility/grid",
+          "primary_topic": "feasibility",
+          "reason": "连接开发流程中的接入等待和工程投入"
+        },
+        {
+          "route": "#lab/footprint",
+          "primary_topic": "p1",
+          "reason": "查看公开披露的实际储能资产参照"
+        }
+      ],
+      "module_count": 8,
+      "question": "电站怎样完成开发、签约和融资？谁拥有资产、负责交易，收入与风险怎样分配，银行据此愿意提供多少贷款？",
+      "lead": "开发节点决定何时进入收入期，商业合同决定收入归谁、下行由谁承担；融资再把现金的稳定性转化为贷款能力。"
+    },
+    {
+      "key": "forward",
+      "title": "新能源与收益空间",
+      "route": "#modules/forward",
+      "primary_routes": [
+        "#forward/drivers",
+        "#forward/pipeline",
+        "#forward/scenarios"
+      ],
+      "cross_routes": [
+        "#lab/anatomy",
+        "#operations/markets"
+      ],
+      "cross_links": [
+        {
+          "route": "#lab/anatomy",
+          "primary_topic": "lab",
+          "reason": "对照历史午间与傍晚价格结构"
+        },
+        {
+          "route": "#operations/markets",
+          "primary_topic": "markets",
+          "reason": "观察海外竞争与收入结构变化"
+        }
+      ],
+      "module_count": 3,
+      "question": "光伏增长和新增储能，会怎样改变便宜电与高价时段的分布？当竞争压缩价差，项目费用后的收入会受到多大影响？",
+      "lead": "结合新能源供需、项目投运节奏和价差变化，理解市场机会从哪里产生、竞争何时到来，以及哪些变化最容易削弱经营贡献。"
+    },
+    {
+      "key": "markets",
+      "title": "海外市场更新",
+      "route": "#modules/markets",
+      "primary_routes": [
+        "#operations/markets",
+        "#operations/updates"
+      ],
+      "cross_routes": [
+        "#forward/scenarios",
+        "#operations/bidding"
+      ],
+      "cross_links": [
+        {
+          "route": "#forward/scenarios",
+          "primary_topic": "forward",
+          "reason": "把海外变化转为日本收益压力的分项判断"
+        },
+        {
+          "route": "#operations/bidding",
+          "primary_topic": "operations",
+          "reason": "回到日本容量报价与机会成本的经营问题"
+        }
+      ],
+      "module_count": 2,
+      "question": "澳大利亚和英国储能收入结构发生了哪些变化？这些市场经验，对日本电站判断现货、调节力与竞争风险有什么启示？",
+      "lead": "海外市场显示，现货收入下降时，调节服务收入未必同步变化。结合规则、项目与价格更新，判断新事实具体改变了哪一项运营或投资判断。"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "overview",
+      "route": "#overview",
+      "title": "区域选择：先看买卖差额从哪里来",
+      "question": "相同设备在不同区域能留下多少买卖差额，领先地区为何会变化？",
+      "primary_topic": "memo",
+      "primary_directory_route": "#modules/memo",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "spot",
+      "route": "#market",
+      "title": "现货交易：让整天的安排创造差额",
+      "question": "低价和高价出现的先后，怎样影响一整天的买卖安排？",
+      "primary_topic": "memo",
+      "primary_directory_route": "#modules/memo",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "rules",
+      "route": "#rules",
+      "title": "调节力：容量收入要付出什么机会成本",
+      "question": "调节力容量收入能否补偿让出的现货机会和履约支出？",
+      "primary_topic": "memo",
+      "primary_directory_route": "#modules/memo",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "sources",
+      "route": "#sources",
+      "title": "来源与方法：需要核对时再深入",
+      "question": "价格、规则和资产信息来自哪里，怎样核对研究判断？",
+      "primary_topic": "memo",
+      "primary_directory_route": "#modules/memo",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-anatomy",
+      "route": "#lab/anatomy",
+      "title": "价格结构：机会来自日常节奏还是少数尖峰",
+      "question": "赚钱机会来自经常出现的日内节奏，还是少数价格尖峰？",
+      "primary_topic": "lab",
+      "primary_directory_route": "#modules/lab",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-replay",
+      "route": "#lab/replay",
+      "title": "单日回放：从购电到库存，再到卖电现金",
+      "question": "一天中买电、存电和卖电怎样形成具体现金流？",
+      "primary_topic": "lab",
+      "primary_directory_route": "#modules/lab",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-strategy",
+      "route": "#lab/strategy",
+      "title": "事前策略：评价抓住了多少钱",
+      "question": "提前制定的交易计划，实际抓住了多少历史赚钱机会？",
+      "primary_topic": "lab",
+      "primary_directory_route": "#modules/lab",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-risk",
+      "route": "#lab/risk",
+      "title": "现金风险：总额为正，也会经历弱段",
+      "question": "收益集中在哪些月份，现金弱段需要多大周转缓冲？",
+      "primary_topic": "lab",
+      "primary_directory_route": "#modules/lab",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-frontier",
+      "route": "#lab/frontier",
+      "title": "资源预留：同一电池要在两种用途间选择",
+      "question": "给调节力多留一份功率，能否补偿少做的现货交易？",
+      "primary_topic": "lab",
+      "primary_directory_route": "#modules/lab",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-economics",
+      "route": "#lab/economics",
+      "title": "交易区块：能否避开最值钱的现货时段",
+      "question": "承诺时段的长短，怎样影响避开高价现货时段的能力？",
+      "primary_topic": "lab",
+      "primary_directory_route": "#modules/lab",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-footprint",
+      "route": "#lab/footprint",
+      "title": "公开项目：机会落在哪些实际资产周围",
+      "question": "公开储能项目分布在哪里，披露了哪些实际资产条件？",
+      "primary_topic": "p1",
+      "primary_directory_route": "#modules/p1",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "lab-bridge",
+      "route": "#lab/bridge",
+      "title": "经营贡献：收入扣费后还留下多少",
+      "question": "毛套利扣除交易、网络和寿命消耗等费用后，还能留下多少？",
+      "primary_topic": "p1",
+      "primary_directory_route": "#modules/p1",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "forward-drivers",
+      "route": "#forward/drivers",
+      "title": "新能源形态：低价出现在哪个时段",
+      "question": "新能源和供需变化，怎样改变便宜电与高价电出现的时段？",
+      "primary_topic": "forward",
+      "primary_directory_route": "#modules/forward",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "forward-pipeline",
+      "route": "#forward/pipeline",
+      "title": "新增项目：竞争什么时候真正到来",
+      "question": "新增储能竞争集中在哪些地区，什么时候可能进入市场？",
+      "primary_topic": "forward",
+      "primary_directory_route": "#modules/forward",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "forward-scenarios",
+      "route": "#forward/scenarios",
+      "title": "收益压力：价差收拢会削去多少贡献",
+      "question": "现货价差和容量支付承压时，经营贡献会减少多少？",
+      "primary_topic": "forward",
+      "primary_directory_route": "#modules/forward",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "feasibility-economics",
+      "route": "#feasibility/economics",
+      "title": "投资可行性：正经营现金能否收回建站支出",
+      "question": "每年有正经营现金的电站，能否收回建设与更换支出？",
+      "primary_topic": "feasibility",
+      "primary_directory_route": "#modules/feasibility",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "feasibility-degradation",
+      "route": "#feasibility/degradation",
+      "title": "寿命与交易：今天多赚的钱值不值得",
+      "question": "今天多做交易赚到的钱，是否值得付出更多寿命与提前更换的代价？",
+      "primary_topic": "feasibility",
+      "primary_directory_route": "#modules/feasibility",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "feasibility-grid",
+      "route": "#feasibility/grid",
+      "title": "并网：好市场为什么还要等待",
+      "question": "价格环境较好的区域，接入等待和追加工程怎样影响项目价值？",
+      "primary_topic": "feasibility",
+      "primary_directory_route": "#modules/feasibility",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-bidding",
+      "route": "#operations/bidding",
+      "title": "报价：多少容量收入才值得承诺资源",
+      "question": "什么报价能补偿现货机会与交付成本，让承诺容量仍有钱可赚？",
+      "primary_topic": "operations",
+      "primary_directory_route": "#modules/operations",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-activation",
+      "route": "#operations/activation",
+      "title": "调用与恢复：承诺怎样变成现场负担",
+      "question": "电网调用和库存恢复，怎样改变剩余交易能力与现金？",
+      "primary_topic": "operations",
+      "primary_directory_route": "#modules/operations",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-joint",
+      "route": "#operations/joint",
+      "title": "滚动联合运营：信息变化后重新安排剩余资源",
+      "question": "获得新信息后重新安排剩余资源，能改善多少日常贡献？",
+      "primary_topic": "operations",
+      "primary_directory_route": "#modules/operations",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-portfolio",
+      "route": "#operations/portfolio",
+      "title": "多站组合：分散不同地区的现金弱段",
+      "question": "不同地区的电站组合，能否分散低收益日与现金弱段？",
+      "primary_topic": "operations",
+      "primary_directory_route": "#modules/operations",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-reliability",
+      "route": "#operations/reliability",
+      "title": "可用率：停机怎样进入项目价值",
+      "question": "停机与维修损失多少现金，维保、冗余和保险值不值得投入？",
+      "primary_topic": "operations",
+      "primary_directory_route": "#modules/operations",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-markets",
+      "route": "#operations/markets",
+      "title": "海外对照：成熟市场怎样改变收入结构",
+      "question": "澳洲与英国的收入结构变化，对日本储能运营有什么启示？",
+      "primary_topic": "markets",
+      "primary_directory_route": "#modules/markets",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "operations-updates",
+      "route": "#operations/updates",
+      "title": "市场更新：新事实究竟改变哪项判断",
+      "question": "新项目、规则和价格变化，分别改变了哪些交易或投资判断？",
+      "primary_topic": "markets",
+      "primary_directory_route": "#modules/markets",
+      "major_module_id": "market_operations",
+      "major_route": "#market-operations"
+    },
+    {
+      "module_id": "business-development",
+      "route": "#business/development",
+      "title": "项目开发：何时可以承诺投资",
+      "question": "土地、接入和许可推进到什么阶段，项目才适合承诺投资？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-actors",
+      "route": "#business/actors",
+      "title": "参与方：谁交付、控制和收款",
+      "question": "谁持有资产、控制运行和收款，出了问题由谁负责？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-commercial",
+      "route": "#business/commercial",
+      "title": "商业合同：分配上行，也分配下行",
+      "question": "固定费、分成和固定收入合同怎样分配上行收益与下行风险？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-policy",
+      "route": "#business/policy",
+      "title": "政策支持：资金什么时候到账，多少能留下",
+      "question": "建设补助和容量机制什么时候提供现金，项目最终能留下多少？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-finance",
+      "route": "#business/finance",
+      "title": "融资：相同项目IRR为何支持不同贷款",
+      "question": "项目回报相同，为什么合同稳定性仍会改变银行愿意提供的贷款？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-use-cases",
+      "route": "#business/use-cases",
+      "title": "应用场景：接线与客户改变价值来源",
+      "question": "独立储能、光储、用户侧和VPP，分别为谁创造什么价值？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-value-chain",
+      "route": "#business/value-chain",
+      "title": "从计划到执行：哪些能力让现金真正发生",
+      "question": "优化、EMS、PCS和聚合商，分别怎样让交易计划成为实际现金？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    },
+    {
+      "module_id": "business-safety",
+      "route": "#business/safety",
+      "title": "风险分配：保险与合同之后还剩什么缺口",
+      "question": "保险、维保和工程保证之后，哪些风险仍会影响偿债与股东回报？",
+      "primary_topic": "business",
+      "primary_directory_route": "#modules/business",
+      "major_module_id": "project_business",
+      "major_route": "#business"
+    }
+  ],
+  "validation": {
+    "actual_module_count": 33,
+    "primary_route_count": 33,
+    "unique_primary_route_count": 33,
+    "missing_routes": [],
+    "duplicate_primary_routes": [],
+    "all_topics_nonempty": true,
+    "all_routes_from_manifest": true,
+    "all_primary_topics_match_r3_source_book": true
+  },
+  "home": {
+    "title": "日本储能：市场机会怎样变成值得投资的资产",
+    "lead": "日本储能电站如何从电力市场获得收入，这些收入又能否支撑建站投资？收入能兑现多少，取决于区域电价、交易安排和市场竞争；资产是否值得投资，还要看建设成本、设备寿命，以及合同和融资如何分配现金与风险。"
+  },
+  "majors": {
+    "market-operations": {
+      "title": "A｜日本电力市场与储能交易运营研究",
+      "lead": "同一座电站放在日本不同地区，能获得怎样的买卖差额？从历史电价中的理论机会，进一步看提前制定交易计划、预留调节能力和现场履约怎样改变最终收入。"
+    },
+    "business": {
+      "title": "B｜日本储能项目开发、商业模式与投融资研究",
+      "lead": "一座储能电站怎样从开发机会变成可运营、可融资的资产？建设与寿命决定投资能否回收，商业合同和融资安排则决定现金归谁、风险由谁承担。"
+    }
+  }
+}
